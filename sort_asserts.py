@@ -12,11 +12,13 @@ import random
 import shutil
 script, filename = argv
 
-cleanup = raw_input('Delete temporary testbenches? [Y/n]: ')
-while cleanup.lower() != 'y' and cleanup.lower() != 'n':
-	print 'Only valid inputs are Y, y, N or n'
-	cleanup = raw_input('Delete temporary testbenches? [Y/n]: ')
-cleanup = cleanup.lower()
+
+#cleanup = raw_input('Delete temporary testbenches? [Y/n]: ')
+#while cleanup.lower() != 'y' and cleanup.lower() != 'n':
+#	print 'Only valid inputs are Y, y, N or n'
+#	cleanup = raw_input('Delete temporary testbenches? [Y/n]: ')
+#cleanup = cleanup.lower()
+
 	
 sourcefile = open(filename)
 
@@ -71,7 +73,7 @@ sourcefile.close()
 
 bodylines = body.split('\n')
 for line in bodylines:
-	if line.strip()[0:6] == 'assert':
+	if line.strip()[0:6] == 'assert' and (assertcount % 7) == 0 :
 		targetfile = open(targetpath + '\\' + 'assert_test_' + str(assertcount) + '.vhd','w+')
 		targetfile.write(header.replace(marker, 'assert_test_' + str(assertcount)))
 		targetfile.write(line)
