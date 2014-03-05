@@ -7,6 +7,7 @@
 
 from sys import argv
 import os
+import subprocess
 import string
 import random
 import shutil
@@ -18,7 +19,7 @@ script, filename = argv
 #	print 'Only valid inputs are Y, y, N or n'
 #	cleanup = raw_input('Delete temporary testbenches? [Y/n]: ')
 #cleanup = cleanup.lower()
-
+cleanup = 'n' #Standard no clean-up for testing purposes
 	
 sourcefile = open(filename)
 
@@ -26,6 +27,8 @@ currentpath = os.getcwd()
 char_set = string.ascii_uppercase + string.digits
 tempdir = ''.join(random.sample(char_set*8,8))
 targetpath = currentpath + '\\temp_' + tempdir
+targetpath = targetpath.replace('VHDL', 'Testing_Folder')
+#More testing only
 
 #Make temporary folder for testbenches
 if not os.path.isdir(targetpath):
@@ -71,16 +74,31 @@ footer = wrapperend + footer
 #Body is finished, should contain only asserts
 sourcefile.close()
 
+#Assume presence of ModelSim and add commands accordingly
+commandfile = 'vlib work\nvcom -2008 -work work '
+
 bodylines = body.split('\n')
 for line in bodylines:
-	if line.strip()[0:6] == 'assert' and (assertcount % 7) == 0 :
-		targetfile = open(targetpath + '\\' + 'assert_test_' + str(assertcount) + '.vhd','w+')
-		targetfile.write(header.replace(marker, 'assert_test_' + str(assertcount)))
-		targetfile.write(line)
-		targetfile.write(footer.replace(marker, 'assert_test_' + str(assertcount)))
+	if line.strip()[0:6] == 'assert':
+		if (assertcount % 17) == 0: #VHDL editor license doesn't allow great amounts of code
+			currentpath = targetpath + '\\' + 'assert_test_' + str(assertcount) + '.vhd'
+			commandfile += currentpath + ' '
+			#simcommands += ''
+			targetfile = open(currentpath,'w+')
+			targetfile.write(header.replace(marker, 'assert_test_' + str(assertcount)))
+			targetfile.write('\n\tassert false report "Start" severity note;\n')
+			targetfile.write(line)
+			targetfile.write('\n\tassert false report "End" severity note;\n')
+			targetfile.write(footer.replace(marker, 'assert_test_' + str(assertcount)))
+			targetfile.close()
 		assertcount += 1
-		targetfile.close()
-#All asserts in a seperate .vhd file
+#All asserts in a separate .vhd file
+
+#Execute code
+for line in commandfile.split('\n'):
+	os.system(line)
+
+os.system('vsim -c work.tb_libv(assert_test_0) -do "run -all;exit"')
 
 if cleanup == 'y':
 	shutil.rmtree(targetpath)
