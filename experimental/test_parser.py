@@ -22,11 +22,11 @@ def setup():
 	source = open(filename)
 	char_set = string.ascii_uppercase + string.digits
 	tempdir = ''.join(random.sample(char_set*8,8))
-	targetpath = os.getcwd() + os.sep() + 'temp_' + tempdir
+	targetpath = os.getcwd() + os.sep + 'temp_' + tempdir
 	outputfile = open(targetpath + '_cmd_output.txt','w+')
 	
 	#Purely for testing purposes
-	targetpath = targetpath.replace('VHDL', 'Testing_Folder')
+	#targetpath = targetpath.replace('VHDL', 'Testing_Folder')
 	
 	#Make temporary folder for testbenches
 	if not os.path.isdir(targetpath):
@@ -85,7 +85,7 @@ def parse(source):
 	for line in bodylines:
 		if line.strip()[0:6] == 'assert':
 			if (assertcount % 17) == 0: #VHDL editor license doesn't allow great amounts of code
-				currentpath = targetpath + os.sep() + 'assert_test_' + str(assertcount) + '.vhd'
+				currentpath = targetpath + os.sep + 'assert_test_' + str(assertcount) + '.vhd'
 				commands += currentpath + ' '
 				allasserts += 'assert_test_' + str(assertcount) + '\n'
 				targetfile = open(currentpath,'w+')
@@ -116,8 +116,9 @@ def test(allasserts, commands, entname, outputfile):
 #remove all temporary files
 def cleanup(targetpath):
 	shutil.rmtree(targetpath)
-	workpath = targetpath.replace()
-	#shutil.rmtree(
+	shutil.rmtree(os.getcwd() + os.sep + 'work')
+	#os.remove(targetpath + '_cmd_output.txt')
+	os.remove(os.getcwd() + os.sep + 'transcript')
 	return
 
 script, filename = argv
