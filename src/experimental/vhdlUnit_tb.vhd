@@ -22,6 +22,8 @@ begin
 		
 		wait for clkperiod;
 		
+		--ScriptStart
+		
 		assertVectors(sv, ("0000", "0001", "0010", "0011"), clkperiod);
 		assertAll(sv, s, clkperiod);
 		assertAll(sv, s, clkperiod);
@@ -30,7 +32,9 @@ begin
 		assertTimedVector (sv, t, ("0000", "0001", "0010"));
 		assertTimedVector (sv, t, ("0000", "0001", "0010", "0011"));
 		
-		assert false report std_logic_vector2string(sv) severity note;
+		assert false report std_logic_vector2string(sv) & "testbench 1" severity note;
+		
+		--ScriptEnd
 		wait;
 	end process;
 end testbench;
