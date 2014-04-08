@@ -1,0 +1,23 @@
+This project contains a library of helper functions to assist in writing testbenches in VHDL.
+
+It is licensed under the Creative Common Zero license - no rights
+reserved:
+
+"To the extent possible under law,
+  Joren Guillaume
+has waived all copyright and related or neighbouring
+rights to the libv project.
+This work is published from: 
+  Belgium"
+  
+  This means:
+
+* You can use it for any purpose.  
+* No warranty of any kind is given or implied.
+
+
+The project uses some excerpts from the code located the following website:
+kik.weii.tu.koszalin.pl/vhdlunit/
+
+The project above states an "Open Source" format, but neglects to include a license.
+Therefor all code used from this source is clearly marked should you choose to ignore it.

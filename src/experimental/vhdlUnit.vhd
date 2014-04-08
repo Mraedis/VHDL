@@ -35,9 +35,9 @@ package body vhdlUnit is
 	begin
 		--ToDo: Incorporate result
 		if (b) then
-			assert false report "test success" & ", result: " & result severity note;
+			assert false report "test success, result: " & result severity note;
 		else
-			assert false report "test failed" & ", result: " & result severity note;
+			assert false report "test failed, result: " & result severity note;
 		end if;
 	end procedure;
 
