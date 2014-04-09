@@ -1,0 +1,11 @@
+# vsim -do {run -all;exit} -c work.tb_libv(assert_test_0) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading work.libv(body)
+# Loading work.tb_libv(assert_test_0)
+# run -all 
+# ** Note: Start
+#    Time: 0 ps  Iteration: 0  Instance: /tb_libv
+# ** Note: End
+#    Time: 0 ps  Iteration: 0  Instance: /tb_libv
+# exit 

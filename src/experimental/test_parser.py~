@@ -12,7 +12,6 @@ import subprocess
 import string
 import random
 import shutil
-import re
 
 
 #Set up working directories and variables
@@ -140,30 +139,14 @@ def format(target):
 					totaltests += 1
 					otherlines += str(othernotes).zfill(4) + ' - ' + line[11:]
 					everyline += str(totaltests).zfill(4) + ' - ' + line[11:]
-	
-	targetpath = os.getcwd() + os.sep + target + '_testresults.txt'
+	targetpath = os.getcwd() + os.sep + target + '__testresults.txt'
 	targetfile = open(targetpath,'w+')
 	targetfile.write('total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes))
 	targetfile.write('\n\n\nPassed tests reports:\n' + passedlines + '\n\n Failed tests reports:\n' + failedlines + '\n\nOther notes:\n' + otherlines + '\n\n\n All test results:\n' + everyline)
-	
-	xmltargetpath = os.getcwd() + os.sep + target + '_testresults.xml'
-	xmltargetfile = open(xmltargetpath, 'w+')
-	xmltargetfile.write('<testsuite tests="' + str(totaltests) + '" name ="' + target + '_tests">')
-	for line in everyline.split('\n'):
-		words = line.split(' ')
-		if line.find('success') != -1:
-			xmltargetfile.write('\n\t<testcase classname="' + target + '" status="' + str(words[0]) + '" name="' + re.search('(?<=name: )(.*)(?= -)', line).group(0) + '"/>')
-		elif line.find('failed') != -1:
-			xmltargetfile.write('\n\t<testcase classname="' + target + '" status="' + str(words[0]) + '" name="' + re.search('(?<=name: )(.*)(?= -)', line).group(0) + '">')
-			xmltargetfile.write('\n\t\t<failure> ' + line.split(' - ')[2] + ' </failure>\n\t</testcase>')
-	xmltargetfile.write('\n</testsuite>')
-	
-	print 'total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes)
+	#print 'total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes)
 	#Print left out - optional command line output
-	
 	source.close()
 	targetfile.close()
-	xmltargetfile.close()
 	
 	#remove all temporary files
 def cleanup(target):
@@ -172,8 +155,6 @@ def cleanup(target):
 	os.remove(os.getcwd() + os.sep + 'transcript')
 	os.remove(os.getcwd() + os.sep + target + '.vhd')
 	return
-
-#Actual script starts here, above only definitions
 
 script, filename = argv
 
@@ -192,7 +173,7 @@ entname, archname, testcount = parse(source, target)
 test(testcount, target, entname, archname, outputfile)
 format(target)
 
-if clean == 'y':
+#if clean == 'y':
 	cleanup(target)
 
 
