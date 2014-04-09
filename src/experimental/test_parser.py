@@ -1,10 +1,10 @@
 #Assume use of testing library 
 
 ##1. Get current working directory
-##2. Add temporary folder with temp_timestamp (ensures folders are unique)
-##3. Create new testbench for each assert
-##4. Execute testbenches & gather output >> Not Yet Implemented
-##5. Save output and delete temporary testbenches if wanted
+##2. Create new architecture for each test
+##3. Execute testbench & gather output
+##4. Save output and delete temporary testbench if desired
+##5. Parse output into readable format
 
 from sys import argv
 import os
@@ -95,7 +95,8 @@ def parse(source, target):
 	
 	return entname, archname, testcount, commands
 	
-#Execute code and save output in outputfile
+	
+	#Execute code and save output in outputfile
 def test(testcount, commands, entname, archname, outputfile):
 	for line in commands.split('\n'):
 		os.system(line)
@@ -106,13 +107,42 @@ def test(testcount, commands, entname, archname, outputfile):
 	outputfile.close()
 	
 	return
+
+	#format the outputfile
+def format(target):
+	testsfailed, testspassed, othernotes = 0, 0, 0
+	failedlines, passedlines, otherlines = '', '', ''
+		#remove modelsim wrappers
+	source = open(os.getcwd() + os.sep + target + '_cmd_output.txt')
+	for line in source:
+		words = line.split(' ')
+		if (len(words) > 2):
+			if(words[2] == 'Note:'):
+				if(len(words) > 4):
+					if(words[4] == 'failed,'):
+						testsfailed += 1
+						failedlines += line
+					elif(words[4] == 'success,'):
+						testspassed += 1
+						passedlines += line
+					else:
+						othernotes += 1
+						otherlines += line
+				else:
+					othernotes += 1
+	targetpath = os.getcwd() + os.sep + target + '__testresults.txt'
+	targetfile = open(targetpath,'w+')
+	targetfile.write('tests passed: ' + str(testspassed) +'\ntests failed: ' + str(testsfailed) + '\nother notes: ' + str(othernotes))
+	targetfile.write('\n\n\nPassed tests reports:\n' + passedlines + '\n\n Failed tests reports:\n' + failedlines + '\n\nOther notes:\n' + otherlines)
+	print 'tests passed: ' + str(testspassed) +'\ntests failed: ' + str(testsfailed) + '\nother notes: ' + str(othernotes)
+	source.close()
+	targetfile.close()
 	
-#remove all temporary files
+	#remove all temporary files
 def cleanup(target):
-	shutil.rmtree(os.getcwd() + os.sep + 'work')
+	#shutil.rmtree(os.getcwd() + os.sep + 'work')
 	os.remove(os.getcwd() + os.sep + 'transcript')
 	os.remove(os.getcwd() + os.sep + target + '.vhd')
-	#os.remove(targetpath + '_cmd_output.txt')
 	return
 
 script, filename = argv
@@ -127,6 +157,7 @@ clean = 'y' #Standard clean-up for testing purposes
 source, target, outputfile = setup()
 entname, archname, testcount, commands = parse(source, target)
 test(testcount, commands, entname, archname, outputfile)
+format(target)
 
 if clean == 'y':
 	cleanup(target)
