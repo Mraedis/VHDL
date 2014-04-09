@@ -35,9 +35,9 @@ package body vhdlUnit is
 	begin
 		--ToDo: Incorporate result
 		if (b) then
-			assert false report "test success, result: " & result severity note;
+			assert false report "test success" & ht & "name: " & result severity note;
 		else
-			assert false report "test failed, result: " & result severity note;
+			assert false report "test failed" & ht & "name: " & result severity note;
 		end if;
 	end procedure;
 
@@ -45,9 +45,9 @@ package body vhdlUnit is
 	begin
 		for i in va'range loop
 			if(v = va(i)) then
-				reportBack(true, "testnr: " & integer'image(i));
+				reportBack(true, "assertVectors (" & integer'image(i + 1) & "/" & integer'image(va'length) & ")");
 			else
-				reportBack(false, "testnr: " & integer'image(i));
+				reportBack(false, "assertVectors (" & integer'image(i + 1) & "/" & integer'image(va'length) & ") - expected: " & std_logic_vector2string(va(i)) & " but received: " & std_logic_vector2string(v));
 			end if;
 			wait for clkperiod;
 		end loop;
@@ -57,9 +57,9 @@ package body vhdlUnit is
 	begin
 		for i in v'range loop
 			if(s = v(i)) then
-				reportBack(true, "testnr: " & integer'image(i));
+				reportBack(true, "assertAll (" & integer'image(i + 1) & "/" & integer'image(v'length) & ")");
 			else
-				reportBack(false, "testnr: " & integer'image(i));
+				reportBack(false, "assertAll (" & integer'image(i + 1) & "/" & integer'image(v'length) & ") - expected: " & std_logic'image(v(i)) & " but received: " & std_logic'image(s));
 			end if;
 			wait for clkperiod;
 		end loop;
@@ -69,11 +69,15 @@ package body vhdlUnit is
 	begin
 		if (t'length = sv'length) then
 			for i in sv'range loop
-				reportBack(v = sv(i), "testnr: " & integer'image(i) & ", result: " & std_logic'image(v));
+				if (v = sv(i)) then
+					reportBack(true, "assertTimed (" & integer'image(i + 1 ) & "/" & integer'image(sv'length) & ") - " & std_logic'image(v));
+				else
+					reportBack(false, "assertTimed (" & integer'image(i + 1) & "/" & integer'image(sv'length) & ") " & " - expected: " & std_logic'image(sv(i)) & " but received: " & std_logic'image(v));
+				end if;
 				wait for t(i);
 			end loop;
 		else
-			reportBack(false, "mismatched dimensions in procedure assertTimed");
+			reportBack(false, "mismatched dimensions in procedure assertTimed - expected " & integer'image(t'length) & " but received " & integer'image(sv'length));
 		end if;
 	end procedure;
 	
@@ -81,11 +85,15 @@ package body vhdlUnit is
 	begin
 		if (t'length = va'length) then
 			for i in va'range loop
-				reportBack(v = va(i), "testnr: " & integer'image(i) & ", result: " & std_logic_vector2string(v));
+				if (v = va(i)) then
+					reportBack(true, "assertTimedVector (" & integer'image(i + 1) & "/" & integer'image(va'length) & ") - " & std_logic_vector2string(v));
+				else
+					reportBack(false, "assertTimedVector (" & integer'image(i + 1) & "/" & integer'image(va'length) & ")"  & " - expected: " & std_logic_vector2string(va(i)) & " but received: " & std_logic_vector2string(v));
+				end if;
 				wait for t(i);
 			end loop;
 		else
-			reportBack(false, "mismatched dimensions in procedure assertTimedVector");
+			reportBack(false, "mismatched dimensions in procedure assertTimedVector - expected " & integer'image(t'length) & " but received " & integer'image(va'length));
 		end if;
 	end procedure;				  
 	
@@ -98,7 +106,7 @@ package body vhdlUnit is
 		variable j : integer := 1;
 	begin			 
 		for i in arg'RANGE loop		
-			result(j) := std_logic'image(arg(i))(1); --Takes the string image and then only the first character (which should be the only character)
+			result(j) := std_logic'image(arg(i))(2); --Takes the string image and then the character needed
 			j:=j+1;
 		end loop;
 		return result;

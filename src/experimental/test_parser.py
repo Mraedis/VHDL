@@ -32,7 +32,6 @@ def setup():
 def parse(source, target):	
 	#Search for architecture definition
 	header, archheader, archfooter = '', '', ''
-	commands = 'vlib work\n' + 'vcom -2008 -quiet -work work vhdlUnit.vhd '+ target +'.vhd\n'
 	alltests = ''
 	testcount = 0
 	line = source.readline()
@@ -93,11 +92,12 @@ def parse(source, target):
 			testcount += 1
 	targetfile.close()
 	
-	return entname, archname, testcount, commands
+	return entname, archname, testcount
 	
 	
 	#Execute code and save output in outputfile
-def test(testcount, commands, entname, archname, outputfile):
+def test(testcount, target, entname, archname, outputfile):
+	commands = 'vlib work\n' + 'vcom -2008 -quiet -work work vhdlUnit.vhd '+ target +'.vhd\n'
 	for line in commands.split('\n'):
 		os.system(line)
 	
@@ -110,8 +110,8 @@ def test(testcount, commands, entname, archname, outputfile):
 
 	#format the outputfile
 def format(target):
-	testsfailed, testspassed, othernotes = 0, 0, 0
-	failedlines, passedlines, otherlines = '', '', ''
+	failedtests, passedtests, othernotes, totaltests = 0, 0, 0, 0
+	failedlines, passedlines, otherlines, everyline = '', '', '', ''
 		#remove modelsim wrappers
 	source = open(os.getcwd() + os.sep + target + '_cmd_output.txt')
 	for line in source:
@@ -119,28 +119,39 @@ def format(target):
 		if (len(words) > 2):
 			if(words[2] == 'Note:'):
 				if(len(words) > 4):
-					if(words[4] == 'failed,'):
-						testsfailed += 1
-						failedlines += line
-					elif(words[4] == 'success,'):
-						testspassed += 1
-						passedlines += line
+					if(words[4] == 'failed\tname:'):
+						failedtests += 1
+						totaltests += 1
+						failedlines += str(failedtests).zfill(4) + ' - ' + line[11:]
+						everyline +=  str(totaltests).zfill(4)  + ' - ' + line[11:]
+					elif(words[4] == 'success\tname:'):
+						passedtests += 1
+						totaltests += 1
+						passedlines += str(passedtests).zfill(4) + ' - ' + line[11:]
+						everyline += str(totaltests).zfill(4) + ' - ' + line[11:]
 					else:
 						othernotes += 1
-						otherlines += line
+						totaltests += 1
+						otherlines += str(othernotes).zfill(4) + ' - ' + line[11:]
+						everyline += str(totaltests).zfill(4) + ' - ' + line[11:]
 				else:
 					othernotes += 1
+					totaltests += 1
+					otherlines += str(othernotes).zfill(4) + ' - ' + line[11:]
+					everyline += str(totaltests).zfill(4) + ' - ' + line[11:]
 	targetpath = os.getcwd() + os.sep + target + '__testresults.txt'
 	targetfile = open(targetpath,'w+')
-	targetfile.write('tests passed: ' + str(testspassed) +'\ntests failed: ' + str(testsfailed) + '\nother notes: ' + str(othernotes))
-	targetfile.write('\n\n\nPassed tests reports:\n' + passedlines + '\n\n Failed tests reports:\n' + failedlines + '\n\nOther notes:\n' + otherlines)
-	print 'tests passed: ' + str(testspassed) +'\ntests failed: ' + str(testsfailed) + '\nother notes: ' + str(othernotes)
+	targetfile.write('total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes))
+	targetfile.write('\n\n\nPassed tests reports:\n' + passedlines + '\n\n Failed tests reports:\n' + failedlines + '\n\nOther notes:\n' + otherlines + '\n\n\n All test results:\n' + everyline)
+	#print 'total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes)
+	#Print left out - optional command line output
 	source.close()
 	targetfile.close()
 	
 	#remove all temporary files
 def cleanup(target):
 	#shutil.rmtree(os.getcwd() + os.sep + 'work')
+	#keep work library for compiled vhdlUnit.vhd in tests.
 	os.remove(os.getcwd() + os.sep + 'transcript')
 	os.remove(os.getcwd() + os.sep + target + '.vhd')
 	return
@@ -152,11 +163,14 @@ script, filename = argv
 #	print 'Only valid inputs are Y, y, N or n'
 #	clean = raw_input('Delete temporary testbenches? [Y/n]: ')
 #clean = clean.lower()
-clean = 'y' #Standard clean-up for testing purposes
+clean = 'y' 
+	#Standard clean-up for testing purposes
 
+	#Set random path, open outputfile, open sourcefile
 source, target, outputfile = setup()
-entname, archname, testcount, commands = parse(source, target)
-test(testcount, commands, entname, archname, outputfile)
+	#Get entity and architecture names, get amount of tests and command to compile temporary .vhd file
+entname, archname, testcount = parse(source, target)
+test(testcount, target, entname, archname, outputfile)
 format(target)
 
 if clean == 'y':

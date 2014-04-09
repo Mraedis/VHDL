@@ -3,5 +3,5 @@
 editor build/
 src/experimental/work/
 src/experimental/transcript
-src/experimental/*parsed.txt
+src/experimental/*results.txt
 src/experimental/*output.txt
