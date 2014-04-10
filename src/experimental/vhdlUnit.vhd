@@ -7,6 +7,10 @@
 --	Changelog (YYYY-MM-DD)
 --	2014-03-21
 --	Initial reportBack, assertVectors, assertAll
+--	2014-03-28
+--	assertTimed, assertTimedVector, std_logic_vector2string
+--	2014-04-08
+--	Edited report functions (reportback, report strings of others)
 --------------------------------------------------------------------------------------------------------------
 
 library IEEE;
