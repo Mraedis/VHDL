@@ -141,11 +141,13 @@ def format(target):
 					otherlines += str(othernotes).zfill(4) + ' - ' + line[11:]
 					everyline += str(totaltests).zfill(4) + ' - ' + line[11:]
 	
+		#Write plain .txt file with testresults
 	targetpath = os.getcwd() + os.sep + target + '_testresults.txt'
 	targetfile = open(targetpath,'w+')
 	targetfile.write('total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes))
 	targetfile.write('\n\n\nPassed tests reports:\n' + passedlines + '\n\n Failed tests reports:\n' + failedlines + '\n\nOther notes:\n' + otherlines + '\n\n\n All test results:\n' + everyline)
 	
+		#Write .xml file in JUnit format (For use in Eclipe)
 	xmltargetpath = os.getcwd() + os.sep + target + '_testresults.xml'
 	xmltargetfile = open(xmltargetpath, 'w+')
 	xmltargetfile.write('<testsuite tests="' + str(totaltests) + '" name ="' + target + '_tests">')
