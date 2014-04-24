@@ -1,0 +1,9 @@
+.project
+.pydevproject
+editor build/
+src/experimental/work/
+src/experimental/quicktests.py
+src/experimental/transcript
+src/experimental/*results.txt
+src/experimental/*output.txt
+src/experimental/*.xml
