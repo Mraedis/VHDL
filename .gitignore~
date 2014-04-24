@@ -1,9 +1,13 @@
 .project
 .pydevproject
+transcript
 editor build/
+src/.library_mapping.xml
+src/.settings
 src/experimental/work/
 src/experimental/quicktests.py
 src/experimental/transcript
 src/experimental/*results.txt
 src/experimental/*output.txt
+src/experimental/libv*
 src/experimental/*.xml

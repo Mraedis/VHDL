@@ -2,6 +2,7 @@
 .pydevproject
 transcript
 editor build/
+Thesis/Bibliografie/
 src/.library_mapping.xml
 src/.settings
 src/experimental/work/
