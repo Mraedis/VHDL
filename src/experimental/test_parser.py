@@ -13,14 +13,17 @@ import string
 import random
 import shutil
 import re
+import StringIO
+import function_tests as ft
 
 
 #Set up working directories and variables
-##Source is the file to be parsed
-##Targetpath is the destination folder for all (temporary) files
+##Source is the content of the file to be parsed
+##Target is an 8 character random code for the current project
 ##Outputfile stores the output of the compiled and ran VHD files
 def setup():
-	source = open(filename)
+	file = open(filename)
+	source = file.read().lower()
 	char_set = string.ascii_uppercase + string.digits
 	target = ''.join(random.sample(char_set*8,8))
 	outputfile = open(os.getcwd() + os.sep + target + '_cmd_output.txt','w+')
@@ -30,8 +33,9 @@ def setup():
 #Reads source file to:
 ##1. Determine tests to be run
 ##2. Determine dependencies
-def parse(source, target):	
-	#Search for architecture definition
+def parse(source, target):
+	
+		#Search for architecture definition
 	header, archheader, archfooter = '', '', ''
 	alltests = ''
 	testcount = 0
@@ -42,10 +46,10 @@ def parse(source, target):
 	while not archstart:
 		words = line.split(' ')
 		if words:	
-			if (words[0].lower() == 'entity'):
+			if (words[0] == 'entity'):
 				entname = words[1]
 					#Save entity name	
-			if (words[0].lower() == 'architecture'):
+			if (words[0] == 'architecture'):
 				archstart = True
 				archname = words[1]
 					#Save architecture name
@@ -59,7 +63,7 @@ def parse(source, target):
 	while not scriptstart:
 		words = line.split(' ')
 		if words:	
-			if (words[0].strip().lower() == '--scriptstart'):
+			if (words[0].strip() == '--scriptstart'):
 				scriptstart = True
 		if not scriptstart:
 			archheader += line
@@ -69,7 +73,7 @@ def parse(source, target):
 	while not scriptend:
 		words = line.split(' ')
 		if words:
-			if (words[0].strip().lower() == '--scriptend'):
+			if (words[0].strip() == '--scriptend'):
 				scriptend = True
 		if not scriptend:
 			alltests += line
@@ -110,11 +114,15 @@ def test(testcount, target, entname, archname, outputfile):
 	return
 
 	#format the outputfile
-def format(target):
+	
+def format(target, arguments=''):
 	failedtests, passedtests, othernotes, totaltests = 0, 0, 0, 0
 	failedlines, passedlines, otherlines, everyline = '', '', '', ''
 		#remove modelsim wrappers
 	source = open(os.getcwd() + os.sep + target + '_cmd_output.txt')
+	
+		#This part parses the output to a simple .txt
+		#It is meant as a plaintext back-up for the "better" xml output
 	for line in source:
 		words = line.split(' ')
 		if (len(words) > 2):
@@ -190,12 +198,13 @@ clean = 'y'
 	#Set random path, open outputfile, open sourcefile
 source, target, outputfile = setup()
 	#Get entity and architecture names, get amount of tests and command to compile temporary .vhd file
-entname, archname, testcount = parse(source, target)
-test(testcount, target, entname, archname, outputfile)
-format(target)
+ft.parsetest(source, target)
+#entname, archname, testcount = parse(source, target)
+#test(testcount, target, entname, archname, outputfile)
+#format(target)
 
-if clean == 'y':
-	cleanup(target)
+#if clean == 'y':
+#	cleanup(target)
 
 
 

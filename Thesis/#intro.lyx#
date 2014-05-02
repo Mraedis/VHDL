@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\exhyphenpenalty=10000\hyphenpenalty=10000
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language british
@@ -582,7 +585,7 @@ key "key-8"
  as well as improve code quality
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-9,key-8"
+key "key-8,key-9"
 
 \end_inset
 
