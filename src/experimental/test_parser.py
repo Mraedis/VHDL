@@ -254,26 +254,31 @@ def cleanup(target):
 
 #Actual script starts here, above only definitions
 
-script, filename = argv
+script, arguments = argv
+if len(arguments) > 1:
+	filename = arguments[0]
+	arguments = arguments[1:]
 
-#clean = raw_input('Delete temporary testbenches? [Y/n]: ')
-#while clean.lower() != 'y' and clean.lower() != 'n':
-#	print 'Only valid inputs are Y, y, N or n'
-#	clean = raw_input('Delete temporary testbenches? [Y/n]: ')
-#clean = clean.lower()
-clean = 'y' 
+clean = raw_input('Delete temporary testbenches? [Y/n]: ')
+while clean.lower() != 'y' and clean.lower() != 'n':
+	print 'Only valid inputs are Y, y, N or n'
+	clean = raw_input('Delete temporary testbenches? [Y/n]: ')
+clean = clean.lower()
 	#Standard clean-up for testing purposes
 
 	#Set random path, open outputfile, open sourcefile
 source, target, outputfile = setup()
 	#Get entity and architecture names, get amount of tests and command to compile temporary .vhd file
+
+#Testcodes, please ignore
 #ft.parsetest(source, target)
+
 entname, archname, testcount = parse(source, target)
 test(testcount, target, entname, archname, outputfile)
 format(target)
 
-#if clean == 'y':
-#	cleanup(target)
+if clean == 'y':
+	cleanup(target)
 
 
 
