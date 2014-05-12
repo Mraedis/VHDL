@@ -1,12 +1,12 @@
 This project contains a library of helper functions to assist in writing testbenches in VHDL.
 
-It is licensed under the Creative Common Zero license - no rights
-reserved:
+It is licensed under the Creative Common Zero license - no rights reserved:
 
 "To the extent possible under law,
   Joren Guillaume
-has waived all copyright and related or neighbouring
-rights to the libv project.
+has waived all copyright
+and related or neighbouring
+rights to the VHDL project.
 This work is published from: 
   Belgium"
   
@@ -16,8 +16,21 @@ This work is published from:
 * No warranty of any kind is given or implied.
 
 
-The project uses some excerpts from the code located the following website:
-kik.weii.tu.koszalin.pl/vhdlunit/
+The project uses some excerpts from the code located at the following websites:
+http://opencores.org/project,avs_aes
 
+kik.weii.tu.koszalin.pl/vhdlunit/
 The project above states an "Open Source" format, but neglects to include a license.
-Therefor all code used from this source is clearly marked should you choose to ignore it.
+Therefore all code used from this source is clearly marked should you choose to ignore it.
+
+-------------------------------------------------------------------------------------------
+
+Much of the code is incomplete or undergoes constant change, a final product is not yet in sight.
+Running the code may require additional installs such as:
+https://github.com/kyrus/python-junit-xml
+which in turn requires
+https://pypi.python.org/pypi/setuptools
+or a derivative to install.
+
+Commands to declare and compile libraries for the AES test project are not included
+but can be extracted from the makefile included in the AES folder, or you can run the makefile.
