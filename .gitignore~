@@ -6,6 +6,7 @@ Thesis/Bibliografie/
 src/.library_mapping.xml
 src/.settings
 src/experimental/work/
+src/experimental/uart16750/
 src/experimental/quicktests.py
 src/experimental/transcript
 src/experimental/*results.txt

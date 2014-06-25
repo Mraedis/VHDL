@@ -22,7 +22,7 @@ from junit_xml import TestSuite, TestCase
 ##Source is the content of the file to be parsed
 ##Target is an 8 character random code for the current project
 ##Outputfile stores the output of the compiled and ran VHD files
-def setup():
+def setup(filename):
 	file = open(filename)
 	source = file.read().lower()
 	char_set = string.ascii_uppercase + string.digits
@@ -204,6 +204,7 @@ def format(target, arguments=''):
 	source.close()
 	targetfile.close()
 	
+	
 		#Write .xml file in JUnit format (For use in Eclipe)
 		#Uses JUnit-xml package by Brian Beyer
 		#source at https://github.com/kyrus/python-junit-xml
@@ -255,30 +256,36 @@ def cleanup(target):
 #Actual script starts here, above only definitions
 
 script, arguments = argv
-if len(arguments) > 1:
-	filename = arguments[0]
-	arguments = arguments[1:]
+words = arguments.split(' ')
+print argv
+if len(words) > 1:
+	filename = words[0]
+	arguments = words[1:]
+else:
+	filename = words[0]
+	
 
-clean = raw_input('Delete temporary testbenches? [Y/n]: ')
-while clean.lower() != 'y' and clean.lower() != 'n':
-	print 'Only valid inputs are Y, y, N or n'
-	clean = raw_input('Delete temporary testbenches? [Y/n]: ')
-clean = clean.lower()
+#clean = raw_input('Delete temporary testbenches? [Y/n]: ')
+#while clean.lower() != 'y' and clean.lower() != 'n':
+#	print 'Only valid inputs are Y, y, N or n'
+#	clean = raw_input('Delete temporary testbenches? [Y/n]: ')
+#clean = clean.lower()
 	#Standard clean-up for testing purposes
 
 	#Set random path, open outputfile, open sourcefile
-source, target, outputfile = setup()
+source, target, outputfile = setup(filename)
 	#Get entity and architecture names, get amount of tests and command to compile temporary .vhd file
 
+all = []
 #Testcodes, please ignore
-#ft.parsetest(source, target)
+entname, archname, all = ft.parsetest(source, target)
 
-entname, archname, testcount = parse(source, target)
-test(testcount, target, entname, archname, outputfile)
-format(target)
+#entname, archname, testcount = parse(source, target)
+#test(testcount, target, entname, archname, outputfile)
+#format(target)
 
-if clean == 'y':
-	cleanup(target)
+#if clean == 'y':
+#	cleanup(target)
 
 
 
