@@ -104,7 +104,9 @@ def parse(source, target):
 	
 	#Execute code and save output in outputfile
 def test(testcount, target, entname, archname, outputfile):
-	commands = 'vlib work\n' + 'vcom -2008 -quiet -work work vhdlUnit.vhd '+ target +'.vhd\n'
+		#Hudson-CI requires vhdlUnit nearby
+	commands = 'vlib work\n' + 'vcom -2008 -quiet -work work H:\\Users\\Joren\\Documents\\GitHub\\VHDL\\src\\experimental\\vhdlUnit.vhd '+ target +'.vhd\n'
+	#commands = 'vlib work\n' + 'vcom -2008 -quiet -work work vhdlUnit.vhd '+ target +'.vhd\n'
 	for line in commands.split('\n'):
 		os.system(line)
 	
@@ -255,14 +257,15 @@ def cleanup(target):
 
 #Actual script starts here, above only definitions
 
-script, arguments = argv
-words = arguments.split(' ')
-print argv
-if len(words) > 1:
-	filename = words[0]
-	arguments = words[1:]
-else:
-	filename = words[0]
+script, filename = argv
+#script, arguments = argv
+#words = arguments.split(' ')
+#print argv
+#if len(words) > 1:
+#	filename = words[0]
+#	arguments = words[1:]
+#else:
+#	filename = words[0]
 	
 
 #clean = raw_input('Delete temporary testbenches? [Y/n]: ')
