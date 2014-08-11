@@ -1,31 +1,20 @@
-###FUNCTIONS###
-#  setup()
-## Sets up (temporary) files, sets all global vars, processes cmdline arguments with argparse
-#
-#  setup_parser()
-## Prepares the parser to accept correct commandline arguments
-#  
-#  tempdir()
-## Creates the temporary working directory
-#  
-#  parse_source()
-## grabs sourcefile, extracts needed code, arranges functions & procedures
-#
-#  test_format()
-## arranges found functions & procedures in their own executable files
-#
-#  parse_tests
-## grabs processed source/files, executes & captures output
-#
-#  format()
-## grabs output, formats output
-#
-#  xmlwrite()
-## grabs processed output, converts to JUnit compatible XML file
-#
-#  cleanup()
-## removes temporary files & directories
-###END###
+##############################################################################################################################
+###    Author:    Joren Guillaume
+###
+###    Changelog
+###    2014.08.11 - Formatting, expanded functions
+###
+############### FUNCTIONS  ###################################################################################################
+#  setup()               ## Sets up (temporary) files, sets all global vars, processes cmdline arguments with argparse
+#  setup_parser()        ## Prepares the parser to accept correct commandline arguments
+#  tempdir()             ## Creates the temporary working directory
+#  parse_source()        ## grabs sourcefile, extracts needed code, arranges functions & procedures
+#  test_format()         ## arranges found functions & procedures in their own executable files
+#  parse_tests           ## grabs processed source/files, executes & captures output
+#  format()              ## grabs output, formats output
+#  xmlwrite()            ## grabs processed output, converts to JUnit compatible XML file
+#  cleanup()             ## removes temporary files & directories
+################## END  ######################################################################################################
 
 import sys
 import os

@@ -12,3 +12,4 @@ src/experimental/*results.txt
 src/experimental/*output.txt
 src/experimental/libv*
 src/experimental/*.xml
+src/experimental/2014.*

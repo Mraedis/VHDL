@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.sigasi.hdt.shared.librarymapping.model:LibraryMappings xmlns:com.sigasi.hdt.shared.librarymapping.model="com.sigasi.hdt.vhdl.scoping.librarymapping" Version="2">
-  <Mappings Location="testing files/altera_mf.vhd" Library="altera_mf"/>
   <Mappings Location="testing files/avs_aes/trunk/rtl/VHDL" Library="avs_aes_lib"/>
   <Mappings Location="Common Libraries/IEEE" Library="ieee"/>
   <Mappings Location="Common Libraries/IEEE Synopsys" Library="ieee"/>
