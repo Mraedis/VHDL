@@ -105,7 +105,9 @@ def parse(source, target):
 	#Execute code and save output in outputfile
 def test(testcount, target, entname, archname, outputfile):
 		#Hudson-CI requires vhdlUnit nearby
-	commands = 'vlib work\n' + 'vcom -2008 -quiet -work work H:\\Users\\Joren\\Documents\\GitHub\\VHDL\\src\\experimental\\vhdlUnit.vhd '+ target +'.vhd\n'
+
+	commands = 'vlib work\n' + 'vcom -2008 -quiet -work work /home/joren/Git/VHDL/src/experimental/vhdlUnit.vhd '+ target +'.vhd\n'
+	#commands = 'vlib work\n' + 'vcom -2008 -quiet -work work H:\\Users\\Joren\\Documents\\GitHub\\VHDL\\src\\experimental\\vhdlUnit.vhd '+ target +'.vhd\n'
 	#commands = 'vlib work\n' + 'vcom -2008 -quiet -work work vhdlUnit.vhd '+ target +'.vhd\n'
 	for line in commands.split('\n'):
 		os.system(line)
