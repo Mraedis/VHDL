@@ -2,6 +2,7 @@ import string
 import StringIO
 import re
 
+## Takes the entire procedure, strips all keywords and leaves only the names of the arguments
 def get_syntax(procedure):
 	procedure = re.sub('[^a-zA-Z0-9\n\.]', ' ', procedure)
 	lines = procedure.split('\n')
@@ -112,7 +113,7 @@ def parsetest(source, target):
 		if (line.strip()[0:2] != '--'):
 			footer += line
 		line = buffer.readline()
-		
+	
 	for procedure in all:
 		procedure_syntax = get_syntax(procedure)
 		print procedure_syntax
