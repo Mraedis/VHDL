@@ -5,6 +5,7 @@
 ###    2014.08.11 - Formatting, filled in code for functions
 ###    2014.08.17 - More filling in code
 ###    2014.08.21 - Added logwrite()
+###    2014.05.25 - Editing functions, use of global variables
 ###
 ############### FUNCTIONS  ###################################################################################################
 #  setup()               ## Sets up (temporary) files, sets all global vars, processes cmdline arguments with argparse
@@ -29,39 +30,64 @@ import argparse
 import time
 
 ## Sets up (temporary) files, sets all global vars, processes cmdline arguments with argparse
-def setup(args, tempname=None):
-    if (tempname == None):
-        global tempname                                                             # If tempname was not given with the function, use global name
+def setup(args, tempname=None, folderpath=None, foldername=None):
+    if (tempname == None):                                                          # If tempname was not given with the function, use global name
+        global tempname
+    if (folderpath == None):                                                        # If folderpath was not given with the function, use global name
+        global folderpath
+    if (foldername == None):                                                        # If folername was not given with the function, use global name
+        global foldername
+        
     folderpath = os.path.join(os.environ['USERPROFILE'], 'VHDL_TDD_Parser')
     if (not os.path.isdir(folderpath)):                                             # Make the folder that contains all non-deleted files from all time, if non-existant
         os.makedirs(folderpath)
         logwrite('n','Created working directory \'VHDL_TDD_Parser\' for the first time.')
-    foldername = time.strftime("%Y.%M.%d - %H.%M") + tempname
-    outputdir = os.path.join(folderpath, foldername)
+    outputdir = time.strftime("%Y.%M.%d - %H.%M") + tempname
+    foldername = os.path.join(folderpath, outputdir)
     if (os.path.isdir(outputdir)):                                                  # Make the folder for the current run    
         logwrite('n','Output directory already existed.')
     else:
-        os.makedirs(outputdir)
-    parsedlist = []
+        os.makedirs(foldername)
+
     if (args.file):                                                                 # If the files to be processed are in a file
         for file in args.list:                                                      # Get all filenames
             listfile = open(get_path(file))                                         # Open the files one by one
             sourcelist = [line.strip() for line in open(listfile)]                  # Get all .vhd files listed within
             for line in sourcelist:                                                 # Parse each .vhd file
-                parse_source(get_path(line), parsedlist, args.script)
+                parse_source(get_path(line), args.script)
     else:                                                                           # If arguments are not lists, they are the files themselves
         for file in args.list:
-            parse_source(get_path(file), parsedlist, args.script)
-    return parsedlist, outputdir
+            parse_source(get_path(file), args.script)
+    return foldername
 
 ## Writes things to the logbook: errors, completed jobs etc.
-def logwrite(level='n',message ='No message given.', tempname=None):
+def logwrite(level='n',message ='No message given.', tempname=None, parser=None):
     if (tempname == None):
         global tempname
+    if (parser == None):
+        global parser
+    global foldername
+    dest = ''
+    if (parser.log != None):
+        dest = get_path(parser.log)
+    else:
+        dest = foldername
         
     #FORMAT: Timestamp \tab Level \tab Message
     levels = {'n': 'notice', 'w' : 'warning', 's': 'severe', 'c': 'critical', 'u' : 'unknown'};
-    logfile = open()
+    logfile = open(dest, 'r+')
+    
+    logfile.seek(0)
+    first_char = logfile.read(1)
+    if not first_char:                                                                              # Check for any file contents and create header if none
+        logfile.write('####################################################\n')
+        logfile.write('###############                      ###############\n')
+        logfile.write('############### LOGFILE FOR ' + tempname + ' ###############\n')
+        logfile.write('###############                      ###############\n')
+        logfile.write('####################################################\n\n')
+        logfile.write('YYYY.MM.DD - HH:MM  -   LEVEL    -  MESSAGE\n\n')
+                                                                                                    # Print the message with information on time and level
+    logfile.write(time.strftime("%Y.%M.%d - %H:%M") + '  -  ' + (levels[level] + '\t').expandtabs(5) + '-  ' + message + '\n')
 
 ## Returns absolute path if not already absolute path, otherwise return argument unchanged
 def get_path(path):
@@ -119,7 +145,11 @@ def tempdir():
 
     
 ## grabs sourcefile, extracts needed code, arranges functions & procedures
-def parse_source(path, parsedlist, script=False):
+def parse_source(path, script=False, parsedlist=None):
+    
+    if(parsedlist == None):
+        global parsedlist
+    
     scriptstart, scriptend = False, False
     
     source = open(path)                                     # Open the file
@@ -180,21 +210,25 @@ def cleanup():
 ######## MAIN PROGRAM STARTS HERE ########
 ##########################################
 
-parsedlist = []
-tempdir, tempname, folderpath = '', '', ''
+parsedlist = []                                                     # Defined as global variables for use elsewhere in script
+tempdir, tempname, folderpath, foldername = '', '', '', ''
+parser = None
 
 #Allows the code to be used as a module
 if __name__ == "__main__":
     
-    systemtime = time.time()                                # Marks the starting time of the script
+    systemtime = time.time()                                        # Marks the starting time of the script
+    logwrite('n','Started at ' + str(systemtime))
     currentdir = os.getcwd()
     
-    parser = parser_setup()                                 # Creates an argument parser for the commandline arguments
-    args, unknown = parser.parse_args()                     # Parses commandline arguments, stores unknown arguments in 'unknown'
-    # If unknown has elements, write an error to the log about having unknown arguments, try to proceed
+    parser = parser_setup()                                         # Creates an argument parser for the commandline arguments
+    args, unknown = parser.parse_known_args()                       # Parses commandline arguments, stores unknown arguments in 'unknown'
     
-    tempdir, tempname = tempdir()                           # Creates a unique (name for the) temporary directory in the systems temp dir
-    parsedlist, folderpath = setup(args, tempname)          # Grab all functions and procedures to be processed, know the path of the output folder
+    if (not unknown):                                               # If there are unknown arguments, write error to log
+        logwrite('w', 'Found unusuable arguments: ' + ', '.join(unknown))
+    
+    tempdir, tempname = tempdir()                                   # Creates a unique (name for the) temporary directory in the systems temp dir
+    folderpath = setup(args, tempname)                              # Grab all functions and procedures to be processed, know the path of the output folder
     
     
     
