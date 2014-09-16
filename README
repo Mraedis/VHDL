@@ -34,3 +34,19 @@ or a derivative to install.
 
 Commands to declare and compile libraries for the AES test project are not included
 but can be extracted from the makefile included in the AES folder, or you can run the makefile.
+
+-------------------------------------------------------------------------------------------
+
+The method user by the author is:
+
+1.		Install Java (optional)
+2.		Install Python
+2.1		Add python to the Path (Windows)
+3.		Install Hudson-CI (optional)
+4.		Install setuptools (using the "python ez_setup.py" command/file provided by setuptools)
+5.		Install python-junit-xml (using the "python setup.py install" command/file provided by python-junit-xml)
+6.		Download a copy of testbench_parser.py
+6.		Run "python testbench_parser.py" (Or have the hudson-CI run it)
+
+Results should be viewable by any junit-xml viewer (such as Eclipse or Hudson-CI)
+Help with running the testbench_parser.py can be obtained by running "python testbench_parser.py -h"
