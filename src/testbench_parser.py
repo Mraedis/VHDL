@@ -12,13 +12,14 @@
 ###                 Files are executed seperately now, output is captured
 ###    2014.09.23 - Started expanding format()
 ###    2014.09.25 - Expanded format() further, preliminary version finished. Started on xmlwrite()
-###    2014.09.26 - 
+###    2014.09.26 - Prelimenary working version. Produces actual xml report with (all passed) test reports
 ###
 ##############################################################################################################################
 ###
 ###    ToDo:
 ###        - Use of Try/Except for error catching
 ###        - Expand commentary to full descriptions
+###        - Actually detect whether tests pass!!
 ###
 ############  FUNCTIONS  #####################################################################################################
 #  setup()               ## Sets up (temporary) files, sets global vars, processes commandline arguments with argparse
