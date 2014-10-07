@@ -13,13 +13,18 @@
 ###    2014.09.23 - Started expanding format()
 ###    2014.09.25 - Expanded format() further, preliminary version finished. Started on xmlwrite()
 ###    2014.09.26 - Prelimenary working version. Produces actual xml report with (all passed) test reports
+###    2014.10.01 - Introduced format2 and xmlwrite2 from previous version "test_parser".
+###                 Testbenches are now required to use the vhdlUnit.vhd library for reporting (reportback() function)
+###                 vhdlUnit.vhd is expected to be in the same directory as testbench_parser.py
+###                 Small error fixing in handling multiple testbenches named the same (or actually being the same)
+###    2014.10.07 - Small all-around changes, including the commandline options, file handling, file locating et
 ###
 ##############################################################################################################################
 ###
 ###    ToDo:
 ###        - Use of Try/Except for error catching
 ###        - Expand commentary to full descriptions
-###        - Actually detect whether tests pass!!
+###        - (Actually detect whether tests pass!!)
 ###
 ############  FUNCTIONS  #####################################################################################################
 #  setup()               ## Sets up (temporary) files, sets global vars, processes commandline arguments with argparse
@@ -30,8 +35,11 @@
 #  parse_source()        ## grabs sourcefile, extracts needed code, arranges functions & procedures
 #  test_format()         ## arranges found functions & procedures in their own executable files
 #  parse_tests           ## grabs processed source/files, executes & captures output
-#  format()              ## grabs output, formats output
-#  xmlwrite()            ## grabs processed output, converts to JUnit compatible XML file
+#  format()  (Deprecated)## grabs output, formats output
+#  xmlwrite()(Deprecated)## grabs processed output, converts to JUnit compatible XML file
+#  format2()             ## grabs output, formats output
+#  xmlwrite2()           ## grabs processed output, converts to JUnit compatible XML file
+#  get_time()            ## extracts the passed time from a modelsim time notice
 #  cleanup()             ## removes temporary files & directories
 ##############    END    #####################################################################################################
 
@@ -46,45 +54,77 @@ import time
 from junit_xml import TestSuite, TestCase
 
 ## Sets up (temporary) files, sets global vars, processes cmdline arguments with argparse
-def setup(args, tempname_t=None, folderpath_t=None, foldername_t=None):
+##
+# args is the arguments part of an argparse.ArgumentParser
+#     The possible expected arguments are c,l,f,d,s; for further explanation see setup_parser()
+##
+# Tempname_t is the random name used throughout the script, it has no constraints for being different
+##
+# Foldername_t is the path to the folder that will contain all permanent logs and results
+##
+def setup(args, tempname_t=None, foldername_t=None):
     if (tempname_t == None):                                                        # If tempname was not given with the function, use global name
         tempname_t = tempname
-    if (folderpath_t == None):                                                      # If folderpath was not given with the function, use global name
-        folderpath_t = folderpath
     if (foldername_t == None):                                                      # If foldername was not given with the function, use global name
         foldername_t = foldername
-        
-    folderpath_t = os.path.join(os.environ['USERPROFILE'], 'VHDL_TDD_Parser')
-    if (not os.path.isdir(folderpath_t)):                                           # Make the folder that contains all non-deleted files from all time, if non-existant
-        os.makedirs(folderpath_t)
-        logbuffer('n','Created working directory \'VHDL_TDD_Parser\' for the first time.')
-    outputdir = time.strftime('%Y.%m.%d - %H.%M - ') + tempname_t
-    foldername_t = os.path.join(folderpath_t, outputdir)
-    if (os.path.isdir(outputdir)):                                                  # Make the folder for the current run    
-        logbuffer('n','Output directory \'' + tempname_t + '\' already existed.')
+    
+    if not args.cmdline:
+        folderpath_t = os.path.join(os.getcwd(), 'VHDL_TDD_Parser')
+        if (not os.path.isdir(folderpath_t)):                                           # Make the folder that contains all non-deleted files from all time, if non-existant
+            os.makedirs(folderpath_t)
+            logbuffer('n','Created working directory \'VHDL_TDD_Parser\' for the first time.')
+        outputdir = time.strftime('%Y.%m.%d - %H.%M - ') + tempname_t
+        foldername_t = os.path.join(folderpath_t, outputdir)
+        if (os.path.isdir(outputdir)):                                                  # Make the folder for the current run    
+            logbuffer('n','Output directory \'' + tempname_t + '\' already existed.')
+        else:
+            os.makedirs(foldername_t)
     else:
-        os.makedirs(foldername_t)
+        folderpath_t = os.path.join(os.environ['USERPROFILE'], 'VHDL_TDD_Parser')
+        if (not os.path.isdir(folderpath_t)):                                           # Make the folder that contains all non-deleted files from all time, if non-existant
+            os.makedirs(folderpath_t)
+            logbuffer('n','Created working directory \'VHDL_TDD_Parser\' for the first time.')
+        outputdir = time.strftime('%Y.%m.%d - %H.%M - ') + tempname_t
+        foldername_t = os.path.join(folderpath_t, outputdir)
+        if (os.path.isdir(outputdir)):                                                  # Make the folder for the current run    
+            logbuffer('n','Output directory \'' + tempname_t + '\' already existed.')
+        else:
+            os.makedirs(foldername_t)
     return foldername_t
 
 ## Stores log reports in a buffer until the logfile is made
+##
+# level is the criticality of the logwrite. It can be notice, warning, severe, critical or unknown
+#     Some levels are not (yet) used and may be obsolete
+##
+# message is the actual logmessage, with no timestamps or level
+##
+# tempname_t is the unique identifier for the testbench run
+##
+# args_t is the argument parser object generated in setup_parser()
+##
 def logbuffer(level='n',message ='No message given.', tempname_t=None, args_t=None):
-    global logs_buffer
-    if logstarted:
+    global logs_buffer                                                                              # Uses the global variables logs_buffer and logstarted
+    if logstarted:                                                                                  # This function cannot work with no such variables
         logwrite(level, message, tempname_t, args_t)
     else:
         logs_buffer.append([level, message, time.strftime("%Y.%m.%d - %H:%M:%S"), ])
 
 ## Writes things to the logbook: errors, completed jobs etc.
-def logwrite(level='n',message ='No message given.', tempname_t=None, args_t=None):
+## Logwrite is fully explained above near logbuffer
+## Logwrite cannot function without global variables logstarted and logs_buffer
+def logwrite(level='n',message ='No message given.', foldername_t=None, tempname_t=None, args_t=None):
     if (tempname_t == None):
         tempname_t = tempname
     if (args_t == None):
         args_t = args
+    if (foldername_t == None):
+        foldername_t = foldername
     dest = ''
     if (args_t.log):
         dest = get_path(args_t.log)
     else:
-        dest = foldername
+        dest = foldername_t
         
     #FORMAT: Timestamp \tab Level \tab Message
     levels = {'n': 'notice', 'w' : 'warning', 's': 'severe', 'c': 'critical', 'u' : 'unknown'};
@@ -95,7 +135,7 @@ def logwrite(level='n',message ='No message given.', tempname_t=None, args_t=Non
     if first_char != '#':                                                                           # Check for any file contents and create header if none
         logfile.write('##################################################################\n')
         logfile.write('######################                      ######################\n')
-        logfile.write('###################### LOGFILE FOR ' + tempname + ' ######################\n')
+        logfile.write('###################### LOGFILE FOR ' + tempname_t + ' ######################\n')
         logfile.write('######################                      ######################\n')
         logfile.write('##################################################################\n\n')
         logfile.write('YYYY.MM.DD - HH:MM:SS  -   LEVEL    -  MESSAGE\n')
@@ -122,32 +162,44 @@ def setup_parser():
     parser = argparse.ArgumentParser(version='0.1'
                                      , description='VHDL testbench to TDD parser'
                                      , formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-        # The -c/--cmd argument is to specify the script being called by an automated program.
+        # The -c/--cmd argument is to specify the script being called from the commandline.
         # The flag is stored in 'cmd', default value is 'False'
     parser.add_argument('-c', '--cmd'
                          , help='specifies script being called from commandline, not automated'
-                         , action = 'store_true', default=False)
+                         , action = 'store_true', dest='cmdline', default=False)
+        # The -d/--dest argument is to specify a custom folderpath for the log.
+        # The flag is stored in 'log', default value is 'None'
+    parser.add_argument('-d', '--dest'
+                        , help='specifies a custom folder for the log'
+                        , action = 'store', dest='log', default=None)
+        # The -f/--file argument is to specify that the -l/--list is a file/files containing a list of .vhd files.
+        # The flag is stored in 'file', default value is 'False'
+    parser.add_argument('-f', '--file'
+                        , help='specifies -l/--list is a file with a list'
+                        , action = 'store_true', default=False)
         # The -l/--list argument is to specify the list of .vhd files to be processed.
         # The flag is stored in 'list', no default value considering there NEEDS to be at least 1 .vhd file
     parser.add_argument('-l', '--list'
                         , help='specifies the list of .vhd files to be processed -- note: ONLY .vhd files'
                         , action = 'store'
                         , nargs = '+', required=True, metavar='path')
-        # The -f/--file argument is to specify that the -l/--list is a file/files containing a list of .vhd files.
-        # The flag is stored in 'file', default value is 'False'
-    parser.add_argument('-f', '--file'
-                        , help='specifies -l/--list is a file with a list'
-                        , action = 'store_true', default=False)
-        # The -d/--dest argument is to specify a custom folderpath for the log.
-        # The flag is stored in 'log', default value is 'None'
-    parser.add_argument('-d', '--dest'
-                        , help='specifies a custom folder for the log'
-                        , action = 'store', dest='log', default=None)
-        # The -s/--script argument is to specify the testbench(es) use the scriptstart/scriptend comments
-        # The flag is stored in 'script', default value is 'False'
-    parser.add_argument('-s', '--script'
-                        , help='specifies the testbenches use the ScriptStart and ScriptEnd comments'
-                        , action = 'store_true', default=False)
+        # The -m/--method argument is to specify which method of writing was used in testbench creation.
+        # The flag is stored in 'list', no default value considering there NEEDS to be at least 1 .vhd file
+    parser.add_argument('-m', '--method'
+                        , help='specifies what method was used to write the testbench. '
+                        , action = 'store'
+                        , default='line', choices=['line', 'startstop', 'partitioned'])
+        # The -p/--precompiled argument is to locate a precompiled library that will be needed during simulation.
+        # The flag is stored in 'list', no default value considering there NEEDS to be at least 1 .vhd file
+    parser.add_argument('-p', '--precompiled'
+                        , help='specifies the location of the precompiled dependencies, requires a full path.'
+                        , action = 'store'
+                        , dest='prepath', metavar='path', default=None)
+#        # The -s/--script argument is to specify the testbench(es) use the scriptstart/scriptend comments
+#        # The flag is stored in 'script', default value is 'False'
+#    parser.add_argument('-s', '--script'
+#                        , help='specifies the testbenches use the ScriptStart and ScriptEnd comments'
+#                        , action = 'store_true', default=False)
     
     return parser
 
@@ -166,9 +218,10 @@ def make_tempdir():
 
     
 ## grabs sourcefile, extracts needed code, arranges functions & procedures
-def parse_source(path, script=False):
+def parse_source(path, method=None):
     
-    scriptstart, scriptend = False, False
+    if (method==None):
+        method=args.method
     archstart = False
     
     try:
@@ -182,6 +235,7 @@ def parse_source(path, script=False):
     header, archheader, body, footer = '','','',''
     entname, archname = '',''
     templist = []
+    tests = 0                                                   # Count the tests in the body
     
     while not archstart:                                        # Find the entity and architecture name, used in executing the testbenches
         if (line == ''):
@@ -200,18 +254,19 @@ def parse_source(path, script=False):
         line_lower = line.lower().strip()
         words = line_lower.split(' ')
     
-    if (script):                                                # Check whether scriptstart/end is being used with 'script'
+    if (method=='startstop'):                                                   # Check whether scriptstart/end is being used with 'script'   
+        scriptstart, scriptend = False, False
         while (not scriptstart):
             if (line == ''):
                 logwrite('c','Reached end of source file without encountering \'--scriptstart\' despite -s flag specified in file ' + str(path) + '.')
                 return ['ERROR', path]
             archheader += line
-            if (line_lower.strip() == '--scriptstart'):         # Find the start of the script, add all lines before the start to the header
+            if (line_lower.strip() == '--scriptstart'):                         # Find the start of the script, add all lines before the start to the header
                 scriptstart = True
             line = source.readline()
             line_lower = line.lower()
         
-        while (not scriptend):                                  # All lines between scriptstart and scriptend are placed in the body
+        while (not scriptend):                                                  # All lines between scriptstart and scriptend are placed in the body
             if (line == ''):
                 logwrite('c','Reached end of source file without encountering \'--scriptstop\' despite -s flag specified in file ' + str(path) + '.')
                 return ['ERROR', path]
@@ -223,11 +278,11 @@ def parse_source(path, script=False):
             line = source.readline()
             line_lower = line.lower()
             
-        footer += line                                          # All remaining lines are placed in the footer
+        footer += line                                                          # All remaining lines are placed in the footer
         for line in source:
             footer += line
         source.close()
-    else:
+    elif (method =='line'):
         archbody, archend = False, False
         beginwords = ['function','procedure','for','while','if','process','component',]
         depth = 0
@@ -237,7 +292,7 @@ def parse_source(path, script=False):
                 logwrite('c','Reached end of source file with incorrect architecture body (found no begin) in file ' + str(path) + '.')
                 return ['ERROR', path]
             if words:
-                if depth == 0 and words[0] == 'begin':          # If the 'begin' is the begin of the architecture body
+                if depth == 0 and words[0] == 'begin':                          # If the 'begin' is the begin of the architecture body
                     archbody = True
                 elif words[0] in beginwords:
                     depth += 1
@@ -258,12 +313,12 @@ def parse_source(path, script=False):
             if not process_begin:
                 if words:
                     if not process_start:
-                        if 'process' in words:                  # Finding the process that envelopes the functions
+                        if 'process' in words:                                  # Finding the process that envelopes the functions
                             process_start = True
                     else:
-                        if depth == 0 and words[0] == 'begin':  # If the 'begin' is the begin of the process
+                        if depth == 0 and words[0] == 'begin':                  # If the 'begin' is the begin of the process
                             process_begin = True
-                        elif words[0] in beginwords:            # Else, check for 'depth' changing words
+                        elif words[0] in beginwords:                            # Else, check for 'depth' changing words
                             depth += 1
                         elif words[0] == 'end':                         
                             depth -= 1
@@ -273,7 +328,7 @@ def parse_source(path, script=False):
                     if (line_lower in ['end architecture;', 'end ' + archname + ';','end architecture' + archname + ';']):
                         archend = True
                         footer += line
-                    elif (words[0] in ['end','wait;']):         # 'wait;' and 'end process;' don't count as tests
+                    elif (words[0] in ['end','wait;']):                         # 'wait;' and 'end process;' don't count as tests
                         footer += line
                     else:
                         body += line
@@ -281,17 +336,53 @@ def parse_source(path, script=False):
             line_lower = line.lower().strip()
             words = line_lower.split(' ')
             
-        for line in source:                                     # All remaining lines, if any, are placed in the footer
+        for line in source:                                                     # All remaining lines, if any, are placed in the footer
             footer += line
         source.close()
         
-    tests = 0                                                   # Count the tests in the body
-    bodylines = body.split('\n')
-    for line in bodylines:                                      # Lines in the body are all single tests/functions (or should be)
-        if line.strip():
-            tests += 1
-            templist.append(line)                               # [META] Improving detection here can be a major asset
+    elif(method=='partitioned'):
+        in_test = False
+        temp_lines = ''
+        
+        while (line != ''):
+            if (in_test):
+                if (len(line) > 4):
+                    if (line_lower[0:5] == '--end'):                            # Find the start of the script, add all lines before the start to the header
+                        in_test = False
+                        templist.append(temp_lines)
+                        temp_lines = ''
+                    else:
+                        temp_lines += line
+                else:
+                    temp_lines += line
+            elif (len(line) > 5):
+                if (line_lower[0:6] == '--test'):
+                    in_test = True
+                    tests += 1
+                else:
+                    if (tests == 0):
+                        archheader += line
+                    else:
+                        temp_lines += line
+                
+            line = source.readline()
+            line_lower = line.lower().strip()
+            words = line_lower.split(' ')
+            
+        if (tests == 0):
+            logwrite('c','Reached end of source file prematurely in file ' + str(path) + '.')
+        footer = temp_lines
+
+        source.close()
     
+    if (method != 'partitioned'):
+        bodylines = body.split('\n')
+        for line in bodylines:                                                  # Lines in the body are all single tests/functions (or should be)
+            if line.strip():
+                tests += 1
+                templist.append(line)                                           # [META] Improving detection here can be a major asset
+    else:
+        tests = len(templist)
     logwrite('n','Successfully parsed ' + entname + '.' + archname + ' with ' + str(tests) + ' tests found.')
     return [archname, entname, header, archheader, footer, templist]
     
@@ -303,7 +394,8 @@ def test_format(parsedlist_t = None):
         
     testcount = {}
     
-    for parsedfile in parsedlist_t:                             # Assign correct variables for making the files
+    da = 0                                                                      # Duplicate Avoider: Multiple instances of the same tb otherwise go wrong here
+    for parsedfile in parsedlist_t:                                             # Assign correct variables for making the files
         if parsedfile[0] != 'ERROR':
             archname = parsedfile[0]
             entname = parsedfile[1]
@@ -313,28 +405,30 @@ def test_format(parsedlist_t = None):
             tests = parsedfile[5]
             
             localcount = 0
-            localname = entname + '.' + archname + '.vhd'       # Name for use in dictionary and testing
+            localname = entname + '.' + archname + '.' + str(da) + '.vhd'       # Name for use in dictionary and testing
             testfile_path = tempdir + os.sep + localname
             testfile = open(testfile_path,'w+')
+            testfile.write('library TDD;\nuse TDD.vhdlUnit.all;\n')
             testfile.write(header)
             
-            for test in tests:                                      # Place every test in the same file, under a different architecture
+            for test in tests:                                                  # Place every test in the same file, under a different architecture
                 testfile.write(archheader.replace(archname, archname + str(localcount)))
-                testfile.write('assert false report \"test started\" severity note;\n')
+                #testfile.write('assert false report \"test started\" severity note;\n')
                 testfile.write(test + '\n')
-                testfile.write('assert false report \"test ended\" severity note;\n')
+                #testfile.write('assert false report \"test ended\" severity note;\n')
                 testfile.write(footer.replace(archname, archname + str(localcount)) + '\n\n')
                 localcount += 1
             testfile.close()
-            testcount[localname] = localcount                       # Keep a dictionary of the tests in each file
+            testcount[localname] = localcount                                   # Keep a dictionary of the tests in each file
         else:
             logwrite('n','Ignoring test ' + str(len(testcount)) + ', file: ' + str(parsedfile[1]))
+        da += 1
     return testcount
     
 ## grabs processed source/files, executes & captures output
 ## testcount_t is a dictionary of key: entityname.architecturename.vhd, with value the number of tests inside
-def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, currentdir_t = None):
-    if (testcount_t == None):                                       # Use global values if arguments not filled
+def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, prepath = None, currentdir_t = None):
+    if (testcount_t == None):                                                   # Use global values if arguments not filled
         testcount_t = testcount
     if (tempdir_t == None):
         tempdir_t = tempdir
@@ -342,27 +436,36 @@ def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, curre
         foldername_t = foldername
     if (currentdir_t == None):
         currentdir_t = currentdir
-    
-    os.chdir(tempdir_t)                                             # Change working directory to the temporary folder
-    
+        
+    os.chdir(tempdir_t)                                                         # Change working directory to the temporary folder
     testcount = 0
     
-    for key,value in testcount_t.iteritems():                       # Run across the dictionary, executing every test in each file
-        ## !! vhdlUnit.vhd is a library for the tested files, need to find a way to compile dependencies before actual files first !!
-        commands = 'vlib work' + str(testcount) +'\n' + 'vcom -2008 -quiet -work work' + str(testcount) +' C:\\Users\\Joren\\Git\\VHDL\\src\\vhdlUnit.vhd' + ' ' + key
-        for line in commands.split('\n'):                           # Form a work directory per file
+    if (prepath != None):
+        source = open(prepath,'r+')
+        for line in source:
+            os.system(line.strip())
+        #shutil.copytree(get_path(prepath), tempdir_t + os.sep + prepath.split(os.sep)[-1])
+    os.system('vlib TDD')
+    os.system('vcom -2008 -quiet -work TDD ' + currentdir_t + os.sep + 'vhdlUnit.vhd')
+    for key,value in testcount_t.iteritems():                                   # Run across the dictionary, executing every test in each file
+                                                                                # Make use of the vhdlUnit 'reportback' function
+        commands = 'vlib work' + str(testcount) +'\n' + 'vcom -2008 -quiet -work work' + str(testcount) + ' ' + key
+        
+        for line in commands.split('\n'):                                       # Form a work directory per file
             os.system(line)
         
         words = str(key).split('.')
-        entname = words[0]                                          # Get entity and architecture name from the key
+        entname = words[0]                                                      # Get entity and architecture name from the key
         archname = words[1]
         
-        outputfile = open(os.getcwd() + os.sep + words[0] + '_cmd_output.txt','w+')
+        outputname = words[0] + '.' + words[1] + '.' + words[2]
+        outputfile = open(os.getcwd() + os.sep + outputname + '_cmd_output.txt','w+')
         logwrite('n','Starting execution of tests in ' + str(key))
         for test in range(0, value):
             readcmd = os.popen('vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" -do "run -all;exit"').read()
             outputfile.write(readcmd)
         outputfile.close()
+        shutil.copy(os.getcwd() + os.sep + outputname + '_cmd_output.txt', foldername_t)
         testcount += 1
     os.chdir(currentdir_t)
     
@@ -434,7 +537,7 @@ def format(tempdir_t = None):
 # Format of testresults: [Name , Count, Testresult1, Testresult2, ... ]
 # Testresult format is: [Name, Count, Test1, Test2, ...]
 # Test format is [Name, Test passed, NumberOfSubTests, testresult1, testresult2, ...]
-def xmlwrite(testresults, foldername_t = None):
+def xmlwrite(testresults, foldername_t=None):
     if (foldername_t == None):
         foldername_t = foldername
     
@@ -457,6 +560,157 @@ def xmlwrite(testresults, foldername_t = None):
     xmltargetfile.write(TestSuite.to_xml_string(ts))
     xmltargetfile.close()
     
+def format2(tempdir_t=None, foldername_t=None):
+    if (tempdir_t == None):
+        tempdir_t = tempdir
+    if (foldername_t == None):
+        foldername_t = foldername
+    testname = tempdir_t.split(os.sep)[-1]
+    currentdir = os.getcwd()
+    os.chdir(tempdir_t)
+    
+    failedtests, passedtests, othernotes, totaltests = 0, 0, 0, 0
+    failedlines, passedlines, otherlines, everyline = [], [], [], []
+    
+    for file in os.listdir(tempdir_t):                              # Get every file that is a commandline output file
+        if file.endswith('_cmd_output.txt'):
+            failedtests_l, passedtests_l, othernotes_l, totaltests_l = 0, 0, 0, 0
+            failedlines_l, passedlines_l, otherlines_l, everyline_l = '', '', '', ''
+            source = open(file,'r+')
+      
+            ReadNote = False
+            lastline = ''
+            for line in source:
+                words = line.split(' ')
+                if ReadNote == True:
+                    to_add = ' - time: ' + words[5] + ' ' + words[6] + '\n'
+                    if lastline == 'success':
+                        passedlines_l += to_add
+                    elif lastline == 'failed':
+                        failedlines_l += to_add
+                    elif lastline == 'other':
+                        otherlines_l += to_add
+                    everyline_l += to_add
+                    ReadNote = False
+                    
+                elif (len(words) > 2):
+                    if(words[2] == 'Note:'):
+                        ReadNote = True
+                        if(len(words) > 4):
+                            if(words[4] == 'failed\tname:'):
+                                failedtests_l += 1
+                                totaltests_l += 1
+                                failedlines_l += str(failedtests_l).zfill(4) + ' - ' + line[11:-1]
+                                lastline = 'failed'
+                            elif(words[4] == 'success\tname:'):
+                                passedtests_l += 1
+                                totaltests_l += 1
+                                passedlines_l += str(passedtests_l).zfill(4) + ' - ' + line[11:-1]
+                                lastline = 'success'
+                            else:
+                                othernotes_l += 1
+                                totaltests_l += 1
+                                otherlines_l += str(othernotes_l).zfill(4) + ' - ' + line[11:-1]
+                                lastline = 'other'
+                        else:
+                            othernotes_l += 1
+                            totaltests_l += 1
+                            otherlines_l += str(othernotes_l).zfill(4) + ' - ' + line[11:-1]
+                            lastline = 'other'
+                        everyline_l += str(totaltests_l).zfill(4) + ' - ' + line[11:-1]
+                        
+            if ReadNote == True:
+                to_add = ' - time: ' + words[5] + ' ' + words[6]
+                if lastline == 'succes':
+                    passedlines_l += to_add
+                elif lastline == 'failed':
+                    failedlines_l += to_add
+                elif lastline == 'other':
+                    otherlines_l += to_add
+                everyline_l += to_add
+            
+            failedtests += failedtests_l
+            passedtests += passedtests_l
+            othernotes += othernotes_l
+            totaltests += totaltests_l
+            failedlines.append(failedlines_l)
+            passedlines.append(passedlines_l)
+            otherlines.append(otherlines_l)
+            everyline.append(everyline_l)
+            
+            source.close()
+            
+                #Write plain .txt file with testresults
+    targetpath = foldername_t + os.sep + testname + '_testresults.txt'
+    targetfile = open(targetpath,'w+')
+    targetfile.write('total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes))
+    output_failed, output_passed, output_other, output_every = '', '', '', ''
+    for x in range (0, len(failedlines)):
+        output_failed += failedlines[x]
+        output_passed += passedlines[x]
+        output_other += otherlines[x]
+        output_every += everyline[x]
+    targetfile.write('\n\n\nPassed tests reports:\n' + output_passed + '\n\nFailed tests reports:\n' + output_failed + '\n\nOther notes:\n' + output_other + '\n\n\nAll test results:\n' + output_every)
+    
+    print 'total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes)
+    #Print left out - optional command line output
+    
+    targetfile.close()
+    os.chdir(currentdir)
+    return everyline
+    
+    
+#Write .xml file in JUnit format (For use in Eclipe)
+#Uses JUnit-xml package by Brian Beyer
+#source at https://github.com/kyrus/python-junit-xml
+#Requires setuptools to install at https://pypi.python.org/pypi/setuptools
+def xmlwrite2(everyline, foldername_t=None):
+    if (foldername_t == None):
+        foldername_t = foldername
+        
+    testname = foldername_t.split(os.sep)[-1]
+        
+    xmltargetpath = foldername_t + os.sep + foldername_t.split(os.sep)[-1] + '_testresults.xml'
+    xmltargetfile = open(xmltargetpath, 'w+')
+    
+    test_suites = []
+    suite_count = 1
+    for lines in everyline:
+        test_cases = []
+        for line in lines.split('\n'):
+            words = line.split(' ')
+            if line.find('success') != -1:
+                time_taken = get_time(line.split('-')[-1][7:])
+                name = words[0] + ' - ' + line.split('-')[1].split('name:')[1].strip()
+                test_cases.append(TestCase(name, testname, time_taken, None))
+            elif line.find('failed') != -1:
+                time_taken = get_time(line.split('-')[-1][7:])
+                name = words[0] + ' - ' + line.split('-')[1].split('name:')[1].strip()
+                message = ("-".join(line.split(' - ')[2:-1])).strip()
+                tc = TestCase(name, testname, time_taken, None)
+                tc.add_failure_info(None, message)
+                test_cases.append(tc)
+        test_suites.append(TestSuite('TestSuite number: ' + str(suite_count), test_cases))
+        suite_count += 1
+        
+    xmltargetfile.write(TestSuite.to_xml_string(test_suites))
+    xmltargetfile.close()
+    
+# extracts the passed time from a modelsim time notice
+def get_time(timestring):
+    words = timestring.split(' ')
+    new_time = float(words[0])
+    multiplier = 1
+    if words[1] == 'ps':
+        multiplier = 10**(-12)
+    elif words[1] == 'ns':
+        multiplier = 10**(-9)
+    elif words[1] == 'us':
+        multiplier = 10**(-6)
+    elif words[1] == 'ms':
+        multiplier = 10**(-3)
+    return new_time * float(multiplier)
+    
 ## removes temporary files & directories
 def cleanup():
     logwrite('n','Cleanup started at ' + str(time.time()))
@@ -472,7 +726,7 @@ if __name__ == "__main__":
     
     parsedlist, logs_buffer = [], []                                                # A buffer is needed for loglines from before the logdirectory was created
     logstarted = False
-    tempdir, tempname, folderpath, foldername = '', '', '', ''                      # Future variables that will be used througout the script
+    tempdir, tempname, foldername = '', '', ''                                      # Future variables that will be used througout the script
     parser = None                                                                   # Assigning name for the parser
     
     systemtime = time.time()                                                        # Marks the starting time of the script
@@ -493,16 +747,19 @@ if __name__ == "__main__":
             listfile = open(get_path(file))                                         # Open the files one by one
             sourcelist = [line.strip() for line in open(listfile)]                  # Get all .vhd files listed within
             for line in sourcelist:                                                 # Parse each .vhd file
-                parsedlist.append(parse_source(get_path(line), args.script))
+                parsedlist.append(parse_source(get_path(line), args.method))
     else:                                                                           # If arguments are not lists, they are the files themselves
         for file in args.list:
-            parsedlist.append(parse_source(get_path(file), args.script))
+            parsedlist.append(parse_source(get_path(file), args.method))
     
     testcount = test_format(parsedlist)                                             # Get list of number of tests
-    parse_tests(testcount, tempdir, foldername)
+    if args.cmdline:                                                                # Location of vhdlUnit.vhd may vary on how the script is called
+        parse_tests(testcount, tempdir, foldername, get_path(args.prepath))
+    else:
+        parse_tests(testcount, tempdir, foldername, get_path(args.prepath), os.path.dirname(os.path.realpath(__file__)))
     
-    testresults = format(tempdir)                                                   # Format the testresults to humanly readable words
-    xmlwrite(testresults)                                                           # Format the above format into a JUnit-XML format
+    testresults = format2(tempdir)                                                  # Format the testresults to humanly readable words
+    xmlwrite2(testresults)                                                          # Format the above format into a JUnit-XML format
     
     cleanup()                                                                      # Remove the temporary working directory
     logwrite('n','Stopped script at ' + str(time.time()))                           # Note the time of ending

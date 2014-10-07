@@ -134,7 +134,7 @@ def format(target, arguments=''):
 		words = line.split(' ')
 		if ReadNote == True:
 			to_add = ' - time: ' + words[5] + ' ' + words[6] + '\n'
-			if lastline == 'succes':
+			if lastline == 'success':
 				passedlines += to_add
 			elif lastline == 'failed':
 				failedlines += to_add

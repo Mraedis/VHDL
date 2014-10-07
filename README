@@ -47,7 +47,18 @@ The method user by the author is:
 5.		Install setuptools (using the "python ez_setup.py" command/file provided by setuptools)
 6.		Install python-junit-xml (using the "python setup.py install" command/file provided by python-junit-xml)
 7.		Download a copy of testbench_parser.py
-8.		Run "python testbench_parser.py" (Or have the hudson-CI run it)
+8.		Run "python testbench_parser.py -c -l <filelist>" (Or have Hudson-CI run it without the -c flag)
+
+To run Hudson-CI from windows:
+1. Download the Hudson .war file
+2. Run the .war file with java -jar hudson.war
+2.1 Optional: install Hudson as a service, but remember to go to Windows: Services: Hudson: Properties and run it as the local user (Modelsim licensing errors)
+3. Configure Hudson to run the build, python and Modelsim are assumed to be included in the PATH variable.
+
+To run Hudson from Linux:
+1. Download the Hudson .war file
+2. Run the .war file with java -jar hudson.war
+3. Configure Hudson to run the build, python and Modelsim are assumed to be included in the PATH variable.
 
 Results should be viewable by any junit-xml viewer (such as Eclipse or Hudson-CI)
 Help with running the testbench_parser.py can be obtained by running "python testbench_parser.py -h"
