@@ -59,17 +59,6 @@ end entity avs_aes_tb;
 
 architecture arch1 of avs_aes_tb is
 
-	function DWORDARRAY2string(arg: in DWORDARRAY) return String is	  
-		variable result : string(1 to arg'LENGTH);
-		variable j : integer := 1;
-	begin			 
-		for i in arg'RANGE loop		
-			result := result & std_logic_vector2string(arg(i));
-			j:=j+1;
-		end loop;
-		return result;
-	end DWORDARRAY2string;
-
 	-- component ports
 	signal clk				  : STD_LOGIC					  := '0';  -- avalon bus clock
 	signal reset			  : STD_LOGIC					  := '0';  -- avalon bus reset
@@ -292,12 +281,12 @@ begin  -- architecture arch1
 		wait until clk = '1';
 
 		if testresult /= expected then
-			reportback(false, "Test 1 - RESULT MISMATCH! expected " & DWORDARRAY2string(expected) & " but received "
-				& DWORDARRAY2string(testresult)
+			reportback(false, "Test 1 - RESULT MISMATCH!"
 			);
 		else
 			reportback(true, "Test 1 - Success");
 		end if;
+		report "FINISH" severity FAILURE;
 
 
 --End Test1
@@ -336,12 +325,11 @@ begin  -- architecture arch1
 		wait until clk = '1';
 
 		if testresult /= expected then
-			reportback(false, "Test 2 - RESULT MISMATCH! expected " & DWORDARRAY2string(expected) & " but received "
-				& DWORDARRAY2string(testresult)
-			);
+			reportback(false, "Test 2 - RESULT MISMATCH!");
 		else
 			reportback(true, "Test 2 - Success");
 		end if;
+		report "FINISH" severity FAILURE;
 
 
 --End Test2
@@ -383,12 +371,11 @@ begin  -- architecture arch1
 		wait until clk = '1';
 
 		if testresult /= expected then
-			reportback(false, "Test 3 - RESULT MISMATCH! expected " & DWORDARRAY2string(expected) & " but received "
-				& DWORDARRAY2string(testresult)
-			);
+			reportback(false, "Test 3 - RESULT MISMATCH!");
 		else
 			reportback(true, "Test 3 - Success");
 		end if;
+		report "FINISH" severity FAILURE;
 
 
 --End Test3
@@ -437,12 +424,11 @@ begin  -- architecture arch1
 		wait until clk = '1';
 
 		if testresult /= expected then
-			reportback(false, "Test 4 - RESULT MISMATCH! expected " & DWORDARRAY2string(expected) & " but received "
-				& DWORDARRAY2string(testresult)
-			);
+			reportback(false, "Test 4 - RESULT MISMATCH!");
 		else
 			reportback(true, "Test 4 - Success");
 		end if;
+		report "FINISH" severity FAILURE;
 --End Test4
 --Test5
 -- Same Data, new key, encrypt
@@ -497,12 +483,11 @@ begin  -- architecture arch1
 		wait until clk = '1';
 
 		if testresult /= expected then
-			reportback(false, "Test 5 - RESULT MISMATCH! expected " & DWORDARRAY2string(expected) & " but received "
-				& DWORDARRAY2string(testresult)
-			);
+			reportback(false, "Test 5 - RESULT MISMATCH!");
 		else
 			reportback(true, "Test 5 - Success");
 		end if;
+		report "FINISH" severity FAILURE;
 
 --End Test5
 

@@ -761,5 +761,5 @@ if __name__ == "__main__":
     testresults = format2(tempdir)                                                  # Format the testresults to humanly readable words
     xmlwrite2(testresults)                                                          # Format the above format into a JUnit-XML format
     
-    cleanup()                                                                      # Remove the temporary working directory
+    #cleanup()                                                                      # Remove the temporary working directory
     logwrite('n','Stopped script at ' + str(time.time()))                           # Note the time of ending

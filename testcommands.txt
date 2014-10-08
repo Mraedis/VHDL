@@ -1,0 +1,5 @@
+python testbench_parser.py -m partitioned -c -l ..\external\avs_aes\bench\VHDL\avs_aes_tb.vhd -p ..\external\aes_precompile.txt
+
+python testbench_parser.py -m partitioned -c -l ..\external\Ultimate_CRC\bench\vhdl\tb_crc.vhd -p ..\external\crc_precompile.txt
+
+http://opencores.org/project,ultimate_crc

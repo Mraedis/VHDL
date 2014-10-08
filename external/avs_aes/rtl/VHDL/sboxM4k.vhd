@@ -65,14 +65,14 @@ architecture M4k of sbox is
 	component altsyncram
 		generic (
 			ADDRESS_REG_B			  : STRING;
-			CLOCK_ENABLE_INPUT_A	  : STRING;
-			CLOCK_ENABLE_INPUT_B	  : STRING;
-			CLOCK_ENABLE_OUTPUT_A	  : STRING;
-			CLOCK_ENABLE_OUTPUT_B	  : STRING;
+			--CLOCK_ENABLE_INPUT_A	  : STRING;
+			--CLOCK_ENABLE_INPUT_B	  : STRING;
+			--CLOCK_ENABLE_OUTPUT_A	  : STRING;
+			--CLOCK_ENABLE_OUTPUT_B	  : STRING;
 			INDATA_REG_B			  : STRING;
 			INIT_FILE				  : STRING;
 			INTENDED_DEVICE_FAMILY	  : STRING;
-			LPM_TYPE				  : STRING;
+			--LPM_TYPE				  : STRING;
 			NUMWORDS_A				  : NATURAL;
 			NUMWORDS_B				  : NATURAL;
 			OPERATION_MODE			  : STRING;
@@ -80,7 +80,7 @@ architecture M4k of sbox is
 			OUTDATA_ACLR_B			  : STRING;
 			OUTDATA_REG_A			  : STRING;
 			OUTDATA_REG_B			  : STRING;
-			POWER_UP_UNINITIALIZED	  : STRING;
+			--POWER_UP_UNINITIALIZED	  : STRING;
 			WIDTHAD_A				  : NATURAL;
 			WIDTHAD_B				  : NATURAL;
 			WIDTH_A					  : NATURAL;
@@ -92,7 +92,7 @@ architecture M4k of sbox is
 		port (
 			wren_a	  : in	STD_LOGIC;
 			wren_b	  : in	STD_LOGIC;
-			clock0	  : in	STD_LOGIC;
+			clock0 	  : in	STD_LOGIC;
 			address_a : in	STD_LOGIC_VECTOR (7 downto 0);
 			address_b : in	STD_LOGIC_VECTOR (7 downto 0);
 			q_a		  : out STD_LOGIC_VECTOR (7 downto 0);
@@ -107,35 +107,35 @@ begin
 	assign_inverse : if INVERSE generate
 		m4kblock_inv : altsyncram
 			generic map (
-				address_reg_b			  => "CLOCK0",
-				clock_enable_input_a	  => "BYPASS",
-				clock_enable_input_b	  => "BYPASS",
-				clock_enable_output_a	  => "BYPASS",
-				clock_enable_output_b	  => "BYPASS",
-				indata_reg_b			  => "CLOCK0",
-				init_file				  => "sbox_inv.hex",
-				intended_device_family	  => "Cyclone II",
-				lpm_type				  => "altsyncram",
-				numwords_a				  => 256,
-				numwords_b				  => 256,
-				operation_mode			  => "BIDIR_DUAL_PORT",
-				outdata_aclr_a			  => "NONE",
-				outdata_aclr_b			  => "NONE",
-				outdata_reg_a			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
-				outdata_reg_b			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
-				power_up_uninitialized	  => "FALSE",
-				widthad_a				  => 8,
-				widthad_b				  => 8,
-				width_a					  => 8,
-				width_b					  => 8,
-				width_byteena_a			  => 1,
-				width_byteena_b			  => 1,
-				wrcontrol_wraddress_reg_b => "CLOCK0"
+				ADDRESS_REG_B			  => "CLOCK0",
+				--CLOCK_ENABLE_INPUT_A	  => "BYPASS",
+				--CLOCK_ENABLE_INPUT_B	  => "BYPASS",
+				--CLOCK_ENABLE_OUTPUT_A	  => "BYPASS",
+				--CLOCK_ENABLE_OUTPUT_B	  => "BYPASS",
+				INDATA_REG_B			  => "CLOCK0",
+				INIT_FILE				  => "H:\Users\Joren\Documents\GitHub\VHDL\external\avs_aes\sim\sbox_inv.hex",
+				INTENDED_DEVICE_FAMILY	  => "Cyclone II",
+				--LPM_TYPE				  => "altsyncram",
+				NUMWORDS_A				  => 256,
+				NUMWORDS_B				  => 256,
+				OPERATION_MODE			  => "BIDIR_DUAL_PORT",
+				OUTDATA_ACLR_A			  => "NONE",
+				OUTDATA_ACLR_B			  => "NONE",
+				OUTDATA_REG_A			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
+				OUTDATA_REG_B			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
+				--POWER_UP_UNINITIALIZED	  => "FALSE",
+				WIDTHAD_A				  => 8,
+				WIDTHAD_B				  => 8,
+				WIDTH_A					  => 8,
+				WIDTH_B					  => 8,
+				WIDTH_BYTEENA_A			  => 1,
+				WIDTH_BYTEENA_B			  => 1,
+				WRCONTROL_WRADDRESS_REG_B => "CLOCK0"
 				)
 			port map (
 				wren_a	  => '0',		-- we don't write to ROM
 				wren_b	  => '0',		-- we don't write to ROM
-				clock0	  => clk,
+				clock0 	  => clk,
 				data_a	  => (others => '0'),  -- dumb compiler wants it anyway
 				data_b	  => (others => '0'),  -- dumb compiler wants it anyway
 				address_a => address_a,
@@ -148,35 +148,35 @@ begin
 	assign_encrypt : if not INVERSE generate
 		m4kblock_fwd : altsyncram
 			generic map (
-				address_reg_b			  => "CLOCK0",
-				clock_enable_input_a	  => "BYPASS",
-				clock_enable_input_b	  => "BYPASS",
-				clock_enable_output_a	  => "BYPASS",
-				clock_enable_output_b	  => "BYPASS",
-				indata_reg_b			  => "CLOCK0",
-				init_file				  => "sbox.hex",
-				intended_device_family	  => "Cyclone II",
-				lpm_type				  => "altsyncram",
-				numwords_a				  => 256,
-				numwords_b				  => 256,
-				operation_mode			  => "BIDIR_DUAL_PORT",
-				outdata_aclr_a			  => "NONE",
-				outdata_aclr_b			  => "NONE",
-				outdata_reg_a			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
-				outdata_reg_b			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
-				power_up_uninitialized	  => "FALSE",
-				widthad_a				  => 8,
-				widthad_b				  => 8,
-				width_a					  => 8,
-				width_b					  => 8,
-				width_byteena_a			  => 1,
-				width_byteena_b			  => 1,
-				wrcontrol_wraddress_reg_b => "CLOCK0"
+				ADDRESS_REG_B			  => "CLOCK0",
+				--CLOCK_ENABLE_INPUT_A	  => "BYPASS",
+				--CLOCK_ENABLE_INPUT_B	  => "BYPASS",
+				--CLOCK_ENABLE_OUTPUT_A	  => "BYPASS",
+				--CLOCK_ENABLE_OUTPUT_B	  => "BYPASS",
+				INDATA_REG_B			  => "CLOCK0",
+				INIT_FILE				  => "H:\Users\Joren\Documents\GitHub\VHDL\external\avs_aes\sim\sbox.hex",
+				INTENDED_DEVICE_FAMILY	  => "Cyclone II",
+				--LPM_TYPE				  => "altsyncram",
+				NUMWORDS_A				  => 256,
+				NUMWORDS_B				  => 256,
+				OPERATION_MODE			  => "BIDIR_DUAL_PORT",
+				OUTDATA_ACLR_A			  => "NONE",
+				OUTDATA_ACLR_B			  => "NONE",
+				OUTDATA_REG_A			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
+				OUTDATA_REG_B			  => "UNREGISTERED",  -- IMPORTANT not CLOCK0!!!
+				--POWER_UP_UNINITIALIZED	  => "FALSE",
+				WIDTHAD_A				  => 8,
+				WIDTHAD_B				  => 8,
+				WIDTH_A					  => 8,
+				WIDTH_B					  => 8,
+				WIDTH_BYTEENA_A			  => 1,
+				WIDTH_BYTEENA_B			  => 1,
+				WRCONTROL_WRADDRESS_REG_B => "CLOCK0"
 				)
 			port map (
 				wren_a	  => '0',		-- we don't write to ROM
 				wren_b	  => '0',		-- we don't write to ROM
-				clock0	  => clk,
+				clock0 	  => clk,
 				data_a	  => (others => '0'),  -- dumb compiler wants it anyway
 				data_b	  => (others => '0'),  -- dumb compiler wants it anyway
 				address_a => address_a,
