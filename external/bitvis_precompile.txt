@@ -1,0 +1,25 @@
+vlib bitvis_util
+vlib bitvis_vip_sbi
+vlib ieee_proposed
+vlib bitvis_work
+
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\types_pkg.vhd
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\adaptations_pkg.vhd
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\string_methods_pkg.vhd
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\protected_types_pkg.vhd
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\vhdl_version_layer_pkg.vhd 
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\license_open_pkg.vhd
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\methods_pkg.vhd
+vcom -suppress 1346,1236 -2008 -work bitvis_util C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_util\\src2008\\bfm_common_pkg.vhd
+
+vcom -93 -work bitvis_vip_sbi C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_vip_sbi\\src\\sbi_bfm_pkg.vhd
+
+vcom -93 -work ieee_proposed C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\x_ieee_proposed\\src\\standard_additions_c.vhdl
+vcom -93 -work ieee_proposed C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\x_ieee_proposed\\src\\standard_textio_additions_c.vhdl
+vcom -93 -work ieee_proposed C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\x_ieee_proposed\\src\\std_logic_1164_additions.vhdl
+vcom -93 -work ieee_proposed C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\x_ieee_proposed\\src\\numeric_std_additions.vhdl
+
+vcom -2008 -work bitvis_work C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_irqc\\src\\irqc_pif_pkg.vhd
+vcom -2008 -work bitvis_work C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_irqc\\src\\irqc_pif.vhd
+vcom -2008 -work bitvis_work C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_irqc\\src\\irqc_core.vhd
+vcom -2008 -work bitvis_work C:\\Users\\Joren\\Git\\VHDL\\external\\Bitvis_Utility_Library_v2_3_0\\bitvis_irqc\\src\\irqc.vhd

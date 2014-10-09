@@ -2,4 +2,7 @@ python testbench_parser.py -m partitioned -c -l ..\external\avs_aes\bench\VHDL\a
 
 python testbench_parser.py -m partitioned -c -l ..\external\Ultimate_CRC\bench\vhdl\tb_crc.vhd -p ..\external\crc_precompile.txt
 
+python testbench_parser.py -m partitioned -c -l ..\external\Bitvis_Utility_Library_v2_3_0\bitvis_irqc\tb\irqc_tb.vhd -p ..\external\bitvis_precompile.txt
+
+
 http://opencores.org/project,ultimate_crc

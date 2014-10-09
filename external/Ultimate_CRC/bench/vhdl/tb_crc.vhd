@@ -259,6 +259,7 @@ begin
    ----------------------------------------------------------------------------
    MAIN : process
    begin
+--Test1
       clken2 <= '0';
       clken3 <= '0';
       message("Simulation starts with a reset.");
@@ -271,6 +272,17 @@ begin
       vector_check("CRC of parallel generator", EXPECTED_CRC, crc_p);
       wait_for_event("Wait for flush to finish", 500 ns, flush);
       wait for 2 ns;
+      
+      reportback(match_s = '1', 
+      		"Serial CRC match - Signal does not match. Expected '1' but received "
+      		& std_logic'image(match_s) & "."
+      		);
+      		
+      reportback(match_p = '1', 
+      		"Parallel CRC match - Signal does not match. Expected '1' but received "
+      		& std_logic'image(match_p) & "."
+      		);
+      
       signal_check("Serial CRC match signal", '1', match_s);
       signal_check("Parallel CRC match signal", '1', match_p);
       message("Check 128bit crc:");
@@ -282,11 +294,25 @@ begin
       clken3 <= '1';
       wait until rising_edge(clk);
       clken3 <= '0';
+      reportback(match_p2 = '1', 
+      		"Parallel 128bit CRC match - Signal does not match. Expected '1' but received "
+      		& std_logic'image(match_p2) & "."
+      		);
+      --if (match_p2 = '1') then
+      --	reportback(true, "Parallel 128bit CRC match");
+     -- else
+      --	reportback(false, 
+      --		"Parallel 128bit CRC match - Signal does not match. Expected '1' and received "
+      --		& std_logic'image(match_p2)
+      --	);
+      --end if;
+      
       signal_check("Parallel 128bit CRC check", '1', match_p2);
       sim_report("");
       wait for 100 ns;
       report "End of simulation! (ignore this failure)"
          severity failure;
+--End Test1
       wait;
    end process;
 

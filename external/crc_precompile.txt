@@ -1,2 +1,2 @@
 vlib crc
-vcom -2008 -quiet -work crc H:\\Users\\Joren\\Documents\\GitHub\\VHDL\\external\\Ultimate_CRC\\rtl\\vhdl\\ucrc_par.vhd H:\\Users\\Joren\\Documents\\GitHub\\VHDL\\external\\Ultimate_CRC\\rtl\\vhdl\\ucrc_ser.vhd H:\\Users\\Joren\\Documents\\GitHub\\VHDL\\external\\Ultimate_CRC\\rtl\\vhdl\\ucrc_pkg.vhd H:\\Users\\Joren\\Documents\\GitHub\\VHDL\\external\\Ultimate_CRC\\bench\\vhdl\\wb_tb_pack.vhd
+vcom -2008 -quiet -work crc C:\\Users\\Joren\\Git\\VHDL\\external\\Ultimate_CRC\\rtl\\vhdl\\ucrc_par.vhd C:\\Users\\Joren\\Git\\VHDL\\external\\Ultimate_CRC\\rtl\\vhdl\\ucrc_ser.vhd C:\\Users\\Joren\\Git\\VHDL\\external\\Ultimate_CRC\\rtl\\vhdl\\ucrc_pkg.vhd C:\\Users\\Joren\\Git\\VHDL\\external\\Ultimate_CRC\\bench\\vhdl\\wb_tb_pack.vhd

@@ -159,8 +159,7 @@ def get_path(path):
 
 ## Prepares the parser to accept correct commandline arguments
 def setup_parser():
-    parser = argparse.ArgumentParser(version='0.1'
-                                     , description='VHDL testbench to TDD parser'
+    parser = argparse.ArgumentParser(  description='VHDL testbench to TDD parser'
                                      , formatter_class=argparse.ArgumentDefaultsHelpFormatter)
         # The -c/--cmd argument is to specify the script being called from the commandline.
         # The flag is stored in 'cmd', default value is 'False'
@@ -195,6 +194,12 @@ def setup_parser():
                         , help='specifies the location of the precompiled dependencies, requires a full path.'
                         , action = 'store'
                         , dest='prepath', metavar='path', default=None)
+        # The -v/--version argument is to compile in a different VHDL version other than 2008.
+        # The flag is stored in 'version', default value is 2008
+    parser.add_argument('-v', '--version'
+                        , help='specifies a different VHDL version, default is 2008'
+                        , action = 'store'
+                        , default='2008' , metavar='version')
 #        # The -s/--script argument is to specify the testbench(es) use the scriptstart/scriptend comments
 #        # The flag is stored in 'script', default value is 'False'
 #    parser.add_argument('-s', '--script'
@@ -383,7 +388,10 @@ def parse_source(path, method=None):
                 templist.append(line)                                           # [META] Improving detection here can be a major asset
     else:
         tests = len(templist)
-    logwrite('n','Successfully parsed ' + entname + '.' + archname + ' with ' + str(tests) + ' tests found.')
+    if (tests == 1):
+        logwrite('n','Successfully parsed ' + entname + '.' + archname + ' with ' + str(tests) + ' testsuite found.')
+    else:
+        logwrite('n','Successfully parsed ' + entname + '.' + archname + ' with ' + str(tests) + ' testsuites found.')
     return [archname, entname, header, archheader, footer, templist]
     
 ## arranges found functions & procedures in their own executable files
@@ -427,29 +435,34 @@ def test_format(parsedlist_t = None):
     
 ## grabs processed source/files, executes & captures output
 ## testcount_t is a dictionary of key: entityname.architecturename.vhd, with value the number of tests inside
-def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, prepath = None, currentdir_t = None):
+def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, args_t = None, currentdir_t = None):
     if (testcount_t == None):                                                   # Use global values if arguments not filled
         testcount_t = testcount
     if (tempdir_t == None):
         tempdir_t = tempdir
     if (foldername_t == None):
         foldername_t = foldername
+    if (args_t == None):
+        args_t = args
     if (currentdir_t == None):
         currentdir_t = currentdir
         
+    args_t.prepath = get_path(args_t.prepath)
+    
     os.chdir(tempdir_t)                                                         # Change working directory to the temporary folder
     testcount = 0
     
-    if (prepath != None):
-        source = open(prepath,'r+')
+    
+    if (args_t.prepath != None):
+        source = open(args_t.prepath,'r+')
         for line in source:
             os.system(line.strip())
         #shutil.copytree(get_path(prepath), tempdir_t + os.sep + prepath.split(os.sep)[-1])
     os.system('vlib TDD')
-    os.system('vcom -2008 -quiet -work TDD ' + currentdir_t + os.sep + 'vhdlUnit.vhd')
+    os.system('vcom -' + args_t.version + ' -quiet -work TDD ' + currentdir_t + os.sep + 'vhdlUnit.vhd')
     for key,value in testcount_t.iteritems():                                   # Run across the dictionary, executing every test in each file
                                                                                 # Make use of the vhdlUnit 'reportback' function
-        commands = 'vlib work' + str(testcount) +'\n' + 'vcom -2008 -quiet -work work' + str(testcount) + ' ' + key
+        commands = 'vlib work' + str(testcount) +'\n' + 'vcom -' + args_t.version + ' -quiet -work work' + str(testcount) + ' ' + key
         
         for line in commands.split('\n'):                                       # Form a work directory per file
             os.system(line)
@@ -583,7 +596,10 @@ def format2(tempdir_t=None, foldername_t=None):
             for line in source:
                 words = line.split(' ')
                 if ReadNote == True:
-                    to_add = ' - time: ' + words[5] + ' ' + words[6] + '\n'
+                    if (len(words) > 5):
+                        to_add = ' - time: ' + words[5] + ' ' + words[6] + '\n'
+                    else:
+                        to_add = line
                     if lastline == 'success':
                         passedlines_l += to_add
                     elif lastline == 'failed':
@@ -605,7 +621,7 @@ def format2(tempdir_t=None, foldername_t=None):
                             elif(words[4] == 'success\tname:'):
                                 passedtests_l += 1
                                 totaltests_l += 1
-                                passedlines_l += str(passedtests_l).zfill(4) + ' - ' + line[11:-1]
+                                passedlines_l += str(passedtests_l).zfill(4) + ' - ' + line[11:-1].split('-')[0]
                                 lastline = 'success'
                             else:
                                 othernotes_l += 1
@@ -622,7 +638,7 @@ def format2(tempdir_t=None, foldername_t=None):
             if ReadNote == True:
                 to_add = ' - time: ' + words[5] + ' ' + words[6]
                 if lastline == 'succes':
-                    passedlines_l += to_add
+                    passedlines_l += to_add[1:-1]
                 elif lastline == 'failed':
                     failedlines_l += to_add
                 elif lastline == 'other':
@@ -754,12 +770,12 @@ if __name__ == "__main__":
     
     testcount = test_format(parsedlist)                                             # Get list of number of tests
     if args.cmdline:                                                                # Location of vhdlUnit.vhd may vary on how the script is called
-        parse_tests(testcount, tempdir, foldername, get_path(args.prepath))
+        parse_tests(testcount, tempdir, foldername, args)
     else:
-        parse_tests(testcount, tempdir, foldername, get_path(args.prepath), os.path.dirname(os.path.realpath(__file__)))
+        parse_tests(testcount, tempdir, foldername, args, os.path.dirname(os.path.realpath(__file__)))
     
     testresults = format2(tempdir)                                                  # Format the testresults to humanly readable words
     xmlwrite2(testresults)                                                          # Format the above format into a JUnit-XML format
     
-    #cleanup()                                                                      # Remove the temporary working directory
+    cleanup()                                                                       # Remove the temporary working directory
     logwrite('n','Stopped script at ' + str(time.time()))                           # Note the time of ending

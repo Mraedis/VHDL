@@ -58,6 +58,17 @@ end entity avs_aes_tb;
 -------------------------------------------------------------------------------
 
 architecture arch1 of avs_aes_tb is
+ 
+	function DWORDARRAY2string(arg : in DWORDARRAY) return String is	  
+		variable result : string(1 to arg'LENGTH * arg(0)'LENGTH);
+		variable j : integer := 1;
+	begin			 
+		for i in arg'RANGE loop		
+			result(j to j + arg(i)'LENGTH -1) := std_logic_vector2string(arg(i)); --Takes the string image and then the character needed
+			j:=j+arg(i)'LENGTH;
+		end loop;
+		return result;
+	end DWORDARRAY2string;
 
 	-- component ports
 	signal clk				  : STD_LOGIC					  := '0';  -- avalon bus clock
@@ -280,12 +291,9 @@ begin  -- architecture arch1
 
 		wait until clk = '1';
 
-		if testresult /= expected then
-			reportback(false, "Test 1 - RESULT MISMATCH!"
+		reportback(testresult = expected, "Test 1 - RESULT MISMATCH! Expected " & DWORDARRAY2string(expected)
+				& " but received " & DWORDARRAY2string(testresult)
 			);
-		else
-			reportback(true, "Test 1 - Success");
-		end if;
 		report "FINISH" severity FAILURE;
 
 
@@ -293,6 +301,59 @@ begin  -- architecture arch1
 
 --Test2
 --  decrypt the the same data under the given key
+
+		if TESTKEYSIZE = 256 then
+			expected <= result256_1;
+		elsif TESTKEYSIZE = 192 then
+			expected <= result192_1;
+		elsif TESTKEYSIZE = 128 then
+			expected <= result128_1;
+		else
+			report "wrong testkeysize" severity FAILURE;
+		end if;
+
+		-----------------------------------------------------------------------
+		-- Setup key1
+		-----------------------------------------------------------------------
+		for cnt in 0 to KEYWORDS-1 loop
+			write <= '1';
+			address <= STD_LOGIC_VECTOR(to_unsigned(cnt,5));
+			writedata <= key_1(cnt);
+			wait until clk='1';
+		end loop;  -- cnt
+		-----------------------------------------------------------------------
+		-- Send data
+		-----------------------------------------------------------------------
+		for cnt in 0 to 3 loop
+			write <= '1';
+			address <= STD_LOGIC_VECTOR(to_unsigned(8+cnt,5));
+			writedata <= data_1(cnt);
+			wait until clk='1';
+		end loop;  -- cnt
+		
+		-- write control
+		-- data stable, key_stable irq_ena
+		wait until clk = '1';
+		write	  <= '1';
+		address	  <= STD_LOGIC_VECTOR(to_unsigned(31, 5));
+		writedata <= X"000000C1";
+		wait until clk = '1';
+		write	  <= '0';
+		-- do the calc
+		wait until irq = '1';
+		wait until clk = '1';
+		-----------------------------------------------------------------------
+		--retrieve and check result
+		-----------------------------------------------------------------------
+		for cnt in 0 to 3 loop
+			read <= '1';
+			address <= STD_LOGIC_VECTOR(to_unsigned(16+cnt,5));
+			wait until clk = '1';
+			testresult(cnt) <= readdata;
+		end loop;  -- cnt
+
+		wait until clk = '1';
+
 		if TESTKEYSIZE = 256 then
 			expected <= result256_2;
 		elsif TESTKEYSIZE = 192 then
@@ -324,11 +385,9 @@ begin  -- architecture arch1
 
 		wait until clk = '1';
 
-		if testresult /= expected then
-			reportback(false, "Test 2 - RESULT MISMATCH!");
-		else
-			reportback(true, "Test 2 - Success");
-		end if;
+		reportback(testresult = expected, "Test 2 - RESULT MISMATCH! Expected " & DWORDARRAY2string(expected)
+				& " but received " & DWORDARRAY2string(testresult)
+			);
 		report "FINISH" severity FAILURE;
 
 
@@ -370,11 +429,9 @@ begin  -- architecture arch1
 
 		wait until clk = '1';
 
-		if testresult /= expected then
-			reportback(false, "Test 3 - RESULT MISMATCH!");
-		else
-			reportback(true, "Test 3 - Success");
-		end if;
+		reportback(testresult = expected, "Test 3 - RESULT MISMATCH! Expected " & DWORDARRAY2string(expected)
+				& " but received " & DWORDARRAY2string(testresult)
+			);
 		report "FINISH" severity FAILURE;
 
 
@@ -390,6 +447,24 @@ begin  -- architecture arch1
 		else
 			report "wrong testkeysize" severity FAILURE;
 		end if;
+
+		-----------------------------------------------------------------------
+		-- Setup key4
+		-----------------------------------------------------------------------
+		-- invalidate old key:
+		wait until clk = '1';
+		write	  <= '1';
+		address	  <= STD_LOGIC_VECTOR(to_unsigned(31, 5));
+		writedata <= X"00000000";
+		wait until clk = '1';
+		
+		for cnt in 0 to KEYWORDS-1 loop
+			write <= '1';
+			address <= STD_LOGIC_VECTOR(to_unsigned(cnt,5));
+			writedata <= key_1(cnt);
+			wait until clk='1';
+		end loop;  -- cnt
+		
 		-----------------------------------------------------------------------
 		-- Send data
 		-----------------------------------------------------------------------
@@ -423,11 +498,9 @@ begin  -- architecture arch1
 
 		wait until clk = '1';
 
-		if testresult /= expected then
-			reportback(false, "Test 4 - RESULT MISMATCH!");
-		else
-			reportback(true, "Test 4 - Success");
-		end if;
+		reportback(testresult = expected, "Test 4 - RESULT MISMATCH! Expected " & DWORDARRAY2string(expected)
+				& " but received " & DWORDARRAY2string(testresult)
+			);
 		report "FINISH" severity FAILURE;
 --End Test4
 --Test5
@@ -459,6 +532,16 @@ begin  -- architecture arch1
 			wait until clk='1';
 		end loop;  -- cnt
 		
+		-----------------------------------------------------------------------
+		-- Send data (same as 4)
+		-----------------------------------------------------------------------
+		for cnt in 0 to 3 loop
+			write <= '1';
+			address <= STD_LOGIC_VECTOR(to_unsigned(8+cnt,5));
+			writedata <= data_4(cnt);
+			wait until clk='1';
+		end loop;  -- cnt
+		
 		-- write control
 		-- data stable, key_stable irq_ena
 		wait until clk = '1';
@@ -482,11 +565,9 @@ begin  -- architecture arch1
 
 		wait until clk = '1';
 
-		if testresult /= expected then
-			reportback(false, "Test 5 - RESULT MISMATCH!");
-		else
-			reportback(true, "Test 5 - Success");
-		end if;
+		reportback(testresult = expected, "Test 5 - RESULT MISMATCH! Expected " & DWORDARRAY2string(expected)
+				& " but received " & DWORDARRAY2string(testresult)
+			);
 		report "FINISH" severity FAILURE;
 
 --End Test5
