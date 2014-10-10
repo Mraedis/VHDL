@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity DFF is
+	Port(D 	 : in std_logic;
+		 CLK : in std_logic;
+		 Q 	 : out std_logic;
+end DFF;
+
+architecture Behavioural of DFF is
+begin
+	process (CLK)
+	begin
+		if rising_edge(CLK) then
+			Q <= D;
+		end if;
+	end process;
+end Behavioural;
