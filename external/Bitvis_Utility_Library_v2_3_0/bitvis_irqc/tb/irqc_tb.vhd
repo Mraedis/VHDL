@@ -382,9 +382,6 @@ begin
       check(C_ADDR_IRR, fit(x"FF"), ERROR, "All IRR triggered");
       check(C_ADDR_IPR, v_irq_mask, ERROR, "IPR triggered for selected");
     
---End4
---Test5
-
       log("\n- - Check interrupt deactivation not affected by non related interrupts or registers");
       v_time_stamp    := now; -- from time of stable active irq2cpu
       write(C_ADDR_ICR, v_irq_mask_inv, "ICR : Clear all non-enabled interrupts");
@@ -410,8 +407,8 @@ begin
 
     report_alert_counters(INTERMEDIATE); -- Report intermediate counters 
     
---End5
---Test6
+--End4
+--Test5
 
     log(ID_LOG_HDR, "Check irq acknowledge and re-enable", C_SCOPE);
     ------------------------------------------------------------
@@ -452,8 +449,8 @@ begin
     await_value(irq2cpu, '1', 0 ns, C_CLK_PERIOD, ERROR, "Interrupt reactivation expected", C_SCOPE);
 
     
---End6
---Test7
+--End5
+--Test6
 
     log(ID_LOG_HDR, "Check Reset", C_SCOPE);
     ------------------------------------------------------------
@@ -469,7 +466,7 @@ begin
     check(C_ADDR_IPR, x"00", ERROR, "IPR all inactive");
 
 
---End Test7
+--End6
 
     --==================================================================================================
     -- Ending the simulation
