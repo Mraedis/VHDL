@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  10 OCT 2014 19:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  16 OCT 2014 16:03
 entering extended mode
 **intro.tex
 (C:\Users\Joren\Git\VHDL\Thesis\LaTeX\intro.tex
@@ -258,18 +258,18 @@ LaTeX Font Info:    ... okay on input line 28.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
-* v-part:(T,H,B)=(72.26999pt, 614.295pt, 108.405pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=472.03123pt
-* \textheight=614.295pt
+* \textheight=652.70622pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
-* \topmargin=-119.50189pt
+* \topmargin=-85.88905pt
 * \headheight=59.75095pt
-* \headsep=59.75095pt
+* \headsep=25.0pt
 * \topskip=11.0pt
-* \footskip=72.26999pt
+* \footskip=30.0pt
 * \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
@@ -341,7 +341,64 @@ Package pdftex.def Info: title-generated.pdf, page1 used on input line 35.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
  [2 <C:/Users/Joren/Git/VHDL/Thesis/LaTeX/title-generated.pdf{C:/ProgramData/Mi
 KTeX/2.9/pdftex/config/pdftex.map}>] [3]
-[4] (C:\Users\Joren\Git\VHDL\Thesis\LaTeX\intro.toc
+[4] <extended-abstract.pdf, id=25, 597.50829pt x 845.0471pt>
+File: extended-abstract.pdf Graphic file (type pdf)
+
+<use extended-abstract.pdf>
+Package pdftex.def Info: extended-abstract.pdf used on input line 66.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+ <use extended-abstract.pdf>
+Package pdftex.def Info: extended-abstract.pdf used on input line 66.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+
+<use extended-abstract.pdf>
+Package pdftex.def Info: extended-abstract.pdf used on input line 66.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+ [5]
+<extended-abstract.pdf, id=33, page=1, 597.50829pt x 845.0471pt>
+File: extended-abstract.pdf Graphic file (type pdf)
+
+<use extended-abstract.pdf, page 1>
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+ <use extended-abstract.pdf, page 1>
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+
+<use extended-abstract.pdf, page 1>
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+ <use extended-abstract.pdf, page 1>
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+
+<use extended-abstract.pdf, page 1>
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [6 <C:/Users/Joren/Git/VHDL/Thesis/LaTeX/extended-abstract.pdf>]
+<extended-abstract.pdf, id=73, page=2, 597.50829pt x 845.0471pt>
+File: extended-abstract.pdf Graphic file (type pdf)
+
+<use extended-abstract.pdf, page 2>
+Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 66.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+ <use extended-abstract.pdf, page 2>
+Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 66.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+File: extended-abstract.pdf Graphic file (type pdf)
+
+<use extended-abstract.pdf, page 2>
+Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 66.
+(pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
+ [7 <C:/Users/Joren/Git/VHDL/Thesis/LaTeX/extended-abstract.pdf>] (C:\Users\Jor
+en\Git\VHDL\Thesis\LaTeX\intro.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -350,76 +407,100 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 5.
 )
 \tf@toc=\write3
- [5]
+ [8]
 (C:\Users\Joren\Git\VHDL\Thesis\LaTeX\intro.lof)
 \tf@lof=\write4
- [6]
+ [9]
 (C:\Users\Joren\Git\VHDL\Thesis\LaTeX\intro.lot)
 \tf@lot=\write5
- [7]
-Underfull \hbox (badness 10000) in paragraph at lines 77--103
+ [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 99--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--103
+Underfull \hbox (badness 10000) in paragraph at lines 99--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--103
+Underfull \hbox (badness 10000) in paragraph at lines 99--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--103
+Underfull \hbox (badness 10000) in paragraph at lines 99--120
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 113--122
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 130--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--133
+Underfull \hbox (badness 10000) in paragraph at lines 141--150
 
  []
 
-[9] [10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 259.
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 219--233
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ []
+
+[14] [15]
+
+LaTeX Warning: Citation `key-10' on page 16 undefined on input line 272.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--279
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 289.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 259.
- [11] [12]
-[13] [13
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 289.
+ [16] [17] [18]
+[18
 
-] (C:\Users\Joren\Git\VHDL\Thesis\LaTeX\intro.aux) ) 
+] (C:\Users\Joren\Git\VHDL\Thesis\LaTeX\intro.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6311 strings out of 493921
- 88958 string characters out of 3147281
+ 6324 strings out of 493921
+ 89293 string characters out of 3147281
  168685 words of memory out of 3000000
- 9529 multiletter control sequences out of 15000+200000
+ 9540 multiletter control sequences out of 15000+200000
  14792 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,18n,42p,243b,1127s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Joren\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Joren\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Us
-ers\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.
-pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
-\ecbx1440.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
-\ec\dpi600\ecbx1000.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb>
-Output written on intro.pdf (14 pages, 236925 bytes).
+ 39i,18n,43p,533b,1133s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ecti1095.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecbx1095.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Joren\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\Joren\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Joren\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/latx
+font/line10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/urw/times/utmri8a.pfb>
+Output written on intro.pdf (19 pages, 365256 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
+ 419 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
