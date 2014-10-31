@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{geometry}
+\usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{listings}
 \lstset{language=VHDL}
@@ -37,7 +38,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Copyright notice
 
-\newpage{}\part*{Useage restrictions}
+\newpage{}\part*{Usage restrictions}
 
 The author gives permission to make this master dissertation available for consultation 
 and to copy parts of this master dissertation for personal use. 
@@ -86,7 +87,7 @@ the obligation to state expressly the source when quoting results from this mast
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Used abbreviations and acronyms
 
-\part*{Acronyms and abbreviations}
+\section*{List of Acronyms and Abbreviations}
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -266,19 +267,32 @@ Driven Development} (TDD). This practice has proven to increase test
 coverage \cite{key-5}, decrease defect density \cite{key-8} as well
 as improve code quality \cite{key-8,key-9}.
 
-\newpage
-\section{Test Driven Development}
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=\textwidth]{images/Design_Flow.png}
+    \caption{Typical CMOS design flow}
+    \label{fig:Design_Flow}
+\end{figure}
+
+
+\subsection{Test Driven Development}
 Test Driven Development is an older development technique that has regained traction 
 in the past decade, primarily through the efforts of Kent Beck \cite{key-10}. The technique focuses on tests being written before the actual code. It is important to make certain distinctions before going more in depth on the used methods. The developing community has a great many practices, each with their own names and methods, and hardly none are mutually exclusive.
 
-\subsection{Unit Testing}
-To understand TDD, an understanding of \emph{Unit Testing} is required. In software testing, a unit test is a test designed to check a single unit of code. Ideally, this unit is the smallest piece in which the code can be divided. This division in units has a number of benefits, one of the most important being that code is exceedingly easy to maintain. Furthermore, the division of the code makes changes, when needed, fast to be carried out and ensures that only the modified code needs to re-tested.
+\subsubsection{Unit Testing}
+To understand TDD, an understanding of \emph{Unit Testing} is required. In software testing, a unit test is a test designed to check a single unit of code. Ideally, this unit is the smallest piece in which the code can be divided. A unit test should always only test a single entity, and only one aspect of that entity's behaviour. This division in units has a number of benefits, one of the most important being that code is exceedingly easy to maintain. Furthermore, the division of the code makes changes, when needed, fast to be carried out and ensures that only the modified code needs to re-tested.
 
-\subsection{Test First Development}
-Another main component of TDD is \emph{Test First Development}, a technique that has a developer writing tests first, before any code has been written. This method makes the developer think on what the code has to achieve, rather than what the specific implementation has to be. A key feature of a new test is that it has to fail when run for the first time, if not, the test is obsolete because the functionality it tests has already been implemented. After being run for the first time, the developer implements just enough code to get the test to pass. Once the test succeeds, it is time for a new test.
+\subsubsection{Test First Development}
+Another main component of TDD is \emph{Test First Development}, a technique that has a developer writing tests first, before any code has been written. This method makes the developer think on what the code has to achieve, rather than what the specific implementation has to be. A key feature of a new test is that it has to fail when run for the first time, if not, the test is obsolete seeing as the functionality it tests has already been implemented. After being run for the first time (and failing), the developer implements just enough code to get the test to pass. Once the test succeeds, it is time for a new test.
 
-\subsection{Test Driven Development}
+\subsubsection{Refactoring}
+The third pillar of TDD is refactoring. After the tests succeed, it is necessary to clean up the code. A well-done TFD implementation uses the bare amount of code needed to make the test pass, but this is of course usually not the best code possible. Refactoring means that you take existing code and modify only the code itself to perform better. This leaves both the input and output of the tests and code unchanged, only the way the code processes input is altered. It is important in this step to edit nothing in the test code or the outputs or inputs. Otherwise, either the test would behave differently or new tests would have to be written. The latter goes directly against the TFD principle.
 
+\subsubsection{Test Driven Development}
+Test Driven Development is a combination of the previously mentioned techniques. A Unit Test is written before any code, the test is then executed and should fail. After the failure, the most basic code to make the test pass is implemented, the test is then executed again and should pass. After this first pass, the code written for the passing of the test, and only this code, is edited to perform and look better. This follows all steps mentioned above, a \emph{Unit Test} is written according to \emph{Test First Development} and is \emph{Refactored} later.
+
+\section{Implementation}
+During the making of this thesis, a number of approaches was investigated and some were put to practical use. Ultimately, the most practical and straightforward approach was to implement a form of Unit Testing.
 
 \section{Mission and objectives}
 
@@ -309,6 +323,8 @@ An Empirical Analysis
 
 \bibitem{key-5}A comparative case study on the impact of test-driven
 development on program design and test coverage
+
+\bibitem{key-6}http://martinfowler.com/bliki/UnitTest.html
 
 \bibitem{key-8}A Longitudinal Study of the Use of a Test-Driven Development
 Practice in Industry

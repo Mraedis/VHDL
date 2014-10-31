@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.12)  16 OCT 2014 17:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.12)  30 OCT 2014 16:36
 entering extended mode
 **intro.tex
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\intro.tex
@@ -77,59 +77,6 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks17
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
-Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count90
-\calc@Bcount=\count91
-\calc@Adimen=\dimen111
-\calc@Bdimen=\dimen112
-\calc@Askip=\skip43
-\calc@Bskip=\skip44
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count92
-\calc@Cskip=\skip45
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
-Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count93
-)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -143,10 +90,63 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-\Gin@req@height=\dimen113
-\Gin@req@width=\dimen114
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count91
+\calc@Bcount=\count92
+\calc@Adimen=\dimen113
+\calc@Bdimen=\dimen114
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count93
+\calc@Cskip=\skip45
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
@@ -236,18 +236,18 @@ Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
 \AP@footins=\box33
 )
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\intro.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -283,12 +283,11 @@ LaTeX Font Info:    ... okay on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box34
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count106
 \scratchdimen=\dimen127
-\scratchbox=\box35
+\scratchbox=\box34
 \nofMPsegments=\count107
 \nofMParguments=\count108
 \everyMPshowfont=\toks23
@@ -298,6 +297,7 @@ LaTeX Font Info:    ... okay on input line 28.
 \makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks24
 )
+\AtBeginShipoutBox=\box35
 \c@lstlisting=\count112
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -306,11 +306,11 @@ Package caption Info: End \AtBeginDocument code.
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf>
-Package pdftex.def Info: title-generated.pdf used on input line 35.
+Package pdftex.def Info: title-generated.pdf used on input line 36.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: title-generated.pdf Graphic file (type pdf)
  <use title-generated.pdf>
-Package pdftex.def Info: title-generated.pdf used on input line 35.
+Package pdftex.def Info: title-generated.pdf used on input line 36.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
  [1
 
@@ -319,25 +319,25 @@ Package pdftex.def Info: title-generated.pdf used on input line 35.
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 35.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 36.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: title-generated.pdf Graphic file (type pdf)
  <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 35.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 36.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 35.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 36.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: title-generated.pdf Graphic file (type pdf)
  <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 35.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 36.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 35.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 36.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
  [2 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/title-generated.pdf{C:/P
 rogramData/MiKTeX/2.9/pdftex/config/pdftex.map}>] [3] [4] <extended-abstract.pd
@@ -345,57 +345,57 @@ f, id=25, 597.50829pt x 845.0471pt>
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf>
-Package pdftex.def Info: extended-abstract.pdf used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf used on input line 67.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: extended-abstract.pdf Graphic file (type pdf)
  <use extended-abstract.pdf>
-Package pdftex.def Info: extended-abstract.pdf used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf used on input line 67.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf>
-Package pdftex.def Info: extended-abstract.pdf used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf used on input line 67.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
  [5]
 <extended-abstract.pdf, id=33, page=1, 597.50829pt x 845.0471pt>
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf, page 1>
-Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 67.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: extended-abstract.pdf Graphic file (type pdf)
  <use extended-abstract.pdf, page 1>
-Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 67.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf, page 1>
-Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 67.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: extended-abstract.pdf Graphic file (type pdf)
  <use extended-abstract.pdf, page 1>
-Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 67.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf, page 1>
-Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 67.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [6 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/extended-abstract.pdf>]
 <extended-abstract.pdf, id=73, page=2, 597.50829pt x 845.0471pt>
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf, page 2>
-Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 67.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: extended-abstract.pdf Graphic file (type pdf)
  <use extended-abstract.pdf, page 2>
-Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 67.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf, page 2>
-Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 66.
+Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 67.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [7 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/extended-abstract.pdf>]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\intro.toc
@@ -414,53 +414,60 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\intro.lot)
 \tf@lot=\write5
  [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 99--120
+Underfull \hbox (badness 10000) in paragraph at lines 100--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--120
+Underfull \hbox (badness 10000) in paragraph at lines 100--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--120
+Underfull \hbox (badness 10000) in paragraph at lines 100--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--120
+Underfull \hbox (badness 10000) in paragraph at lines 100--121
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 130--139
+Underfull \hbox (badness 10000) in paragraph at lines 131--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--150
+Underfull \hbox (badness 10000) in paragraph at lines 142--151
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 219--233
+Underfull \hbox (badness 10000) in paragraph at lines 220--234
 
  []
 
-[14] [15]
+[14] <images/Design_Flow.png, id=120, 1336.24219pt x 628.59843pt>
+File: images/Design_Flow.png Graphic file (type png)
 
-LaTeX Warning: Citation `key-10' on page 16 undefined on input line 272.
+<use images/Design_Flow.png>
+Package pdftex.def Info: images/Design_Flow.png used on input line 272.
+(pdftex.def)             Requested size: 472.03123pt x 222.05576pt.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 290.
+
+LaTeX Warning: Citation `key-10' on page 15 undefined on input line 280.
+
+[15 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/Design_Flow.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 304.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 290.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 304.
  [16] [17]
-[18] [18
+[18] [19] [19
 
 ] (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\intro.aux)
 
@@ -468,13 +475,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6324 strings out of 493921
- 90032 string characters out of 3144876
- 168685 words of memory out of 3000000
- 9540 multiletter control sequences out of 15000+200000
+ 6338 strings out of 493921
+ 90259 string characters out of 3144876
+ 168517 words of memory out of 3000000
+ 9551 multiletter control sequences out of 15000+200000
  14792 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,18n,43p,636b,1133s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,18n,43p,712b,1133s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecti1095.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbx1095.pk> <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
@@ -494,9 +501,9 @@ iKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Program Files (x8
  2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on intro.pdf (19 pages, 366355 bytes).
+Output written on intro.pdf (20 pages, 396411 bytes).
 PDF statistics:
- 421 PDF objects out of 1000 (max. 8388607)
+ 428 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
