@@ -659,16 +659,25 @@ def format2(tempdir_t=None, foldername_t=None):
                 #Write plain .txt file with testresults
     targetpath = foldername_t + os.sep + testname + '_testresults.txt'
     targetfile = open(targetpath,'w+')
-    targetfile.write('total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes))
+    targetfile.write('total tests: '      + str(totaltests)
+                     + '\ntests passed: ' + str(passedtests)
+                     +'\ntests failed: '  + str(failedtests)
+                     + '\nother notes: '  + str(othernotes))
     output_failed, output_passed, output_other, output_every = '', '', '', ''
     for x in range (0, len(failedlines)):
         output_failed += failedlines[x]
         output_passed += passedlines[x]
         output_other += otherlines[x]
         output_every += everyline[x]
-    targetfile.write('\n\n\nPassed tests reports:\n' + output_passed + '\n\nFailed tests reports:\n' + output_failed + '\n\nOther notes:\n' + output_other + '\n\n\nAll test results:\n' + output_every)
+    targetfile.write('\n\n\nPassed tests reports:\n' + output_passed
+                     + '\n\nFailed tests reports:\n' + output_failed
+                     + '\n\nOther notes:\n'          + output_other
+                     + '\n\n\nAll test results:\n'   + output_every)
     
-    print 'total tests: ' + str(totaltests) + '\ntests passed: ' + str(passedtests) +'\ntests failed: ' + str(failedtests) + '\nother notes: ' + str(othernotes)
+    print( 'total tests: '      + str(totaltests)
+           + '\ntests passed: ' + str(passedtests)
+           +'\ntests failed: '  + str(failedtests)
+           + '\nother notes: '  + str(othernotes))
     #Print left out - optional command line output
     
     targetfile.close()
@@ -752,7 +761,7 @@ if __name__ == "__main__":
     args, unknown = parser.parse_known_args()                                       # Parses commandline arguments, stores unknown arguments in 'unknown'
     
     tempdir, tempname = make_tempdir()                                              # Creates a unique (name for the) temporary directory in the systems temp dir
-    foldername = setup(args, tempname)                                              # Grab all functions and procedures to be processed, know the path of the output folder
+    foldername = setup(args, tempname)                                              # Grab all functions and procedures to be processed, returns output folder
     
     logwrite('n','Started script at ' + str(systemtime))
     if (unknown):                                                                   # If there are unknown arguments, write error to log
