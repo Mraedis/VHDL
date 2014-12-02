@@ -1,4 +1,5 @@
 \documentclass[british,10pt]{beamer}
+\usepackage{pifont}
 
 % Beamer specific settings
 
@@ -49,7 +50,6 @@
 \vskip20pt 
 }
 
-% Outline
 \begin{frame}<beamer>\frametitle{Outline}
   \tableofcontents
 \end{frame}
@@ -61,95 +61,207 @@
 VHDL
 \begin{itemize}
 \item VHSIC Hardware Description Language
+\item Developed by U.S. Department of Defense
+\begin{itemize}
+\item Document \ding{222} Simulate \ding{222} Synthesize
+\end{itemize}
 \item Used for describing digital and mixed-signal systems 
-\item Simulated \& compiled using special tools (e.g. ModelSim)
+\item Compiled \& simulated using special tools (e.g. ModelSim)
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{VHDL - design flow}
+\includegraphics[width=\textwidth]{images/VHDLflow.pdf}
+\end{frame}
+
+\subsection{Testing VHDL}
+
+\begin{frame}\frametitle{Testing VHDL}
+Testbenches
+\begin{itemize}
+\item Entity \& architecture selection
+\item Signal drivers, stimuli \& processes
+\item Assertions and output tracking
+\begin{itemize}
+\item Comparison to "golden reference"
+\item Wave-check
+\item Manual check
+\end{itemize}
+\end{itemize}
+\vspace{0.25cm}
+Problems
+\begin{itemize}
+\item Non-standardized process
+\item Single point of failure
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Modelsim - waves}
+\centering
+\includegraphics[width=0.9\textwidth]{images/waves.png}
+\end{frame}
+
+\section{Proposed solution}
+
+\subsection{VHDL testing Framework}
+
+\begin{frame}\frametitle{VHDL testing framework}
+Standardized testing framework
+\begin{itemize}
+\item Based on Test Driven Development (TDD)
+\item Cross platform
+\item Utility library
+\begin{itemize}
+\item Standardized testbenches
+\item Swift coding
+\end{itemize}
+\item Script-based processing \ding{222} Standardized processing \& output
+\item Continuous Integration (CI) system
 \end{itemize}
 \end{frame}
 
 \subsection{Test Driven Development}
 
 \begin{frame}\frametitle{Test Driven Development}
+\begin{columns}
+\begin{column}{0.6\textwidth}
 Test Driven Development
 \begin{itemize}
-\item Software development process
-\item Write test first, write code second 
-\item Unit testing with very short development cycle
+\item Software development technique
+\item Proven to significantly reduce errors
+\item All behaviour is tested
+\item Unit testing \& short development cycle
+\item Red - Green - Refactor
 \end{itemize}
+\end{column}
+\column{0.4\textwidth}
+\includegraphics[width=\textwidth]{images/tdd.pdf}
+\end{columns}
 \end{frame}
 
-\subsection{How is VHDL tested?}
+%\begin{frame}\frametitle{TDD - design flow}
+%\includegraphics[width=\textwidth]{images/TDDflow2.pdf}
+%\end{frame}
 
-\begin{frame}\frametitle{How is VHDL tested?}
-VHDL is tested using testbenches
+\subsection{Utility library}
+
+\begin{frame}\frametitle{Specialized library}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+Bitvis utility library
 \begin{itemize}
-\item Architecture selection
-\item Signal drivers, stimuli \& processes
-\item Assertions and output tracking
+\item Expands VHDL functions
+\begin{itemize}
+\item Easy value checking
+\item Clock \& pulse generators
+\item String handling \& random generation
+\item Easy output logging
 \end{itemize}
+\item Quick \& uniform coding
+\item Compatible with all VHDL versions
+\end{itemize}
+\end{column}
+\column{0.5\textwidth}
+\includegraphics[width=0.6\textwidth]{images/bitvis.png}
+\end{columns}
 \end{frame}
 
-\section{Exploring solutions}
 \subsection{Script-based processing}
 
 \begin{frame}\frametitle{Script-based processing}
-Python script
-\begin{itemize}
-\item Read pre-edited VHDL testbenches
-\item Divide into smaller tests
-\item Check faults after division
-\item Captures \& processes output
-\end{itemize}
+Specialized python script
+\vspace{1cm}
+\includegraphics[width=\textwidth]{images/Scriptflow.pdf}
 \end{frame}
 
+\begin{frame}\frametitle{Script-based processing}
+Features
+\begin{itemize}
+\item Standalone functions
+\item Customizable process
+\item Different modes of separation
+\item Text \& JUnit format reports
+\item Automated file cleanup
+\end{itemize}
+\end{frame}
 
 \subsection{Continuous Integration}
 
 \begin{frame}\frametitle{Continuous Integration}
+\begin{columns}
+\begin{column}{0.6\textwidth}
 Hudson-CI
 \begin{itemize}
 \item Centralized, automated testing
 \item Revision control integration (e.g. Git)
 \item Statistics on success
+\item Standardized test reports (JUnit)
+\item Very customizable
 \end{itemize}
+\end{column}
+\column{0.5\textwidth}
+\includegraphics[width=0.6\textwidth]{images/hudson.png}
+\end{columns}
 \end{frame}
 
-\subsection{Specialized library}
-
-\begin{frame}\frametitle{Specialized library}
-Bitvis Utility Library
-\begin{itemize}
-\item Expands VHDL functions
-\item Quick \& uniform coding
-\item Compatible with all VHDL versions
-\end{itemize}
+\begin{frame}\frametitle{Hudson interface}
+\centering
+\includegraphics[width=\textwidth]{images/hudsoninterface.png}
 \end{frame}
 
-\section{Problems and Future Work}
+\begin{frame}\frametitle{Hudson statistics}
+\centering
+\includegraphics[width=0.8\textwidth]{images/hudsonstats.png}
+\end{frame}
+
+\begin{frame}\frametitle{Framework design flow}
+\centering
+\includegraphics[width=0.8\textwidth]{images/Frameworkflow.pdf}
+\end{frame}
+
+\section{Concluding}
 
 \subsection{Problems}
 \begin{frame}\frametitle{Problems}
 \begin{itemize}
-\item Top-level blindness
+\item VHDL has no reflection
 \begin{itemize}
-\item No inner signal monitoring
-\item Lack of inner testing \& reporting
+\item Circumvent with higher level language
 \end{itemize}
-\item TDD not fully implementable
+\item Simulation is not synthesis
 \begin{itemize}
-\item No testing before code
-\item Unit-testing impractical
+\item Wait statements, wrong sensitivity list ...
+\end{itemize}
+\item Code duplication increases compile \& simulation time
+\begin{itemize}
+\item Implement regression testing
+\end{itemize}
+\item Relatively few options
+\begin{itemize}
+\item Further development
 \end{itemize}
 \end{itemize}
 \end{frame}
 
-\subsection{Future Work}
+\subsection{Future work}
 
-\begin{frame}\frametitle{Future Work}
+\begin{frame}\frametitle{Future work}
 \begin{itemize}
 \item Improving base script
-\item Multi-level testbench integration
+\begin{itemize}
+\item Better integration utility library
+\item More options
+\end{itemize}
+\item Regression testing
+\item Proper documentation \& examples
 \end{itemize}
 \end{frame}
 
+\subsection{Demo}
+
+\begin{frame}\frametitle{Demo}
+\centering
+\Huge Demo
+\end{frame}
 
 \end{document}

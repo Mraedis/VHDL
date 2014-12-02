@@ -1,12 +1,14 @@
 \beamer@endinputifotherversion {3.33pt}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{VHDL}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Test Driven Development}{5}{0}{1}
-\beamer@subsectionintoc {1}{3}{How is VHDL tested?}{7}{0}{1}
-\beamer@sectionintoc {2}{Exploring solutions}{9}{0}{2}
-\beamer@subsectionintoc {2}{1}{Script-based processing}{9}{0}{2}
-\beamer@subsectionintoc {2}{2}{Continuous Integration}{11}{0}{2}
-\beamer@subsectionintoc {2}{3}{Specialized library}{13}{0}{2}
-\beamer@sectionintoc {3}{Problems and Future Work}{15}{0}{3}
-\beamer@subsectionintoc {3}{1}{Problems}{15}{0}{3}
-\beamer@subsectionintoc {3}{2}{Future Work}{17}{0}{3}
+\beamer@subsectionintoc {1}{2}{Testing VHDL}{6}{0}{1}
+\beamer@sectionintoc {2}{Proposed solution}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{VHDL testing Framework}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Test Driven Development}{11}{0}{2}
+\beamer@subsectionintoc {2}{3}{Utility library}{13}{0}{2}
+\beamer@subsectionintoc {2}{4}{Script-based processing}{15}{0}{2}
+\beamer@subsectionintoc {2}{5}{Continuous Integration}{18}{0}{2}
+\beamer@sectionintoc {3}{Concluding}{23}{0}{3}
+\beamer@subsectionintoc {3}{1}{Problems}{23}{0}{3}
+\beamer@subsectionintoc {3}{2}{Future work}{25}{0}{3}
+\beamer@subsectionintoc {3}{3}{Demo}{27}{0}{3}

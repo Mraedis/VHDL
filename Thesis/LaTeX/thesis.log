@@ -1,21 +1,21 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.10.10)  2 DEC 2014 14:45
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.12)  2 DEC 2014 16:19
 entering extended mode
 **thesis.tex
-(C:\Users\Joren\Git\VHDL\Thesis\LaTeX\thesis.tex
+(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -30,22 +30,22 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\latin9.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latin9.def"
 File: latin9.def 2008/03/30 v1.1d Input encoding file
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -80,22 +80,22 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -111,28 +111,28 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks17
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count90
@@ -140,13 +140,13 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
 Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count91
 \calc@Bcount=\count92
@@ -159,16 +159,16 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count93
 \calc@Cskip=\skip45
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
 Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -182,7 +182,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box26
@@ -190,10 +190,10 @@ File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count94
 \AM@templatesizebox=\box27
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
 \lst@mode=\count95
 \lst@gtempboxa=\box28
 \lst@token=\toks19
@@ -207,33 +207,33 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 \lst@lineno=\count100
 \lst@maxwidth=\dimen118
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 \c@lstnumber=\count101
 \lst@skipnumbers=\count102
 \lst@framebox=\box29
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
-File: listings.cfg 2014/09/06 1.5e listings configuration
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
-Package: listings 2014/09/06 1.5e (Carsten Heinz)
+Package: listings 2014/03/04 1.5c (Carsten Heinz)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2014/09/06 1.5e listings language file
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\english.ldf"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
 Language: english 2005/03/30 v3.3o English support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count103
 \U@D=\dimen119
@@ -242,10 +242,10 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen120
@@ -259,7 +259,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \c@ContinuedFloat=\count104
 Package caption Info: listings package is loaded.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count105
 \float@exts=\toks20
@@ -267,13 +267,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks21
 \@floatcapt=\box31
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\afterpage.sty"
 Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
 \AP@output=\toks22
 \AP@partial=\box32
 \AP@footins=\box33
 )
-(C:\Users\Joren\Git\VHDL\Thesis\LaTeX\thesis.aux)
+(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
@@ -288,7 +288,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 31.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -325,7 +325,7 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count106
 \scratchdimen=\dimen127
@@ -381,9 +381,9 @@ File: title-generated.pdf Graphic file (type pdf)
 <use title-generated.pdf, page 1>
 Package pdftex.def Info: title-generated.pdf, page1 used on input line 38.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
- [2 <C:/Users/Joren/Git/VHDL/Thesis/LaTeX/title-generated.pdf{C:/ProgramData/Mi
-KTeX/2.9/pdftex/config/pdftex.map}>] [3]
-[4] <extended-abstract.pdf, id=25, 597.50829pt x 845.0471pt>
+ [2 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/title-generated.pdf{C:/P
+rogramData/MiKTeX/2.9/pdftex/config/pdftex.map}>] [3] [4] <extended-abstract.pd
+f, id=25, 597.50829pt x 845.0471pt>
 File: extended-abstract.pdf Graphic file (type pdf)
 
 <use extended-abstract.pdf>
@@ -423,7 +423,7 @@ File: extended-abstract.pdf Graphic file (type pdf)
 <use extended-abstract.pdf, page 1>
 Package pdftex.def Info: extended-abstract.pdf, page1 used on input line 69.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [6 <C:/Users/Joren/Git/VHDL/Thesis/LaTeX/extended-abstract.pdf>]
+ [6 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/extended-abstract.pdf>]
 <extended-abstract.pdf, id=73, page=2, 597.50829pt x 845.0471pt>
 File: extended-abstract.pdf Graphic file (type pdf)
 
@@ -439,26 +439,26 @@ File: extended-abstract.pdf Graphic file (type pdf)
 <use extended-abstract.pdf, page 2>
 Package pdftex.def Info: extended-abstract.pdf, page2 used on input line 69.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
- [7 <C:/Users/Joren/Git/VHDL/Thesis/LaTeX/extended-abstract.pdf>] (C:\Users\Jor
-en\Git\VHDL\Thesis\LaTeX\thesis.toc
+ [7 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/extended-abstract.pdf>]
+(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 5.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 5.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 5.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -470,10 +470,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 )
 \tf@toc=\write3
  [8]
-(C:\Users\Joren\Git\VHDL\Thesis\LaTeX\thesis.lof)
+(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.lof)
 \tf@lof=\write4
  [9]
-(C:\Users\Joren\Git\VHDL\Thesis\LaTeX\thesis.lot)
+(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.lot)
 \tf@lot=\write5
  [10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 102--115
@@ -530,8 +530,8 @@ Package pdftex.def Info: images/Design_Flow.png used on input line 177.
 
 LaTeX Warning: Citation `key-10' on page 15 undefined on input line 184.
 
-[15 <C:/Users/Joren/Git/VHDL/Thesis/LaTeX/images/Design_Flow.png>] [16]
-[17]
+[15 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/Design_Flow.png>]
+[16] [17]
 Overfull \hbox (9.91862pt too wide) in paragraph at lines 221--222
 \T1/lmr/m/n/10.95 There are many as-pects to a prop-erly main-tained CI sys-tem
 , but one key as-pect of over-all pro-gram-ming
@@ -550,7 +550,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--231
 
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 232.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
@@ -561,28 +561,165 @@ Underfull \hbox (badness 10000) in paragraph at lines 239--243
  []
 
 [18] [19] [20] [21] [22]
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2014/03/04 1.5c listings language file
+)
+(H:/Users/Joren/Documents/GitHub/VHDL/src/testbench_parser.py
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 5.
+ [23
 
-! Package Listings Error: File `H:/Users/Joren/Documents/GitHub/VHDL/src/testbe
-nch_parser(.py)' not found.
+]
+Overfull \hbox (104.08748pt too wide) in paragraph at lines 73--74
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: py)
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.287 ...ents/GitHub/VHDL/src/testbench_parser.py}
-                                                  
-*** (cannot \read from terminal in nonstop modes)
+Overfull \hbox (104.08748pt too wide) in paragraph at lines 84--85
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
 
- 
+
+Overfull \hbox (24.88814pt too wide) in paragraph at lines 107--108
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.28828pt too wide) in paragraph at lines 108--109
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[24]
+Overfull \hbox (29.2881pt too wide) in paragraph at lines 135--136
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.88814pt too wide) in paragraph at lines 150--151
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[25]
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <6> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 220.
+
+Overfull \hbox (143.68715pt too wide) in paragraph at lines 244--245
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][] 
+ []
+
+[26]
+Overfull \hbox (7.28828pt too wide) in paragraph at lines 272--273
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.68806pt too wide) in paragraph at lines 275--276
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.88832pt too wide) in paragraph at lines 282--283
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+[27]
+Overfull \hbox (33.68806pt too wide) in paragraph at lines 361--362
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+[28]
+Overfull \hbox (42.48799pt too wide) in paragraph at lines 411--412
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[29]
+Overfull \hbox (20.48817pt too wide) in paragraph at lines 500--501
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Overfull \hbox (24.88814pt too wide) in paragraph at lines 508--509
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][] 
+ []
+
+[30]
+Overfull \hbox (60.08784pt too wide) in paragraph at lines 523--524
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][] 
+ []
+
+[31] [32] [33]
+Overfull \hbox (42.48799pt too wide) in paragraph at lines 762--763
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Overfull \hbox (20.48817pt too wide) in paragraph at lines 771--773
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (55.68788pt too wide) in paragraph at lines 773--774
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][] 
+ []
+
+
+Overfull \hbox (42.48799pt too wide) in paragraph at lines 774--776
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+[34]) [35] [35
+
+
+] (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6458 strings out of 493921
- 92363 string characters out of 3147281
- 169724 words of memory out of 3000000
- 9648 multiletter control sequences out of 15000+200000
- 49970 words of font info for 37 fonts, out of 3000000 for 9000
+ 6824 strings out of 493921
+ 97824 string characters out of 3144876
+ 235923 words of memory out of 3000000
+ 10002 multiletter control sequences out of 15000+200000
+ 63798 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,18n,43p,1064b,1135s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 39i,18n,43p,1064b,1827s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/
+MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/latxfont/line10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmb
+x12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx6.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/lm/lmri7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (36 pages, 601970 bytes).
+PDF statistics:
+ 239 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+
