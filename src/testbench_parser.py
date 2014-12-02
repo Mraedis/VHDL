@@ -194,6 +194,12 @@ def setup_parser():
                         , help='specifies the location of the precompiled dependencies, requires a full path.'
                         , action = 'store'
                         , dest='prepath', metavar='path', default=None)
+        # The -r/--runops argument is to specify custom commands during simulation.
+        # The flag is stored in 'runops', Default value: -do "run all; exit"
+    parser.add_argument('-r', '--runops'
+                        , help='specifies custom arguments for simulation start, default: -do "run -all;exit"'
+                        , action = 'store'
+                        , dest='runops', metavar='string', default='-do "run -all;exit"')
         # The -v/--version argument is to compile in a different VHDL version other than 2008.
         # The flag is stored in 'version', default value is 2008
     parser.add_argument('-v', '--version'
@@ -475,7 +481,11 @@ def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, args_
         outputfile = open(os.getcwd() + os.sep + outputname + '_cmd_output.txt','w+')
         logwrite('n','Starting execution of tests in ' + str(key))
         for test in range(0, value):
-            readcmd = os.popen('vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" -do "run -all;exit"').read()
+            print( 'vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" '
+                               + args_t.runops.replace(entname, 'work' + str(testcount) + '.' + entname + '(' + archname + str(test)))
+            readcmd = os.popen('vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" '
+                               + args_t.runops.replace(entname, 'work' + str(testcount) + '.' + entname + '(' + archname + str(test))).read()
+            #readcmd = os.popen('vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" -do "run -all;exit"').read()
             outputfile.write(readcmd)
         outputfile.close()
         shutil.copy(os.getcwd() + os.sep + outputname + '_cmd_output.txt', foldername_t)
@@ -786,5 +796,5 @@ if __name__ == "__main__":
     testresults = format2(tempdir)                                                  # Format the testresults to humanly readable words
     xmlwrite2(testresults)                                                          # Format the above format into a JUnit-XML format
     
-    cleanup()                                                                       # Remove the temporary working directory
+    #cleanup()                                                                       # Remove the temporary working directory
     logwrite('n','Stopped script at ' + str(time.time()))                           # Note the time of ending

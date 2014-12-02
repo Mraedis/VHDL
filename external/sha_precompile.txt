@@ -1,0 +1,8 @@
+vlib sha_work
+
+vcom -work sha_work -explicit -93 "C:\\Users\\Joren\\Git\\VHDL\\external\\sha256core\\trunk\\rtl\\dual_mem.vhd"  
+vcom -work sha_work -explicit -93 "C:\\Users\\Joren\\Git\\VHDL\\external\\sha256core\\trunk\\rtl\\sha_fun.vhd"  
+vcom -work sha_work -explicit -93 "C:\\Users\\Joren\\Git\\VHDL\\external\\sha256core\\trunk\\rtl\\ff_bank.vhd"  
+vcom -work sha_work -explicit -93 "C:\\Users\\Joren\\Git\\VHDL\\external\\sha256core\\trunk\\rtl\\sh_reg.vhd"
+vcom -work sha_work -explicit -93 "C:\\Users\\Joren\\Git\\VHDL\\external\\sha256core\\trunk\\rtl\\msg_comp.vhd"
+vcom -work sha_work -explicit -93 "C:\\Users\\Joren\\Git\\VHDL\\external\\sha256core\\trunk\\rtl\\sha_256.vhd"

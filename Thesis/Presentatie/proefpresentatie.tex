@@ -1,0 +1,155 @@
+\documentclass[british,10pt]{beamer}
+
+% Beamer specific settings
+
+% Other styles can be used instead of Boadilla, e.g., to add an index column.
+\mode<presentation>
+{
+  \usetheme{Boadilla} % Without index, with footer
+}
+
+\title{Building a better VHDL testing environment}
+\author[J. Guillaume]{Joren Guillaume}
+\date[DEC'14, Gent]{Prelimenary Presentation}
+\institute[Ghent University]
+{
+  FEA\\
+  Ghent University
+}
+
+% This command makes the logo appear at the right side which does not fit
+% the UGent style. A solution is found further below.
+% \logo{\includegraphics[scale=0.25]{logolabel.jpg}}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>\frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\setbeamersize{text margin left=1cm}
+\setbeamersize{text margin right=1cm}
+
+\begin{document}
+
+
+% Titlepage containing the logo of the Faculty (Engineering in this example)
+\begin{frame}[plain]
+\mode<presentation>{\includegraphics[width=\textwidth]{tw.pdf}}
+  \titlepage
+\end{frame}
+
+
+% UGent logo at left side from second slide on.
+\setbeamertemplate{sidebar left}{ 
+\vfill 
+\rlap{%\hskip0.1cm 
+ \includegraphics[scale=0.3]{logolabel2.jpg} } 
+\vskip20pt 
+}
+
+% Outline
+\begin{frame}<beamer>\frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\subsection{VHDL}
+
+\begin{frame}\frametitle{VHDL}
+VHDL
+\begin{itemize}
+\item VHSIC Hardware Description Language
+\item Used for describing digital and mixed-signal systems 
+\item Simulated \& compiled using special tools (e.g. ModelSim)
+\end{itemize}
+\end{frame}
+
+\subsection{Test Driven Development}
+
+\begin{frame}\frametitle{Test Driven Development}
+Test Driven Development
+\begin{itemize}
+\item Software development process
+\item Write test first, write code second 
+\item Unit testing with very short development cycle
+\end{itemize}
+\end{frame}
+
+\subsection{How is VHDL tested?}
+
+\begin{frame}\frametitle{How is VHDL tested?}
+VHDL is tested using testbenches
+\begin{itemize}
+\item Architecture selection
+\item Signal drivers, stimuli \& processes
+\item Assertions and output tracking
+\end{itemize}
+\end{frame}
+
+\section{Exploring solutions}
+\subsection{Script-based processing}
+
+\begin{frame}\frametitle{Script-based processing}
+Python script
+\begin{itemize}
+\item Read pre-edited VHDL testbenches
+\item Divide into smaller tests
+\item Check faults after division
+\item Captures \& processes output
+\end{itemize}
+\end{frame}
+
+
+\subsection{Continuous Integration}
+
+\begin{frame}\frametitle{Continuous Integration}
+Hudson-CI
+\begin{itemize}
+\item Centralized, automated testing
+\item Revision control integration (e.g. Git)
+\item Statistics on success
+\end{itemize}
+\end{frame}
+
+\subsection{Specialized library}
+
+\begin{frame}\frametitle{Specialized library}
+Bitvis Utility Library
+\begin{itemize}
+\item Expands VHDL functions
+\item Quick \& uniform coding
+\item Compatible with all VHDL versions
+\end{itemize}
+\end{frame}
+
+\section{Problems and Future Work}
+
+\subsection{Problems}
+\begin{frame}\frametitle{Problems}
+\begin{itemize}
+\item Top-level blindness
+\begin{itemize}
+\item No inner signal monitoring
+\item Lack of inner testing \& reporting
+\end{itemize}
+\item TDD not fully implementable
+\begin{itemize}
+\item No testing before code
+\item Unit-testing impractical
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Future Work}
+
+\begin{frame}\frametitle{Future Work}
+\begin{itemize}
+\item Improving base script
+\item Multi-level testbench integration
+\end{itemize}
+\end{frame}
+
+
+\end{document}
