@@ -1,0 +1,6 @@
+Opmerkingen:
+-Te veel detail over randcomponenten
+-Voorbeeld! Gebruik codevoorbeeld als leidraad
+-Te weinig detail over script zelf
+-Te optimistisch over script
+-Te weinig inzicht in VHDL testbenches

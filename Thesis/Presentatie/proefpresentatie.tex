@@ -61,12 +61,11 @@
 VHDL
 \begin{itemize}
 \item VHSIC Hardware Description Language
+\item Used for describing digital and mixed-signal systems 
 \item Developed by U.S. Department of Defense
 \begin{itemize}
 \item Document \ding{222} Simulate \ding{222} Synthesize
 \end{itemize}
-\item Used for describing digital and mixed-signal systems 
-\item Compiled \& simulated using special tools (e.g. ModelSim)
 \end{itemize}
 \end{frame}
 
@@ -79,13 +78,13 @@ VHDL
 \begin{frame}\frametitle{Testing VHDL}
 Testbenches
 \begin{itemize}
-\item Entity \& architecture selection
+\item Unit Under Test (UUT)
 \item Signal drivers, stimuli \& processes
 \item Assertions and output tracking
 \begin{itemize}
 \item Comparison to "golden reference"
-\item Wave-check
 \item Manual check
+\item Wave-check
 \end{itemize}
 \end{itemize}
 \vspace{0.25cm}
@@ -179,7 +178,6 @@ Features
 \begin{itemize}
 \item Standalone functions
 \item Customizable process
-\item Different modes of separation
 \item Text \& JUnit format reports
 \item Automated file cleanup
 \end{itemize}
@@ -228,17 +226,14 @@ Hudson-CI
 \begin{itemize}
 \item Circumvent with higher level language
 \end{itemize}
-\item Simulation is not synthesis
-\begin{itemize}
-\item Wait statements, wrong sensitivity list ...
-\end{itemize}
 \item Code duplication increases compile \& simulation time
 \begin{itemize}
 \item Implement regression testing
+\item Smart code filtering
 \end{itemize}
-\item Relatively few options
+\item Simulation is not synthesis
 \begin{itemize}
-\item Further development
+\item Wait statements, wrong sensitivity list ...
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -252,6 +247,7 @@ Hudson-CI
 \item Better integration utility library
 \item More options
 \end{itemize}
+\item Smart code analysis
 \item Regression testing
 \item Proper documentation \& examples
 \end{itemize}
