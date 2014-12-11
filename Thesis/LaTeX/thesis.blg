@@ -1,4 +1,20 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
-I found no \bibdata command---while reading file thesis.aux
-I found no \bibstyle command---while reading file thesis.aux
-(There were 2 error messages)
+[0] Config.pm:320> INFO - This is Biber 1.9
+[0] Config.pm:323> INFO - Logfile is 'thesis.blg'
+[51] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
+[52] Biber.pm:333> INFO - Reading 'thesis.bcf'
+[159] Biber.pm:635> INFO - Found 7 citekeys in bib section 0
+[230] Biber.pm:3051> INFO - Processing section 0
+[271] Biber.pm:3189> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[275] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
+[277] bibtex.pm:864> INFO - Found BibTeX data source 'bibliography.bib'
+[413] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
+[416] bibtex.pm:864> INFO - Found BibTeX data source 'C:/Program Files (x86)/MiKTeX 2.9/bibtex/bib/withesis/refs.bib'
+[417] Utils.pm:144> WARN - BibTeX subsystem: C:\Users\Joren\AppData\Local\Temp\cOrLoQl0iO\refs.bib_9260.utf8, line 4, warning: possible runaway string started at line 3
+[418] Utils.pm:144> WARN - I didn't find a database entry for crossref 'conf/isese/2006' in entry 'conf/isese/BhatN06' - ignoring (section 0)
+[536] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[537] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[537] Biber.pm:2928> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-GB'
+[537] Biber.pm:2932> INFO - No sort tailoring available for locale 'en-GB'
+[566] bbl.pm:517> INFO - Writing 'thesis.bbl' with encoding 'latin9'
+[569] bbl.pm:606> INFO - Output to thesis.bbl
+[569] Biber.pm:106> INFO - WARNINGS: 2

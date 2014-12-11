@@ -1,6 +1,7 @@
 \documentclass[11pt,british]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
+\usepackage[backend=biber,style=numeric,citestyle=numeric]{biblatex}
 \usepackage{lmodern}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -34,10 +35,12 @@
 \renewcommand*\glspostdescription{\Dotfill}
 \makeatother
 
+\addbibresource{bibliography.bib}
+\bibliography{refs} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Title- & blank page
 \begin{document}
-
+\renewcommand{\thepage}{\roman{page}}
 %%Mandatory blank page
 \newpage
 \thispagestyle{empty}
@@ -79,6 +82,7 @@ the obligation to state expressly the source when quoting results from this mast
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Table of Contents
 
+\setcounter{tocdepth}{2}
 \tableofcontents
 \pagebreak
 
@@ -101,8 +105,9 @@ the obligation to state expressly the source when quoting results from this mast
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \part{Problem and background}
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
 
 \newacronym{VHDL}{VHDL}{VHSIC Hardware Description Language}
 \newacronym{VHSIC}{VHSIC}{Very High Speed Integrated Circuits}
@@ -155,7 +160,7 @@ A common mistake is to think that low or ground mean \emph{zero voltage.} This i
 \newacronym{HDL}{HDL}{Hardware Description Language}
 \newacronym{RTL}{RTL}{Register Transfer Level}
 
-A \gls{HDL} can be used to describe any one of the levels mentioned in the previous section, right down to the logic gate level. However, this last one is wholly unnecessary considering synthesis tools can produce superior logic gate-level layouts \cite{key-1}. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. An \gls{RTL} flip-flop implementation is shown here: 
+A \gls{HDL} can be used to describe any one of the levels mentioned in the previous section, right down to the logic gate level. However, this last one is wholly unnecessary considering synthesis tools can produce superior logic gate-level layouts \cite{VHDLintro}. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
 \begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt]
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -180,7 +185,7 @@ end Behavioural;
 The \gls{IEEE} library provides a number of extensions on the original \gls{VHDL} specification that allow a more realistic simulation and description of hardware behaviour. An \emph{entity} defines the inputs and outputs of a certain building block, in this case the \gls{DFF}. The D stands for Delay, and it simply puts on its output, Q, that which was on the input, D, one clock period earlier. The \emph{architecture}, in this case Behavioural, takes the description of an entity and assigns a real implementation to it. All \emph{processes} are executed in parallel, this does not mean that all are triggered at the same time, nor do they take equally as long to finish, but it means that any process can be executed alongside any other process. In this case there is only one (nameless) process that describes the entire behaviour of the flip-flop. The process waits for the rising edge of the clock, which is a transition from zero to one, after which it schedules the value of D to be put on Q when the next rising edge appears.
 \\
 \\
-This is a basic example of an entity, an architecture and a process. This flip-flop could be used in certain numbers to build a \emph{register}, a collection of ones and zeroes (henceforth referred to as \emph{bits}) that is used to (temporarily) store these values. The register could then be used alongside combinational logic to build an even bigger entity. The idea here is that small building blocks can be combined to produce vast and complex circuits that are nearly impossible to describe in one go. Adding all these layers together also creates a lot of room for error, and having a multi-level design makes it challenging to pinpoint the exact level and location of any errors. Therefore, it is paramount that all code on all levels is tested thoroughly, which is done by use of \emph{testbenches} \cite{key-2}.
+This is a basic example of an entity, an architecture and a process. This flip-flop could be used in certain numbers to build a \emph{register}, a collection of ones and zeroes (henceforth referred to as \emph{bits}) that is used to (temporarily) store these values. The register could then be used alongside combinational logic to build an even bigger entity. The idea here is that small building blocks can be combined to produce vast and complex circuits that are nearly impossible to describe in one go. Adding all these layers together also creates a lot of room for error, and having a multi-level design makes it challenging to pinpoint the exact level and location of any errors. Therefore, it is paramount that all code on all levels is tested thoroughly, which is done by use of \emph{testbenches} \cite{bergeron00}.
 \\
 \\
 \newacronym{UUT}{UUT}{Unit Under Test}
@@ -188,7 +193,7 @@ This is a basic example of an entity, an architecture and a process. This flip-f
 Testbenches are made up of code that takes a certain building block, the \gls{UUT} or \gls{DUT}. The testbench then puts a certain sequence of values on the inputs and monitors the outputs. If the device performs normally, the received output sequence should match a certain \emph{golden reference}, the expected output sequence. In these testbenches it is good practice to observe how well a device performs if its inputs behave outside of the normal mode of operation. When all of these tests have finished and the output performs as expected, the device is ready to be put into production or further down the developmental process.
 \\
 \\
-If a device is not tested properly and faults propagate throughout development, they can be very expensive to correct, especially at the stage of production, where a single photomask, used to ``print'' part of the layout, can easily cost \$100,000 \cite{key-3} (\euro81,000 at time of writing). Therefore a large portion of time is spent writing and executing tests\cite{key-4}. A large number of practices to improve both the speed and quality of testing and coding exist, but the focus chosen in this thesis is \gls{TDD}. This practice has proven to increase test coverage \cite{key-5}, decrease defect density \cite{key-8} as well as improve code quality \cite{key-8,key-9}.
+If a device is not tested properly and faults propagate throughout development, they can be very expensive to correct, especially at the stage of production, where a single photomask, used to ``print'' part of the layout, can easily cost \$100,000 (\euro81,000 at time of writing)\cite{weber06}. Therefore a large portion of time is spent writing and executing tests. A large number of practices to improve both the speed and quality of testing and coding exist, but the focus chosen in this thesis is \gls{TDD}. This practice has proven to increase test coverage \cite{Siniaalto:2007:CCS:1302496.1302946}, decrease defect density \cite{TDDinpractice} as well as improve code quality \cite{TDDinpractice,conf/isese/BhatN06}.
 
 \begin{figure}[h]
     \centering
@@ -199,11 +204,13 @@ If a device is not tested properly and faults propagate throughout development, 
 
 
 \subsection{Test Driven Development}
-Test Driven Development is a proven development technique that has regained traction in the past decade, primarily through the efforts of Kent Beck \cite{key-10}. The technique focuses on tests being created before the actual code. It is important to make certain distinctions before going more in depth on the used methods. The developing community has a great many practices, each with their own names and methods, and hardly none are mutually exclusive.
+%Citations needed
+Test Driven Development is a proven development technique that has regained traction in the past decade, primarily through the efforts of Kent Beck\cite{VHDLUnit}. The technique focuses on tests being created before the actual code. It is important to make certain distinctions before going more in depth on the used methods. The developing community has a great many practices, each with their own names and methods, and hardly none are mutually exclusive.
 
 \subsubsection{Unit Testing}
 To understand \gls{TDD}, an basic knowledge of \emph{Unit Testing} is required. In software testing, a unit test is a test designed to check a single unit of code. Ideally, this unit is the smallest piece in which the code can be divided. A unit test should always test only a single entity, and only one aspect of that entity's behaviour. This division in units has a number of benefits, one of the most important being that code is exceedingly easy to maintain. Furthermore, the division of the code makes changes, when needed, fast to be carried out and ensures that only the modified code needs to re-tested.
 
+%% herschrijven!
 \subsubsection{Test First Development}
 Another main component of \gls{TDD} is \gls{TFD}, a technique that has a developer writing tests first, before any code has been written. This method makes the developer think on what the code has to achieve, rather than what the specific implementation has to be. A key feature of a new test is that it has to fail during its first run. If not, the test is obsolete seeing as the functionality it tests has already been implemented. After being run for the first time (and failing), the developer implements just enough code to get the test to pass. Once the test succeeds, it is time for a new test.
 
@@ -213,25 +220,59 @@ The third pillar of TDD is refactoring. After the tests succeed, it is necessary
 \subsubsection{Test Driven Development}
 Test Driven Development is a combination of the previously mentioned techniques. A Unit Test is written before any code, the test is then executed and should fail. After the failure, the most basic code to make the test pass is implemented, the test is then executed again and should pass. After this first pass, the code written for the passing of the test, and only this code, is edited to perform and look better. This follows all steps mentioned above, a \emph{Unit Test} is written according to \emph{Test First Development} and is \emph{Refactored} later.
 
-\newpage
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=0.25\textwidth]{images/tdd.pdf}
+    \caption{Three step TDD design flow}
+    \label{fig:TDD_Flow}
+\end{figure}
 
-\section{Testing VHDL}
+\newpage
 %Wat zijn de gangbare praktijken in de industrie?
-%Wat is het marktaandeel van VHDL?
-%Wat doet VHDL bij een testbench? Specialiteitjes waar er op gelet moet worden?
-%Wat is de gemiddelde looptijd van een groot project?
+\newacronym{CRV}{CRV}{Constrained Random Verification}
+\newacronym{DT}{DT}{Directed Testing}
+\newacronym{FC}{FC}{Funcational Coverage}
+\newacronym{CC}{CC}{Code Coverage}
+\newacronym{IC}{IC}{Intelligent Coverage}
+\section{Current industry practices}
+As mentioned before, a number of practices exist to improve speed and quality of testing and coding. The bigger part of these practices are applied in the software development industry, where this is quite literally their entire business. Moving to \gls{HDL}s, it stands to reason that code meant for synthesis may not be able to follow all of these best practices. However, the industry has formed several practices and \emph{methodologies} to try and create a uniform verification process. The most well-known will be discussed in some detail below.
+
+\subsection{Coverage}
+Coverage is a generic term that is used to describe how fully a design has been tested on one aspect or another. There exist many tools for different coverage analyses, but in this section we will focus only on the types of coverage.
+
+\subsubsection*{Code Coverage}
+\newacronym{FSM}{FSM}{Finite State Machine}
+In development, \gls{CC} is a type of measurement to indicate how well the source code has been tested. With the use of a coverage report, unused blocks of code can be uncovered, these blocks might indicate unnecessary code or a bug. Imagine a \gls{FSM} with an unused reset state, this might indicate that the reset isn't functioning properly or there are no tests covering the reset. CC does not, however, provide any real functional analysis. It does not indicate any missing lines of code nor does it tell you whether the inputs and outputs behave properly.
+
+\subsubsection*{Funcational Coverage}
+\gls{FC} is the practice of measuring whether design covers all possible use states it can possibly be in. Good practice is to include all possible cases, including corner cases, cases that cover multiple clock cycles, erroneous cases such as receiving an interrupt when processing or overflowing a buffer and so on. 
+
+\subsection{Verification Methodologies}
+
+\subsubsection{Formal Verification}
+On top of the aforementioned, there are several more practices that have unique ways of verifying the propertiesof a design, but aren't used sufficiently to merit full detailing. Formal verification is such a practice, where the core idea is to mathematically prove the design from its specifications. The upside is that the design is completely verified, however, it it out of use because proving large designs is not only tedious but takes up ridiculous amounts of man-hours.
+
+\subsubsection{Constrained Random Verification}
+\gls{CRV} is an industry practice where one or more inputs are generated randomly, within certain bounds or \emph{constraints}. This practice was brought into use after designs grew too large for \gls{DT} to support. DT has verification engineers write out very specific things they wanted to test, for instance, a reset pulse to verify the reset working correctly. CRV opposes this with the idea that for all behaviour to be tested properly in large designs, the amount of time spent writing and executing tests would simply become too great. It proposes a solution where inputs are generated randomly, within certain bounds, but in a sufficiently large quantity to have implicitly covered all scenarios. It is important to note that in DT, expected behaviour is directly tested, but in CRV it is likely to be the unexpected behaviour that gets tested too. This solved the long standing problem of testing any and all behaviour, including the unexpected.
+
+\subsection{Open Source VHDL Verification Methodology}
+\newacronym{OSVVM}{OSVVM}{Open Source VHDL Verification Methodology}
+The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV}, \gls{FC} and \gls{IC} to be implemented in a project. 
+
+\subsubsection{Intelligent Coverage}
+
+
+\subsection{Other practices}
 
 \newpage
-
-\section{Building a framework}
-During the making of this thesis, a number of approaches was investigated and some were put to practical use. Ultimately, the most practical and straightforward approach was to implement a form of Unit Testing. Alongside, an extensive library, written in \gls{VHDL}, was used to ease the building of testbenches. Finally, a central server was installed that repeatedly and automatically ran the script and read the resulting test outputs.
 
 %Wat is CI? Wat doet Hudson?
-%Kan VHDL gemakkelijk ontwikkeld worden met Continuous Integration?
-%Wat is ModelSim, waarom gebruiken? Mogelijke opties/voordelen? gratis studentenversie
+%GIT? Hoe werkt het, waarom?
 %Waarom automated? Voordelen?
 %Problemen bij implementatie? Tekortkomingen?
-%Wat is BitVis? Hoe helpt dit? 
+
+\section{Software development practices}
+During the making of this thesis, a number of approaches was investigated and some were put to practical use. In this chapter, the more useful and tried of the aforementioned are discussed in some detail.
 
 \subsection{Continuous Integration}
 \gls{CI} is a software development technique in which developers upload the edits on the software, or their \emph{build}, to a central server which then \emph{continuously integrates} the code from multiple developers. This to prevent integration headaches when the code of multiple developers has diverged to such an extent that it would take much more time to make the edits work together than if they had been integrated early on.
@@ -255,6 +296,13 @@ Combining all of these practices saves developers a lot of time and, by extensio
 \item Graphical and statistical overview of test progress throughout builds.
 \end{itemize}
 
+%Kan VHDL gemakkelijk ontwikkeld worden met Continuous Integration?
+%Wat is ModelSim, waarom gebruiken? Mogelijke opties/voordelen? gratis studentenversie
+%Wat is BitVis? Hoe helpt dit? 
+%Wat is het marktaandeel van VHDL?
+%Wat doet VHDL bij een testbench? Specialiteitjes waar er op gelet moet worden?
+%Wat is de gemiddelde looptijd van een groot project?
+
 \subsection{Modelsim}
 As mentioned in section~\ref{sec:intro} \gls{HDL}s are used for developing hardware, and need to be tested and build as such. Like any other programming language, they need a dedicated compiler to fault-check the code and build the binaries. Unlike other programming languages, however, they need a simulator in order to verify the builds.
 \\
@@ -274,24 +322,27 @@ ModelSim is the simulator that was used for several reasons. First, a free stude
 %-> State facts
 
 \pagebreak{}
-\begin{thebibliography}{1}
-\bibitem{key-1}http://www.asic-world.com/vhdl/intro1.html
 
-\bibitem{key-2}Writing Testbenches: Functional Verification of HDL Models
+\printbibliography
 
-\bibitem{key-3}Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis
-
-\bibitem{key-4}Citation needed !!
-
-\bibitem{key-5}A comparative case study on the impact of test-driven development on program design and test coverage
-
-\bibitem{key-6}http://martinfowler.com/bliki/UnitTest.html
-
-\bibitem{key-8}A Longitudinal Study of the Use of a Test-Driven Development Practice in Industry
-
-\bibitem{key-9}Evaluating the Efficacy of Test-Driven Development
-
-\end{thebibliography}
+%\begin{thebibliography}{1}
+%\bibitem{key-1}http://www.asic-world.com/vhdl/intro1.html
+%
+%\bibitem{key-2}Writing Testbenches: Functional Verification of HDL Models
+%
+%\bibitem{key-3}Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis
+%
+%\bibitem{key-4}Citation needed !!
+%
+%\bibitem{key-5}A comparative case study on the impact of test-driven development on program design and test coverage
+%
+%\bibitem{key-6}A Longitudinal Study of the Use of a Test-Driven Development Practice in Industry
+%
+%\bibitem{key-7}Evaluating the Efficacy of Test-Driven Development
+%
+%\bibitem{key-8}http://martinfowler.com/bliki/UnitTest.html
+%
+%\end{thebibliography}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 

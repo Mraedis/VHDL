@@ -418,6 +418,216 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{CRV}{}%
+{%
+\gls@defglossaryentry{CRV}%
+{%
+name={CRV},%
+sort={CRV},%
+type={acronym},%
+first={Constrained Random Verification\glsspace (CRV)},%
+firstplural={Constrained Random Verifications\glsspace (CRVs)},%
+text={CRV},%
+plural={CRVs},%
+description={Constrained Random Verification},%
+descriptionplural={Constrained Random Verification\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Constrained Random Verification},%
+longplural={Constrained Random Verifications},%
+short={CRV},%
+shortplural={CRVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DT}{}%
+{%
+\gls@defglossaryentry{DT}%
+{%
+name={DT},%
+sort={DT},%
+type={acronym},%
+first={Directed Testing\glsspace (DT)},%
+firstplural={Directed Testings\glsspace (DTs)},%
+text={DT},%
+plural={DTs},%
+description={Directed Testing},%
+descriptionplural={Directed Testing\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Directed Testing},%
+longplural={Directed Testings},%
+short={DT},%
+shortplural={DTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FC}{}%
+{%
+\gls@defglossaryentry{FC}%
+{%
+name={FC},%
+sort={FC},%
+type={acronym},%
+first={Funcational Coverage\glsspace (FC)},%
+firstplural={Funcational Coverages\glsspace (FCs)},%
+text={FC},%
+plural={FCs},%
+description={Funcational Coverage},%
+descriptionplural={Funcational Coverage\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Funcational Coverage},%
+longplural={Funcational Coverages},%
+short={FC},%
+shortplural={FCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CC}{}%
+{%
+\gls@defglossaryentry{CC}%
+{%
+name={CC},%
+sort={CC},%
+type={acronym},%
+first={Code Coverage\glsspace (CC)},%
+firstplural={Code Coverages\glsspace (CCs)},%
+text={CC},%
+plural={CCs},%
+description={Code Coverage},%
+descriptionplural={Code Coverage\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Code Coverage},%
+longplural={Code Coverages},%
+short={CC},%
+shortplural={CCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IC}{}%
+{%
+\gls@defglossaryentry{IC}%
+{%
+name={IC},%
+sort={IC},%
+type={acronym},%
+first={Intelligent Coverage\glsspace (IC)},%
+firstplural={Intelligent Coverages\glsspace (ICs)},%
+text={IC},%
+plural={ICs},%
+description={Intelligent Coverage},%
+descriptionplural={Intelligent Coverage\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intelligent Coverage},%
+longplural={Intelligent Coverages},%
+short={IC},%
+shortplural={ICs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FSM}{}%
+{%
+\gls@defglossaryentry{FSM}%
+{%
+name={FSM},%
+sort={FSM},%
+type={acronym},%
+first={Finite State Machine\glsspace (FSM)},%
+firstplural={Finite State Machines\glsspace (FSMs)},%
+text={FSM},%
+plural={FSMs},%
+description={Finite State Machine},%
+descriptionplural={Finite State Machine\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Finite State Machine},%
+longplural={Finite State Machines},%
+short={FSM},%
+shortplural={FSMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OSVVM}{}%
+{%
+\gls@defglossaryentry{OSVVM}%
+{%
+name={OSVVM},%
+sort={OSVVM},%
+type={acronym},%
+first={Open Source VHDL Verification Methodology\glsspace (OSVVM)},%
+firstplural={Open Source VHDL Verification Methodologys\glsspace (OSVVMs)},%
+text={OSVVM},%
+plural={OSVVMs},%
+description={Open Source VHDL Verification Methodology},%
+descriptionplural={Open Source VHDL Verification Methodology\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Open Source VHDL Verification Methodology},%
+longplural={Open Source VHDL Verification Methodologys},%
+short={OSVVM},%
+shortplural={OSVVMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{RC}{}%
 {%
 \gls@defglossaryentry{RC}%
