@@ -1,0 +1,450 @@
+\ifglsentryexists{VHDL}{}%
+{%
+\gls@defglossaryentry{VHDL}%
+{%
+name={VHDL},%
+sort={VHDL},%
+type={acronym},%
+first={VHSIC Hardware Description Language\glsspace (VHDL)},%
+firstplural={VHSIC Hardware Description Languages\glsspace (VHDLs)},%
+text={VHDL},%
+plural={VHDLs},%
+description={VHSIC Hardware Description Language},%
+descriptionplural={VHSIC Hardware Description Language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={VHSIC Hardware Description Language},%
+longplural={VHSIC Hardware Description Languages},%
+short={VHDL},%
+shortplural={VHDLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{VHSIC}{}%
+{%
+\gls@defglossaryentry{VHSIC}%
+{%
+name={VHSIC},%
+sort={VHSIC},%
+type={acronym},%
+first={Very High Speed Integrated Circuits\glsspace (VHSIC)},%
+firstplural={Very High Speed Integrated Circuitss\glsspace (VHSICs)},%
+text={VHSIC},%
+plural={VHSICs},%
+description={Very High Speed Integrated Circuits},%
+descriptionplural={Very High Speed Integrated Circuits\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Very High Speed Integrated Circuits},%
+longplural={Very High Speed Integrated Circuitss},%
+short={VHSIC},%
+shortplural={VHSICs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TDD}{}%
+{%
+\gls@defglossaryentry{TDD}%
+{%
+name={TDD},%
+sort={TDD},%
+type={acronym},%
+first={Test Driven Development\glsspace (TDD)},%
+firstplural={Test Driven Developments\glsspace (TDDs)},%
+text={TDD},%
+plural={TDDs},%
+description={Test Driven Development},%
+descriptionplural={Test Driven Development\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Test Driven Development},%
+longplural={Test Driven Developments},%
+short={TDD},%
+shortplural={TDDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TFD}{}%
+{%
+\gls@defglossaryentry{TFD}%
+{%
+name={TFD},%
+sort={TFD},%
+type={acronym},%
+first={Test First Development\glsspace (TFD)},%
+firstplural={Test First Developments\glsspace (TFDs)},%
+text={TFD},%
+plural={TFDs},%
+description={Test First Development},%
+descriptionplural={Test First Development\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Test First Development},%
+longplural={Test First Developments},%
+short={TFD},%
+shortplural={TFDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CI}{}%
+{%
+\gls@defglossaryentry{CI}%
+{%
+name={CI},%
+sort={CI},%
+type={acronym},%
+first={Continuous Integration\glsspace (CI)},%
+firstplural={Continuous Integrations\glsspace (CIs)},%
+text={CI},%
+plural={CIs},%
+description={Continuous Integration},%
+descriptionplural={Continuous Integration\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Continuous Integration},%
+longplural={Continuous Integrations},%
+short={CI},%
+shortplural={CIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CMOS}{}%
+{%
+\gls@defglossaryentry{CMOS}%
+{%
+name={CMOS},%
+sort={CMOS},%
+type={acronym},%
+first={Complementary Metal Oxide Semiconductor\glsspace (CMOS)},%
+firstplural={Complementary Metal Oxide Semiconductors\glsspace (CMOSs)},%
+text={CMOS},%
+plural={CMOSs},%
+description={Complementary Metal Oxide Semiconductor},%
+descriptionplural={Complementary Metal Oxide Semiconductor\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Complementary Metal Oxide Semiconductor},%
+longplural={Complementary Metal Oxide Semiconductors},%
+short={CMOS},%
+shortplural={CMOSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NAND}{}%
+{%
+\gls@defglossaryentry{NAND}%
+{%
+name={NAND},%
+sort={NAND},%
+type={acronym},%
+first={Not AND\glsspace (NAND)},%
+firstplural={Not ANDs\glsspace (NANDs)},%
+text={NAND},%
+plural={NANDs},%
+description={Not AND},%
+descriptionplural={Not AND\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Not AND},%
+longplural={Not ANDs},%
+short={NAND},%
+shortplural={NANDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NOR}{}%
+{%
+\gls@defglossaryentry{NOR}%
+{%
+name={NOR},%
+sort={NOR},%
+type={acronym},%
+first={Not OR\glsspace (NOR)},%
+firstplural={Not ORs\glsspace (NORs)},%
+text={NOR},%
+plural={NORs},%
+description={Not OR},%
+descriptionplural={Not OR\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Not OR},%
+longplural={Not ORs},%
+short={NOR},%
+shortplural={NORs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{HDL}{}%
+{%
+\gls@defglossaryentry{HDL}%
+{%
+name={HDL},%
+sort={HDL},%
+type={acronym},%
+first={Hardware Description Language\glsspace (HDL)},%
+firstplural={Hardware Description Languages\glsspace (HDLs)},%
+text={HDL},%
+plural={HDLs},%
+description={Hardware Description Language},%
+descriptionplural={Hardware Description Language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hardware Description Language},%
+longplural={Hardware Description Languages},%
+short={HDL},%
+shortplural={HDLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{RTL}{}%
+{%
+\gls@defglossaryentry{RTL}%
+{%
+name={RTL},%
+sort={RTL},%
+type={acronym},%
+first={Register Transfer Level\glsspace (RTL)},%
+firstplural={Register Transfer Levels\glsspace (RTLs)},%
+text={RTL},%
+plural={RTLs},%
+description={Register Transfer Level},%
+descriptionplural={Register Transfer Level\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Register Transfer Level},%
+longplural={Register Transfer Levels},%
+short={RTL},%
+shortplural={RTLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IEEE}{}%
+{%
+\gls@defglossaryentry{IEEE}%
+{%
+name={IEEE},%
+sort={IEEE},%
+type={acronym},%
+first={Institute of Eletrical and Eletronics Engineers\glsspace (IEEE)},%
+firstplural={Institute of Eletrical and Eletronics Engineerss\glsspace (IEEEs)},%
+text={IEEE},%
+plural={IEEEs},%
+description={Institute of Eletrical and Eletronics Engineers},%
+descriptionplural={Institute of Eletrical and Eletronics Engineers\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Institute of Eletrical and Eletronics Engineers},%
+longplural={Institute of Eletrical and Eletronics Engineerss},%
+short={IEEE},%
+shortplural={IEEEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DFF}{}%
+{%
+\gls@defglossaryentry{DFF}%
+{%
+name={DFF},%
+sort={DFF},%
+type={acronym},%
+first={D Flip-Flop\glsspace (DFF)},%
+firstplural={D Flip-Flops\glsspace (DFFs)},%
+text={DFF},%
+plural={DFFs},%
+description={D Flip-Flop},%
+descriptionplural={D Flip-Flop\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={D Flip-Flop},%
+longplural={D Flip-Flops},%
+short={DFF},%
+shortplural={DFFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{UUT}{}%
+{%
+\gls@defglossaryentry{UUT}%
+{%
+name={UUT},%
+sort={UUT},%
+type={acronym},%
+first={Unit Under Test\glsspace (UUT)},%
+firstplural={Unit Under Tests\glsspace (UUTs)},%
+text={UUT},%
+plural={UUTs},%
+description={Unit Under Test},%
+descriptionplural={Unit Under Test\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unit Under Test},%
+longplural={Unit Under Tests},%
+short={UUT},%
+shortplural={UUTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DUT}{}%
+{%
+\gls@defglossaryentry{DUT}%
+{%
+name={DUT},%
+sort={DUT},%
+type={acronym},%
+first={Device Under Test\glsspace (DUT)},%
+firstplural={Device Under Tests\glsspace (DUTs)},%
+text={DUT},%
+plural={DUTs},%
+description={Device Under Test},%
+descriptionplural={Device Under Test\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Device Under Test},%
+longplural={Device Under Tests},%
+short={DUT},%
+shortplural={DUTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{RC}{}%
+{%
+\gls@defglossaryentry{RC}%
+{%
+name={RC},%
+sort={RC},%
+type={acronym},%
+first={Revision Control\glsspace (RC)},%
+firstplural={Revision Controls\glsspace (RCs)},%
+text={RC},%
+plural={RCs},%
+description={Revision Control},%
+descriptionplural={Revision Control\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Revision Control},%
+longplural={Revision Controls},%
+short={RC},%
+shortplural={RCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

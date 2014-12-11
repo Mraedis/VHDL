@@ -693,6 +693,147 @@ def format2(tempdir_t=None, foldername_t=None):
     targetfile.close()
     os.chdir(currentdir)
     return everyline
+
+## grabs processed output, converts to JUnit compatible XML file
+# Available format is Package (collection of testsuites with an own name)
+# containing testsuites with each their own name and testcount
+# Who each have testcases with their own name and error/success report
+# Format of testresults: [Name , Count, Testresult1, Testresult2, ... ]
+# Testresult format is: [Name, Count, Test1, Test2, ...]
+# Test format is [Name, Test passed, NumberOfSubTests, testresult1, testresult2, ...]
+def xmlwrite(testresults, foldername_t=None):
+    if (foldername_t == None):
+        foldername_t = foldername
+    
+    hostname = str(testresults[0])                                                          # Hostname is the RANDOMNAME
+    xmltargetpath = foldername + os.sep + hostname + '_testresults.xml'                     # Save in file named RANDOMNAME_testresults.xml
+    xmltargetfile = open(xmltargetpath, 'w+')
+    
+    ts = []                                                                                 # Every file is a testsuite
+    
+    # JUnit-xml format is: TestCase(Name, ClassName, Elapsed_Time_In_Sec, Stdout, Stderr) 
+    #                      TestSuite(Name, Test_cases[], Hostname, ID, Package, Timestamp, Properties)
+    for testresult in testresults[2:]:
+        test_cases = []                                                                     # Every testsuite can contain multiple testcases
+        for test in testresult[2:]:
+            testcase = TestCase(test[0], testresult[0], None)
+            if(not test[1]):
+                testcase.add_failure_info(None, test[3:])
+            test_cases.append(testcase)
+        ts.append(TestSuite(testresult[0], test_cases, testresults[0]))
+    xmltargetfile.write(TestSuite.to_xml_string(ts))
+    xmltargetfile.close()
+    
+def format3(tempdir_t=None, foldername_t=None):
+    if (tempdir_t == None):
+        tempdir_t = tempdir
+    if (foldername_t == None):
+        foldername_t = foldername
+    testname = tempdir_t.split(os.sep)[-1]
+    currentdir = os.getcwd()
+    os.chdir(tempdir_t)
+    
+    failedtests, passedtests, othernotes, totaltests = 0, 0, 0, 0
+    failedlines, passedlines, otherlines, everyline = [], [], [], []
+    
+    for file in os.listdir(tempdir_t):                              # Get every file that is a commandline output file
+        if file.endswith('_cmd_output.txt'):
+            failedtests_l, passedtests_l, othernotes_l, totaltests_l = 0, 0, 0, 0
+            failedlines_l, passedlines_l, otherlines_l, everyline_l = '', '', '', ''
+            source = open(file,'r+')
+      
+            ReadNote = False
+            lastline = ''
+            for line in source:
+                words = line.split(' ')
+                if ReadNote == True:
+                    if (len(words) > 5):
+                        to_add = ' - time: ' + words[5] + ' ' + words[6] + '\n'
+                    else:
+                        to_add = line
+                    if lastline == 'success':
+                        passedlines_l += to_add
+                    elif lastline == 'failed':
+                        failedlines_l += to_add
+                    elif lastline == 'other':
+                        otherlines_l += to_add
+                    everyline_l += to_add
+                    ReadNote = False
+                    
+                elif (len(words) > 2):
+                    if(words[2] == 'Note:'):
+                        ReadNote = True
+                        if(len(words) > 4):
+                            if(words[4] == 'failed\tname:'):
+                                failedtests_l += 1
+                                totaltests_l += 1
+                                failedlines_l += str(failedtests_l).zfill(4) + ' - ' + line[11:-1]
+                                lastline = 'failed'
+                            elif(words[4] == 'success\tname:'):
+                                passedtests_l += 1
+                                totaltests_l += 1
+                                passedlines_l += str(passedtests_l).zfill(4) + ' - ' + line[11:-1].split('-')[0]
+                                lastline = 'success'
+                            else:
+                                othernotes_l += 1
+                                totaltests_l += 1
+                                otherlines_l += str(othernotes_l).zfill(4) + ' - ' + line[11:-1]
+                                lastline = 'other'
+                        else:
+                            othernotes_l += 1
+                            totaltests_l += 1
+                            otherlines_l += str(othernotes_l).zfill(4) + ' - ' + line[11:-1]
+                            lastline = 'other'
+                        everyline_l += str(totaltests_l).zfill(4) + ' - ' + line[11:-1]
+                        
+            if ReadNote == True:
+                to_add = ' - time: ' + words[5] + ' ' + words[6]
+                if lastline == 'succes':
+                    passedlines_l += to_add[1:-1]
+                elif lastline == 'failed':
+                    failedlines_l += to_add
+                elif lastline == 'other':
+                    otherlines_l += to_add
+                everyline_l += to_add
+            
+            failedtests += failedtests_l
+            passedtests += passedtests_l
+            othernotes += othernotes_l
+            totaltests += totaltests_l
+            failedlines.append(failedlines_l)
+            passedlines.append(passedlines_l)
+            otherlines.append(otherlines_l)
+            everyline.append(everyline_l)
+            
+            source.close()
+            
+                #Write plain .txt file with testresults
+    targetpath = foldername_t + os.sep + testname + '_testresults.txt'
+    targetfile = open(targetpath,'w+')
+    targetfile.write('total tests: '      + str(totaltests)
+                     + '\ntests passed: ' + str(passedtests)
+                     +'\ntests failed: '  + str(failedtests)
+                     + '\nother notes: '  + str(othernotes))
+    output_failed, output_passed, output_other, output_every = '', '', '', ''
+    for x in range (0, len(failedlines)):
+        output_failed += failedlines[x]
+        output_passed += passedlines[x]
+        output_other += otherlines[x]
+        output_every += everyline[x]
+    targetfile.write('\n\n\nPassed tests reports:\n' + output_passed
+                     + '\n\nFailed tests reports:\n' + output_failed
+                     + '\n\nOther notes:\n'          + output_other
+                     + '\n\n\nAll test results:\n'   + output_every)
+    
+    print( 'total tests: '      + str(totaltests)
+           + '\ntests passed: ' + str(passedtests)
+           +'\ntests failed: '  + str(failedtests)
+           + '\nother notes: '  + str(othernotes))
+    #Print left out - optional command line output
+    
+    targetfile.close()
+    os.chdir(currentdir)
+    return everyline
     
     
 #Write .xml file in JUnit format (For use in Eclipe)
