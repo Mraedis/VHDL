@@ -658,3 +658,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{XML}{}%
+{%
+\gls@defglossaryentry{XML}%
+{%
+name={XML},%
+sort={XML},%
+type={acronym},%
+first={eXtensible Markup Language\glsspace (XML)},%
+firstplural={eXtensible Markup Languages\glsspace (XMLs)},%
+text={XML},%
+plural={XMLs},%
+description={eXtensible Markup Language},%
+descriptionplural={eXtensible Markup Language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={eXtensible Markup Language},%
+longplural={eXtensible Markup Languages},%
+short={XML},%
+shortplural={XMLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

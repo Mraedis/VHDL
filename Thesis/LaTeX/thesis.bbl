@@ -106,6 +106,27 @@
       \verb 10.1109/AGILE.2007.43
       \endverb
     \endentry
+    \entry{ICoverage}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{8533575c6d963e59f8b87340bdc46755}
+      \strng{fullhash}{8533575c6d963e59f8b87340bdc46755}
+      \field{sortinit}{L}
+      \field{sortinithash}{c41a2b5886eeae464e75d1a9df4cd13e}
+      \field{labeltitle}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
+      \field{title}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
+      \field{urlday}{25}
+      \field{urlmonth}{07}
+      \field{urlyear}{2014}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.synthworks.com/blog/2013/05/24/osvvms-intelligent-coverage-is-5x-or-more-faster-than-systemverilogs-constrained-random/
+      \endverb
+    \endentry
     \entry{Siniaalto:2007:CCS:1302496.1302946}{inproceedings}{}
       \name{labelname}{2}{}{%
         {{hash=ec60540f104c366402a1ade216fa9053}{Siniaalto}{S\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
@@ -171,7 +192,7 @@
       }
       \name{editor}{3}{}{%
         {{hash=791dd40fd1d6b34669542d7c4efc2be1}{Travassos}{T\bibinitperiod}{Guilherme\bibnamedelima Horta}{G\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{hash=9e18e47a44375ce2af3acfca9794292a}{Maldonado}{M\bibinitperiod}{José\bibnamedelima Carlos}{J\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{hash=b4ff357640fb1a0eaed1703bb95ce45e}{Maldonado}{M\bibinitperiod}{José\bibnamedelima Carlos}{J\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
         {{hash=e1ce15e2eeb53e3fc8c6035fd761594b}{Wohlin}{W\bibinitperiod}{Claes}{C\bibinitperiod}{}{}{}{}}%
       }
       \list{publisher}{1}{%
