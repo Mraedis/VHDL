@@ -65,7 +65,7 @@ the obligation to state expressly the source when quoting results from this mast
 %% Preface
 
 \newpage{}\part*{Preface}
-
+\emph{\color{red}Dankwoord en zo verder.}
 \pagebreak{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,12 +77,13 @@ the obligation to state expressly the source when quoting results from this mast
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Extended abstract
-
-\includepdf[pages={1,2}]{extended-abstract.pdf}
+% Nog geen extended abstract
+%\includepdf[pages={1,2}]{extended-abstract.pdf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Table of Contents
 
+\newpage
 \setcounter{tocdepth}{2}
 \tableofcontents
 \pagebreak
@@ -95,9 +96,9 @@ the obligation to state expressly the source when quoting results from this mast
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% List of tables
-
-\listoftables
-\pagebreak
+% Nog geen tabellen
+%\listoftables
+%\pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Used abbreviations and acronyms
@@ -124,7 +125,7 @@ Developing \gls{VHDL}, like any code, is prone to error creation, either by user
 Because testing is such a time consuming process, finding errors often results in severe delays due to the need to both correct the error and test for others. Therefore it is in the best interests of both testing- and software engineers to write testbenches with maximal coverage, optimal readability and minimum time spent. It is also important to find and correct errors with minimal delay and maximal efficiency. This entire process should affect the least amount of code possible in order to minimize time spent retesting and modifying the code.
 \\
 \\
-In this thesis, the objective is to provide VHDL users with an operating system independent framework. This framework will allow users to quickly and consistently create, modify and execute testbenches. To accomplish all of this, a number of tried and proven external tools will be gathered around a central python script. This combination will ensure timely and automated building, testing and test report generation.
+In this thesis, the objective is to provide VHDL users with an operating system independent framework. This framework will allow users to quickly and consistently create, modify and execute testbenches. To accomplish all of this, a number of tried and proven external tools will be gathered around a central Python script. This combination will ensure timely and automated building, testing and test report generation.
 
 %In this thesis, a number of mechanics are used to optimize both testing and coding. Based loosely off %of \gls{TDD}, tests are written to function and be tested independently.  In order to maximize %coverage and keep the time spent writing tests to a minimum, a library with often used functions and %other useful code is made available. Alongside of it is a tool, written in Python, to process tests %independently  and represent the results in a quick and easy-to-read format.
 
@@ -181,7 +182,7 @@ begin
 end Behavioural;
 \end{lstlisting}
 
-\newacronym{IEEE}{IEEE}{Institute of Eletrical and Eletronics Engineers}
+\newacronym{IEEE}{IEEE}{Institute of Electrical and Electronics Engineers}
 \newacronym{DFF}{DFF}{D Flip-Flop}
 The \gls{IEEE} library provides a number of extensions on the original \gls{VHDL} specification that allow a more realistic simulation and description of hardware behaviour. An \emph{entity} defines the inputs and outputs of a certain building block, in this case the \gls{DFF}. The D stands for Delay, and it simply puts on its output, Q, that which was on the input, D, one clock period earlier. The \emph{architecture}, in this case Behavioural, takes the description of an entity and assigns a real implementation to it. All \emph{processes} are executed in parallel, this does not mean that all are triggered at the same time, nor do they take equally as long to finish, but it means that any process can be executed alongside any other process. In this case there is only one (nameless) process that describes the entire behaviour of the flip-flop. The process waits for the rising edge of the clock, which is a transition from zero to one, after which it schedules the value of D to be put on Q when the next rising edge appears.
 \\
@@ -208,7 +209,7 @@ If a device is not tested properly and faults propagate throughout development, 
 %Wat zijn de gangbare praktijken in de industrie?
 \newacronym{CRV}{CRV}{Constrained Random Verification}
 \newacronym{DT}{DT}{Directed Testing}
-\newacronym{FC}{FC}{Funcational Coverage}
+\newacronym{FC}{FC}{Functional Coverage}
 \newacronym{CC}{CC}{Code Coverage}
 \newacronym{IC}{IC}{Intelligent Coverage}
 \section{Current industry practices}
@@ -221,7 +222,7 @@ Coverage is a generic term that is used to describe how fully a design has been 
 \newacronym{FSM}{FSM}{Finite State Machine}
 In development, \gls{CC} is a type of measurement to indicate how well the source code has been tested. With the use of a coverage report, unused blocks of code can be uncovered, these blocks might indicate unnecessary code or a bug. Imagine a \gls{FSM} with an unused reset state, this might indicate that the reset isn't functioning properly or there are no tests covering the reset. CC does not, however, provide any real functional analysis. It does not indicate any missing lines of code nor does it tell you whether the inputs and outputs behave properly.
 
-\subsubsection{Funcational Coverage}
+\subsubsection{Functional Coverage}
 \gls{FC} is the practice of measuring whether design covers all possible use states it can possibly be in. Good practice is to include all possible cases, including corner cases, cases that cover multiple clock cycles, erroneous cases such as receiving an interrupt when processing or overflowing a buffer and so on. 
 
 \subsection{Verification}
@@ -244,7 +245,7 @@ The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV} and \gls
 \subsection{Simulation tools}
 As mentioned in section~\ref{sec:intro} \gls{HDL}s are used for developing hardware, and need to be tested and build as such. Like any other programming language, they need a dedicated compiler to fault-check the code and build the binaries. Unlike other programming languages, however, they need a simulator in order to verify the builds. There exist many compilers and simulators, almost none are exclusive for \gls{VHDL}, almost all are dual-language and support some form of Verilog, a different HDL. However, many of them refuse to support the latest additions to the VHDL language specification, even the 2002 additions are hard to be found.
 
-\subsubsection{Modelsim}
+\subsubsection{ModelSim}
 ModelSim is the simulator that was used for several reasons. First, a free student edition was available. Considering licenses  outside of school can easily cost upward of \$25,000 (\euro20,250 at time of writing) this made it ideal for any thesis or student related work. Second, ModelSim supports all versions of \gls{VHDL}, which is the \gls{HDL} we are processing. And last but not least, ModelSim is one of the industry's most used simulators, enabling a pool of experience to be consulted.
 
 \newpage
@@ -276,7 +277,7 @@ Test Driven Development is a combination of the previously mentioned techniques.
 
 \begin{figure}[h]
     \centering
-	\includegraphics[width=0.45\textwidth]{images/tdd.pdf}
+	\includegraphics[width=0.38\textwidth]{images/tdd.pdf}
     \caption{Three step TDD design flow}
     \label{fig:TDD_Flow}
 \end{figure}
@@ -308,6 +309,11 @@ Combining all of these practices saves developers a lot of time and, by extensio
 JUnit is an implementation for the Java programming language of the xUnit specification, which defines several key components for a testing framework. Considering the relevance here is not the framework itself but the format used for its reports, details about its implementation and use will not be discussed.\\
 The JUnit reports are written in \gls{XML}, which is a type of language used for formatting data. The JUnit format is supported by numerous (open source) tools, such as Eclipse and the aforementioned Hudson-CI, which makes it an ideal candidate for further investigation. 
 
+\section{Python}
+Python is a high-level computer programming language that first appeared in 1991, with the third major revision being released in 2008. It supports object-oriented and structured programming, and is easy to use as a scripting language. A great feat of Pythons community is that there are many, many (open source) libraries available for just about any function that comes to mind. This is on top of the already impressive amount of libraries Python itself supports. In addition to this, Python has all of its standard features explained in great detail with good examples in its online documenting system. The combination of these features allows any programmer, even with very little know-how, to quickly put together anything that comes to mind.\\
+\\
+For these reasons, and its platform-independence, Python is the only programming language that was investigated.
+
 %Kan VHDL gemakkelijk ontwikkeld worden met Continuous Integration?
 %Wat is ModelSim, waarom gebruiken? Mogelijke opties/voordelen? gratis studentenversie
 %Wat is BitVis? Hoe helpt dit? 
@@ -316,11 +322,13 @@ The JUnit reports are written in \gls{XML}, which is a type of language used for
 %Wat is de gemiddelde looptijd van een groot project?
 
 \newpage
-\section{Developing a framework}
+\part{Developing a framework}
+In part I different aspects from both the software and \gls{VHDL} development worlds were discussed, each in  varying levels of detail. In this part bits and pieces of each subject are combined to form a new whole, a VHDL development framework. 
 
 
 \newpage{}
 \section{The future of testing}
+\emph{\color{red} Iets over VHDL features, verbeteringen etc}
 %Wat zijn de ontbrekende features voor het geavanceerd testen van VHDL?
 %Wat kan er verbeterd worden aan de VHDL specificatie?
 %Hoe kunnen de programmas (compilers e.d.) aangepast worden zodat dit overkomen wordt?
