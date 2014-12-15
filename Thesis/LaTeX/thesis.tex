@@ -213,6 +213,8 @@ If a device is not tested properly and faults propagate throughout development, 
 \newacronym{CC}{CC}{Code Coverage}
 \newacronym{IC}{IC}{Intelligent Coverage}
 \section{Current industry practices}
+\label{sec:industry}
+\emph{\color{red} Iets over asserts en dergelijke!}\\
 As mentioned before, a number of practices exist to improve speed and quality of testing and coding. The bigger part of these practices are applied in the software development industry, where this is quite literally their entire business. Moving to \gls{HDL}s, it stands to reason that code meant for synthesis may not be able to follow all of these best practices. However, the industry has formed several practices and \emph{methodologies} to try and create a uniform verification process. The most well-known will be discussed in some detail below.
 
 \subsection{Coverage}
@@ -255,7 +257,7 @@ ModelSim is the simulator that was used for several reasons. First, a free stude
 %Waarom automated? Voordelen?
 %Problemen bij implementatie? Tekortkomingen?
 
-\section{Software development practices}
+\section{Software development \& practices}
 During the making of this thesis, a number of approaches was investigated and some were put to practical use. In this chapter, the more useful and tried of the aforementioned are discussed in some detail.
 
 
@@ -309,10 +311,8 @@ Combining all of these practices saves developers a lot of time and, by extensio
 JUnit is an implementation for the Java programming language of the xUnit specification, which defines several key components for a testing framework. Considering the relevance here is not the framework itself but the format used for its reports, details about its implementation and use will not be discussed.\\
 The JUnit reports are written in \gls{XML}, which is a type of language used for formatting data. The JUnit format is supported by numerous (open source) tools, such as Eclipse and the aforementioned Hudson-CI, which makes it an ideal candidate for further investigation. 
 
-\section{Python}
-Python is a high-level computer programming language that first appeared in 1991, with the third major revision being released in 2008. It supports object-oriented and structured programming, and is easy to use as a scripting language. A great feat of Pythons community is that there are many, many (open source) libraries available for just about any function that comes to mind. This is on top of the already impressive amount of libraries Python itself supports. In addition to this, Python has all of its standard features explained in great detail with good examples in its online documenting system. The combination of these features allows any programmer, even with very little know-how, to quickly put together anything that comes to mind.\\
-\\
-For these reasons, and its platform-independence, Python is the only programming language that was investigated.
+\subsection{Python}
+Python is a high-level computer programming language that first appeared in 1991, with the third major revision being released in 2008. It supports object-oriented and structured programming, and is easy to use as a scripting language. A great feat of Pythons community is that there are many, many (open source) libraries available for just about any function that comes to mind. This is on top of the already impressive amount of libraries Python itself supports. In addition to this, Python has all of its standard features explained in great detail with good examples in its online documenting system. The combination of these features allows any programmer, even with very little know-how, to quickly put together anything that comes to mind.
 
 %Kan VHDL gemakkelijk ontwikkeld worden met Continuous Integration?
 %Wat is ModelSim, waarom gebruiken? Mogelijke opties/voordelen? gratis studentenversie
@@ -323,8 +323,34 @@ For these reasons, and its platform-independence, Python is the only programming
 
 \newpage
 \part{Developing a framework}
-In part I different aspects from both the software and \gls{VHDL} development worlds were discussed, each in  varying levels of detail. In this part bits and pieces of each subject are combined to form a new whole, a VHDL development framework. 
+In part I different aspects from both the software and \gls{VHDL} development worlds were discussed, each in  varying levels of detail. In this part bits and pieces of each subject are combined to form a new whole, a VHDL development framework.
 
+\section{Outlining}
+Before work begins on developing the framework, there need to be some bounds set and goals to work towards. As VHDL development is done in both Windows and Linux environments, it only makes sense to keep the whole framework as platform independent as possible. To add to this, the whole needs to be developed in the short span of under a year by one developer who has had little experience doing so. The language chosen thus must be easy to master and work on all platforms with as few as possible modifications.\\
+\\
+Furthermore, software practices will have to be applied to maintain clean code and a steady development process. To this end, work started with unit testing in mind. Parts of the VHDL testbench are separated to be executed independently in an automated fashion.
+
+\subsection{First draft}
+In section~\ref{sec:industry} some current industry practices were discussed and one of the very basic VHDL testing methods was found to be assertions. In order to remain as broad as possible, work started with processing these assertions first. The assertions thus need to be found inside the VHDL testbench, separated and saved in individual files to be executed.\\
+\\
+One of the main problems that quickly arose was: \emph{Where are the assertions located?}. To prevent overcomplicating things, the assumption was made that all tests are fitted inside their own procedure or function and that these would be called from inside the architecture body. All that would remain was to find the architecture body, find the keyword \emph{begin} and extract every line from the body.\\
+\\
+When the script was run on a file, a few problems quickly came in view:
+\begin{itemize}
+\item Tests can be a lot more complicated than first assumed
+\item Procedures and functions aren't that easily made to contain fully working code
+\item Writing tests this way is actually \emph{more} time consuming
+\end{itemize}
+To try and counter the problems, making use of a standardized function library was proposed. This way, verified code could be integrated which reduced the workload when writing the testbench. Making use of this library would also bring a degree of uniformity to the testbenches, which would help with readability.
+
+\newpage{}
+\subsection{Making improvements}
+As mentioned above, one of the first improvements was a standardized function library. To be of any use, this library should contain functions and procedures that are either used extensively throughout the developmental process, have a great potential of being used or that, when created on their own, would impose a significant workload on the developer. Considering the large percentage of the industry still working in the VHDL-93 specification, the library would need to be compatible with this version. However, to ensure future usability and steer development towards the newer versions, i.e. 2002 and 2008, these will need to be supported as well.\\
+\\
+A second improvement, yet undiscussed, would be maintaining a clean set-up. Throughout the first testing, it became apparent that when multiplying the amount of testbenches that are executed, the files around them are multiplied in the same way. Massive clutters of 'temporary' files and folders would quickly pollute the workspace, and thus keeping track and removing unneeded files would be of the essence, especially considering later modifications (see section~\ref{sec:CI}).
+
+\subsection{Hudson-CI}
+\label{sec:CI}
 
 \newpage{}
 \section{The future of testing}
@@ -374,7 +400,6 @@ In part I different aspects from both the software and \gls{VHDL} development wo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Mandatory blank page
-
 \afterpage{\blankpage}
 
 
