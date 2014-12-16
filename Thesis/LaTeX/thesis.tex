@@ -8,7 +8,6 @@
 \usepackage{pdfpages}
 \usepackage{lscape}
 \usepackage{listings}
-\lstset{language=VHDL}
 \usepackage{babel}
 \usepackage[justification=centering]{caption}
 \usepackage{float}
@@ -21,6 +20,65 @@
 
 \usepackage{multicol}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% python syntax highlighting
+
+\usepackage{color}
+\usepackage{listings}
+\usepackage{setspace}
+
+\definecolor{Code}{rgb}{0,0,0}
+\definecolor{Decorators}{rgb}{0.5,0.5,0.5}
+\definecolor{Numbers}{rgb}{0.5,0,0}
+\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5}
+\definecolor{Keywords}{rgb}{0,0,1}
+\definecolor{self}{rgb}{0,0,0}
+\definecolor{Strings}{rgb}{0,0.63,0}
+\definecolor{Comments}{rgb}{0,0.63,1}
+\definecolor{Backquotes}{rgb}{0,0,0}
+\definecolor{Classname}{rgb}{0,0,0}
+\definecolor{FunctionName}{rgb}{0,0,0}
+\definecolor{Operators}{rgb}{0,0,0}
+\definecolor{Background}{rgb}{0.98,0.98,0.98}
+
+\lstnewenvironment{python}[1][]{
+\lstset{
+frame=single,
+framesep=2mm, 
+belowskip=8pt,
+aboveskip=8pt,
+% Custom above
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=1em,
+xleftmargin=1em,
+framextopmargin=2em,
+framexbottommargin=2em,
+showspaces=false,
+showtabs=false,
+showstringspaces=false,
+frame=l,
+tabsize=4,
+% Basic
+basicstyle=\ttfamily\small\setstretch{1},
+backgroundcolor=\color{Background},
+language=Python,
+% Comments
+commentstyle=\color{Comments}\slshape,
+% Strings
+stringstyle=\color{Strings},
+morecomment=[s][\color{Strings}]{"""}{"""},
+morecomment=[s][\color{Strings}]{'''}{'''},
+% keywords
+morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
+keywordstyle={\color{Keywords}\bfseries},
+% additional keywords
+morekeywords={[2]@invariant},
+keywordstyle={[2]\color{Decorators}\slshape},
+emph={self},
+emphstyle={\color{self}\slshape},
+%
+}}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{afterpage}
@@ -166,7 +224,7 @@ A common mistake is to think that low or ground mean \emph{zero voltage.} This i
 \newacronym{RTL}{RTL}{Register Transfer Level}
 
 A \gls{HDL} can be used to describe any one of the levels mentioned in the previous section, right down to the logic gate level. However, this last one is wholly unnecessary considering synthesis tools can produce superior logic gate-level layouts \cite{VHDLintro}. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
-\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt, showstringspaces=false]
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt, showstringspaces=false]
 library IEEE;
 use IEEE.std_logic_1164.all;
 entity DFF is
@@ -222,7 +280,7 @@ As mentioned before, a number of practices exist to improve speed and quality of
 \subsection{Assertions}
 \label{subsec:assertions}
 Assertions are the standard practice of verification. An assert in VHDL is very simple, check whether some boolean condition is true. If true, do nothing, if false, return the error message and throw an error of a certain level, as in the following example:
-\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false]
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false]
 assert (not Q) report "Unexpected output value" severity failure;
 \end{lstlisting}
 In this example, an error is thrown of the severity \emph{failure}, which ends the simulation, if the value on the output \emph{Q} (see subsection~\ref{subsec:HDL})) isn't \emph{logically true}. This means the output has to have a value of \emph{high} or \emph{1}. The severity of the assertion can be in the range of notice to failure, and the simulator might be set to respond or stop only to a certain level of severity. Doing this for the right values at intervals gives the developer a quick overview of whether everything went according to plan. After all, if things went wrong, the assertion should have thrown an error here or there.
@@ -364,7 +422,7 @@ A second improvement, yet undiscussed, would be maintaining a clean set-up. Thro
 The first addition to the library was the tracking of signals and arrays (called \emph{vectors} in VHDL). VHDL itself provides assertion-based verification, as mentioned before subsection~\ref{subsec:assertions}). However, these assertions are long and nondescript. To make these easier to read and reproduce, functions could be made that act the same as a well-written assertion, but are much easier to read. Furthermore, assertions can be used to pass information about non-critical signals to a shell environment that looks for specific output text. An example:
 
 \begin{multicols}{2}
-\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
 procedure reportBack(
 	b : boolean;  result : string) is
 begin
@@ -380,7 +438,7 @@ begin
 end procedure;
 \end{lstlisting}
 \columnbreak
-\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
  wait until rising_edge(clk);
  reportback(('0' = Q), "Checking Q:1");
  wait until rising_edge(clk);
@@ -409,11 +467,19 @@ Each of these methods has its advantages and disadvantages, but to begin the sec
 
 \subsection{Code execution}
 With many files being generated and every file test by hand, an automated compile and test system had to be devised. As discussed in subsection~\ref{subsec:simtool}, ModelSim was deemed the most useful tool for this development. As many tools do, ModelSim supports command-line execution of its commands, even easier to invoke should the tool be added to the system's \emph{path} variable. Python, being a script language, fully supported execution of command-line code with it's built-in function \emph{os.system()}, an example:
-\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, language=Python]
+%\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, language=python]
+%\end{lstlisting}
+
+\begin{python}
 os.system('vlib work')
-os.system('vcom -2008 -work work tb_vhdl.vhd')
-os.system('vsim -c work.tb_vhdl(architecture_0) -do "run -all;exit"')
-\end{lstlisting}
+os.system('vcom -2008 -work work tb_dff.vhd')
+os.system('vsim -c work.tb_dff(Behavioural) -do "run -all;exit"')
+\end{python}
+
+In the above example, the VHDL library \emph{work} is made, the file \emph{tb\_dff.vhd} is compiled to it and the architecture \emph{Behavioural} of tb\_dff is executed with the options \emph{"run -all;exit"} (This means as much as \emph{run from start to end, then exit the program}.). Work is a standard name for a library, but it is prone to abuse, i.e. putting everything in the work library. Nevertheless, this is a script that is being executed and as such generic names aren't a problem for the script itself, only for debugging by the developer. the -2008 and -c flags indicate the VHDL-2008 version is being used and that the tool works in command line mode.\\
+\\
+To summarize, the script now took a testbench, separated its tests into different testbench files, compiled and executed each of these files and displayed the output in the console used to execute the script from. So some tasks are automated, but there still isn't any clear overview of results nor is there full automation.
+
 
 \subsection{Code organisation}
 The next step in the process was code organisation. Up until now everything was being done sequentially in the main Python file. With the come become increasingly complex and to increase the above promoted readability, functions were made to contain their own parts of the code.

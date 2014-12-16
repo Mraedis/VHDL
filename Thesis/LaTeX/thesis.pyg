@@ -1,0 +1,3 @@
+os.system('vlib work')
+os.system('vcom -2008 -work work tb_vhdl.vhd')
+os.system('vsim -c work.tb_vhdl(architecture_0) -do "run -all;exit"')

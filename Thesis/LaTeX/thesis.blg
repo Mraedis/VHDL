@@ -1,20 +1,20 @@
 [0] Config.pm:320> INFO - This is Biber 1.9
 [0] Config.pm:323> INFO - Logfile is 'thesis.blg'
-[49] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
-[50] Biber.pm:333> INFO - Reading 'thesis.bcf'
-[156] Biber.pm:635> INFO - Found 8 citekeys in bib section 0
-[207] Biber.pm:3051> INFO - Processing section 0
-[247] Biber.pm:3189> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[252] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
-[254] bibtex.pm:864> INFO - Found BibTeX data source 'bibliography.bib'
-[388] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
-[391] bibtex.pm:864> INFO - Found BibTeX data source 'C:/Program Files (x86)/MiKTeX 2.9/bibtex/bib/withesis/refs.bib'
-[393] Utils.pm:144> WARN - BibTeX subsystem: C:\Users\Joren\AppData\Local\Temp\djB2n4tCLl\refs.bib_5580.utf8, line 4, warning: possible runaway string started at line 3
-[395] Utils.pm:144> WARN - I didn't find a database entry for crossref 'conf/isese/2006' in entry 'conf/isese/BhatN06' - ignoring (section 0)
-[530] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[530] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[530] Biber.pm:2928> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-GB'
-[530] Biber.pm:2932> INFO - No sort tailoring available for locale 'en-GB'
-[563] bbl.pm:517> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[565] bbl.pm:606> INFO - Output to thesis.bbl
-[566] Biber.pm:106> INFO - WARNINGS: 2
+[52] biber-MSWIN:274> INFO - === %a %b %e, %Y, %H:%M:%S
+[53] Biber.pm:333> INFO - Reading 'thesis.bcf'
+[169] Biber.pm:635> INFO - Found 8 citekeys in bib section 0
+[222] Biber.pm:3051> INFO - Processing section 0
+[262] Biber.pm:3189> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[266] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
+[267] bibtex.pm:864> INFO - Found BibTeX data source 'bibliography.bib'
+[401] bibtex.pm:990> INFO - Decoding LaTeX character macros into UTF-8
+[403] bibtex.pm:864> INFO - Found BibTeX data source 'C:/Program Files (x86)/MiKTeX 2.9/bibtex/bib/withesis/refs.bib'
+[405] Utils.pm:144> WARN - BibTeX subsystem: C:\Users\Joren\AppData\Local\Temp\aCIbNMweeN\refs.bib_5548.utf8, line 4, warning: possible runaway string started at line 3
+[406] Utils.pm:144> WARN - I didn't find a database entry for crossref 'conf/isese/2006' in entry 'conf/isese/BhatN06' - ignoring (section 0)
+[534] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[534] UCollate.pm:66> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[534] Biber.pm:2928> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'en-GB'
+[534] Biber.pm:2932> INFO - No sort tailoring available for locale 'en-GB'
+[570] bbl.pm:517> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[572] bbl.pm:606> INFO - Output to thesis.bbl
+[572] Biber.pm:106> INFO - WARNINGS: 2
