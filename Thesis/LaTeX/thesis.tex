@@ -19,6 +19,8 @@
 \setlength\glsdescwidth{\textwidth}
 \makeglossaries
 
+\usepackage{multicol}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{afterpage}
@@ -159,11 +161,12 @@ A common mistake is to think that low or ground mean \emph{zero voltage.} This i
 \pagebreak
 
 \subsection{Hardware Description Languages}
+\label{subsec:HDL}
 \newacronym{HDL}{HDL}{Hardware Description Language}
 \newacronym{RTL}{RTL}{Register Transfer Level}
 
 A \gls{HDL} can be used to describe any one of the levels mentioned in the previous section, right down to the logic gate level. However, this last one is wholly unnecessary considering synthesis tools can produce superior logic gate-level layouts \cite{VHDLintro}. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
-\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt]
+\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt, showstringspaces=false]
 library IEEE;
 use IEEE.std_logic_1164.all;
 entity DFF is
@@ -214,8 +217,15 @@ If a device is not tested properly and faults propagate throughout development, 
 \newacronym{IC}{IC}{Intelligent Coverage}
 \section{Current industry practices}
 \label{sec:industry}
-\emph{\color{red} Iets over asserts en dergelijke!}\\
 As mentioned before, a number of practices exist to improve speed and quality of testing and coding. The bigger part of these practices are applied in the software development industry, where this is quite literally their entire business. Moving to \gls{HDL}s, it stands to reason that code meant for synthesis may not be able to follow all of these best practices. However, the industry has formed several practices and \emph{methodologies} to try and create a uniform verification process. The most well-known will be discussed in some detail below.
+
+\subsection{Assertions}
+\label{subsec:assertions}
+Assertions are the standard practice of verification. An assert in VHDL is very simple, check whether some boolean condition is true. If true, do nothing, if false, return the error message and throw an error of a certain level, as in the following example:
+\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false]
+assert (not Q) report "Unexpected output value" severity failure;
+\end{lstlisting}
+In this example, an error is thrown of the severity \emph{failure}, which ends the simulation, if the value on the output \emph{Q} (see subsection~\ref{subsec:HDL})) isn't \emph{logically true}. This means the output has to have a value of \emph{high} or \emph{1}. The severity of the assertion can be in the range of notice to failure, and the simulator might be set to respond or stop only to a certain level of severity. Doing this for the right values at intervals gives the developer a quick overview of whether everything went according to plan. After all, if things went wrong, the assertion should have thrown an error here or there.
 
 \subsection{Coverage}
 Coverage is a generic term that is used to describe how fully a design has been tested on one aspect or another. There exist many tools for different coverage analyses, but in this section we will focus only on the types of coverage.
@@ -247,10 +257,11 @@ The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV} and \gls
 \subsection{Simulation tools}
 As mentioned in section~\ref{sec:intro} \gls{HDL}s are used for developing hardware, and need to be tested and build as such. Like any other programming language, they need a dedicated compiler to fault-check the code and build the binaries. Unlike other programming languages, however, they need a simulator in order to verify the builds. There exist many compilers and simulators, almost none are exclusive for \gls{VHDL}, almost all are dual-language and support some form of Verilog, a different HDL. However, many of them refuse to support the latest additions to the VHDL language specification, even the 2002 additions are hard to be found.
 
+\label{subsec:simtool}
 \subsubsection{ModelSim}
-ModelSim is the simulator that was used for several reasons. First, a free student edition was available. Considering licenses  outside of school can easily cost upward of \$25,000 (\euro20,250 at time of writing) this made it ideal for any thesis or student related work. Second, ModelSim supports all versions of \gls{VHDL}, which is the \gls{HDL} we are processing. And last but not least, ModelSim is one of the industry's most used simulators, enabling a pool of experience to be consulted.
+ModelSim is the simulator that was investigated for several reasons. First, a free student edition was available. Considering licenses  outside of school can easily cost upward of \$25,000 (\euro20,250 at time of writing) this made it ideal for any thesis or student related work. Proof of this is the extensive use of ModelSim in the courses related to HDL development. Second, ModelSim supports all versions of \gls{VHDL}, which is the \gls{HDL} we are processing. Even in 2014, only one other tool was found to support all of VHDL-2008. And last but not least, ModelSim is one of the industry's most used simulators, enabling a pool of experience to be consulted.
 
-\newpage
+\emph{\color{red}Figuurtje of vergelijking tussen simulators?}
 
 %Wat is CI? Wat doet Hudson?
 %GIT? Hoe werkt het, waarom?
@@ -344,13 +355,74 @@ When the script was run on a file, a few problems quickly came in view:
 To try and counter the problems, making use of a standardized function library was proposed. This way, verified code could be integrated which reduced the workload when writing the testbench. Making use of this library would also bring a degree of uniformity to the testbenches, which would help with readability.
 
 \newpage{}
-\subsection{Making improvements}
+\subsection{First improvements}
 As mentioned above, one of the first improvements was a standardized function library. To be of any use, this library should contain functions and procedures that are either used extensively throughout the developmental process, have a great potential of being used or that, when created on their own, would impose a significant workload on the developer. Considering the large percentage of the industry still working in the VHDL-93 specification, the library would need to be compatible with this version. However, to ensure future usability and steer development towards the newer versions, i.e. 2002 and 2008, these will need to be supported as well.\\
 \\
-A second improvement, yet undiscussed, would be maintaining a clean set-up. Throughout the first testing, it became apparent that when multiplying the amount of testbenches that are executed, the files around them are multiplied in the same way. Massive clutters of 'temporary' files and folders would quickly pollute the workspace, and thus keeping track and removing unneeded files would be of the essence, especially considering later modifications (see section~\ref{sec:CI}).
+A second improvement, yet undiscussed, would be maintaining a clean set-up. Throughout the first testing, it became apparent that when multiplying the amount of testbenches that are executed, the files around them are multiplied in the same way. Massive clutters of 'temporary' files and folders would quickly pollute the workspace, and thus keeping track and removing unneeded files would be of the essence, especially considering later modifications (see subsection~\ref{subsec:CI}).
+
+\subsubsection{The Library}
+The first addition to the library was the tracking of signals and arrays (called \emph{vectors} in VHDL). VHDL itself provides assertion-based verification, as mentioned before subsection~\ref{subsec:assertions}). However, these assertions are long and nondescript. To make these easier to read and reproduce, functions could be made that act the same as a well-written assertion, but are much easier to read. Furthermore, assertions can be used to pass information about non-critical signals to a shell environment that looks for specific output text. An example:
+
+\begin{multicols}{2}
+\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
+procedure reportBack(
+	b : boolean;  result : string) is
+begin
+	if (not Q) then
+		assert false report
+			"test success" & ht & "name: "
+			& "Checking Q" severity note;
+	else
+		assert false report
+			"test failed" & ht & "name: "
+			& "Checking Q" severity note;
+	end if;
+end procedure;
+\end{lstlisting}
+\columnbreak
+\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
+ wait until rising_edge(clk);
+ reportback(('0' = Q), "Checking Q:1");
+ wait until rising_edge(clk);
+ reportback(('1' = Q), "Checking Q:2");
+ wait until rising_edge(clk);
+ reportback(('0' = Q), "Checking Q:3");
+ wait until rising_edge(clk);
+ reportback(('1' = Q), "Checking Q:4");
+ wait until rising_edge(clk);
+ reportback(('0' = Q), "Checking Q:5");
+ wait until rising_edge(clk);
+ reportback(('1' = Q), "Checking Q:6");
+ wait until rising_edge(clk);
+\end{lstlisting}
+\end{multicols}
+In the left column, the source code of the function used in the right column is displayed. It is easy to see that, to maintain the same level of useful information (report on success \emph{and} failure, name of test) without a procedure, the code would be excessively long. On top of that, the readability is improved greatly with only the logic and the message to display remaining. If this much improvement comes from a very simple function, it is not unlikely that a great deal more can come should the library be expanded.
+
+\subsubsection{Cleaning up}
+The second addition, simultaneous with the first, is the implementation of a clean-up system. As mentioned before, a massive amount of 'compiled clutter' is created when tests are separated into multiple testbenches. Several ways of dealing with this were considered, such as:
+\begin{itemize}
+\item Tracking changes in the working directory
+\item Filtering needed files and deleting everything else
+\item Compiling in a specific folder and extracting what was needed
+\end{itemize}
+Each of these methods has its advantages and disadvantages, but to begin the second method was chosen. This was easy to do, considering compiling happened in a local folder and all the files that were being used were known. The disadvantage being that, if the files used should change and this is not implemented in the code, it would result in the loss of these files.
+
+\subsection{Code execution}
+With many files being generated and every file test by hand, an automated compile and test system had to be devised. As discussed in subsection~\ref{subsec:simtool}, ModelSim was deemed the most useful tool for this development. As many tools do, ModelSim supports command-line execution of its commands, even easier to invoke should the tool be added to the system's \emph{path} variable. Python, being a script language, fully supported execution of command-line code with it's built-in function \emph{os.system()}, an example:
+\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, language=Python]
+os.system('vlib work')
+os.system('vcom -2008 -work work tb_vhdl.vhd')
+os.system('vsim -c work.tb_vhdl(architecture_0) -do "run -all;exit"')
+\end{lstlisting}
+
+\subsection{Code organisation}
+The next step in the process was code organisation. Up until now everything was being done sequentially in the main Python file. With the come become increasingly complex and to increase the above promoted readability, functions were made to contain their own parts of the code.
+
+% Voor later:
+% ultimately the third option was deemed the most suitable. The main disadvantage of this method %is that making uniform folder tracking platform independent is not very easy. Thankfully, Python %has some folder variables that are suitable for this case.
 
 \subsection{Hudson-CI}
-\label{sec:CI}
+\label{subsec:CI}\emph{\color{red}Sectietje over hudson (nodig om te verwijzen)}
 
 \newpage{}
 \section{The future of testing}

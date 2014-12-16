@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.11)  15 DEC 2014 11:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.11)  16 DEC 2014 12:09
 entering extended mode
 **thesis.tex
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.tex
@@ -946,11 +946,60 @@ Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \glo@acronym@file=\write5
 Package glossaries Info: Writing glossary file thesis.acn on input line 20.
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2014/10/28 v1.8i multicolumn formatting (FMi)
+\c@tracingmulticols=\count307
+\mult@box=\box40
+\multicol@leftmargin=\dimen150
+\c@unbalance=\count308
+\c@collectmore=\count309
+\doublecol@number=\count310
+\multicoltolerance=\count311
+\multicolpretolerance=\count312
+\full@width=\dimen151
+\page@free=\dimen152
+\premulticols=\dimen153
+\postmulticols=\dimen154
+\multicolsep=\skip78
+\multicolbaselineskip=\skip79
+\partial@page=\box41
+\last@line=\box42
+\maxbalancingoverflow=\dimen155
+\mult@rightbox=\box43
+\mult@grightbox=\box44
+\mult@gfirstbox=\box45
+\mult@firstbox=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\c@columnbadness=\count313
+\c@finalcolumnbadness=\count314
+\last@try=\dimen156
+\multicolovershoot=\dimen157
+\multicolundershoot=\dimen158
+\mult@nat@firstbox=\box64
+\colbreak@box=\box65
+\mc@col@check@num=\count315
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\afterpage.sty"
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks39
-\AP@partial=\box40
-\AP@footins=\box41
+\AP@partial=\box66
+\AP@footins=\box67
 )
 Package biblatex Info: Trying to load language 'british'...
 Package biblatex Info: ... file 'british.lbx' found.
@@ -967,22 +1016,22 @@ File: english.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count307
-\@quotereset=\count308
+\@quotelevel=\count316
+\@quotereset=\count317
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -994,8 +1043,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
 
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 43.
-Package biblatex Info: Reference segment=0 on input line 43.
+Package biblatex Info: Reference section=0 on input line 45.
+Package biblatex Info: Reference segment=0 on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1033,20 +1082,20 @@ Package biblatex Info: Reference segment=0 on input line 43.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count309
-\scratchdimen=\dimen150
-\scratchbox=\box42
-\nofMPsegments=\count310
-\nofMParguments=\count311
+\scratchcounter=\count318
+\scratchdimen=\dimen159
+\scratchbox=\box68
+\nofMPsegments=\count319
+\nofMParguments=\count320
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count312
-\MPscratchDim=\dimen151
-\MPnumerator=\count313
-\makeMPintoPDFobject=\count314
+\MPscratchCnt=\count321
+\MPscratchDim=\dimen160
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
 \everyMPtoPDFconversion=\toks41
 )
-\AtBeginShipoutBox=\box43
-\c@lstlisting=\count315
+\AtBeginShipoutBox=\box69
+\c@lstlisting=\count324
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1065,11 +1114,11 @@ Dictionary: glossaries-dictionary, Language: English
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf>
-Package pdftex.def Info: title-generated.pdf used on input line 50.
+Package pdftex.def Info: title-generated.pdf used on input line 52.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: title-generated.pdf Graphic file (type pdf)
  <use title-generated.pdf>
-Package pdftex.def Info: title-generated.pdf used on input line 50.
+Package pdftex.def Info: title-generated.pdf used on input line 52.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
  [1
 
@@ -1078,25 +1127,25 @@ Package pdftex.def Info: title-generated.pdf used on input line 50.
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 50.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: title-generated.pdf Graphic file (type pdf)
  <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 50.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 50.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: title-generated.pdf Graphic file (type pdf)
  <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 50.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: title-generated.pdf Graphic file (type pdf)
 
 <use title-generated.pdf, page 1>
-Package pdftex.def Info: title-generated.pdf, page1 used on input line 50.
+Package pdftex.def Info: title-generated.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
  [2 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/title-generated.pdf{C:/P
 rogramData/MiKTeX/2.9/pdftex/config/pdftex.map}>] [3] [4] [5] (H:\Users\Joren\D
@@ -1136,60 +1185,60 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@lof=\write7
  [7]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.acr)
-Overfull \hbox (23.03639pt too wide) in paragraph at lines 2--108
+Overfull \hbox (23.03639pt too wide) in paragraph at lines 2--110
 []
  []
 
 [8]
 \@gls@deffile=\write8
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--129
+Underfull \hbox (badness 10000) in paragraph at lines 124--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--129
+Underfull \hbox (badness 10000) in paragraph at lines 124--131
 
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 142--158
+Underfull \hbox (badness 10000) in paragraph at lines 144--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--158
+Underfull \hbox (badness 10000) in paragraph at lines 144--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--158
+Underfull \hbox (badness 10000) in paragraph at lines 144--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--158
+Underfull \hbox (badness 10000) in paragraph at lines 144--160
 
  []
 
 [2]
-Overfull \hbox (3.61993pt too wide) in paragraph at lines 187--199
+Overfull \hbox (3.61993pt too wide) in paragraph at lines 190--202
 []\T1/lmr/m/n/10.95 The []In-sti-tute of Elet-rical and Elet-ron-ics En-gin-eer
 s (IEEE) lib-rary provides a num-ber of ex-ten-sions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--199
+Underfull \hbox (badness 10000) in paragraph at lines 190--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--199
+Underfull \hbox (badness 10000) in paragraph at lines 190--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--199
+Underfull \hbox (badness 10000) in paragraph at lines 190--202
 
  []
 
@@ -1197,84 +1246,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--199
 File: images/VHDLflow.pdf Graphic file (type pdf)
 
 <use images/VHDLflow.pdf>
-Package pdftex.def Info: images/VHDLflow.pdf used on input line 202.
+Package pdftex.def Info: images/VHDLflow.pdf used on input line 205.
 (pdftex.def)             Requested size: 472.03123pt x 231.86896pt.
  [4 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/VHDLflow.pdf>] [5
 ] [6] [7]
 <images/tdd.pdf, id=90, 283.0575pt x 264.99pt>
 File: images/tdd.pdf Graphic file (type pdf)
  <use images/tdd.pdf>
-Package pdftex.def Info: images/tdd.pdf used on input line 282.
+Package pdftex.def Info: images/tdd.pdf used on input line 293.
 (pdftex.def)             Requested size: 179.37416pt x 167.92712pt.
 
-Overfull \hbox (9.91862pt too wide) in paragraph at lines 292--293
+Overfull \hbox (9.91862pt too wide) in paragraph at lines 303--304
 \T1/lmr/m/n/10.95 There are many as-pects to a prop-erly main-tained []CI sys-t
 em, but one key as-pect of over-all pro-gram-ming
  []
 
 
-Overfull \hbox (3.94691pt too wide) in paragraph at lines 295--296
+Overfull \hbox (3.94691pt too wide) in paragraph at lines 306--307
 \T1/lmr/m/n/10.95 A use-ful but not re-quired as-pect is build auto-ma-tion. Us
 -ing a timer or trig-ger, the build auto-mat-ic-ally
  []
 
 [8 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/tdd.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 303.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 314.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 303.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 314.
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
+Underfull \hbox (badness 10000) in paragraph at lines 340--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--339
+Underfull \hbox (badness 10000) in paragraph at lines 345--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--339
+Underfull \hbox (badness 10000) in paragraph at lines 345--350
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 348--351
+Underfull \hbox (badness 10000) in paragraph at lines 359--362
 
  []
 
-[11] [12] [13]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 369.
+
+Overfull \hbox (4.83008pt too wide) in paragraph at lines 364--365
+\T1/lmr/m/n/10.95 could be made that act the same as a well-written as-ser-tion
+, but are much easier to read. Fur-ther-more,
+ []
+
+
+Overfull \hbox (2.08388pt too wide) in paragraph at lines 373--374
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 385.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 385.
+[11] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+[12] [13] [14]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 441.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (10.08467pt too wide) in paragraph at lines 370--370
+Overfull \hbox (10.08467pt too wide) in paragraph at lines 442--442
 []\T1/lmr/m/n/10.95 Jim Lewis. \T1/lmr/m/it/10.95 OS-VVM's In-tel-li-gent Cov-e
 r-age is 5X or More Faster than Sys-tem-Ver-i-log's Con-strained
  []
 
 
-Overfull \hbox (12.48996pt too wide) in paragraph at lines 370--370
+Overfull \hbox (12.48996pt too wide) in paragraph at lines 442--442
 []\T1/lmr/m/n/10.95 B. Thiru-malesh and N. Na-chiap-pan. ``Eval-u-at-ing the ef
 -fic-acy of test-driven de-vel-op-ment: in-dus-trial
  []
 
-[14] [14
+[15] [15
 
 ] (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.aux)
 Package logreq Info: Writing requests to 'thesis.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 16965 strings out of 493705
- 264169 string characters out of 3142151
- 719660 words of memory out of 3000000
- 19950 multiletter control sequences out of 15000+200000
- 53201 words of font info for 40 fonts, out of 3000000 for 9000
+ 17247 strings out of 493705
+ 267676 string characters out of 3142151
+ 779947 words of memory out of 3000000
+ 20219 multiletter control sequences out of 15000+200000
+ 66381 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  46i,18n,75p,2229b,1503s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
@@ -1282,15 +1349,17 @@ iles (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/
 MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/eurosym/feymr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/l
-m/lmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmtt10.pfb>
-Output written on thesis.pdf (23 pages, 448632 bytes).
+m/lmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx9.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/lm/lmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/l
+msy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy9.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on thesis.pdf (24 pages, 513801 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
+ 181 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
