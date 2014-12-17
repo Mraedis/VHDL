@@ -10,80 +10,82 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Introduction}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Digital Electronics}{2}
+\contentsline {subsection}{\numberline {2.1}Hardware Description Languages}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Hardware Description Languages}{3}
+\contentsline {section}{\numberline {3}Current industry practices}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Current industry practices}{5}
+\contentsline {subsection}{\numberline {3.1}Assertions}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Assertions}{5}
+\contentsline {subsection}{\numberline {3.2}Coverage}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Coverage}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}Code Coverage}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1}Code Coverage}{5}
+\contentsline {subsubsection}{\numberline {3.2.2}Functional Coverage}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.2}Functional Coverage}{5}
+\contentsline {subsection}{\numberline {3.3}Verification}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Verification}{6}
+\contentsline {subsubsection}{\numberline {3.3.1}Constrained Random Verification}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Constrained Random Verification}{6}
+\contentsline {subsubsection}{\numberline {3.3.2}Formal Verification}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2}Formal Verification}{6}
+\contentsline {subsection}{\numberline {3.4}Open Source VHDL Verification Methodology}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Methodologies}{6}
+\contentsline {subsection}{\numberline {3.5}Simulation tools}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.4.1}Open Source VHDL Verification Methodology}{6}
+\contentsline {subsubsection}{\numberline {3.5.1}ModelSim}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.4.2}Universal Verification Model}{6}
+\contentsline {section}{\numberline {4}Software development \& practices}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Simulation tools}{6}
+\contentsline {subsection}{\numberline {4.1}Test Driven Development}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.5.1}ModelSim}{7}
+\contentsline {subsubsection}{\numberline {4.1.1}Unit Testing}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Software development \& practices}{7}
+\contentsline {subsubsection}{\numberline {4.1.2}Test First Development}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Test Driven Development}{7}
+\contentsline {subsubsection}{\numberline {4.1.3}Refactoring}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.1}Unit Testing}{7}
+\contentsline {subsubsection}{\numberline {4.1.4}Test Driven Development}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.2}Test First Development}{7}
+\contentsline {subsection}{\numberline {4.2}Continuous Integration}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.3}Refactoring}{7}
+\contentsline {subsubsection}{\numberline {4.2.1}Revision Control}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.4}Test Driven Development}{8}
+\contentsline {subsubsection}{\numberline {4.2.2}Build Automation}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Continuous Integration}{8}
+\contentsline {subsubsection}{\numberline {4.2.3}Test Automation}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.1}Revision Control}{8}
+\contentsline {subsubsection}{\numberline {4.2.4}Hudson-CI}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2}Build Automation}{9}
+\contentsline {subsection}{\numberline {4.3}JUnit}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.3}Test Automation}{9}
+\contentsline {subsection}{\numberline {4.4}Python}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.4}Hudson-CI}{9}
+\contentsline {part}{II\hspace {1em}Developing a framework}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}JUnit}{9}
+\contentsline {section}{\numberline {5}Outlining}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Python}{9}
+\contentsline {subsection}{\numberline {5.1}First draft}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{II\hspace {1em}Developing a framework}{10}
+\contentsline {subsection}{\numberline {5.2}First improvements}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Outlining}{10}
+\contentsline {subsubsection}{\numberline {5.2.1}The Library}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}First draft}{10}
+\contentsline {subsubsection}{\numberline {5.2.2}Cleaning up}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}First improvements}{11}
+\contentsline {subsection}{\numberline {5.3}Code execution}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1}The Library}{11}
+\contentsline {subsection}{\numberline {5.4}Code organisation}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.2}Cleaning up}{11}
+\contentsline {subsection}{\numberline {5.5}Result evaluation}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Code execution}{12}
+\contentsline {subsubsection}{\numberline {5.5.1}JUnit XML}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Code organisation}{12}
+\contentsline {section}{\numberline {6}Complete rewrite}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Hudson-CI}{12}
+\contentsline {subsection}{\numberline {6.1}Organising functions}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}The future of testing}{13}
+\contentsline {subsection}{\numberline {6.2}Hudson-CI}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Conclusion}{14}
+\contentsline {section}{\numberline {7}The future of testing}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Conclusion}{16}
