@@ -575,7 +575,7 @@ xmlfile.write(TestSuite.to_xml_string([ts]))
 \end{python}
 Again there is filtering on the words \emph{success} and \emph{failed}, but regular expressions are abandoned in favour of simple line splitting using the '-' token as it was needlessly complicated. Test failures now feature some details on how or why they failed, with the \emph{message} argument. Readability has improved as well, with each argument being defined before being used. Furthermore, generated reports are now able to be loaded into Eclipse, and by extension any other JUnit compatible viewer. This was previously not possible due to some missing options that were unable to be located.
 
-\section{Complete rewrite}
+\section{Fresh start}
 As everything up until now was based on code started with limited knowledge and experience of Python, it became clear that the original files weren't easy to be refactored or otherwise modified. The experience gained from writing everything mentioned in section~\ref{sec:outlining} was put to good use, and a clean file was started. With this file, a number of assumptions were made:
 \begin{itemize}
 \item Everything was to be organised into functions
