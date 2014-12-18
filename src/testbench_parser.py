@@ -13,7 +13,7 @@
 ###    2014.09.23 - Started expanding format()
 ###    2014.09.25 - Expanded format() further, preliminary version finished. Started on xmlwrite()
 ###    2014.09.26 - Prelimenary working version. Produces actual xml report with (all passed) test reports
-###    2014.10.01 - Introduced format2 and xmlwrite2 from previous version "test_parser".
+###    2014.10.01 - Introduced format and xmlwrite from previous version "test_parser".
 ###                 Testbenches are now required to use the vhdlUnit.vhd library for reporting (reportback() function)
 ###                 vhdlUnit.vhd is expected to be in the same directory as testbench_parser.py
 ###                 Small error fixing in handling multiple testbenches named the same (or actually being the same)
@@ -27,20 +27,18 @@
 ###        - (Actually detect whether tests pass!!)
 ###
 ############  FUNCTIONS  #####################################################################################################
-#  setup()               ## Sets up (temporary) files, sets global vars, processes commandline arguments with argparse
-#  logwrite()            ## Writes things to the logbook, errors, completed jobs etc.
-#  get_path(path)        ## Returns absolute path if not already absolute path, otherwise return argument unchanged
-#  setup_parser()        ## Prepares the parser to accept correct commandline arguments
-#  make_tempdir()        ## Creates the temporary working directory
-#  parse_source()        ## grabs sourcefile, extracts needed code, arranges functions & procedures
-#  test_format()         ## arranges found functions & procedures in their own executable files
-#  parse_tests           ## grabs processed source/files, executes & captures output
-#  format()  (Deprecated)## grabs output, formats output
-#  xmlwrite()(Deprecated)## grabs processed output, converts to JUnit compatible XML file
-#  format2()             ## grabs output, formats output
-#  xmlwrite2()           ## grabs processed output, converts to JUnit compatible XML file
-#  get_time()            ## extracts the passed time from a modelsim time notice
-#  cleanup()             ## removes temporary files & directories
+#  setup()               ## Set up files, set global vars, process commandline arguments with argparse
+#  logwrite()            ## Write things to the logbook, errors, completed jobs etc.
+#  get_path(path)        ## Return absolute path if not already absolute path
+#  setup_parser()        ## Prepare the parser to accept correct commandline arguments
+#  make_tempdir()        ## Create the temporary working directory
+#  parse_source()        ## Grab sourcefile, extract needed code, arrange functions & procedures
+#  test_format()         ## Arrange found functions & procedures in their own executable files
+#  parse_tests           ## Grab processed source/files, execute & capture output
+#  format()             ## Grab output, format output
+#  xmlwrite()           ## Grab processed output, convert to JUnit compatible XML file
+#  get_time()            ## Extract the passed time from a ModelSim time notice
+#  cleanup()             ## Remove temporary files & directories
 ##############    END    #####################################################################################################
 
 import sys
@@ -103,17 +101,17 @@ def setup(args, tempname_t=None, foldername_t=None):
 ##
 # args_t is the argument parser object generated in setup_parser()
 ##
-def logbuffer(level='n',message ='No message given.', tempname_t=None, args_t=None):
+def logbuffer(level='u',message ='No message given.', tempname_t=None, args_t=None):
     global logs_buffer                                                                              # Uses the global variables logs_buffer and logstarted
     if logstarted:                                                                                  # This function cannot work with no such variables
         logwrite(level, message, tempname_t, args_t)
     else:
-        logs_buffer.append([level, message, time.strftime("%Y.%m.%d - %H:%M:%S"), ])
+        logs_buffer.append([level, message, time.strftime("%Y.%m.%d - %H:%M:%S") ])
 
 ## Writes things to the logbook: errors, completed jobs etc.
 ## Logwrite is fully explained above near logbuffer
 ## Logwrite cannot function without global variables logstarted and logs_buffer
-def logwrite(level='n',message ='No message given.', foldername_t=None, tempname_t=None, args_t=None):
+def logwrite(level='u',message ='No message given.', tempname_t=None, args_t=None, foldername_t=None):
     if (tempname_t == None):
         tempname_t = tempname
     if (args_t == None):
@@ -138,7 +136,7 @@ def logwrite(level='n',message ='No message given.', foldername_t=None, tempname
         logfile.write('###################### LOGFILE FOR ' + tempname_t + ' ######################\n')
         logfile.write('######################                      ######################\n')
         logfile.write('##################################################################\n\n')
-        logfile.write('YYYY.MM.DD - HH:MM:SS  -   LEVEL    -  MESSAGE\n')
+        logfile.write('YYYY.MM.DD - hh:mm:ss  -   LEVEL    -  MESSAGE\n')
     else:
         logfile.seek(2)
         
@@ -175,7 +173,7 @@ def setup_parser():
         # The flag is stored in 'file', default value is 'False'
     parser.add_argument('-f', '--file'
                         , help='specifies -l/--list is a file with a list'
-                        , action = 'store_true', default=False)
+                        , action = 'store_true', default=False) 
         # The -l/--list argument is to specify the list of .vhd files to be processed.
         # The flag is stored in 'list', no default value considering there NEEDS to be at least 1 .vhd file
     parser.add_argument('-l', '--list'
@@ -492,98 +490,7 @@ def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, args_
         testcount += 1
     os.chdir(currentdir_t)
     
-## grabs output, formats output
-def format(tempdir_t = None):
-    if (tempdir_t == None):
-        tempdir_t = tempdir
-    testname = tempdir_t.split(os.sep)[-1]                          # Folder is named for the testresult
-    testresults = [testname, 0]                                     # Format of testresults: [Testresultname , Testcount, Testresult1, Testresult2, ... ]
-    currentdir = os.getcwd()                                        # Testresults are formatted: [Name, Bool Passed, NumberOfTests, Result(s)]
-    os.chdir(tempdir_t)                                             # Move working directory to local dir
-                                                                            
-    for file in os.listdir(tempdir_t):                              # Get every file that is a commandline output file
-        if file.endswith('_cmd_output.txt'):
-            source = open(file,'r+')
-            testresult = [file.split('_cmd_output.txt')[0],0]       # Testresult is every test in the file, start with name and 0 tests
-            in_test = False                                         # Opposed to testresult!S! which is a collection of testresults of files in the folder
-            prev = ''                                               # For storing the previous line
-            line = source.readline()
-            
-            while(line != ''):                                      # As long as EOF is not reached
-                if (line == '# run -all\n'):
-                    test_name = prev.split(' ')[-1]
-                    in_test = True
-                while in_test:                                      # In_test is a boolean that checks whether or not we are "inside" a test
-                    line = source.readline()
-                    words = line.split(' ')
-                    if (words[1] == 'Errors:' and words[3] == 'Warnings:' ):    # Standard end for modelsim, use as 'endpoint' of tests
-                        in_test = False
-                    else:
-                        if (line == '# ** Note: test started\n'):               # Currently no good detection on whether test passed or not!
-                            test = [test_name, True, 0, '']                     # Test format is [Name, Test passed, NumberOfTests, testresult1, testresult2, ...]
-                            line = source.readline()
-                            line = source.readline()                            # Skip 1 line with the time status
-                            no_test = True
-                            
-                            while (line != '# ** Note: test ended\n'):
-                                no_test = False
-                                if (line == ''):
-                                    logwrite('c', 'Encountered faulty results in ' + 'Reached EOF mid-test.')
-                                    in_test = False
-                                    break
-                                if (len(line) > 12):                            # Otherwise "line[5:10]" might cause array size errors
-                                    if (line[5:10] != 'Time:'):
-                                        test[2] += 1                            # Increase number of tests found
-                                        test[3] += '\n' + line                  # Append line for info
-                                else:
-                                    test[2] += 1
-                                    test[3] += '\n' + line
-                                line = source.readline()
-                            if(not no_test):
-                                test[3] = test[3][1:]                           # Remove unnecessary newline at start of log
-                            else:
-                                test[2:] = [1, 'One test ran, no output detected.']
-                            testresult.append(test)
-                            testresult[1] += 1
-                    # This is the end of "while in_test:"
-                prev = line
-                line = source.readline()
-                # This is the end of "while(line != ''):
-            testresults.append(testresult)
-    os.chdir(currentdir)
-    return testresults
-    
-## grabs processed output, converts to JUnit compatible XML file
-# Available format is Package (collection of testsuites with an own name)
-# containing testsuites with each their own name and testcount
-# Who each have testcases with their own name and error/success report
-# Format of testresults: [Name , Count, Testresult1, Testresult2, ... ]
-# Testresult format is: [Name, Count, Test1, Test2, ...]
-# Test format is [Name, Test passed, NumberOfSubTests, testresult1, testresult2, ...]
-def xmlwrite(testresults, foldername_t=None):
-    if (foldername_t == None):
-        foldername_t = foldername
-    
-    hostname = str(testresults[0])                                                          # Hostname is the RANDOMNAME
-    xmltargetpath = foldername + os.sep + hostname + '_testresults.xml'                     # Save in file named RANDOMNAME_testresults.xml
-    xmltargetfile = open(xmltargetpath, 'w+')
-    
-    ts = []                                                                                 # Every file is a testsuite
-    
-    # JUnit-xml format is: TestCase(Name, ClassName, Elapsed_Time_In_Sec, Stdout, Stderr) 
-    #                      TestSuite(Name, Test_cases[], Hostname, ID, Package, Timestamp, Properties)
-    for testresult in testresults[2:]:
-        test_cases = []                                                                     # Every testsuite can contain multiple testcases
-        for test in testresult[2:]:
-            testcase = TestCase(test[0], testresult[0], None)
-            if(not test[1]):
-                testcase.add_failure_info(None, test[3:])
-            test_cases.append(testcase)
-        ts.append(TestSuite(testresult[0], test_cases, testresults[0]))
-    xmltargetfile.write(TestSuite.to_xml_string(ts))
-    xmltargetfile.close()
-    
-def format2(tempdir_t=None, foldername_t=None):
+def format(tempdir_t=None, foldername_t=None):
     if (tempdir_t == None):
         tempdir_t = tempdir
     if (foldername_t == None):
@@ -693,154 +600,12 @@ def format2(tempdir_t=None, foldername_t=None):
     targetfile.close()
     os.chdir(currentdir)
     return everyline
-
-## grabs processed output, converts to JUnit compatible XML file
-# Available format is Package (collection of testsuites with an own name)
-# containing testsuites with each their own name and testcount
-# Who each have testcases with their own name and error/success report
-# Format of testresults: [Name , Count, Testresult1, Testresult2, ... ]
-# Testresult format is: [Name, Count, Test1, Test2, ...]
-# Test format is [Name, Test passed, NumberOfSubTests, testresult1, testresult2, ...]
-def xmlwrite(testresults, foldername_t=None):
-    if (foldername_t == None):
-        foldername_t = foldername
-    
-    hostname = str(testresults[0])                                                          # Hostname is the RANDOMNAME
-    xmltargetpath = foldername + os.sep + hostname + '_testresults.xml'                     # Save in file named RANDOMNAME_testresults.xml
-    xmltargetfile = open(xmltargetpath, 'w+')
-    
-    ts = []                                                                                 # Every file is a testsuite
-    
-    # JUnit-xml format is: TestCase(Name, ClassName, Elapsed_Time_In_Sec, Stdout, Stderr) 
-    #                      TestSuite(Name, Test_cases[], Hostname, ID, Package, Timestamp, Properties)
-    for testresult in testresults[2:]:
-        test_cases = []                                                                     # Every testsuite can contain multiple testcases
-        for test in testresult[2:]:
-            testcase = TestCase(test[0], testresult[0], None)
-            if(not test[1]):
-                testcase.add_failure_info(None, test[3:])
-            test_cases.append(testcase)
-        ts.append(TestSuite(testresult[0], test_cases, testresults[0]))
-    xmltargetfile.write(TestSuite.to_xml_string(ts))
-    xmltargetfile.close()
-    
-def format3(tempdir_t=None, foldername_t=None):
-    if (tempdir_t == None):
-        tempdir_t = tempdir
-    if (foldername_t == None):
-        foldername_t = foldername
-    testname = tempdir_t.split(os.sep)[-1]
-    currentdir = os.getcwd()
-    os.chdir(tempdir_t)
-    
-    failedtests, passedtests, othernotes, totaltests = 0, 0, 0, 0
-    failedlines, passedlines, otherlines, everyline = [], [], [], []
-    
-    for file in os.listdir(tempdir_t):                              # Get every file that is a commandline output file
-        if file.endswith('_cmd_output.txt'):
-            failedtests_l, passedtests_l, othernotes_l, totaltests_l = 0, 0, 0, 0
-            failedlines_l, passedlines_l, otherlines_l, everyline_l = '', '', '', ''
-            source = open(file,'r+')
-      
-            ReadNote = False
-            lastline = ''
-            for line in source:
-                words = line.split(' ')
-                if ReadNote == True:
-                    if (len(words) > 5):
-                        to_add = ' - time: ' + words[5] + ' ' + words[6] + '\n'
-                    else:
-                        to_add = line
-                    if lastline == 'success':
-                        passedlines_l += to_add
-                    elif lastline == 'failed':
-                        failedlines_l += to_add
-                    elif lastline == 'other':
-                        otherlines_l += to_add
-                    everyline_l += to_add
-                    ReadNote = False
-                    
-                elif (len(words) > 2):
-                    if(words[2] == 'Note:'):
-                        ReadNote = True
-                        if(len(words) > 4):
-                            if(words[4] == 'failed\tname:'):
-                                failedtests_l += 1
-                                totaltests_l += 1
-                                failedlines_l += str(failedtests_l).zfill(4) + ' - ' + line[11:-1]
-                                lastline = 'failed'
-                            elif(words[4] == 'success\tname:'):
-                                passedtests_l += 1
-                                totaltests_l += 1
-                                passedlines_l += str(passedtests_l).zfill(4) + ' - ' + line[11:-1].split('-')[0]
-                                lastline = 'success'
-                            else:
-                                othernotes_l += 1
-                                totaltests_l += 1
-                                otherlines_l += str(othernotes_l).zfill(4) + ' - ' + line[11:-1]
-                                lastline = 'other'
-                        else:
-                            othernotes_l += 1
-                            totaltests_l += 1
-                            otherlines_l += str(othernotes_l).zfill(4) + ' - ' + line[11:-1]
-                            lastline = 'other'
-                        everyline_l += str(totaltests_l).zfill(4) + ' - ' + line[11:-1]
-                        
-            if ReadNote == True:
-                to_add = ' - time: ' + words[5] + ' ' + words[6]
-                if lastline == 'succes':
-                    passedlines_l += to_add[1:-1]
-                elif lastline == 'failed':
-                    failedlines_l += to_add
-                elif lastline == 'other':
-                    otherlines_l += to_add
-                everyline_l += to_add
-            
-            failedtests += failedtests_l
-            passedtests += passedtests_l
-            othernotes += othernotes_l
-            totaltests += totaltests_l
-            failedlines.append(failedlines_l)
-            passedlines.append(passedlines_l)
-            otherlines.append(otherlines_l)
-            everyline.append(everyline_l)
-            
-            source.close()
-            
-                #Write plain .txt file with testresults
-    targetpath = foldername_t + os.sep + testname + '_testresults.txt'
-    targetfile = open(targetpath,'w+')
-    targetfile.write('total tests: '      + str(totaltests)
-                     + '\ntests passed: ' + str(passedtests)
-                     +'\ntests failed: '  + str(failedtests)
-                     + '\nother notes: '  + str(othernotes))
-    output_failed, output_passed, output_other, output_every = '', '', '', ''
-    for x in range (0, len(failedlines)):
-        output_failed += failedlines[x]
-        output_passed += passedlines[x]
-        output_other += otherlines[x]
-        output_every += everyline[x]
-    targetfile.write('\n\n\nPassed tests reports:\n' + output_passed
-                     + '\n\nFailed tests reports:\n' + output_failed
-                     + '\n\nOther notes:\n'          + output_other
-                     + '\n\n\nAll test results:\n'   + output_every)
-    
-    print( 'total tests: '      + str(totaltests)
-           + '\ntests passed: ' + str(passedtests)
-           +'\ntests failed: '  + str(failedtests)
-           + '\nother notes: '  + str(othernotes))
-    #Print left out - optional command line output
-    
-    targetfile.close()
-    os.chdir(currentdir)
-    return everyline
-    
     
 #Write .xml file in JUnit format (For use in Eclipe)
 #Uses JUnit-xml package by Brian Beyer
 #source at https://github.com/kyrus/python-junit-xml
 #Requires setuptools to install at https://pypi.python.org/pypi/setuptools
-def xmlwrite2(everyline, foldername_t=None):
+def xmlwrite(everyline, foldername_t=None):
     if (foldername_t == None):
         foldername_t = foldername
         
@@ -906,11 +671,14 @@ if __name__ == "__main__":
     parser = None                                                                   # Assigning name for the parser
     
     systemtime = time.time()                                                        # Marks the starting time of the script
+    logbuffer('n','Saving current working directory')
     currentdir = os.getcwd()                                                        # CWD is changed during simulation
     
+    logbuffer('n','Setting up argument parser')
     parser = setup_parser()                                                         # Creates an argument parser for the commandline arguments
     args, unknown = parser.parse_known_args()                                       # Parses commandline arguments, stores unknown arguments in 'unknown'
     
+    logbuffer('n','Creating temporary directories')
     tempdir, tempname = make_tempdir()                                              # Creates a unique (name for the) temporary directory in the systems temp dir
     foldername = setup(args, tempname)                                              # Grab all functions and procedures to be processed, returns output folder
     
@@ -919,23 +687,28 @@ if __name__ == "__main__":
         logwrite('w', 'Found unusuable arguments: ' + ', '.join(unknown))
 
     if (args.file):                                                                 # If the files to be processed are in a file
+        logwrite('n','Beginning source file parsing')
         for file in args.list:                                                      # Get all filenames
             listfile = open(get_path(file))                                         # Open the files one by one
             sourcelist = [line.strip() for line in open(listfile)]                  # Get all .vhd files listed within
             for line in sourcelist:                                                 # Parse each .vhd file
                 parsedlist.append(parse_source(get_path(line), args.method))
     else:                                                                           # If arguments are not lists, they are the files themselves
+        logwrite('n','Beginning source file parsing')
         for file in args.list:
             parsedlist.append(parse_source(get_path(file), args.method))
-    
+            
+    logwrite('n','Beginning test formatting')
     testcount = test_format(parsedlist)                                             # Get list of number of tests
     if args.cmdline:                                                                # Location of vhdlUnit.vhd may vary on how the script is called
         parse_tests(testcount, tempdir, foldername, args)
     else:
         parse_tests(testcount, tempdir, foldername, args, os.path.dirname(os.path.realpath(__file__)))
     
-    testresults = format2(tempdir)                                                  # Format the testresults to humanly readable words
-    xmlwrite2(testresults)                                                          # Format the above format into a JUnit-XML format
+    logwrite('n','Beginning result formatting')
+    testresults = format(tempdir)                                                  # Format the testresults to humanly readable words
+    xmlwrite(testresults)                                                          # Format the above format into a JUnit-XML format
     
+    logwrite('n','Cleaning up files')
     #cleanup()                                                                       # Remove the temporary working directory
     logwrite('n','Stopped script at ' + str(time.time()))                           # Note the time of ending

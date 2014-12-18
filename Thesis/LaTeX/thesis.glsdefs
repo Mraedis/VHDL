@@ -688,3 +688,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{OS}{}%
+{%
+\gls@defglossaryentry{OS}%
+{%
+name={OS},%
+sort={OS},%
+type={acronym},%
+first={Operating System\glsspace (OS)},%
+firstplural={Operating Systems\glsspace (OSs)},%
+text={OS},%
+plural={OSs},%
+description={Operating System},%
+descriptionplural={Operating System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Operating System},%
+longplural={Operating Systems},%
+short={OS},%
+shortplural={OSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

@@ -80,12 +80,32 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {5.5.1}JUnit XML}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Fresh start}{14}
+\contentsline {section}{\numberline {6}Fresh start}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Organising functions}{14}
+\contentsline {subsection}{\numberline {6.1}Organising functions}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Hudson-CI}{14}
+\contentsline {subsection}{\numberline {6.2}Argparser}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}The future of testing}{15}
+\contentsline {subsection}{\numberline {6.3}Log keeping}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Conclusion}{16}
+\contentsline {subsubsection}{\numberline {6.3.1}Basic log}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.3.2}Buffering}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.3.3}Actual log}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4}Getting ready}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.4.1}Temporary directory}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.4.2}Results directory}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5}Processing source files}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Surrounding programs}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}Hudson-CI}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}The future of testing}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Conclusion}{19}
