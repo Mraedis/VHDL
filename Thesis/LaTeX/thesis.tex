@@ -95,9 +95,12 @@ emphstyle={\color{self}\slshape},
 
 \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm,headheight=2.1cm}
 \exhyphenpenalty=10000\hyphenpenalty=10000
+
 \makeatletter
+
 \newcommand \Dotfill {\leavevmode \cleaders \hb@xt@ .77em{\hss .\hss }\hfill \kern \z@}
 \renewcommand*\glspostdescription{\Dotfill}
+
 \makeatother
 
 \addbibresource{bibliography.bib}
@@ -250,7 +253,6 @@ begin
 	end process;
 end Behavioural;
 \end{lstlisting}
-
 \newacronym{IEEE}{IEEE}{Institute of Electrical and Electronics Engineers}
 \newacronym{DFF}{DFF}{D Flip-Flop}
 The \gls{IEEE} library provides a number of extensions on the original \gls{VHDL} specification that allow a more realistic simulation and description of hardware behaviour. An \emph{entity} defines the inputs and outputs of a certain building block, in this case the \gls{DFF}. The D stands for Delay, and it simply puts on its output, Q, that which was on the input, D, one clock period earlier. The \emph{architecture}, in this case Behavioural, takes the description of an entity and assigns a real implementation to it. All \emph{processes} are executed in parallel, this does not mean that all are triggered at the same time, nor do they take equally as long to finish, but it means that any process can be executed alongside any other process. In this case there is only one (nameless) process that describes the entire behaviour of the flip-flop. The process waits for the rising edge of the clock, which is a transition from zero to one, after which it schedules the value of D to be put on Q when the next rising edge appears.
@@ -287,7 +289,7 @@ As mentioned before, a number of practices exist to improve speed and quality of
 
 \subsection{Assertions}
 \label{subsec:assertions}
-Assertions are the standard practice of verification. An assert in VHDL is very simple, check whether some boolean condition is true. If true, do nothing, if false, return the error message and throw an error of a certain level, as in the following example:
+Assertions are the standard practice of verification. An assert in VHDL is very simple: check whether some boolean condition is true. If true, do nothing, if false, return the error message and throw an error of a certain level, as in the following example:
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false]
 assert (not Q) report "Unexpected output value" severity failure;
 \end{lstlisting}
@@ -301,15 +303,16 @@ Coverage is a generic term that is used to describe how fully a design has been 
 In development, \gls{CC} is a type of measurement to indicate how well the source code has been tested. With the use of a coverage report, unused blocks of code can be uncovered, these blocks might indicate unnecessary code or a bug. Imagine a \gls{FSM} with an unused reset state, this might indicate that the reset isn't functioning properly or there are no tests covering the reset. CC does not, however, provide any real functional analysis. It does not indicate any missing lines of code nor does it tell you whether the inputs and outputs behave properly.
 
 \subsubsection{Functional Coverage}
-\gls{FC} is the practice of measuring whether design covers all possible use states it can possibly be in. Good practice is to include all possible cases, including corner cases, cases that cover multiple clock cycles, erroneous cases such as receiving an interrupt when processing or overflowing a buffer and so on. 
+\gls{FC} is the practice of measuring whether the design covers all possible use states it can possibly be in. Good practice is to include all possible cases, including corner cases, cases that cover multiple clock cycles, erroneous cases such as receiving an interrupt when processing or overflowing a buffer and so on. 
 
 \subsection{Verification}
 
 \subsubsection{Constrained Random Verification}
-\gls{CRV} is an industry practice where one or more inputs are generated randomly, within certain bounds or \emph{constraints}. This practice was brought into use after designs grew too large for \gls{DT} to support. DT has verification engineers write out very specific things they wanted to test, for instance, a reset pulse to verify the reset working correctly. CRV opposes this with the idea that for all behaviour to be tested properly in large designs, the amount of time spent writing and executing tests would simply become too great. It proposes a solution where inputs are generated randomly, within certain bounds, but in a sufficiently large quantity to have implicitly covered all scenarios. It is important to note that in DT, expected behaviour is directly tested, but in CRV it is likely to be the unexpected behaviour that gets tested too. This solved the long standing problem of testing any and all behaviour, including the unexpected.
+\emph{\color{red}Revision!}
+\gls{CRV} is an industry practice where one or more inputs are generated randomly, within certain bounds or \emph{constraints}. This practice was brought into use after designs grew too large for \gls{DT} to support. DT has verification engineers write out very specific things they want to test, for instance, a reset pulse to verify the reset working correctly. CRV opposes this with the idea that for all behaviour to be tested properly in large designs, the amount of time spent writing and executing tests would simply become too great. It proposes a solution where inputs are generated randomly, within certain bounds, but in a sufficiently large quantity to have implicitly covered all scenarios. It is important to note that in DT, expected behaviour is directly tested, but in CRV it is likely to be the unexpected behaviour that gets tested too. This solved the long standing problem of testing any behaviour, including the unexpected.
 
 \subsubsection{Formal Verification}
-On top of the aforementioned, there are several more practices that have unique ways of verifying the properties of a design, but aren't used sufficiently to merit full detailing. Formal verification is such a practice, where the core idea is to mathematically prove the design from its specifications. The upside is that the design is completely verified, however, it it out of use because proving large designs is not only tedious but takes up ridiculous amounts of man-hours.
+On top of the aforementioned, there are several more practices that have unique ways of verifying the properties of a design, but aren't used sufficiently to merit full detailing. Formal verification is such a practice, where the core idea is to mathematically prove the design from its specifications. The upside is that the design is completely verified, however, it is out of use because proving large designs is not only tedious but takes up large amounts of man-hours.
 
 %\subsection{Methodologies}
 
@@ -323,7 +326,7 @@ The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV} and \gls
 %The Universal Verification Methodology is a popular methodology for SystemVerilog which brings it a %certain degree of automation. It should bring easier design of testing frameworks to Verilog %developers. \gls{UVVM}, however, is an intended port of features from this methodology which could be %used in VHDL verification. 
 
 \subsection{Simulation tools}
-As mentioned in section~\ref{sec:intro} \gls{HDL}s are used for developing hardware, and need to be tested and build as such. Like any other programming language, they need a dedicated compiler to fault-check the code and build the binaries. Unlike other programming languages, however, they need a simulator in order to verify the builds. There exist many compilers and simulators, almost none are exclusive for \gls{VHDL}, almost all are dual-language and support some form of Verilog, a different HDL. However, many of them refuse to support the latest additions to the VHDL language specification, even the 2002 additions are hard to be found.
+As mentioned in section~\ref{sec:intro} \gls{HDL}s are used for developing hardware, and need to be tested and build as such. Like any other programming language, they need a dedicated compiler to fault-check the code and build the binaries. Unlike other programming languages they need a simulator in order to verify the builds. There exist many compilers and simulators, almost none are exclusive for \gls{VHDL}, almost all are dual-language and support some form of Verilog, a different HDL. However, many of them refuse to support the latest additions to the VHDL language specification, even the 2002 additions are hard to be found.
 
 \label{subsec:simtool}
 \subsubsection{ModelSim}
@@ -336,15 +339,15 @@ ModelSim is the simulator that was investigated for several reasons. First, a fr
 %Waarom automated? Voordelen?
 %Problemen bij implementatie? Tekortkomingen?
 
-\section{Software development \& practices}
-During the making of this thesis, a number of approaches was investigated and some were put to practical use. In this chapter, the more useful and tried of the aforementioned are discussed in some detail.
+\section{Software development practices}
+During the making of this thesis, a number of approaches were investigated and some were put to practical use. In this chapter, the more useful and tried of the aforementioned are discussed in detail.
 
 
 \subsection{Test Driven Development}
-\gls{TDD} is a proven development technique that has regained traction in the past decade, primarily through the efforts of Kent Beck\cite{VHDLUnit}. This practice has proven to increase test coverage \cite{Siniaalto:2007:CCS:1302496.1302946}, decrease defect density \cite{TDDinpractice} as well as improve code quality \cite{TDDinpractice,conf/isese/BhatN06}. The technique focuses on tests being created before the actual code. It is important to make certain distinctions before going more in depth on the used methods. The developing community has a great many practices, each with their own names and methods, and hardly none are mutually exclusive.
+\gls{TDD} is a proven development technique that has regained traction in the past decade, primarily through the efforts of Kent Beck \cite{VHDLUnit}. This practice has proven to increase test coverage \cite{Siniaalto:2007:CCS:1302496.1302946}, decrease defect density \cite{TDDinpractice} as well as improve code quality \cite{TDDinpractice,conf/isese/BhatN06}. The technique focuses on tests being created before the actual code. It is important to make certain distinctions before going more in depth on the used methods. The developing community has a great many practices, each with their own names and methods, and hardly none are mutually exclusive.
 
 \subsubsection{Unit Testing}
-To understand \gls{TDD}, an basic knowledge of \emph{Unit Testing} is required. In software testing, a unit test is a test designed to check a single unit of code. Ideally, this unit is the smallest piece in which the code can be divided. A unit test should always test only a single entity, and only one aspect of that entity's behaviour. This division in units has a number of benefits, one of the most important being that code is exceedingly easy to maintain. Furthermore, the division of the code makes changes, when needed, fast to be carried out and ensures that only the modified code needs to re-tested.
+To understand \gls{TDD}, a basic knowledge of \emph{Unit Testing} is required. In software testing, a unit test is a test designed to check a single unit of code. Ideally, this unit is the smallest piece in which the code can be divided. A unit test should always test only a single entity, and only one aspect of that entity's behaviour. This division in units has a number of benefits, one of the most important being that code is exceedingly easy to maintain. Furthermore, the division of the code makes changes, when needed, fast to be carried out and ensures that only the modified code needs to re-tested.
 
 %% herschrijven!
 \subsubsection{Test First Development}
@@ -354,7 +357,7 @@ Another main component of \gls{TDD} is \gls{TFD}, a technique that has a develop
 The third pillar of TDD is refactoring. After the tests succeed, it is necessary to clean up the code. A well-done \gls{TFD} implementation uses the bare amount of code needed to make the test pass, but this is of course usually not the best code possible. Refactoring means that you take existing code and modify only the code itself to perform better. This leaves both the input and output of the tests and code unchanged, only the way the code processes input is altered. It is important in this step to edit nothing in the test code or the outputs or inputs. Otherwise, either the test would behave differently or new tests would have to be written. The latter goes directly against the \gls{TFD} principle.
 
 \subsubsection{Test Driven Development}
-Test Driven Development is a combination of the previously mentioned techniques. A Unit Test is written before any code, the test is then executed and should fail. After the failure, the most basic code to make the test pass is implemented, the test is then executed again and should pass. After this first pass, the code written for the passing of the test, and only this code, is edited to perform and look better. This follows all steps mentioned above, a \emph{Unit Test} is written according to \emph{Test First Development} and is \emph{Refactored} later.
+Test Driven Development is a combination of the previously mentioned techniques. A Unit Test is written before any code is, the test is then executed and should fail. After the failure, the most basic code to make the test pass is implemented. The test is then executed again and should pass. After this first pass, the code written for the passing of the test, and only this code, is edited to perform and look better. This follows all steps mentioned above, a \emph{Unit Test} is written according to \emph{Test First Development} and is \emph{Refactored} later.
 
 \begin{figure}[h]
     \centering
@@ -374,25 +377,26 @@ There are many aspects to a properly maintained \gls{CI} system, but one key asp
 A useful but not required aspect is build automation. Using a timer or trigger, the build automatically runs with the latest updates, preferably from an \gls{RC} system. This way, the binaries are always up to date and the developer does not need to wait for compilation to run the latest tests. Although the latter is less imported in a proper \gls{CI} system as will be discussed further on. 
 
 \subsubsection{Test Automation}
-As the code is build at scheduled times, and testing is needed regardless it makes perfect sense to add a testing step to the automated build. Automating tests saves the developers yet another part of their time, thus freeing more for the actual development and debugging steps. A good \gls{CI} system can read test reports, or at least some standard of reports. 
+As the code is built at scheduled times, and testing is needed regardless, it makes perfect sense to add a testing step to the automated build. Automating tests saves the developers yet another part of their time, thus freeing more for the actual development and debugging steps. A good \gls{CI} system can read test reports, or at least some standard of reports. 
 
 \subsubsection{Hudson-CI}
-Combining all of these practices saves developers a lot of time and, by extension, the company they might work for, a lot of money. Considering today's competitive market for software development, any edge that can be obtained is a plus. Even more so when plenty of free Continuous Integration servers exist that employ open or widely used standards. The \gls{CI} solution that was investigated is Hudson-CI. Hudson-CI provides an extensive range of features, including everything listed above. The used features are:
+\emph{\color{red}Verhuizen naar later: specifieke implementatie tegenover algemene zaken hier}
+Combining all of these practices saves developers a lot of time and, by extension, the company they might work for, a lot of money. Considering today's competitive market for software development, any edge that can be obtained is a plus. Even more so when plenty of free Continuous Integration servers exist that employ open or widely used standards. The \gls{CI} solution that was investigated is Hudson-CI which provides an extensive range of features, including everything listed above. The used features are:
 \begin{itemize}
-\item Timed and triggered building from an \gls{RC} repository.
-\item Automated testing of said build.
-\item Humanly readable reports in the \emph{JUnit} format.
-\item Graphical and statistical overview of test progress throughout builds.
+\item Timed and triggered building from an \gls{RC} repository
+\item Automated testing of said build
+\item Humanly readable reports in the \emph{JUnit} format
+\item Graphical and statistical overview of test progress throughout builds
 \end{itemize}
 
 \subsection{JUnit}
 \label{subsec:JUnit}
 \newacronym{XML}{XML}{eXtensible Markup Language}
-JUnit is an implementation for the Java programming language of the xUnit specification, which defines several key components for a testing framework. Considering the relevance here is not the framework itself but the format used for its reports, details about its implementation and use will not be discussed.\\
+JUnit is an implementation for the Java programming language of the xUnit specification, which defines several key components for a testing framework. Considering the relevant piece here is not the framework itself but the format used for its reports, details about its implementation and use will not be discussed.\\
 The JUnit reports are written in \gls{XML}, which is a type of language used for formatting data. The JUnit format is supported by numerous (open source) tools, such as Eclipse and the aforementioned Hudson-CI, which makes it an ideal candidate for further investigation. 
 
 \subsection{Python}
-Python is a high-level computer programming language that first appeared in 1991, with the third major revision being released in 2008. It supports object-oriented and structured programming, and is easy to use as a scripting language. A great feat of Pythons community is that there are many, many (open source) libraries available for just about any function that comes to mind. This is on top of the already impressive amount of libraries Python itself supports. In addition to this, Python has all of its standard features explained in great detail with good examples in its online documenting system. The combination of these features allows any programmer, even with very little know-how, to quickly put together anything that comes to mind.
+Python is a high-level computer programming language that first appeared in 1991, with the third major revision being released in 2008. It supports object-oriented and structured programming and is easy to use as a scripting language. A great feat of Pythons community is that there are many (open source) libraries available for just about any function that comes to mind. This on top of the already impressive amount of libraries that Python itself supports. In addition to this, Python has all of its standard features explained in great detail with good examples in its online documenting system. The combination of these features allows any programmer, even with very little know-how, to quickly put together anything that comes to mind.
 
 %Kan VHDL gemakkelijk ontwikkeld worden met Continuous Integration?
 %Wat is ModelSim, waarom gebruiken? Mogelijke opties/voordelen? gratis studentenversie
@@ -402,13 +406,14 @@ Python is a high-level computer programming language that first appeared in 1991
 %Wat is de gemiddelde looptijd van een groot project?
 
 \newpage
+%\setcounter{section}{0}
 \part{Developing a framework}
-In part I different aspects from both the software and \gls{VHDL} development worlds were discussed, each in  varying levels of detail. In this part bits and pieces of each subject are combined to form a new whole, a VHDL development framework.
+In part I different aspects from both the software and \gls{VHDL} development worlds were discussed in  varying levels of detail. In this part bits and pieces of each subject are combined to form a new whole, a VHDL development framework.
 
 \section{Outlining}
 \label{sec:outlining}
 \newacronym{OS}{OS}{Operating System}
-Before work begins on developing the framework, there need to be some bounds set and goals to work towards. As VHDL development is done on both the Windows and Linux \gls{OS}, it only makes sense to keep the whole framework as platform independent as possible. To add to this, the whole needs to be developed in the short span of under a year by one developer who has had little experience doing so. The language chosen thus must be easy to master and work on all platforms with as few as possible modifications.\\
+Before work begins on developing the framework, there need to be some boundaries set and goals to work towards. As VHDL development is done on both Windows and Linux, it only makes sense to keep the whole framework as platform independent as possible. To add to this, the framework needs to be developed in the short span of under a year by one developer who has had little experience doing so. The language chosen thus must be easy to master and work on all platforms with as few as possible modifications.\\
 \\
 Furthermore, software practices will have to be applied to maintain clean code and a steady development process. To this end, work started with unit testing in mind. Parts of the VHDL testbench are separated to be executed independently in an automated fashion.
 
@@ -424,18 +429,17 @@ When the script was run on a file, a few problems quickly came in view:
 \item Procedures and functions aren't that easily made to contain fully working code
 \item Writing tests this way is actually \emph{more} time consuming
 \end{itemize}
-To try and counter the problems, making use of a standardized function library was proposed. This way, verified code could be integrated which reduced the workload when writing the testbench. Making use of this library would also bring a degree of uniformity to the testbenches, which would help with readability.
+To try and counter the problems, using a standardized function library was proposed. This way, verified code could be integrated which reduced the workload when writing the testbench. Making use of this library also brought a degree of uniformity to the testbenches, which helped with readability.
 
 \newpage{}
 \subsection{First improvements}
-As mentioned above, one of the first improvements was a standardized function library. To be of any use, this library should contain functions and procedures that are either used extensively throughout the developmental process, have a great potential of being used or that, when created on their own, would impose a significant workload on the developer. Considering the large percentage of the industry still working in the VHDL-93 specification, the library would need to be compatible with this version. However, to ensure future usability and steer development towards the newer versions, i.e. 2002 and 2008, these will need to be supported as well.\\
+As mentioned above, one of the first improvements was a standardized function library. To be of any use, this library should contain functions and procedures that are either used extensively throughout the developmental process, have a great potential of being used or that, when created on their own, would impose a significant workload on the developer. Considering the large percentage of the industry still working in the VHDL-93 specification, the library would need to be compatible with this version. However, to ensure future usability and steer development towards the newer versions, i.e. 2002 and 2008, these should be supported as well.\\
 \\
 A second improvement, yet undiscussed, would be maintaining a clean set-up. Throughout the first testing, it became apparent that when multiplying the amount of testbenches that are executed, the files around them are multiplied in the same way. Massive clutters of 'temporary' files and folders would quickly pollute the workspace, and thus keeping track and removing unneeded files would be of the essence, especially considering later modifications (see section~\ref{subsec:CI}).
 
-\subsubsection{The Library}
+\subsubsection{The library}
 \label{subsubsec:library}
-The first addition to the library was the tracking of signals and arrays (called \emph{vectors} in VHDL). VHDL itself provides assertion-based verification, as mentioned before section~\ref{subsec:assertions}). However, these assertions are long and nondescript. To make these easier to read and reproduce, functions could be made that act the same as a well-written assertion, but are much easier to read. Furthermore, assertions can be used to pass information about non-critical signals to a shell environment that looks for specific output text. An example:
-
+The first addition to the library was the tracking of signals and arrays (called \emph{vectors} in VHDL). VHDL itself provides assertion-based verification, as mentioned before section~\ref{subsec:assertions}. However, these assertions are long and nondescript. To make these easier to read and reproduce, functions could be made that act the same as a well-written assertion, but are much easier to read. Furthermore, assertions can be used to pass information about non-critical signals to a shell environment that looks for specific output text. An example:
 \begin{multicols}{2}
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
 procedure reportBack(
@@ -469,19 +473,19 @@ end procedure;
  wait until rising_edge(clk);
 \end{lstlisting}
 \end{multicols}
-In the left column, the source code of the function used in the right column is displayed. It is easy to see that, to maintain the same level of useful information (report on success \emph{and} failure, name of test) without a procedure, the code would be excessively long. On top of that, the readability is improved greatly with only the logic and the message to display remaining. If this much improvement comes from a very simple function, it is not unlikely that a great deal more can come should the library be expanded.
+\noindent In the left column, the source code of the function used in the right column is displayed. To maintain the same level of useful information (report on success \emph{and} failure, name of test) without a procedure, the code would be excessively long. On top of that, the readability is improved greatly with only the logic and the message to display remaining. If this much improvement comes from a very simple function, it is not unlikely that a great deal more can come should the library be expanded.
 
 \subsubsection{Cleaning up}
 The second addition, simultaneous with the first, is the implementation of a clean-up system. As mentioned before, a massive amount of 'compiled clutter' is created when tests are separated into multiple testbenches. Several ways of dealing with this were considered, such as:
 \begin{itemize}
 \item Tracking changes in the working directory
 \item Filtering needed files and deleting everything else
-\item Compiling in a specific folder and extracting what was needed
+\item Compiling in a specific folder and extracting what was necessary
 \end{itemize}
-Each of these methods has its advantages and disadvantages, but to begin the second method was chosen. This was easy to do, considering compiling happened in a local folder and all the files that were being used were known. The disadvantage being that, if the files used should change and this is not implemented in the code, it would result in the loss of these files.
+Each of these methods has its advantages and disadvantages, but as a start the second method was chosen. This was straightforward to do, considering compiling occured in a local folder and all the used files were known. The disadvantage being that, if the files used should change and this is not implemented in the code, it would result in the loss of these files.
 
 \subsection{Code execution}
-With many files being generated and every file test by hand, an automated compile and test system had to be devised. As discussed in section~\ref{subsec:simtool}, ModelSim was deemed the most useful tool for this development. As many tools do, ModelSim supports command-line execution of its commands, even easier to invoke should the tool be added to the system's \emph{path} variable. Python, being a script language, fully supported execution of command-line code with it's built-in function \emph{os.system()}, an example:
+With many files being generated and every file tested by hand, an automated compile and test system had to be devised. As discussed in section~\ref{subsec:simtool}, ModelSim was deemed the most useful tool for this development. ModelSim supports command-line execution of its commands, which are even easier to invoke should the tool be added to the system's \emph{path} variable. Python, being a script language, fully supports execution of command-line code with it's built-in function \emph{os.system()}, an example:
 %\begin{lstlisting}[tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, language=python]
 %\end{lstlisting}
 
@@ -491,12 +495,20 @@ os.system('vcom -2008 -work work tb_dff.vhd')
 os.system('vsim -c work.tb_dff(Behavioural) -do "run -all;exit"')
 \end{python}
 
-In the above example, the VHDL library \emph{work} is made, the file \emph{tb\_dff.vhd} is compiled to it and the architecture \emph{Behavioural} of tb\_dff is executed with the options \emph{"run -all;exit"} (This means as much as \emph{run from start to end, then exit the program}.). Work is a standard name for a library, but it is prone to abuse, i.e. putting everything in the work library. Nevertheless, this is a script that is being executed and as such generic names aren't a problem for the script itself, only for debugging by the developer. the -2008 and -c flags indicate the VHDL-2008 version is being used and that the tool works in command line mode.\\
+\noindent In the above example, the VHDL library \emph{work} is made, the file \emph{tb\_dff.vhd} is compiled to it and the architecture \emph{Behavioural} of tb\_dff is executed with the options \emph{"run -all;exit"} (this means as much as \emph{run from start to end, then exit the program}). Work is a standard name for a library, but it is prone to abuse, i.e. putting everything in the work library. Nevertheless, this is a script that is being executed and as such generic names aren't a problem for the script itself, only for debugging by the developer. The -2008 and -c flags indicate the VHDL-2008 version is being used and that the tool works in command-line mode.\\
 \\
-To summarize, the script now took a testbench, separated its tests into different testbench files, compiled and executed each of these files and displayed the output in the console used to execute the script from. So some tasks are automated, but there still isn't any clear overview of results nor is there full automation.
+To summarize, the script
+\begin{enumerate}[itemsep=-0.1cm]
+\item Took a testbench
+\item Separated its tests into different testbench files
+\item Compiled and executed each of these files
+\item Displayed the output in the console used to execute the script from
+\end{enumerate}
+So some tasks are automated, but there still isn't any clear overview of results nor is there full automation.
 
 \subsection{Code organisation}
-The next step in the process was code organisation. Up until now everything was being done sequentially in the main Python file. With the come become increasingly complex and to increase the above promoted readability, functions were made to contain their own parts of the code. All of these functions initially assume full control of every variable in the file, a bad practice but needed. The function setup begins very traditionally:
+\label{subsec:execution}
+The next step in the process was code organisation. Up until now everything has been done sequentially in the main Python file. With the code becoming increasingly complex and to increase the above promoted readability, functions were made to contain their own parts of the code. All of these functions initially assume full control of every variable in the file, a bad practice but needed. The function setup begins very traditionally:
 \begin{enumerate}[itemsep=-0.1cm]
 \item \itab{Setup:} \tab{Set all files and folders, generate unique name for current run}
 \item \itab{Parsing:} \tab{Read source, sort into testbenches, ready commands for execution}
@@ -504,15 +516,14 @@ The next step in the process was code organisation. Up until now everything was 
 \item \itab{Clean-up:} \tab{Remove everything except captured output}
 \end{enumerate}
 
-As is visible in the list, commands are now automatically captured in an output file with the following code:
+\noindent As is visible in the list, commands are now automatically captured in an output file with the following code:
 \begin{python}
 readcmd = os.popen('vsim -c -quiet "work.' + entname 
 					+ '(' + line 
 					+ ')"	-do "run -all;exit"').read()
 outputfile.write(readcmd)
 \end{python}
-The \emph{os.popen()} command opens up a console window, whose contents are read in combination with the \emph{read()} command that follows. The variables \emph{entname} and \emph{line} are the extracted entity name from the original source and a variable integer. This integer is the chosen name for the architectures from the different testbenches, who are simply named \emph{1, 2 ...} .
-This proved to be somewhat illegible for different testbenches, especially for multiple runs, so it was quickly replaced with:
+The \emph{os.popen()} command opens up a console window, whose contents are read in combination with the \emph{read()} command that follows. The variables \emph{entname} and \emph{line} are the extracted entity name from the original source and a variable integer. This integer is the chosen name for the architectures from the different testbenches, who are simply named \emph{1, 2 ...} . This proved to be somewhat illegible for different testbenches, especially for multiple runs, so it was quickly replaced with:
 \begin{python}
 readcmd = os.popen('vsim -c -quiet "work.' + entname 
 					+ '(' + archname + str(test) 
@@ -521,14 +532,14 @@ readcmd = os.popen('vsim -c -quiet "work.' + entname
 Where each architecture keeps its original name with simply a number appended to it.
 
 \subsection{Result evaluation}
-As is evident from the previous subsection, tests are executed and results captured automatically, but making sense of a whole lot of command line output from a text file isn't easy. ModelSim makes this 'worse' by adding a header and a whole lot of information that isn't really interesting at this time of development. Things such as what files were loaded prior to the execution and what preference file is being read are not needed. They might be in the event of severe failure but for a quick and easy overview of results, they are unwelcome.\\
+As is evident from the section~\ref{subsec:execution}, tests are executed and results captured automatically, but making sense of a whole lot of command line output from a text file is challenging. ModelSim makes this more difficult by adding a header and a lot of information that isn't really interesting at this time of development. Things such as which files were loaded prior to the execution and which preference file is being read are not needed. They might be in the event of severe failure but for a quick and easy overview of results, they are unwelcome.\\
 \\
-A great deal of filtering of the output file was needed, only the passed and failed testresults were needed for a proper report. In section~\ref{subsubsec:library}, it is shown that asserts are passed as notes with the explicit words \emph{test success} and \emph{test failed}. A simple filtering on these words per line of the output file should return every testresult, neatly ordered in passed and failed groups. A total testcount can easily be tallied from the combination, and as such a crude report is written to a text file.
+A great deal of filtering of the output file was required, only the passed and failed testresults were needed for a proper report. In section~\ref{subsubsec:library}, it is shown that asserts are passed as notes with the explicit words \emph{test success} and \emph{test failed}. A simple filtering on these words per line of the output file should return every testresult, neatly ordered in passed and failed groups. A total testcount can easily be tallied from the combination, and as such a crude report is written to a text file.
 
 \subsubsection{JUnit XML}
-As mentioned in section~\ref{subsec:JUnit}, the JUnit implementation of xUnit uses \gls{XML} for report viewing. The editor used throughout the development of the thesis is Eclipse, which is written in Java, the same language JUnit is an implementation for. So unsurprisingly, Eclipse readily supports JUnit XML reports. They can be read and displayed by manually navigating to them or editing the project properties to automatically read them.\\
+Previously discussed in section~\ref{subsec:JUnit}, the JUnit implementation of xUnit uses \gls{XML} for report viewing. The editor that was used throughout the development of the thesis is \emph{Eclipse}, which is written in \emph{Java}, the same language JUnit is an implementation for. So unsurprisingly, Eclipse readily supports JUnit XML reports. They can be read and displayed by manually navigating to them or editing the project properties to automatically read them.\\
 \\
-To read an XML report, we would of course need to have one generated. As mentioned above, testresults are stored in a text file, which is readily accessible. A very basic JUnit XML report consists of a \emph{testsuite} and a number of \emph{testcases}. A testsuite is a group of tests, and a testcase is a single test, in this case a passed or failed assert.
+To read an XML report, one would first would have to be generated. A very basic JUnit XML report consists of a \emph{testsuite} and a number of \emph{testcases}. A testsuite is a group of tests, and a testcase is a single test, in this case a passed or failed assert.
 %A crude implementation of how to parse the testresults is show below:
 %\begin{python}
 %xmlpath = os.getcwd() + os.sep + target + '_testresults.xml'
@@ -552,10 +563,10 @@ To read an XML report, we would of course need to have one generated. As mention
 %xmlfile.write('\n</testsuite>')
 %\end{python}
 %The testsuite is named for the unique testrun identifier \emph{target}. The string \emph{everyline} contains every testresult, both passed and failed, separated by a newline. Using a simple wordmatch and a regular expression search with the command \emph{re.search()}, the needed information is extracted into a testcase class, per test. Finally, the resulting file is written to the \emph{xmlpath}, composed of again the unique identifier and the clear word \emph{testresults} in the current working directory.
-The testsuite is named for the unique testrun identifier. A string contains every testresult, both passed and failed, separated by a newline. Using a simple wordmatch and a regular expression search with the command \emph{re.search()}, the needed information is extracted into a testcase class, per test. Finally, the resulting file is written to the  correct file, composed of again the unique identifier and the clear word \emph{testresults} in the current working directory.\\
+The testsuite is named for the unique testrun identifier. A string contains every testresult, both passed and failed, separated by a newline. Using a simple wordmatch and a regular expression search with the command \emph{re.search()}, the information is extracted into a testcase class, per test. Finally, the resulting file is written to the  correct file, composed of again the unique identifier and the clear word \emph{testresults} in the current working directory.\\
 \\
 %As this proved to be too crude for a proper report, the decision was made to move to a pre-made, open-source Python implementation of a JUnit report, aptly named python-junit-xml.\cite{junitxml} This package requires its own external component to be installed, called setuptools.\cite{setuptools} In this thesis, versions 1.0 and 3.5.1 respectively were used, but versions 1.3 and 8.0.4 are available at time of writing. The package supports more options than were first used, such as \emph{time\_taken}, which is the testcase duration, the name of the suite parent and many more. The implementation is shown below:
-As this proved to be too crude for a proper report, the decision was made to move to a pre-made, open-source Python implementation of a JUnit report, aptly named python-junit-xml.\cite{junitxml} This package requires its own external component to be installed, called setuptools.\cite{setuptools} In this thesis, versions 1.0 and 3.5.1 respectively were used, but versions 1.3 and 8.0.4 are available at time of writing. The package supports more options than were first used, such as the testcase duration, the name of the suite parent and many more.\\
+As this proved to be too crude for a proper report, the decision was made to move to a pre-made, open-source Python implementation of a JUnit report, aptly named python-junit-xml.\cite{junitxml} This package requires its own external component to be installed, called setuptools \cite{setuptools}. In this thesis, versions 1.0 and 3.5.1 respectively were used, but versions 1.3 and 8.0.4 are currently available. The package supports more options than were first used, such as the testcase duration, the name of the suite parent and many more.\\
 \\
 % The implementation is shown below:
 %\begin{python}
@@ -581,39 +592,39 @@ As this proved to be too crude for a proper report, the decision was made to mov
 %ts = TestSuite("Test Suite", test_cases)
 %xmlfile.write(TestSuite.to_xml_string([ts]))
 %\end{python}
-Again there is filtering on the words \emph{success} and \emph{failed}, but regular expressions are abandoned in favour of simple line splitting using the '-' token as it was needlessly complicated. Test failures now feature some details on how or why they failed, with the \emph{message} argument. Readability has improved as well, with each argument being defined before being used. Furthermore, generated reports are now able to be loaded into Eclipse, and by extension any other JUnit compatible viewer. This was previously not possible due to some missing options that were unable to be located.
+Again there is filtering on the words \emph{success} and \emph{failed}, but regular expressions are abandoned in favour of simple line splitting using the '-' token, as it was needlessly complicated. Test failures now feature some details on how or why they failed, with the \emph{message} argument. Readability has improved as well, with each argument being defined before being used. Furthermore, generated reports are now able to be loaded into Eclipse, and by extension any other JUnit compatible viewer. This was previously not possible due to some missing options that were unable to be located.
 
 \section{Fresh start}
-As everything up until now was based on code started with limited knowledge and experience of Python, it became clear that the original files weren't easy to be refactored or otherwise modified. The experience gained from writing everything mentioned in section~\ref{sec:outlining} was put to good use, and a clean file was started. With this file, a number of assumptions were made:
+As everything up until now was based on code created on the fly, it became clear that the original files weren't ready to be refactored or otherwise modified. The experience gained from writing everything mentioned in section~\ref{sec:outlining} was put to good use, and a clean file was started. With this file, a number of assumptions were made:
 \begin{itemize}
-\item Everything was to be organised into functions
-\item Functions were to work independently
-\item Optional arguments to modify the behaviour were to be specified
-\item Proper documentation was to be provided
-\item A log detailing events was to be held
+\item Everything should be organised into functions
+\item Functions should work independently
+\item Optional arguments to modify the behaviour should be specified
+\item Proper documentation should be provided
+\item A log detailing events should be held
 \end{itemize}
-All of these sound very logical to any experienced developer, however it was the inexperience that led to this point of rewrite. As such, there needed to be taken greater care of common software development practices to ensure the code would be understandable to outside developers. With this in mind, a division was made by functions that would represent the different steps in the parsing process.
+All of these sound very logical to any experienced developer, and so there needed to be taken greater care of common software development practices to ensure the code would be understandable to outside developers. With this in mind, a division was made by functions that would represent the different steps in the parsing process.
 
 \subsection{Organising functions}
-First it was chosen what the file was to be able to do, not how it was going to be done or what the exact implementation would be. From this, a number of functions were listed that should be able to get the entire job done, plus or minus some additions. They were:
+The file was divided into parts that each held a certain functionality, disregarding specific details in favour of behavioural descriptions. From this, a number of functions were listed that should be able to get the entire job done, plus or minus some additions. These were:
 \begin{itemize}[itemsep=-0.05cm]
 \item \itab{setup()}  		\tab{Set up files, set all global vars, process cmdline arguments with argparse}
-\item \itab{logwrite()}     \tab{Write things to the log file: errors, completed jobs etc.}
+\item \itab{logwrite()}     \tab{Write to the log file: errors, completed jobs etc.}
 \item \itab{get\_path(path)} \tab{Return absolute path if not already absolute path}
 \item \itab{setup\_parser()} \tab{Prepare the parser to accept correct cmdline arguments}
 \item \itab{make\_tempdir()}      \tab{Create the temporary working directory}
-\item \itab{parse\_source()} \tab{Grab source file, extract needed code, arrange functions \& procedures}
-\item \itab{test\_format()} \tab{Arrange found functions \& procedures in their own executable files}
-\item \itab{parse\_tests}   \tab{Grab processed source/files, execute \& capture output}
+\item \itab{parse\_source()} \tab{Grab source file, extract code, arrange functions and procedures}
+\item \itab{test\_format()} \tab{Arrange found functions and procedures in their own executable files}
+\item \itab{parse\_tests}   \tab{Grab processed source/files, execute and capture output}
 \item \itab{format()}       \tab{Grab output, format output}
 \item \itab{xmlwrite()}     \tab{Grab processed output, convert to JUnit compatible XML file}
 \item \itab{get\_time()}	\tab{Extract the passed time from a ModelSim time notice}
-\item \itab{cleanup()}      \tab{Remove temporary files \& directories}
+\item \itab{cleanup()}      \tab{Remove temporary files and directories}
 \end{itemize}
-Some of these bear striking resemblance to functions previously implemented. However, a lot of behaviour has been split into different functions, with as much useful standalones available. Some new behaviour has been brought up as well such as the log and the tempdir functions.
+Some of these bear striking resemblance to functions previously implemented. However, a lot of behaviour has been split into different functions, with as much useful standalones available. Some new behaviour has been brought up as well, such as the log and the tempdir functions.
 
 \subsection{Argparser}
-One of the more interesting features that was brought up was an \emph{argument parser}. The idea of adding arguments to the command line was long-existent, but it wasn't up until now that it was revealed that Python had a built-in argument parser. Using the library \emph{argparse}, it would become possible to have a complex yet simple to use commandline interface with optional and required arguments. Included in the parser is also the option for a clear and thorough help, providing users with all the information they might need to run the script. An example:
+One of the features that was brought up was an \emph{argument parser}. The idea of adding arguments to the command-line was long-existing, but only recently it was revealed that Python had a built-in argument parser. Using the library \emph{argparse}, it would become possible to have a complex yet simple to use commandline interface with optional and required arguments. Included in the parser is also the option for a clear and thorough help, providing users with all the information they might need to run the script. An example:
 
 \begin{python}
 p = argparse.ArgumentParser(description='VHDL testbench parser'
@@ -625,13 +636,13 @@ p.add_argument('-c', '--cmd'
                
 arguments, unknown = p.parse_known_args()
 \end{python}
-First, the argumentparser \emph{p} is defined, its options are a description and a formatter class. The formatter class is used to build the help when it is asked, it formats the output of all the \emph{help} strings and the possible additions they need. Second, one or more arguments are added to the parser with the \emph{add\_argument} function. The options here are the flag(s), a description for the help, the action to be carried out (in this case store a boolean), the name of the action's destination and a default value. Only the flags are a required option, the rest are added for their usefulness. And finally, the arguments are parsed to \emph{arguments} and \emph{unknown}. The simple command is \emph{parse\_args}, but by using {parse\_known\_args} it is possible to also capture any unrecognized arguments without the parser forcefully exiting, these arguments are stored in unknown.
+First, the argumentparser \emph{p} is defined, its options are a description and a formatter class. The formatter class is used to build the help when asked, it formats the output of all the \emph{help} strings and the possible additions they need. Secondly, one or more arguments are added to the parser with the \emph{add\_argument} function. The options here are the flag(s), a description for the help, the action to be carried out (in this case store a boolean), the name of the action's destination and a default value. Only the flags are a required option, the rest are added for their usefulness. And finally, the arguments are parsed to \emph{arguments} and \emph{unknown}. The simple command is \emph{parse\_args}, but by using {parse\_known\_args} it is possible to also capture any unrecognized arguments without the parser forcefully exiting, these arguments are stored in unknown.
 
 \subsection{Log keeping}
-One important aspect of debugging is a properly maintained log. Before the refresh, log keeping was limited to reading the ModelSim command line information. No output from the script was displayed, unless haphazardly specified for crude debugging during development. With the creation of at least a basic log, it could be possible to get a more detailed description and location of where things might have gone wrong. Having the possibility of logging also immediately increases the desire to use it, as usage should be simple and results are immediate.
+One important aspect of debugging is a properly maintained log. Before the refresh, log keeping was limited to reading the ModelSim command line information. No output from the script was displayed, unless haphazardly specified for crude debugging during development. With the creation of at least a basic log, it was possible to get a more detailed description and location of where things might have gone wrong. Having the possibility of logging also immediately increases the desire to use it, as usage should be simple and results are immediate.
 
 \subsubsection{Basic log}
-To start off, a simple text file was created, and its location might be changed through the use of a command line argument with argparse. Of course, to be readable, the log file should maintain a certain formatting. What is more, to be properly useful, a certain timekeeping aspect needed to be incorporated as well. The simple step by step plan would be:
+To start off, a simple text file was created and its location might be decided through the use of a command line argument with argparse. Of course, to be readable, the log file should maintain a certain formatting. To be properly useful, a certain timekeeping aspect needed to be incorporated as well. The simple step by step plan would be:
 \begin{enumerate}[itemsep=-0.1cm]
 \item Create log file if not already existent
 \item Determine time of writing
@@ -641,7 +652,8 @@ To start off, a simple text file was created, and its location might be changed 
 These steps combined give a basic but detailed and useful log. It should then give any debugging information that might be needed.
 
 \subsubsection{Buffering}
-It was quickly determined that the log wasn't usable when the script hadn't already gone through several critical phases, each with very possible and critical messages that needed to be kept. A file couldn't be used before it was created, but it couldn't be created until the directory was set up which might require some logs being kept. There were two ways to deal with this, the first is turn off logging for all that comes before the log file is created; the second is to keep a buffer of log messages and to flush them to the log once it was ready. Seeing as it was easily implemented, the second option was chosen and a simple array was kept with log messages:
+\label{subsubsec:buffering}
+It was quickly determined that the log was not usable until the script had already gone through several critical phases, each with very possible and critical messages that needed to be kept. A file couldn't be used before it was created, but it couldn't be created until the directory was set up which might require some logs being kept. There were two ways to deal with this, the first is turn off logging for all that comes before the log file is created; the second is to keep a buffer of log messages and to flush them to the log once it was ready. Seeing as it was easily implemented, the second option was chosen and a simple array was kept with log messages:
 \begin{python}
 def logbuffer(level='n',message ='No message given.'):
     global logs_buffer 
@@ -651,20 +663,20 @@ def logbuffer(level='n',message ='No message given.'):
         logs_buffer.append([level, message
         					, time.strftime("%Y.%m.%d - %H:%M:%S") ])
 \end{python}
-The variable \emph{logs\_buffer} is used to store the messages, the keyword \emph{global} is needed for Python to allow it to be modified. If the logs have started, indicated by the boolean \emph{logstarted}, the original log write function is simply called. In this function, the time is kept for every logwrite and as such the buffer needs to keep this as well with the format Year.Month.Day - Hours:Minutes:Seconds, in the typical 'full' numbers YYYY.MM.DD - hh:mm:ss. Finally, a certain level is given as argument. This level indicates the severity of the log, inspired by the assertion severity levels in \gls{VHDL}. Adding this provides the possibility of filtering a long log for critical information.
+The variable \emph{logs\_buffer} is used to store the messages, the keyword \emph{global} is required for Python to allow it to be modified. If the logs have started, indicated by the boolean \emph{logstarted}, the original log write function is simply called. In this function, the time is kept for every logwrite and as such the buffer needs to keep this as well with the format Year.Month.Day - Hours:Minutes:Seconds, in the typical 'full' numbers YYYY.MM.DD - hh:mm:ss. Finally, a certain level is given as argument. This level indicates the severity of the log, inspired by the assertion severity levels in \gls{VHDL}. Adding this provides the possibility of filtering a long log for critical information.
 
 \subsubsection{Actual log}
-With the buffer in place, the log could be properly expanded for some more advanced features. Priority is determining whether the log file had been created or not, this by using the global variable \emph{logstarted}, mentioned in the previous subsection. After creating the log, a header was written to the file containing information such as format of the messages used, the unique name of the test run and some basic cosmetics. All that needed to be done now was to write the buffered messages and ready the file for further additions.
+With the buffer in place, the log could be properly expanded for some more advanced features. Priority is determining whether the log file had been created or not, which is done by using the global variable \emph{logstarted}, mentioned in section~\ref{subsubsec:buffering}. After creating the log, a header was written to the file containing information such as format of the messages used, the unique name of the test run and some basic cosmetics. All that remained to be done now was to write the buffered messages and ready the file for further additions.
 
 \subsection{Getting ready}
 \emph{\color{red} Titel?}
-To ensure a proper work environment, temporary files and folders needed to be created, as well as more permanent files such as the log and results. At first, files were stored in a simple folder in the same directory as the source file. This was a perfectly acceptable practice to start off with, but eventually it became clear that users might take offence to folders seeming to appear in and out of existence while the script was being run. Furthermore, to prevent the results and logs of being scattered to wherever the source files might be located, a central folder was put to use to store any and all files kept after the script had run its course.
+To ensure a proper work environment, temporary files and folders should be created, as well as more permanent files such as the log and results. At first, files were stored in a  folder in the same directory as the source file. This was a perfectly acceptable practice to start off with, but eventually it became clear that users might take offence to folders seeming to appear in and out of existence while the script was running. Furthermore, to prevent the results and logs of being scattered to wherever the source files might be located, a central folder was put to use to store any and all files kept after the script had run its course.
 
 \subsubsection{Temporary directory}
 Considering that current-day operating systems have a a modern work environment, including folders for temporary storage and other out-of-sight stashing, it stood to reason to make use of this. Python has built-in functionality to access feature, in the form of \emph{tempfile.gettempdir()}, which is a function that returns the temporary directory of the user calling the script. By creating a uniquely named folder within the temporary directory and doing all the work inside, it would be possible to simply remove this folder at the end of the run and leave a clean slate behind.
 
 \subsubsection{Results directory}
-With the platform independence in mind, there needed to be a folder that was always in the same location, regardless of the \gls{OS}. Most current-day OS's have a documents folder per user, and good use could be made of this. With the Python function \emph{os.environ['USERPROFILE']} referring to this folder, a folder aptly named \emph{VHDL\_TDD\_Parser} is created that stores a new folder for each run of the script. However, if the script was being called without the command line flag, it was assumed to be run by a more advanced program, perhaps a scheduler, that would automatically configure the files and folders to be stored in its workspace. Developers might also make use of this feature to disregard the central storage and have their results with the source files.
+With the platform independence in mind, there was a need for a folder that always stayed in the same location, regardless of the \gls{OS}. Most current-day OS's have a documents folder per user, and so good use could be made of this. With the Python function \emph{os.environ['USERPROFILE']} referring to this folder, a folder aptly named \emph{VHDL\_TDD\_Parser} is created that stores a new folder for each run of the script. However, if the script was called without the command line flag, one can assume it to be run by a more advanced program, perhaps a scheduler, that would automatically configure the files and folders to be stored in its workspace. Developers might also make use of this feature to disregard the central storage and have their results with the source files.
 
 \subsection{Processing source files}
 Originally, one file at a time was processed, with the testbench inside expected to contain several different test cases. As work progressed, it became obvious that a large \gls{VHDL} project might contain several testbenches, and that each of these testbenches might contain multiple test suites with their own test cases. Work had to be done on maintaining a way of keeping different files separate, so that a proper trace could lead back to the original source, rather than a mix of everything. \\
@@ -675,11 +687,11 @@ Remembering the first draft in section~\ref{subsec:first}, there were different 
 \item Line per line 
 \item Partitioned with identifiers
 \end{itemize}
-In the Start Stop method, every single line between certain keywords is assumed to contain a test. Further it is assumed that everything above the keywords is architecture header and everything below is a general 'end of the architecture body'. This method is the easiest to parse, simply look for the keyword and create a new testbench with every line. An obvious disadvantage is that this is unsuited for large testbenches, with code duplication through the roof considering all processes need to be defined outside the keywords.\\
+In the Start Stop method, every single line between certain keywords is assumed to contain a test. It is assumed that everything above the keywords is architecture header and everything below is a general 'end of the architecture body'. This method is the easiest to parse, look for the keyword and create a new testbench with every line. A disadvantage is that this is unsuited for large testbenches, with code duplication through the roof considering all processes need to be defined outside the keywords.\\
 \\
-In the Line method, the parser looks for a process, this process is to contain one test per line within. It looks for this process itself and as such, can much more easily make a mistake than the Start Stop method. Its inclusion in the final build is simply for legacy reasons and it is advised against using this method.\\
+In the Line method, the parser looks for a process. This process should contain one test per line. It looks for this process itself and as such, can much more easily make a mistake than the Start Stop method.\\
 \\
-Finally, in the Partitioned method, the developer indicates which blocks are testsuites by using the \emph{-\--test} and \emph{-\--end} keywords. Everything in between these keywords are assumed to be a single block of testcases, to be put in the same new testbench. As such, and unlike the previous two methods, it is possible to define multiple testsuites.  This method gives the greatest advantages and, with some expansion, might enable a more intelligent handling of the testbenches that are being processed.
+Finally, in the Partitioned method, the developer indicates which blocks are testsuites by using the \emph{-\--test} and \emph{-\--end} keywords. Everything in between these keywords is assumed to be a single block of testcases, to be put in the same new testbench. As such, and unlike the previous two methods, it is possible to define multiple testsuites. This method gives the greatest advantages and, with some expansion, might enable a more intelligent handling of the testbenches that are being processed.
 
 
 % Voor later:
