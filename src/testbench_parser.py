@@ -124,7 +124,7 @@ def logwrite(level='u',message ='No message given.', tempname_t=None, args_t=Non
     else:
         dest = foldername_t
         
-    #FORMAT: Timestamp \tab Level \tab Message
+    #FORMAT: Time stamp \tab Level \tab Message
     levels = {'n': 'notice', 'w' : 'warning', 's': 'severe', 'c': 'critical', 'u' : 'unknown'};
     logfile = open(dest + os.sep + 'logfile.txt', 'a+')
     
@@ -143,6 +143,8 @@ def logwrite(level='u',message ='No message given.', tempname_t=None, args_t=Non
     global logstarted
     if (not logstarted):
         logstarted = True
+    # if logs_buffer: -> Needed for error logging when the logfile doesn't work
+    # Adding the check here prevents eternal looping of logging errors writing to log
         for command in logs_buffer:
             logfile.write(command[2] + '  -  ' + (levels[command[0]] + '\t').expandtabs(5) + '-  ' + command[1] + '\n')
                                                                                                     # Print the message with information on time and level
@@ -291,9 +293,10 @@ def parse_source(path, method=None):
         for line in source:
             footer += line
         source.close()
+        
     elif (method =='line'):
         archbody, archend = False, False
-        beginwords = ['function','procedure','for','while','if','process','component',]
+        beginwords = ['function','procedure','for','while','if','process','component']
         depth = 0
         
         while not archbody:
@@ -399,9 +402,11 @@ def parse_source(path, method=None):
     return [archname, entname, header, archheader, footer, templist]
     
 ## arranges found functions & procedures in their own executable files
-def test_format(parsedlist_t = None):
+def test_format(parsedlist_t = None, tempdir_t = None):
     if parsedlist_t == None:
         parsedlist_t = parsedlist
+    if (tempdir_t == None):
+        tempdir_t = tempdir
     ## Format: parsedlist is a tuple of tuples: [archname, entname, header, archheader, footer, list_of_tests]
         
     testcount = {}
@@ -418,7 +423,7 @@ def test_format(parsedlist_t = None):
             
             localcount = 0
             localname = entname + '.' + archname + '.' + str(da) + '.vhd'       # Name for use in dictionary and testing
-            testfile_path = tempdir + os.sep + localname
+            testfile_path = tempdir_t + os.sep + localname
             testfile = open(testfile_path,'w+')
             testfile.write('library TDD;\nuse TDD.vhdlUnit.all;\n')
             testfile.write(header)
@@ -431,6 +436,7 @@ def test_format(parsedlist_t = None):
                 testfile.write(footer.replace(archname, archname + str(localcount)) + '\n\n')
                 localcount += 1
             testfile.close()
+            logwrite('n','Parsed test with name: ' + localname)
             testcount[localname] = localcount                                   # Keep a dictionary of the tests in each file
         else:
             logwrite('n','Ignoring test ' + str(len(testcount)) + ', file: ' + str(parsedfile[1]))

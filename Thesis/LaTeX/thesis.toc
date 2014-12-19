@@ -50,11 +50,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.2.1}Revision Control}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2}Build Automation}{7}
+\contentsline {subsubsection}{\numberline {4.2.2}Build Automation}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.2.3}Test Automation}{8}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.4}Hudson-CI}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}JUnit}{8}
 \defcounter {refsection}{0}\relax 
@@ -102,10 +100,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.5}Processing source files}{16}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.5.1}Processing methods}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.5.2}Formatting the testbenches}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6}Execution}{17}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7}Surrounding programs}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Hudson-CI}{17}
+\contentsline {subsection}{\numberline {7.1}Hudson-CI}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}The future of testing}{18}
+\contentsline {section}{\numberline {8}The future of testing}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Conclusion}{19}
+\contentsline {section}{\numberline {9}Conclusion}{20}

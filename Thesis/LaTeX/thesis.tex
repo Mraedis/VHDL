@@ -1,7 +1,7 @@
 \documentclass[11pt,british]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[backend=biber,style=numeric,citestyle=numeric]{biblatex}
+\usepackage[backend=biber,style=numeric,citestyle=numeric,sorting=none]{biblatex}
 \usepackage{lmodern}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -185,14 +185,20 @@ the obligation to state expressly the source when quoting results from this mast
 \newacronym{CI}{CI}{Continuous Integration}
 
 \section{Problem}
+\emph{\color{red}Revisie nodig: belangrijkste pagina}
 
-Developing \gls{VHDL}, like any code, is prone to error creation, either by user or by wrong product specifications. To ensure errors are weeded out before the more expensive production begins, the code must be subjected to rigorous testing. Currently, large and impractical tests are needed to fully test a product.
+Developing digital hardware \gls{VHDL} is, like any code, prone to errors, either by the developer or by wrong or bad \emph{\color{red}synoniem} product specifications. To ensure errors are weeded out before the more expensive production begins\emph{\color{red}Zie commentaar}, the code must be subjected to rigorous testing. \emph{Currently, large and impractical tests are needed to fully test a product.}
+\emph{\color{red}productie != einddoel alle VHDL -> FPGAs en FPGA verdelingen}
 \\
 \\
 Because testing is such a time consuming process, finding errors often results in severe delays due to the need to both correct the error and test for others. Therefore it is in the best interests of both testing- and software engineers to write testbenches with maximal coverage, optimal readability and minimum time spent. It is also important to find and correct errors with minimal delay and maximal efficiency. This entire process should affect the least amount of code possible in order to minimize time spent retesting and modifying the code.
+\emph{\color{red} Betere samenvatting + meer gevolgen}
 \\
 \\
-In this thesis, the objective is to provide VHDL users with an operating system independent framework. This framework will allow users to quickly and consistently create, modify and execute testbenches. To accomplish all of this, a number of tried and proven external tools will be gathered around a central Python script. This combination will ensure timely and automated building, testing and test report generation.
+\emph{\color{red}De stappen gezet, niet productie zelf}\\
+In this thesis, the objective is to explore an operating system independent framework. This framework will allow users to quickly and consistently create, modify and execute testbenches. To accomplish all of this, a number of industry standard tools will be incorporated
+%tried and proven external tools will be gathered 
+around a central Python script. This combination will ensure timely and automated building, testing and test report generation.
 
 %In this thesis, a number of mechanics are used to optimize both testing and coding. Based loosely off %of \gls{TDD}, tests are written to function and be tested independently.  In order to maximize %coverage and keep the time spent writing tests to a minimum, a library with often used functions and %other useful code is made available. Alongside of it is a tool, written in Python, to process tests %independently  and represent the results in a quick and easy-to-read format.
 
@@ -232,6 +238,8 @@ In this thesis, the objective is to provide VHDL users with an operating system 
 \label{subsec:HDL}
 \newacronym{HDL}{HDL}{Hardware Description Language}
 \newacronym{RTL}{RTL}{Register Transfer Level}
+\emph{\color{red}Meer bronvermelding}\\
+\emph{\color{red} Ook iets meer over geschiedenis VHDL}\\
 
 %A \gls{HDL} can be used to describe any one of the levels mentioned in the previous section, right down to the logic gate level. However, this last one is wholly unnecessary considering synthesis tools can produce superior logic gate-level layouts \cite{VHDLintro}.
 A \gls{HDL} can be used to describe digital electronics, i.e. hardware, in different levels. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
@@ -255,23 +263,29 @@ end Behavioural;
 \end{lstlisting}
 \newacronym{IEEE}{IEEE}{Institute of Electrical and Electronics Engineers}
 \newacronym{DFF}{DFF}{D Flip-Flop}
+\emph{\color{red}IEEE is alles in VHDL: betere verwoording}\\
+\emph{\color{red}Sequentieel proces}\\
 The \gls{IEEE} library provides a number of extensions on the original \gls{VHDL} specification that allow a more realistic simulation and description of hardware behaviour. An \emph{entity} defines the inputs and outputs of a certain building block, in this case the \gls{DFF}. The D stands for Delay, and it simply puts on its output, Q, that which was on the input, D, one clock period earlier. The \emph{architecture}, in this case Behavioural, takes the description of an entity and assigns a real implementation to it. All \emph{processes} are executed in parallel, this does not mean that all are triggered at the same time, nor do they take equally as long to finish, but it means that any process can be executed alongside any other process. In this case there is only one (nameless) process that describes the entire behaviour of the flip-flop. The process waits for the rising edge of the clock, which is a transition from zero to one, after which it schedules the value of D to be put on Q when the next rising edge appears.
 \\
 \\
+\emph{\color{red}Hierarchisch testing: figuur, uitleg}\\
+\emph{\color{red}Wat is een testbench bvb, hoe werkt dit? niet te veel stappen overslaan}\\
 This is a basic example of an entity, an architecture and a process. This flip-flop could be used in certain numbers to build a \emph{register}, a collection of ones and zeroes (henceforth referred to as \emph{bits}) that is used to (temporarily) store these values. The register could then be used alongside combinational logic to build an even bigger entity. The idea here is that small building blocks can be combined to produce vast and complex circuits that are nearly impossible to describe in one go. Adding all these layers together also creates a lot of room for error, and having a multi-level design makes it challenging to pinpoint the exact level and location of any errors. Therefore, it is paramount that all code on all levels is tested thoroughly, which is done by use of \emph{testbenches} \cite{bergeron00}.
 \\
 \\
 \newacronym{UUT}{UUT}{Unit Under Test}
 \newacronym{DUT}{DUT}{Device Under Test}
-Testbenches are made up of code that takes a certain building block, the \gls{UUT} or \gls{DUT}. The testbench then puts a certain sequence of values on the inputs and monitors the outputs. If the device performs normally, the received output sequence should match a certain \emph{golden reference}, the expected output sequence. In these testbenches it is good practice to observe how well a device performs if its inputs behave outside of the normal mode of operation. When all of these tests have finished and the output performs as expected, the device is ready to be put into production or further down the developmental process.
+\emph{\color{red}Golden reference is geen vakterm}\\
+Testbenches are made up of code that takes a certain building block, the \gls{UUT} or \gls{DUT}. The testbench then puts a certain sequence of values on the inputs and monitors the outputs. If the device performs normally, the received output sequence should match an expected output sequence. In these testbenches it is good practice to observe how well a device performs if its inputs behave outside of the normal mode of operation. When all of these tests have finished and the output performs as expected, the device is ready to be put into production or further down the developmental process.
 \\
 \\
 If a device is not tested properly and faults propagate throughout development, they can be very expensive to correct, especially at the stage of production, where a single photomask, used to ``print'' part of the layout, can easily cost \$100,000 (\euro81,000 at time of writing)\cite{weber06}. Therefore a large portion of time is spent writing and executing tests.
 
+\emph{\color{red}Relevantere figuur, betere design flow}\\
 \begin{figure}[h]
     \centering
 	\includegraphics[width=\textwidth]{images/VHDLflow.pdf}
-    \caption{Typical CMOS design flow}
+    \caption{Typical ASIC design flow}
     \label{fig:Design_Flow}
 \end{figure}
 
@@ -284,6 +298,7 @@ If a device is not tested properly and faults propagate throughout development, 
 \newacronym{CC}{CC}{Code Coverage}
 \newacronym{IC}{IC}{Intelligent Coverage}
 \section{Current industry practices}
+\emph{\color{red}Klassieke testbench nog uitleggen}\\
 \label{sec:industry}
 As mentioned before, a number of practices exist to improve speed and quality of testing and coding. The bigger part of these practices are applied in the software development industry, where this is quite literally their entire business. Moving to \gls{HDL}s, it stands to reason that code meant for synthesis may not be able to follow all of these best practices. However, the industry has formed several practices and \emph{methodologies} to try and create a uniform verification process. The most well-known will be discussed in some detail below.
 
@@ -303,12 +318,14 @@ Coverage is a generic term that is used to describe how fully a design has been 
 In development, \gls{CC} is a type of measurement to indicate how well the source code has been tested. With the use of a coverage report, unused blocks of code can be uncovered, these blocks might indicate unnecessary code or a bug. Imagine a \gls{FSM} with an unused reset state, this might indicate that the reset isn't functioning properly or there are no tests covering the reset. CC does not, however, provide any real functional analysis. It does not indicate any missing lines of code nor does it tell you whether the inputs and outputs behave properly.
 
 \subsubsection{Functional Coverage}
+\emph{\color{red}Niet juist}\\
 \gls{FC} is the practice of measuring whether the design covers all possible use states it can possibly be in. Good practice is to include all possible cases, including corner cases, cases that cover multiple clock cycles, erroneous cases such as receiving an interrupt when processing or overflowing a buffer and so on. 
 
 \subsection{Verification}
-
 \subsubsection{Constrained Random Verification}
 \emph{\color{red}Revision!}
+\emph{\color{red}Voorbeelden, niet noodzakelijk VHDL, bronvermelding (algemeen)}\\
+\emph{\color{red}Resultaat en hoe controleren bij random input}\\
 \gls{CRV} is an industry practice where one or more inputs are generated randomly, within certain bounds or \emph{constraints}. This practice was brought into use after designs grew too large for \gls{DT} to support. DT has verification engineers write out very specific things they want to test, for instance, a reset pulse to verify the reset working correctly. CRV opposes this with the idea that for all behaviour to be tested properly in large designs, the amount of time spent writing and executing tests would simply become too great. It proposes a solution where inputs are generated randomly, within certain bounds, but in a sufficiently large quantity to have implicitly covered all scenarios. It is important to note that in DT, expected behaviour is directly tested, but in CRV it is likely to be the unexpected behaviour that gets tested too. This solved the long standing problem of testing any behaviour, including the unexpected.
 
 \subsubsection{Formal Verification}
@@ -316,6 +333,7 @@ On top of the aforementioned, there are several more practices that have unique 
 
 %\subsection{Methodologies}
 
+\emph{\color{red}Beetje overbodig of meer uitleg}\\
 \subsection{Open Source VHDL Verification Methodology}
 \newacronym{OSVVM}{OSVVM}{Open Source VHDL Verification Methodology}
 The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV} and \gls{FC} to be implemented in a project. It consists out of two packages, \emph{Random.pkg} and \emph{Coverage.pkg}. The new feature, which it dubs \gls{IC}, redefines its FC model based on holes in the FC coverage and randomization. The advantage is obviously that 100\% coverage is always within reach, even when the original draft did not achieve full coverage.\cite{ICoverage}
@@ -330,9 +348,9 @@ As mentioned in section~\ref{sec:intro} \gls{HDL}s are used for developing hardw
 
 \label{subsec:simtool}
 \subsubsection{ModelSim}
-ModelSim is the simulator that was investigated for several reasons. First, a free student edition was available. Considering licenses  outside of school can easily cost upward of \$25,000 (\euro20,250 at time of writing) this made it ideal for any thesis or student related work. Proof of this is the extensive use of ModelSim in the courses related to HDL development. Second, ModelSim supports all versions of \gls{VHDL}, which is the \gls{HDL} we are processing. Even in 2014, only one other tool was found to support all of VHDL-2008. And last but not least, ModelSim is one of the industry's most used simulators, enabling a pool of experience to be consulted.
+ModelSim is the simulator that was investigated for several reasons. First, a free student edition was available. Considering licenses  outside of school can easily cost upward of \$25,000 (\euro20,250 at time of writing) this made it ideal for any thesis or student related work. Proof of this is the extensive use of ModelSim in the courses related to HDL development. Second, ModelSim supports all versions of \gls{VHDL}, which is the \gls{HDL} we are processing. Even in 2014, only one other tool was found to support all of VHDL-2008, which is Aldec's \emph{Active-HDL}. And last but not least, ModelSim is one of the industry's most used simulators, enabling a pool of experience to be consulted. \cite{ActiveHDL},\cite{Cadence},\cite{ISE},\cite{Quartus},\cite{ModelSim}
 
-\emph{\color{red}Figuurtje of vergelijking tussen simulators?}
+\emph{\color{red}Figuurtje of vergelijking tussen simulators?}\\
 
 %Wat is CI? Wat doet Hudson?
 %GIT? Hoe werkt het, waarom?
@@ -351,6 +369,7 @@ To understand \gls{TDD}, a basic knowledge of \emph{Unit Testing} is required. I
 
 %% herschrijven!
 \subsubsection{Test First Development}
+\emph{\color{red}Herschrijven}
 Another main component of \gls{TDD} is \gls{TFD}, a technique that has a developer writing tests first, before any code has been written. This method makes the developer think on what the code has to achieve, rather than what the specific implementation has to be. A key feature of a new test is that it has to fail during its first run. If not, the test is obsolete seeing as the functionality it tests has already been implemented. After being run for the first time (and failing), the developer implements just enough code to get the test to pass. Once the test succeeds, it is time for a new test.
 
 \subsubsection{Refactoring}
@@ -367,7 +386,10 @@ Test Driven Development is a combination of the previously mentioned techniques.
 \end{figure}
 
 \subsection{Continuous Integration}
-\gls{CI} is a software development technique in which developers upload the edits on the software, or their \emph{build}, to a central server which then \emph{continuously integrates} the code from multiple developers. This to prevent integration headaches when the code of multiple developers has diverged to such an extent that it would take much more time to make the edits work together than if they had been integrated early on.
+\label{subsec:CI}
+\gls{CI} is a software development technique in which developers upload the edits on the software, or their \emph{build}, to a central server which then \emph{continuously integrates} the code from multiple developers. This to prevent integration headaches when the code of multiple developers has diverged to such an extent that it would take much more time to make the edits work together than if they had been integrated early on.\\
+\\
+Combining all of these practices saves developers, and by extension the company they might work for, a lot of time and of money. Considering today's competitive market for software development, any edge that can be obtained is a plus. Even more so when plenty of free Continuous Integration solutions exist that employ open or widely used standards.
 
 \subsubsection{Revision Control}
 \newacronym{RC}{RC}{Revision Control}
@@ -379,17 +401,9 @@ A useful but not required aspect is build automation. Using a timer or trigger, 
 \subsubsection{Test Automation}
 As the code is built at scheduled times, and testing is needed regardless, it makes perfect sense to add a testing step to the automated build. Automating tests saves the developers yet another part of their time, thus freeing more for the actual development and debugging steps. A good \gls{CI} system can read test reports, or at least some standard of reports. 
 
-\subsubsection{Hudson-CI}
-\emph{\color{red}Verhuizen naar later: specifieke implementatie tegenover algemene zaken hier}
-Combining all of these practices saves developers a lot of time and, by extension, the company they might work for, a lot of money. Considering today's competitive market for software development, any edge that can be obtained is a plus. Even more so when plenty of free Continuous Integration servers exist that employ open or widely used standards. The \gls{CI} solution that was investigated is Hudson-CI which provides an extensive range of features, including everything listed above. The used features are:
-\begin{itemize}
-\item Timed and triggered building from an \gls{RC} repository
-\item Automated testing of said build
-\item Humanly readable reports in the \emph{JUnit} format
-\item Graphical and statistical overview of test progress throughout builds
-\end{itemize}
 
 \subsection{JUnit}
+\emph{\color{red}Meer over xUnit ipv JUnit en dan verder gaan over JUnit}\\
 \label{subsec:JUnit}
 \newacronym{XML}{XML}{eXtensible Markup Language}
 JUnit is an implementation for the Java programming language of the xUnit specification, which defines several key components for a testing framework. Considering the relevant piece here is not the framework itself but the format used for its reports, details about its implementation and use will not be discussed.\\
@@ -408,6 +422,9 @@ Python is a high-level computer programming language that first appeared in 1991
 \newpage
 %\setcounter{section}{0}
 \part{Developing a framework}
+\emph{\color{red}Structurering!}\\
+\emph{\color{red}Meer in detail gaan over methodes, voorbeeld van hoe framework gebruiken in plaats van details uit te leggen over de functies: design beslissingen}\\
+\emph{\color{red}Meer grafische uitleg, workflow en dergelijke}\\
 In part I different aspects from both the software and \gls{VHDL} development worlds were discussed in  varying levels of detail. In this part bits and pieces of each subject are combined to form a new whole, a VHDL development framework.
 
 \section{Outlining}
@@ -435,7 +452,7 @@ To try and counter the problems, using a standardized function library was propo
 \subsection{First improvements}
 As mentioned above, one of the first improvements was a standardized function library. To be of any use, this library should contain functions and procedures that are either used extensively throughout the developmental process, have a great potential of being used or that, when created on their own, would impose a significant workload on the developer. Considering the large percentage of the industry still working in the VHDL-93 specification, the library would need to be compatible with this version. However, to ensure future usability and steer development towards the newer versions, i.e. 2002 and 2008, these should be supported as well.\\
 \\
-A second improvement, yet undiscussed, would be maintaining a clean set-up. Throughout the first testing, it became apparent that when multiplying the amount of testbenches that are executed, the files around them are multiplied in the same way. Massive clutters of 'temporary' files and folders would quickly pollute the workspace, and thus keeping track and removing unneeded files would be of the essence, especially considering later modifications (see section~\ref{subsec:CI}).
+A second improvement, yet undiscussed, would be maintaining a clean set-up. Throughout the first testing, it became apparent that when multiplying the amount of testbenches that are executed, the files around them are multiplied in the same way. Massive clutters of 'temporary' files and folders would quickly pollute the workspace, and thus keeping track and removing unneeded files would be of the essence, especially considering later modifications (see section~\ref{subsec:Hudson}).
 
 \subsubsection{The library}
 \label{subsubsec:library}
@@ -669,7 +686,7 @@ The variable \emph{logs\_buffer} is used to store the messages, the keyword \emp
 With the buffer in place, the log could be properly expanded for some more advanced features. Priority is determining whether the log file had been created or not, which is done by using the global variable \emph{logstarted}, mentioned in section~\ref{subsubsec:buffering}. After creating the log, a header was written to the file containing information such as format of the messages used, the unique name of the test run and some basic cosmetics. All that remained to be done now was to write the buffered messages and ready the file for further additions.
 
 \subsection{Getting ready}
-\emph{\color{red} Titel?}
+\emph{\color{red} Titel?}\\
 To ensure a proper work environment, temporary files and folders should be created, as well as more permanent files such as the log and results. At first, files were stored in a  folder in the same directory as the source file. This was a perfectly acceptable practice to start off with, but eventually it became clear that users might take offence to folders seeming to appear in and out of existence while the script was running. Furthermore, to prevent the results and logs of being scattered to wherever the source files might be located, a central folder was put to use to store any and all files kept after the script had run its course.
 
 \subsubsection{Temporary directory}
@@ -679,8 +696,10 @@ Considering that current-day operating systems have a a modern work environment,
 With the platform independence in mind, there was a need for a folder that always stayed in the same location, regardless of the \gls{OS}. Most current-day OS's have a documents folder per user, and so good use could be made of this. With the Python function \emph{os.environ['USERPROFILE']} referring to this folder, a folder aptly named \emph{VHDL\_TDD\_Parser} is created that stores a new folder for each run of the script. However, if the script was called without the command line flag, one can assume it to be run by a more advanced program, perhaps a scheduler, that would automatically configure the files and folders to be stored in its workspace. Developers might also make use of this feature to disregard the central storage and have their results with the source files.
 
 \subsection{Processing source files}
-Originally, one file at a time was processed, with the testbench inside expected to contain several different test cases. As work progressed, it became obvious that a large \gls{VHDL} project might contain several testbenches, and that each of these testbenches might contain multiple test suites with their own test cases. Work had to be done on maintaining a way of keeping different files separate, so that a proper trace could lead back to the original source, rather than a mix of everything. \\
-\\
+Originally, one file at a time was processed, with the testbench inside expected to contain several different test cases. As work progressed, it became obvious that a large \gls{VHDL} project might contain several testbenches, and that each of these testbenches might contain multiple test suites with their own test cases. Work had to be done on maintaining a way of keeping different files separate, so that a proper trace could lead back to the original source, rather than a mix of everything. 
+
+\subsubsection{Processing methods}
+\label{subsubsec:processmethods}
 Remembering the first draft in section~\ref{subsec:first}, there were different ways of splitting the testbench into cases and suites. Considering the command line arguments were now available, it would stand to reason to give the developer the possibility of choosing in what way they desired to split their testbenches. Supporting every possible way is impossible, and as such the choice came down to three varieties:
 \begin{itemize}[itemsep=-0.1cm]
 \item Start Stop identifiers
@@ -689,19 +708,45 @@ Remembering the first draft in section~\ref{subsec:first}, there were different 
 \end{itemize}
 In the Start Stop method, every single line between certain keywords is assumed to contain a test. It is assumed that everything above the keywords is architecture header and everything below is a general 'end of the architecture body'. This method is the easiest to parse, look for the keyword and create a new testbench with every line. A disadvantage is that this is unsuited for large testbenches, with code duplication through the roof considering all processes need to be defined outside the keywords.\\
 \\
-In the Line method, the parser looks for a process. This process should contain one test per line. It looks for this process itself and as such, can much more easily make a mistake than the Start Stop method.\\
+In the Line method, the parser looks for a process. This process should contain one test per line. It looks for this process itself and as such, can easier make a mistake than the Start Stop method.\\
 \\
 Finally, in the Partitioned method, the developer indicates which blocks are testsuites by using the \emph{-\--test} and \emph{-\--end} keywords. Everything in between these keywords is assumed to be a single block of testcases, to be put in the same new testbench. As such, and unlike the previous two methods, it is possible to define multiple testsuites. This method gives the greatest advantages and, with some expansion, might enable a more intelligent handling of the testbenches that are being processed.
 
+\subsubsection{Formatting the testbenches}
+\label{subsubsec:testformat}
+Now that the tests and other relevant information were extracted, the creation of the new testbenches was started. All parse methods from section~\ref{subsubsec:processmethods} returned the same variables:
+\begin{multicols}{2}
+\begin{itemize}[itemsep=-0.1cm]
+\item File header
+\item Entity name
+\item Architecture name
+\end{itemize}
+\columnbreak
+\begin{itemize}[itemsep=-0.1cm]
+\item Architecture header
+\item Architecture footer
+\item List of found testsuites
+\end{itemize}
+\end{multicols}
+\noindent Splitting the architecture header from the rest of the header allowed easier change of the architecture name, which was used in formatting the tests. For easier access, all of these variables were contained in a tuple which was then given to the formatting function. Using this tuple, a template was formed for the general testbenches. As the library functions mentioned in section~\ref{subsubsec:library} were used, a library header containing it was added to the header. In the next step, the architecture name was replaced with a unique name to allow each testsuite to be called generically as will be discussed in section~\ref{subsec:executing}. This generic name also including a \emph{duplication avoider}, a counter to prevent multiple runs of the same source file creating conflicting names. The testsuites were encapsuled by the architecture header and footer, an everything was written to a file, one per test. Lastly, all of the unique names were then stored in a different tuple which was returned by the formatting function.
 
-% Voor later:
-% ultimately the third option was deemed the most suitable. The main disadvantage of this method %is that making uniform folder tracking platform independent is not very easy. Thankfully, Python %has some folder variables that are suitable for this case.
+\subsection{Execution}
+\label{subsec:executing}
+\emph{\color{red}Titel?}\\
+With the 
 
 \section{Surrounding programs}
-\emph{\color{red}Titel?}
+\emph{\color{red}Titel?}\\
 
 \subsection{Hudson-CI}
-\label{subsec:CI}\emph{\color{red}Sectietje over hudson (nodig om te verwijzen)}
+\label{subsec:Hudson}
+The \gls{CI} solution that was investigated is Hudson-CI which provides an extensive range of features, including everything listed above. The used features are:
+\begin{itemize}
+\item Timed and triggered building from an \gls{RC} repository
+\item Automated testing of said build
+\item Humanly readable reports in the \emph{JUnit} format
+\item Graphical and statistical overview of test progress throughout builds
+\end{itemize}
 
 \newpage{}
 \section{The future of testing}

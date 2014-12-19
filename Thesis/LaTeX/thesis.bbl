@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.3 $
+% $ biblatex bbl format version 2.4 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \sortlist{entry}{}
+  \sortlist{none}{none}
     \entry{bergeron00}{book}{}
       \name{labelname}{1}{}{%
         {{hash=f69f4007d3ae9e68699445e95362d552}{Bergeron}{B\bibinitperiod}{Janick}{J\bibinitperiod}{}{}{}{}}%
@@ -31,30 +31,11 @@
       }
       \strng{namehash}{f69f4007d3ae9e68699445e95362d552}
       \strng{fullhash}{f69f4007d3ae9e68699445e95362d552}
-      \field{sortinit}{B}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Writing Testbenches: Functional Verification of HDL Models}
       \field{title}{Writing Testbenches: Functional Verification of HDL Models}
       \field{year}{2000}
-    \endentry
-    \entry{junitxml}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=817c1fb2234a6a8c7449a1484e7a892b}{Beyer}{B\bibinitperiod}{Brian}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=817c1fb2234a6a8c7449a1484e7a892b}{Beyer}{B\bibinitperiod}{Brian}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{817c1fb2234a6a8c7449a1484e7a892b}
-      \strng{fullhash}{817c1fb2234a6a8c7449a1484e7a892b}
-      \field{sortinit}{B}
-      \field{labeltitle}{Python JUnit XML}
-      \field{title}{Python JUnit XML}
-      \field{urlday}{07}
-      \field{urlmonth}{05}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb https://pypi.python.org/pypi/junit-xml/1.3
-      \endverb
     \endentry
     \entry{weber06}{article}{}
       \name{labelname}{2}{}{%
@@ -67,7 +48,8 @@
       }
       \strng{namehash}{10532350e9d9567db58789bed5e8c88c}
       \strng{fullhash}{10532350e9d9567db58789bed5e8c88c}
-      \field{sortinit}{C}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis}
       \field{journaltitle}{IEEE Transactions on Semiconductor Manufacturing}
       \field{number}{4}
@@ -76,26 +58,130 @@
       \field{year}{2006}
       \field{pages}{465\bibrangedash 474}
     \endentry
-    \entry{setuptools}{online}{}
-      \name{labelname}{2}{}{%
-        {{hash=8b4ba0e6aa896caa9e658caf32dd3859}{Coombs}{C\bibinitperiod}{Jason\bibnamedelima R.}{J\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-        {{hash=6b43a6ad96ee8c2181887c641c87a7e6}{Eby}{E\bibinitperiod}{Phillip\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+    \entry{ICoverage}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
       }
-      \name{author}{2}{}{%
-        {{hash=8b4ba0e6aa896caa9e658caf32dd3859}{Coombs}{C\bibinitperiod}{Jason\bibnamedelima R.}{J\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-        {{hash=6b43a6ad96ee8c2181887c641c87a7e6}{Eby}{E\bibinitperiod}{Phillip\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+      \name{author}{1}{}{%
+        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{09e1a70e9fff91274bc214da331f9e33}
-      \strng{fullhash}{09e1a70e9fff91274bc214da331f9e33}
-      \field{sortinit}{C}
-      \field{labeltitle}{setuptools}
-      \field{title}{setuptools}
-      \field{urlday}{07}
-      \field{urlmonth}{05}
+      \strng{namehash}{8533575c6d963e59f8b87340bdc46755}
+      \strng{fullhash}{8533575c6d963e59f8b87340bdc46755}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
+      \field{title}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
+      \field{urlday}{25}
+      \field{urlmonth}{07}
+      \field{urlyear}{2014}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.synthworks.com/blog/2013/05/24/osvvms-intelligent-coverage-is-5x-or-more-faster-than-systemverilogs-constrained-random/
+      \endverb
+    \endentry
+    \entry{ActiveHDL}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=ac3d8ed6c68dd5474508d864bccfaad7}{Inc.}{I\bibinitperiod}{Aldec}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=ac3d8ed6c68dd5474508d864bccfaad7}{Inc.}{I\bibinitperiod}{Aldec}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{ac3d8ed6c68dd5474508d864bccfaad7}
+      \strng{fullhash}{ac3d8ed6c68dd5474508d864bccfaad7}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Active-HDL Configurations}
+      \field{title}{Active-HDL Configurations}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
       \field{urlyear}{2014}
       \field{year}{2014}
       \verb{url}
-      \verb https://pypi.python.org/pypi/setuptools
+      \verb https://www.aldec.com/en/products/fpga_simulation/active-hdl
+      \endverb
+    \endentry
+    \entry{Cadence}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=bce431d01a4df1bf31ba7787331ad1dc}{Cadence}{C\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=bce431d01a4df1bf31ba7787331ad1dc}{Cadence}{C\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{bce431d01a4df1bf31ba7787331ad1dc}
+      \strng{fullhash}{bce431d01a4df1bf31ba7787331ad1dc}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Incisive Enterprise Simulator}
+      \field{title}{Incisive Enterprise Simulator}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2014}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://www.cadence.com/products/fv/enterprise_simulator/pages/default.aspx
+      \endverb
+    \endentry
+    \entry{ISE}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=f872201c6db9bf2620dc262ba42d2271}{Xilinx}{X\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=f872201c6db9bf2620dc262ba42d2271}{Xilinx}{X\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{f872201c6db9bf2620dc262ba42d2271}
+      \strng{fullhash}{f872201c6db9bf2620dc262ba42d2271}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Vivado Synthesis}
+      \field{title}{Vivado Synthesis}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2014}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://www.xilinx.com/support/answers/62005.html
+      \endverb
+    \endentry
+    \entry{Quartus}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{feb14148e4ce243ab58a4f11cd231ab9}
+      \strng{fullhash}{feb14148e4ce243ab58a4f11cd231ab9}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Quartus II support for VHDL 2008}
+      \field{title}{Quartus II support for VHDL 2008}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2014}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://quartushelp.altera.com/14.1/master.htm#mergedProjects/hdl/vhdl/vhdl_list_2008_vhdl_support.htm?GSA_pos=1&WT.oss_r=1&WT.oss=vhdl%202008
+      \endverb
+    \endentry
+    \entry{ModelSim}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{feb14148e4ce243ab58a4f11cd231ab9}
+      \strng{fullhash}{feb14148e4ce243ab58a4f11cd231ab9}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{ModelSim 10.0 release notes}
+      \field{title}{ModelSim 10.0 release notes}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2014}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://www.altera.com/download/os-support/release-notes_10.0c.txt
       \endverb
     \endentry
     \entry{VHDLUnit}{online}{}
@@ -107,7 +193,8 @@
       }
       \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
       \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
-      \field{sortinit}{F}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{UnitTest}
       \field{title}{UnitTest}
       \field{urlday}{30}
@@ -116,52 +203,6 @@
       \field{year}{2014}
       \verb{url}
       \verb http://martinfowler.com/bliki/UnitTest.html
-      \endverb
-    \endentry
-    \entry{TDDinpractice}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Computer Society}%
-      }
-      \strng{namehash}{d491ae8f0e022b551b68362d132d6d0e}
-      \strng{fullhash}{d491ae8f0e022b551b68362d132d6d0e}
-      \field{sortinit}{L}
-      \field{labeltitle}{On the Sustained Use of a Test-Driven Development Practice at IBM}
-      \field{booktitle}{{AGILE} 2007 Conference {(AGILE} 2007), 13-17 August 2007, Washington, DC, {USA}}
-      \field{isbn}{0-7695-2872-4}
-      \field{series}{AGILE '07}
-      \field{title}{On the Sustained Use of a Test-Driven Development Practice at IBM}
-      \field{year}{2007}
-      \field{pages}{6\bibrangedash 14}
-      \verb{doi}
-      \verb 10.1109/AGILE.2007.43
-      \endverb
-    \endentry
-    \entry{ICoverage}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{8533575c6d963e59f8b87340bdc46755}
-      \strng{fullhash}{8533575c6d963e59f8b87340bdc46755}
-      \field{sortinit}{L}
-      \field{labeltitle}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
-      \field{title}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
-      \field{urlday}{25}
-      \field{urlmonth}{07}
-      \field{urlyear}{2014}
-      \field{year}{2013}
-      \verb{url}
-      \verb http://www.synthworks.com/blog/2013/05/24/osvvms-intelligent-coverage-is-5x-or-more-faster-than-systemverilogs-constrained-random/
       \endverb
     \endentry
     \entry{Siniaalto:2007:CCS:1302496.1302946}{inproceedings}{}
@@ -181,7 +222,8 @@
       }
       \strng{namehash}{885caf2fd64c7de1bd8f3d4291670afa}
       \strng{fullhash}{885caf2fd64c7de1bd8f3d4291670afa}
-      \field{sortinit}{S}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage}
       \field{booktitle}{Proceedings of the First International Symposium on Empirical Software Engineering and Measurement}
       \field{isbn}{0-7695-2886-4}
@@ -194,6 +236,33 @@
       \endverb
       \verb{url}
       \verb http://dx.doi.org/10.1109/ESEM.2007.2
+      \endverb
+    \endentry
+    \entry{TDDinpractice}{inproceedings}{}
+      \name{labelname}{2}{}{%
+        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {{IEEE} Computer Society}%
+      }
+      \strng{namehash}{d491ae8f0e022b551b68362d132d6d0e}
+      \strng{fullhash}{d491ae8f0e022b551b68362d132d6d0e}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{On the Sustained Use of a Test-Driven Development Practice at IBM}
+      \field{booktitle}{{AGILE} 2007 Conference {(AGILE} 2007), 13-17 August 2007, Washington, DC, {USA}}
+      \field{isbn}{0-7695-2872-4}
+      \field{series}{AGILE '07}
+      \field{title}{On the Sustained Use of a Test-Driven Development Practice at IBM}
+      \field{year}{2007}
+      \field{pages}{6\bibrangedash 14}
+      \verb{doi}
+      \verb 10.1109/AGILE.2007.43
       \endverb
     \endentry
     \entry{conf/isese/BhatN06}{inproceedings}{}
@@ -215,7 +284,8 @@
       }
       \strng{namehash}{616279e0e5308872e5362eb1ab21def2}
       \strng{fullhash}{616279e0e5308872e5362eb1ab21def2}
-      \field{sortinit}{T}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Evaluating the efficacy of test-driven development: industrial case studies}
       \field{booktitle}{ISESE}
       \field{isbn}{1-59593-218-6}
@@ -229,25 +299,6 @@
       \verb http://dblp.uni-trier.de/db/conf/isese/isese2006.html#BhatN06
       \endverb
     \endentry
-  \endsortlist
-  \sortlist{entry}{nty}
-    \entry{bergeron00}{book}{}
-      \name{labelname}{1}{}{%
-        {{hash=f69f4007d3ae9e68699445e95362d552}{Bergeron}{B\bibinitperiod}{Janick}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=f69f4007d3ae9e68699445e95362d552}{Bergeron}{B\bibinitperiod}{Janick}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Springer US}%
-      }
-      \strng{namehash}{f69f4007d3ae9e68699445e95362d552}
-      \strng{fullhash}{f69f4007d3ae9e68699445e95362d552}
-      \field{sortinit}{B}
-      \field{labeltitle}{Writing Testbenches: Functional Verification of HDL Models}
-      \field{title}{Writing Testbenches: Functional Verification of HDL Models}
-      \field{year}{2000}
-    \endentry
     \entry{junitxml}{online}{}
       \name{labelname}{1}{}{%
         {{hash=817c1fb2234a6a8c7449a1484e7a892b}{Beyer}{B\bibinitperiod}{Brian}{B\bibinitperiod}{}{}{}{}}%
@@ -257,7 +308,8 @@
       }
       \strng{namehash}{817c1fb2234a6a8c7449a1484e7a892b}
       \strng{fullhash}{817c1fb2234a6a8c7449a1484e7a892b}
-      \field{sortinit}{B}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Python JUnit XML}
       \field{title}{Python JUnit XML}
       \field{urlday}{07}
@@ -267,26 +319,6 @@
       \verb{url}
       \verb https://pypi.python.org/pypi/junit-xml/1.3
       \endverb
-    \endentry
-    \entry{weber06}{article}{}
-      \name{labelname}{2}{}{%
-        {{hash=2a5ec7ab95a6a4d1095c2954466b7434}{Charles\bibnamedelimb M.\bibnamedelimi Weber}{C\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim W\bibinitperiod}{Neil\bibnamedelimb C.\bibnamedelimi Berglund}{N\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
-        {{hash=23a81a475123990a877394e29c447af6}{Gabella}{G\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=2a5ec7ab95a6a4d1095c2954466b7434}{Charles\bibnamedelimb M.\bibnamedelimi Weber}{C\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim W\bibinitperiod}{Neil\bibnamedelimb C.\bibnamedelimi Berglund}{N\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
-        {{hash=23a81a475123990a877394e29c447af6}{Gabella}{G\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{10532350e9d9567db58789bed5e8c88c}
-      \strng{fullhash}{10532350e9d9567db58789bed5e8c88c}
-      \field{sortinit}{C}
-      \field{labeltitle}{Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis}
-      \field{journaltitle}{IEEE Transactions on Semiconductor Manufacturing}
-      \field{number}{4}
-      \field{title}{Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis}
-      \field{volume}{19}
-      \field{year}{2006}
-      \field{pages}{465\bibrangedash 474}
     \endentry
     \entry{setuptools}{online}{}
       \name{labelname}{2}{}{%
@@ -299,7 +331,8 @@
       }
       \strng{namehash}{09e1a70e9fff91274bc214da331f9e33}
       \strng{fullhash}{09e1a70e9fff91274bc214da331f9e33}
-      \field{sortinit}{C}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{setuptools}
       \field{title}{setuptools}
       \field{urlday}{07}
@@ -308,137 +341,6 @@
       \field{year}{2014}
       \verb{url}
       \verb https://pypi.python.org/pypi/setuptools
-      \endverb
-    \endentry
-    \entry{VHDLUnit}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
-      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
-      \field{sortinit}{F}
-      \field{labeltitle}{UnitTest}
-      \field{title}{UnitTest}
-      \field{urlday}{30}
-      \field{urlmonth}{06}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://martinfowler.com/bliki/UnitTest.html
-      \endverb
-    \endentry
-    \entry{TDDinpractice}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Computer Society}%
-      }
-      \strng{namehash}{d491ae8f0e022b551b68362d132d6d0e}
-      \strng{fullhash}{d491ae8f0e022b551b68362d132d6d0e}
-      \field{sortinit}{L}
-      \field{labeltitle}{On the Sustained Use of a Test-Driven Development Practice at IBM}
-      \field{booktitle}{{AGILE} 2007 Conference {(AGILE} 2007), 13-17 August 2007, Washington, DC, {USA}}
-      \field{isbn}{0-7695-2872-4}
-      \field{series}{AGILE '07}
-      \field{title}{On the Sustained Use of a Test-Driven Development Practice at IBM}
-      \field{year}{2007}
-      \field{pages}{6\bibrangedash 14}
-      \verb{doi}
-      \verb 10.1109/AGILE.2007.43
-      \endverb
-    \endentry
-    \entry{ICoverage}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{8533575c6d963e59f8b87340bdc46755}
-      \strng{fullhash}{8533575c6d963e59f8b87340bdc46755}
-      \field{sortinit}{L}
-      \field{labeltitle}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
-      \field{title}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
-      \field{urlday}{25}
-      \field{urlmonth}{07}
-      \field{urlyear}{2014}
-      \field{year}{2013}
-      \verb{url}
-      \verb http://www.synthworks.com/blog/2013/05/24/osvvms-intelligent-coverage-is-5x-or-more-faster-than-systemverilogs-constrained-random/
-      \endverb
-    \endentry
-    \entry{Siniaalto:2007:CCS:1302496.1302946}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=ec60540f104c366402a1ade216fa9053}{Siniaalto}{S\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=643f27fd87bc989106865f2992b84fa8}{Abrahamsson}{A\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=ec60540f104c366402a1ade216fa9053}{Siniaalto}{S\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=643f27fd87bc989106865f2992b84fa8}{Abrahamsson}{A\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Washington, DC, USA}%
-      }
-      \list{publisher}{1}{%
-        {IEEE Computer Society}%
-      }
-      \strng{namehash}{885caf2fd64c7de1bd8f3d4291670afa}
-      \strng{fullhash}{885caf2fd64c7de1bd8f3d4291670afa}
-      \field{sortinit}{S}
-      \field{labeltitle}{A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage}
-      \field{booktitle}{Proceedings of the First International Symposium on Empirical Software Engineering and Measurement}
-      \field{isbn}{0-7695-2886-4}
-      \field{series}{ESEM '07}
-      \field{title}{A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage}
-      \field{year}{2007}
-      \field{pages}{275\bibrangedash 284}
-      \verb{doi}
-      \verb 10.1109/ESEM.2007.2
-      \endverb
-      \verb{url}
-      \verb http://dx.doi.org/10.1109/ESEM.2007.2
-      \endverb
-    \endentry
-    \entry{conf/isese/BhatN06}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=5fbaf783b8140891257eba9f62176ec0}{Thirumalesh}{T\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
-        {{hash=cdc711a2fa255038778a399e556da46c}{Nachiappan}{N\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=5fbaf783b8140891257eba9f62176ec0}{Thirumalesh}{T\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
-        {{hash=cdc711a2fa255038778a399e556da46c}{Nachiappan}{N\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \name{editor}{3}{}{%
-        {{hash=791dd40fd1d6b34669542d7c4efc2be1}{Travassos}{T\bibinitperiod}{Guilherme\bibnamedelima Horta}{G\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{hash=b4ff357640fb1a0eaed1703bb95ce45e}{Maldonado}{M\bibinitperiod}{José\bibnamedelima Carlos}{J\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=e1ce15e2eeb53e3fc8c6035fd761594b}{Wohlin}{W\bibinitperiod}{Claes}{C\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {ACM}%
-      }
-      \strng{namehash}{616279e0e5308872e5362eb1ab21def2}
-      \strng{fullhash}{616279e0e5308872e5362eb1ab21def2}
-      \field{sortinit}{T}
-      \field{labeltitle}{Evaluating the efficacy of test-driven development: industrial case studies}
-      \field{booktitle}{ISESE}
-      \field{isbn}{1-59593-218-6}
-      \field{title}{Evaluating the efficacy of test-driven development: industrial case studies}
-      \field{urlday}{23}
-      \field{urlmonth}{01}
-      \field{urlyear}{2007}
-      \field{year}{2006}
-      \field{pages}{356\bibrangedash 363}
-      \verb{url}
-      \verb http://dblp.uni-trier.de/db/conf/isese/isese2006.html#BhatN06
       \endverb
     \endentry
   \endsortlist
