@@ -38,16 +38,18 @@
       \field{year}{2000}
     \endentry
     \entry{weber06}{article}{}
-      \name{labelname}{2}{}{%
-        {{hash=2a5ec7ab95a6a4d1095c2954466b7434}{Charles\bibnamedelimb M.\bibnamedelimi Weber}{C\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim W\bibinitperiod}{Neil\bibnamedelimb C.\bibnamedelimi Berglund}{N\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      \name{labelname}{3}{}{%
+        {{hash=bde1efd4649f63fa5a73f7ecac574679}{Weber}{W\bibinitperiod}{Charles\bibnamedelima M.}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=a4c2c3ac30273d783a83644d13c3682c}{Berglund}{B\bibinitperiod}{Neil\bibnamedelima C.}{N\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
         {{hash=23a81a475123990a877394e29c447af6}{Gabella}{G\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
       }
-      \name{author}{2}{}{%
-        {{hash=2a5ec7ab95a6a4d1095c2954466b7434}{Charles\bibnamedelimb M.\bibnamedelimi Weber}{C\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim W\bibinitperiod}{Neil\bibnamedelimb C.\bibnamedelimi Berglund}{N\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      \name{author}{3}{}{%
+        {{hash=bde1efd4649f63fa5a73f7ecac574679}{Weber}{W\bibinitperiod}{Charles\bibnamedelima M.}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=a4c2c3ac30273d783a83644d13c3682c}{Berglund}{B\bibinitperiod}{Neil\bibnamedelima C.}{N\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
         {{hash=23a81a475123990a877394e29c447af6}{Gabella}{G\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{10532350e9d9567db58789bed5e8c88c}
-      \strng{fullhash}{10532350e9d9567db58789bed5e8c88c}
+      \strng{namehash}{b5692251efa064f9dc1991688113adca}
+      \strng{fullhash}{b5692251efa064f9dc1991688113adca}
       \field{sortinit}{0}
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis}
@@ -57,27 +59,6 @@
       \field{volume}{19}
       \field{year}{2006}
       \field{pages}{465\bibrangedash 474}
-    \endentry
-    \entry{ICoverage}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=8533575c6d963e59f8b87340bdc46755}{Lewis}{L\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{8533575c6d963e59f8b87340bdc46755}
-      \strng{fullhash}{8533575c6d963e59f8b87340bdc46755}
-      \field{sortinit}{0}
-      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
-      \field{labeltitle}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
-      \field{title}{OSVVM’s Intelligent Coverage is 5X or More Faster than SystemVerilog’s Constrained Random}
-      \field{urlday}{25}
-      \field{urlmonth}{07}
-      \field{urlyear}{2014}
-      \field{year}{2013}
-      \verb{url}
-      \verb http://www.synthworks.com/blog/2013/05/24/osvvms-intelligent-coverage-is-5x-or-more-faster-than-systemverilogs-constrained-random/
-      \endverb
     \endentry
     \entry{ActiveHDL}{online}{}
       \name{labelname}{1}{}{%
@@ -239,19 +220,21 @@
       \endverb
     \endentry
     \entry{TDDinpractice}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      \name{labelname}{3}{}{%
+        {{hash=d3686808d5941e5aa359d0c66e8c0dc9}{Williams}{W\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=43a97811952f1cb39044c702ab8df66e}{Sanchez}{S\bibinitperiod}{J.C.}{J\bibinitperiod}{}{}{}{}}%
         {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
       }
-      \name{author}{2}{}{%
-        {{hash=dce7d16856faa20c3cbcf87eb0c1bc2d}{L.\bibnamedelimi Williams}{L\bibinitperiod\bibinitdelim W\bibinitperiod}{J.C.\bibnamedelimi Sanchez}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      \name{author}{3}{}{%
+        {{hash=d3686808d5941e5aa359d0c66e8c0dc9}{Williams}{W\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=43a97811952f1cb39044c702ab8df66e}{Sanchez}{S\bibinitperiod}{J.C.}{J\bibinitperiod}{}{}{}{}}%
         {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
       }
       \list{publisher}{1}{%
         {{IEEE} Computer Society}%
       }
-      \strng{namehash}{d491ae8f0e022b551b68362d132d6d0e}
-      \strng{fullhash}{d491ae8f0e022b551b68362d132d6d0e}
+      \strng{namehash}{9b3c1d9f2f1e57b67b39b54591e389a9}
+      \strng{fullhash}{9b3c1d9f2f1e57b67b39b54591e389a9}
       \field{sortinit}{0}
       \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{On the Sustained Use of a Test-Driven Development Practice at IBM}
@@ -297,6 +280,45 @@
       \field{pages}{356\bibrangedash 363}
       \verb{url}
       \verb http://dblp.uni-trier.de/db/conf/isese/isese2006.html#BhatN06
+      \endverb
+    \endentry
+    \entry{xunit}{inproceedings}{}
+      \name{labelname}{5}{}{%
+        {{hash=111397407a76a2ab1031df7163bdfabc}{Kivi}{K\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=759d24648e81313a84406b84d0e36b32}{Haydon}{H\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=aa748277d720ac18c1c9383a133ce319}{Hayes}{H\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=8c6eba904b09ba6acf88313287a049e1}{Schneider}{S\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=615364429460b16557e3e55dee8c7557}{Succi}{S\bibinitperiod}{G.}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=111397407a76a2ab1031df7163bdfabc}{Kivi}{K\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=759d24648e81313a84406b84d0e36b32}{Haydon}{H\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=aa748277d720ac18c1c9383a133ce319}{Hayes}{H\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=8c6eba904b09ba6acf88313287a049e1}{Schneider}{S\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=615364429460b16557e3e55dee8c7557}{Succi}{S\bibinitperiod}{G.}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Halifax, NS}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{efc9a341ea67a15c6cb035ec9714322d}
+      \strng{fullhash}{0936c34a9f64f70b5fddcddc307f052d}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Extreme programming: a university team design experience}
+      \field{booktitle}{Canadian Conference on Electrical and Computer Engineering}
+      \field{isbn}{0-7803-5957-7}
+      \field{series}{CCECE '00}
+      \field{title}{Extreme programming: a university team design experience}
+      \field{year}{2000}
+      \field{pages}{816\bibrangedash 820}
+      \verb{doi}
+      \verb 10.1109/CCECE.2000.849579
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/CCECE.2000.849579
       \endverb
     \endentry
     \entry{junitxml}{online}{}

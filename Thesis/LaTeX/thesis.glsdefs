@@ -598,36 +598,6 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{OSVVM}{}%
-{%
-\gls@defglossaryentry{OSVVM}%
-{%
-name={OSVVM},%
-sort={OSVVM},%
-type={acronym},%
-first={Open Source VHDL Verification Methodology\glsspace (OSVVM)},%
-firstplural={Open Source VHDL Verification Methodologys\glsspace (OSVVMs)},%
-text={OSVVM},%
-plural={OSVVMs},%
-description={Open Source VHDL Verification Methodology},%
-descriptionplural={Open Source VHDL Verification Methodology\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Open Source VHDL Verification Methodology},%
-longplural={Open Source VHDL Verification Methodologys},%
-short={OSVVM},%
-shortplural={OSVVMs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
 \ifglsentryexists{RC}{}%
 {%
 \gls@defglossaryentry{RC}%

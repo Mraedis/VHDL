@@ -23,6 +23,8 @@
 \newcommand{\tab}[1]{\hspace{.18\textwidth}\rlap{#1}}
 \usepackage{enumitem}
 
+\usepackage[titletoc,toc,page]{appendix}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% python syntax highlighting
 
@@ -186,6 +188,7 @@ the obligation to state expressly the source when quoting results from this mast
 
 \section{Problem}
 \emph{\color{red}Revisie nodig: belangrijkste pagina}
+Developing digital hardware \gls{VHDL} is, like any code, prone to errors, either by the developer or by wrong product specifications. To ensure errors are weeded out before the more expensive roll-out or production begins, the code must be subjected to rigorous testing. \emph{Currently, large and impractical tests are needed to fully test a product.}
 
 Developing digital hardware \gls{VHDL} is, like any code, prone to errors, either by the developer or by wrong or bad \emph{\color{red}synoniem} product specifications. To ensure errors are weeded out before the more expensive production begins\emph{\color{red}Zie commentaar}, the code must be subjected to rigorous testing. \emph{Currently, large and impractical tests are needed to fully test a product.}
 \emph{\color{red}productie != einddoel alle VHDL -> FPGAs en FPGA verdelingen}
@@ -195,10 +198,12 @@ Because testing is such a time consuming process, finding errors often results i
 \emph{\color{red} Betere samenvatting + meer gevolgen}
 \\
 \\
-\emph{\color{red}De stappen gezet, niet productie zelf}\\
-In this thesis, the objective is to explore an operating system independent framework. This framework will allow users to quickly and consistently create, modify and execute testbenches. To accomplish all of this, a number of industry standard tools will be incorporated
-%tried and proven external tools will be gathered 
-around a central Python script. This combination will ensure timely and automated building, testing and test report generation.
+In this thesis, the objective is to explore the possibility of creating an operating system independent framework. This framework should allow users to quickly and consistently create, modify, execute and evaluate testbenches. To accomplish all of this, a number of industry standard tools will be incorporated around a central Python script. This combination should ensure timely and automated building, testing and test report generation.
+
+%\emph{\color{red}De stappen gezet, niet productie zelf}\\
+%In this thesis, the objective is to explore an operating system independent framework. This framework should allow users to quickly and consistently create, modify and execute testbenches. To accomplish all of this, a number of industry standard tools will be incorporated
+%%tried and proven external tools will be gathered 
+%around a central Python script. This combination will ensure timely and automated building, testing and test report generation.
 
 %In this thesis, a number of mechanics are used to optimize both testing and coding. Based loosely off %of \gls{TDD}, tests are written to function and be tested independently.  In order to maximize %coverage and keep the time spent writing tests to a minimum, a library with often used functions and %other useful code is made available. Alongside of it is a tool, written in Python, to process tests %independently  and represent the results in a quick and easy-to-read format.
 
@@ -239,47 +244,46 @@ around a central Python script. This combination will ensure timely and automate
 \newacronym{HDL}{HDL}{Hardware Description Language}
 \newacronym{RTL}{RTL}{Register Transfer Level}
 \emph{\color{red}Meer bronvermelding}\\
-\emph{\color{red} Ook iets meer over geschiedenis VHDL}\\
+A \gls{HDL} can be used to describe digital electronics, i.e. hardware, in different levels. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. \gls{VHDL} is such a language, having been developed in the eighties of the twentieth century, originally to have a uniform description of hardware brought in by external vendors to the U.S. department of defence. It was quickly realized that simulation was possible with a good description and the language evolved to be used as such. The final step was to create tools that could not only simulate, but also synthesize (i.e. create actual hardware layouts) from these descriptions. An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt, showstringspaces=false, basicstyle=\footnotesize]
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-%A \gls{HDL} can be used to describe any one of the levels mentioned in the previous section, right down to the logic gate level. However, this last one is wholly unnecessary considering synthesis tools can produce superior logic gate-level layouts \cite{VHDLintro}.
-A \gls{HDL} can be used to describe digital electronics, i.e. hardware, in different levels. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
-\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt, showstringspaces=false]
-library IEEE;
-use IEEE.std_logic_1164.all;
-entity DFF is
-	Port(D 	 : in std_logic;
-		 CLK : in std_logic;
-		 Q 	 : out std_logic;
-end DFF;
-architecture Behavioural of DFF is
-begin
-	process (CLK)
-	begin
-		if rising_edge(CLK) then
-			Q <= D;
-		end if;
-	end process;
-end Behavioural;
+ENTITY dff IS
+	PORT(d 	 : IN  std_logic;
+		 clk : IN  std_logic;
+		 q 	 : OUT std_logic;
+END dff;
+
+ARCHITECTURE Behavioural OF dff IS
+BEGIN
+	PROCESS (clk)
+	BEGIN
+		IF rising_edge(clk) THEN
+			q <= d;
+		END IF;
+	END PROCESS;
+END Behavioural;
 \end{lstlisting}
 \newacronym{IEEE}{IEEE}{Institute of Electrical and Electronics Engineers}
 \newacronym{DFF}{DFF}{D Flip-Flop}
-\emph{\color{red}IEEE is alles in VHDL: betere verwoording}\\
-\emph{\color{red}Sequentieel proces}\\
-The \gls{IEEE} library provides a number of extensions on the original \gls{VHDL} specification that allow a more realistic simulation and description of hardware behaviour. An \emph{entity} defines the inputs and outputs of a certain building block, in this case the \gls{DFF}. The D stands for Delay, and it simply puts on its output, Q, that which was on the input, D, one clock period earlier. The \emph{architecture}, in this case Behavioural, takes the description of an entity and assigns a real implementation to it. All \emph{processes} are executed in parallel, this does not mean that all are triggered at the same time, nor do they take equally as long to finish, but it means that any process can be executed alongside any other process. In this case there is only one (nameless) process that describes the entire behaviour of the flip-flop. The process waits for the rising edge of the clock, which is a transition from zero to one, after which it schedules the value of D to be put on Q when the next rising edge appears.
+The \gls{IEEE} 1164 library provides a number of extensions on the original \gls{VHDL} IEEE 1076 specification that allow a more realistic simulation and description of hardware behaviour. An \emph{entity} defines the inputs and outputs of a certain building block, in this case the \gls{DFF}. The \emph{architecture}, in this case Behavioural, takes the description of an entity and assigns a real implementation to it. In this architecture, we have one process and it is \emph{sequential}, meaning that every update in the process follows an update of the \emph{clk}, the clock signal. The d stands for delay, and it simply puts on its output, q, that which was on the input, d, one clock period earlier. All \emph{processes} are executed in parallel, this does not mean that all are triggered at the same time, nor do they take equally as long to finish, but it means that any process can be executed alongside any other process. In this case there is only one (nameless) process that describes the entire behaviour of the flip-flop. The process waits for the rising edge of the clock, which is a transition from zero to one, after which it schedules the value of d to be put on q when the next rising edge appears.
 \\
 \\
 \emph{\color{red}Hierarchisch testing: figuur, uitleg}\\
 \emph{\color{red}Wat is een testbench bvb, hoe werkt dit? niet te veel stappen overslaan}\\
-This is a basic example of an entity, an architecture and a process. This flip-flop could be used in certain numbers to build a \emph{register}, a collection of ones and zeroes (henceforth referred to as \emph{bits}) that is used to (temporarily) store these values. The register could then be used alongside combinational logic to build an even bigger entity. The idea here is that small building blocks can be combined to produce vast and complex circuits that are nearly impossible to describe in one go. Adding all these layers together also creates a lot of room for error, and having a multi-level design makes it challenging to pinpoint the exact level and location of any errors. Therefore, it is paramount that all code on all levels is tested thoroughly, which is done by use of \emph{testbenches} \cite{bergeron00}.
-\\
-\\
 \newacronym{UUT}{UUT}{Unit Under Test}
 \newacronym{DUT}{DUT}{Device Under Test}
-\emph{\color{red}Golden reference is geen vakterm}\\
-Testbenches are made up of code that takes a certain building block, the \gls{UUT} or \gls{DUT}. The testbench then puts a certain sequence of values on the inputs and monitors the outputs. If the device performs normally, the received output sequence should match an expected output sequence. In these testbenches it is good practice to observe how well a device performs if its inputs behave outside of the normal mode of operation. When all of these tests have finished and the output performs as expected, the device is ready to be put into production or further down the developmental process.
+This is a basic example of an entity, an architecture and a process. Before the code can be put to use in a working environment, it needs to be tested first. This is done through the use of \emph{testbenches}. \cite{bergeron00} Testbenches are made up of code that takes a certain building block, the \gls{UUT} or \gls{DUT}. The testbench then puts a certain sequence of values on the inputs and monitors the outputs. Applying this to the example listed earlier, the testbench would contain a process with a clock, signals coupled with the ones in the entity, some stimuli and \emph{wait} statements. The signals are linked to the DFF, which is now the UUT. Then the clock starts ticking and the input d is made '0' or '1' every now and then. All that is left is to assure the output q is always '0' and '1' exactly one clock cycle later. The full code is listed in appendix~\ref{app:dfftestbench}.
 \\
 \\
-If a device is not tested properly and faults propagate throughout development, they can be very expensive to correct, especially at the stage of production, where a single photomask, used to ``print'' part of the layout, can easily cost \$100,000 (\euro81,000 at time of writing)\cite{weber06}. Therefore a large portion of time is spent writing and executing tests.
+If the device performs normally, the received output sequence should match an expected output sequence. In these testbenches it is good practice to observe how well a device performs if its inputs behave outside of the normal mode of operation. When all of these tests have finished and the output performs as expected, the device is ready to be put into production or further down the developmental process.
+\\
+\\
+The higher level components, such as a registry, employ a number of the lower level ones to create more complex logic. The flip-flop could be used in certain numbers to build a \emph{register}, a collection of ones and zeroes (henceforth referred to as \emph{bits}) that is used to (temporarily) store these values. The register could then be used alongside combinational logic to build an even bigger entity. The idea here is that small building blocks can be combined to produce vast and complex circuits that are nearly impossible to describe in one go. Adding all these layers together also creates a lot of room for error, and having a multi-level design makes it challenging to pinpoint the exact level and location of any errors. 
+\\
+\\
+If a device is not tested properly and faults propagate throughout development, they can be very expensive to correct, especially if it is brought into production, where a single photomask, used to ``print'' part of the layout, can easily cost \$100,000 (\euro81,000 at time of writing)\cite{weber06}. Therefore a large portion of time is spent writing and executing tests.
 
 \emph{\color{red}Relevantere figuur, betere design flow}\\
 \begin{figure}[h]
@@ -305,10 +309,22 @@ As mentioned before, a number of practices exist to improve speed and quality of
 \subsection{Assertions}
 \label{subsec:assertions}
 Assertions are the standard practice of verification. An assert in VHDL is very simple: check whether some boolean condition is true. If true, do nothing, if false, return the error message and throw an error of a certain level, as in the following example:
-\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false]
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=3mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\small, linewidth=\textwidth]
 assert (not Q) report "Unexpected output value" severity failure;
 \end{lstlisting}
 In this example, an error is thrown of the severity \emph{failure}, which ends the simulation, if the value on the output \emph{Q} (see section~\ref{subsec:HDL})) isn't \emph{logically true}. This means the output has to have a value of \emph{high} or \emph{1}. The severity of the assertion can be in the range of notice to failure, and the simulator might be set to respond or stop only to a certain level of severity. Doing this for the right values at intervals gives the developer a quick overview of whether everything went according to plan. After all, if things went wrong, the assertion should have thrown an error here or there.
+
+\subsection{Generic testbench}
+The generic testbench operates as mentioned in section~\ref{subsec:HDL}. It assigns every input and output on the \gls{DUT} their counterpart in the testbench and contains a number of processes with stimuli. Standard procedure is:
+\begin{enumerate}[itemsep=-0.1cm]
+\item Wait for some clock periods to 'ready' the design
+\item Apply stimuli to the inputs
+\item Wait for the appropriate number of clock cycles
+\item Use asserts to check whether the outputs have the right values
+\item Repeat steps 2 through 4 until satisfied
+\item End with an infinite 'wait' to suspend the process
+\end{enumerate}
+Creating this kind of testbench for a large, hierarchical project would certainly become lengthy and unclear. To counter these disadvantages, a number of practices were created to keep control over what and how designs are tested. The more used of these practices are explained below.
 
 \subsection{Coverage}
 Coverage is a generic term that is used to describe how fully a design has been tested on one aspect or another. There exist many tools for different coverage analyses, but in this section we will focus only on the types of coverage.
@@ -318,8 +334,8 @@ Coverage is a generic term that is used to describe how fully a design has been 
 In development, \gls{CC} is a type of measurement to indicate how well the source code has been tested. With the use of a coverage report, unused blocks of code can be uncovered, these blocks might indicate unnecessary code or a bug. Imagine a \gls{FSM} with an unused reset state, this might indicate that the reset isn't functioning properly or there are no tests covering the reset. CC does not, however, provide any real functional analysis. It does not indicate any missing lines of code nor does it tell you whether the inputs and outputs behave properly.
 
 \subsubsection{Functional Coverage}
-\emph{\color{red}Niet juist}\\
-\gls{FC} is the practice of measuring whether the design covers all possible use states it can possibly be in. Good practice is to include all possible cases, including corner cases, cases that cover multiple clock cycles, erroneous cases such as receiving an interrupt when processing or overflowing a buffer and so on. 
+\emph{\color{red}Controleren}\\
+\gls{FC} is the practice of measuring whether the \gls{UUT} meets with certain specifications at specific times during the testing process. These specifications are created by the developer and are used to check whether the design performs as expected. Good practice is to include corner cases, cases that cover very rare occurrences and so on. That way, the device is sure to be in working condition even under unexpected circumstances.
 
 \subsection{Verification}
 \subsubsection{Constrained Random Verification}
@@ -332,11 +348,10 @@ In development, \gls{CC} is a type of measurement to indicate how well the sourc
 On top of the aforementioned, there are several more practices that have unique ways of verifying the properties of a design, but aren't used sufficiently to merit full detailing. Formal verification is such a practice, where the core idea is to mathematically prove the design from its specifications. The upside is that the design is completely verified, however, it is out of use because proving large designs is not only tedious but takes up large amounts of man-hours.
 
 %\subsection{Methodologies}
-
-\emph{\color{red}Beetje overbodig of meer uitleg}\\
-\subsection{Open Source VHDL Verification Methodology}
-\newacronym{OSVVM}{OSVVM}{Open Source VHDL Verification Methodology}
-The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV} and \gls{FC} to be implemented in a project. It consists out of two packages, \emph{Random.pkg} and \emph{Coverage.pkg}. The new feature, which it dubs \gls{IC}, redefines its FC model based on holes in the FC coverage and randomization. The advantage is obviously that 100\% coverage is always within reach, even when the original draft did not achieve full coverage.\cite{ICoverage}
+%\emph{\color{red}Beetje overbodig of meer uitleg}\\
+%\subsection{Open Source VHDL Verification Methodology}
+%\newacronym{OSVVM}{OSVVM}{Open Source VHDL Verification Methodology}
+%The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV} and \gls{FC} to be implemented in a project. It consists out of two packages, \emph{Random.pkg} and \emph{Coverage.pkg}. The new feature, which it dubs \gls{IC}, redefines its FC model based on holes in the FC coverage and randomization. The advantage is obviously that 100\% coverage is always within reach, even when the original draft did not achieve full coverage.\cite{ICoverage}
 
 %\subsubsection{Universal VHDL Verification Methodology}
 %\newacronym{UVVM}{UVVM}{Universal VHDL Verification Methodology}
@@ -344,11 +359,11 @@ The \gls{OSVVM} is a set of packages that makes it easier for \gls{CRV} and \gls
 %The Universal Verification Methodology is a popular methodology for SystemVerilog which brings it a %certain degree of automation. It should bring easier design of testing frameworks to Verilog %developers. \gls{UVVM}, however, is an intended port of features from this methodology which could be %used in VHDL verification. 
 
 \subsection{Simulation tools}
-As mentioned in section~\ref{sec:intro} \gls{HDL}s are used for developing hardware, and need to be tested and build as such. Like any other programming language, they need a dedicated compiler to fault-check the code and build the binaries. Unlike other programming languages they need a simulator in order to verify the builds. There exist many compilers and simulators, almost none are exclusive for \gls{VHDL}, almost all are dual-language and support some form of Verilog, a different HDL. However, many of them refuse to support the latest additions to the VHDL language specification, even the 2002 additions are hard to be found.
+As mentioned in section~\ref{sec:intro}, \gls{HDL}s are used for developing hardware, and need to be tested and build as such. Like any other programming language, they need a dedicated compiler to fault-check the code and build the binaries. Unlike other programming languages they need a simulator in order to verify the builds. There exist many compilers and simulators, almost none are exclusive for \gls{VHDL}, almost all are dual-language and support some form of Verilog, a different HDL. However, many of them refuse to support the latest additions to the VHDL language specification, even the 2002 additions are hard to be found. \cite{ActiveHDL},\cite{Cadence},\cite{ISE},\cite{Quartus}
 
 \label{subsec:simtool}
 \subsubsection{ModelSim}
-ModelSim is the simulator that was investigated for several reasons. First, a free student edition was available. Considering licenses  outside of school can easily cost upward of \$25,000 (\euro20,250 at time of writing) this made it ideal for any thesis or student related work. Proof of this is the extensive use of ModelSim in the courses related to HDL development. Second, ModelSim supports all versions of \gls{VHDL}, which is the \gls{HDL} we are processing. Even in 2014, only one other tool was found to support all of VHDL-2008, which is Aldec's \emph{Active-HDL}. And last but not least, ModelSim is one of the industry's most used simulators, enabling a pool of experience to be consulted. \cite{ActiveHDL},\cite{Cadence},\cite{ISE},\cite{Quartus},\cite{ModelSim}
+ModelSim is the simulator that was investigated for several reasons. First, a free student edition was available. Considering licenses  outside of school can easily cost upward of \$25,000 (\euro20,250 at time of writing) this made it ideal for any thesis or student related work. Proof of this is the extensive use of ModelSim in the courses related to HDL development. Second, ModelSim supports all versions of \gls{VHDL}, which is the \gls{HDL} we are processing. Even in 2014, only one other tool was found to support all of VHDL-2008, which is Aldec's \emph{Active-HDL}. And last but not least, ModelSim is one of the industry's most used simulators, enabling a pool of experience to be consulted.\cite{ModelSim}
 
 \emph{\color{red}Figuurtje of vergelijking tussen simulators?}\\
 
@@ -401,13 +416,17 @@ A useful but not required aspect is build automation. Using a timer or trigger, 
 \subsubsection{Test Automation}
 As the code is built at scheduled times, and testing is needed regardless, it makes perfect sense to add a testing step to the automated build. Automating tests saves the developers yet another part of their time, thus freeing more for the actual development and debugging steps. A good \gls{CI} system can read test reports, or at least some standard of reports. 
 
-
-\subsection{JUnit}
-\emph{\color{red}Meer over xUnit ipv JUnit en dan verder gaan over JUnit}\\
-\label{subsec:JUnit}
+\subsection{xUnit}
+\label{subsec:xUnit}
 \newacronym{XML}{XML}{eXtensible Markup Language}
-JUnit is an implementation for the Java programming language of the xUnit specification, which defines several key components for a testing framework. Considering the relevant piece here is not the framework itself but the format used for its reports, details about its implementation and use will not be discussed.\\
-The JUnit reports are written in \gls{XML}, which is a type of language used for formatting data. The JUnit format is supported by numerous (open source) tools, such as Eclipse and the aforementioned Hudson-CI, which makes it an ideal candidate for further investigation. 
+xUnit is a collection of frameworks that all follow the same basic principle. The xUnit specification defines several key components for a testing framework. They encompass an implementation of a \emph{testcase} which contains a single unit test. These testcases are then enveloped in \emph{testsuites}, which are groups of tests that need the same conditions before they can be executed.  There are more implementation details but these are not relevant to this thesis. JUnit is an implementation for the Java programming language of the xUnit specification. A useful part of the specification is a standard format for the test reports. The reports are written in \gls{XML}, which is a type of language used for formatting data. The JUnit format is supported by numerous (open source) tools, which makes it an ideal candidate for further investigation. \cite{xunit}, \cite{junitxml}
+
+%\subsection{JUnit}
+%\emph{\color{red}Meer over xUnit ipv JUnit en dan verder gaan over JUnit}\\
+%\label{subsec:JUnit}
+%\newacronym{XML}{XML}{eXtensible Markup Language}
+%JUnit is an implementation for the Java programming language of the xUnit specification, which defines several key components for a testing framework. Considering the relevant piece here is not the framework itself but the format used for its reports, details about its implementation and use will not be discussed.\\
+%The JUnit reports are written in \gls{XML}, which is a type of language used for formatting data. The JUnit format is supported by numerous (open source) tools, such as Eclipse and the aforementioned Hudson-CI, which makes it an ideal candidate for further investigation. 
 
 \subsection{Python}
 Python is a high-level computer programming language that first appeared in 1991, with the third major revision being released in 2008. It supports object-oriented and structured programming and is easy to use as a scripting language. A great feat of Pythons community is that there are many (open source) libraries available for just about any function that comes to mind. This on top of the already impressive amount of libraries that Python itself supports. In addition to this, Python has all of its standard features explained in great detail with good examples in its online documenting system. The combination of these features allows any programmer, even with very little know-how, to quickly put together anything that comes to mind.
@@ -554,7 +573,7 @@ As is evident from the section~\ref{subsec:execution}, tests are executed and re
 A great deal of filtering of the output file was required, only the passed and failed testresults were needed for a proper report. In section~\ref{subsubsec:library}, it is shown that asserts are passed as notes with the explicit words \emph{test success} and \emph{test failed}. A simple filtering on these words per line of the output file should return every testresult, neatly ordered in passed and failed groups. A total testcount can easily be tallied from the combination, and as such a crude report is written to a text file.
 
 \subsubsection{JUnit XML}
-Previously discussed in section~\ref{subsec:JUnit}, the JUnit implementation of xUnit uses \gls{XML} for report viewing. The editor that was used throughout the development of the thesis is \emph{Eclipse}, which is written in \emph{Java}, the same language JUnit is an implementation for. So unsurprisingly, Eclipse readily supports JUnit XML reports. They can be read and displayed by manually navigating to them or editing the project properties to automatically read them.\\
+Previously discussed in section~\ref{subsec:xUnit}, the JUnit implementation of xUnit uses \gls{XML} for report viewing. The editor that was used throughout the development of the thesis is \emph{Eclipse}, which is written in \emph{Java}, the same language JUnit is an implementation for. So unsurprisingly, Eclipse readily supports JUnit XML reports. They can be read and displayed by manually navigating to them or editing the project properties to automatically read them.\\
 \\
 To read an XML report, one would first would have to be generated. A very basic JUnit XML report consists of a \emph{testsuite} and a number of \emph{testcases}. A testsuite is a group of tests, and a testcase is a single test, in this case a passed or failed assert.
 %A crude implementation of how to parse the testresults is show below:
@@ -765,24 +784,64 @@ The \gls{CI} solution that was investigated is Hudson-CI which provides an exten
 
 \printbibliography
 
-%\begin{thebibliography}{1}
-%\bibitem{key-1}http://www.asic-world.com/vhdl/intro1.html
-%
-%\bibitem{key-2}Writing Testbenches: Functional Verification of HDL Models
-%
-%\bibitem{key-3}Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis
-%
-%\bibitem{key-4}Citation needed !!
-%
-%\bibitem{key-5}A comparative case study on the impact of test-driven development on program design and test coverage
-%
-%\bibitem{key-6}A Longitudinal Study of the Use of a Test-Driven Development Practice in Industry
-%
-%\bibitem{key-7}Evaluating the Efficacy of Test-Driven Development
-%
-%\bibitem{key-8}http://martinfowler.com/bliki/UnitTest.html
-%
-%\end{thebibliography}
+\begin{appendices}
+
+\section{Code examples}
+\subsection{DFF testbench}
+\label{app:dfftestbench}
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=4pt, aboveskip=4pt, showstringspaces=false, basicstyle=\footnotesize]
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
+ENTITY tb_dff IS
+END tb_dff;
+
+ARCHITECTURE Behavioural OF tb_dff IS
+	COMPONENT dff
+    PORT(
+		d 	: IN  std_logic;
+        clk : IN  std_logic;
+		q 	: OUT std_logic;
+    END COMPONENT;
+    
+	SIGNAL d   : std_logic := '0';
+	SIGNAL clk : std_logic := '0';
+	SIGNAL q   : std_logic := '0';
+
+	CONSTANT clk_period : time := 10 ns;
+BEGIN
+	uut: dff PORT MAP (
+        d => d,
+        clk => clk,
+		q => q
+        );
+	clk_process : PROCESS
+		BEGIN
+			clk <= '0';
+			WAIT FOR clk_period/2;
+			clk <= '1';
+			WAIT FOR clk_period - clk_period/2;
+	END PROCESS;
+	
+	stim_proc: PROCESS
+	BEGIN		
+     	WAIT FOR clk_period;
+     	assert q = '0'
+			report "Wrong output value at startup" severity FAILURE;
+		d <= '1';
+     	WAIT FOR clk_period;
+     	assert q = '1'
+			report "Wrong output value at first test" severity FAILURE;
+		d <= '0';
+     	WAIT FOR clk_period;
+     	assert q = '0'
+			report "Wrong output value at final test" severity FAILURE;
+		WAIT;
+   END PROCESS;
+END Behavioural;
+\end{lstlisting}
+
+\end{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 
