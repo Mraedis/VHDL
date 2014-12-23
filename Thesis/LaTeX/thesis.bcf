@@ -1946,22 +1946,33 @@
     <bcf:datasource type="file" datatype="bibtex">refs.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">bergeron00</bcf:citekey>
-    <bcf:citekey order="2">weber06</bcf:citekey>
-    <bcf:citekey order="3">ActiveHDL</bcf:citekey>
-    <bcf:citekey order="4">Cadence</bcf:citekey>
-    <bcf:citekey order="5">ISE</bcf:citekey>
-    <bcf:citekey order="6">Quartus</bcf:citekey>
-    <bcf:citekey order="7">ModelSim</bcf:citekey>
-    <bcf:citekey order="8">VHDLUnit</bcf:citekey>
-    <bcf:citekey order="9">Siniaalto:2007:CCS:1302496.1302946</bcf:citekey>
-    <bcf:citekey order="10">TDDinpractice</bcf:citekey>
-    <bcf:citekey order="11">TDDinpractice</bcf:citekey>
-    <bcf:citekey order="11">conf/isese/BhatN06</bcf:citekey>
-    <bcf:citekey order="12">xunit</bcf:citekey>
-    <bcf:citekey order="13">junitxml</bcf:citekey>
-    <bcf:citekey order="14">junitxml</bcf:citekey>
-    <bcf:citekey order="15">setuptools</bcf:citekey>
+    <bcf:citekey order="1">vhdlorigin</bcf:citekey>
+    <bcf:citekey order="2">vhdlorigin2</bcf:citekey>
+    <bcf:citekey order="3">vhdlsim</bcf:citekey>
+    <bcf:citekey order="4">vhdlsynth</bcf:citekey>
+    <bcf:citekey order="5">vhdlsynth2</bcf:citekey>
+    <bcf:citekey order="6">vhdlsynth3</bcf:citekey>
+    <bcf:citekey order="7">IEEE1164</bcf:citekey>
+    <bcf:citekey order="8">bergeron00</bcf:citekey>
+    <bcf:citekey order="9">vhdltestbench</bcf:citekey>
+    <bcf:citekey order="10">vhdldebug</bcf:citekey>
+    <bcf:citekey order="11">vhdlsynth3</bcf:citekey>
+    <bcf:citekey order="12">vhdlhierarchy</bcf:citekey>
+    <bcf:citekey order="13">weber06</bcf:citekey>
+    <bcf:citekey order="14">ActiveHDL</bcf:citekey>
+    <bcf:citekey order="15">Cadence</bcf:citekey>
+    <bcf:citekey order="16">ISE</bcf:citekey>
+    <bcf:citekey order="17">Quartus</bcf:citekey>
+    <bcf:citekey order="18">ModelSim</bcf:citekey>
+    <bcf:citekey order="19">VHDLUnit</bcf:citekey>
+    <bcf:citekey order="20">TDDinpractice</bcf:citekey>
+    <bcf:citekey order="21">Siniaalto:2007:CCS:1302496.1302946</bcf:citekey>
+    <bcf:citekey order="22">TDDinpractice</bcf:citekey>
+    <bcf:citekey order="22">conf/isese/BhatN06</bcf:citekey>
+    <bcf:citekey order="23">xunit</bcf:citekey>
+    <bcf:citekey order="24">junitxml</bcf:citekey>
+    <bcf:citekey order="25">junitxml</bcf:citekey>
+    <bcf:citekey order="26">setuptools</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
   <bcf:sorting>

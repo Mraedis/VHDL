@@ -13,3 +13,4 @@ src/experimental/*output.txt
 src/experimental/libv*
 src/experimental/*.xml
 src/experimental/2014.*
+*.~vsd
