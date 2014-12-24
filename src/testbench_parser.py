@@ -164,12 +164,12 @@ def setup_parser():
         # The -c/--cmd argument is to specify the script being called from the commandline.
         # The flag is stored in 'cmd', default value is 'False'
     parser.add_argument('-c', '--cmd'
-                         , help='specifies script being called from commandline, not automated'
+                         , help='specifies output to be displayed on the command line'
                          , action = 'store_true', dest='cmdline', default=False)
         # The -d/--dest argument is to specify a custom folderpath for the log.
         # The flag is stored in 'log', default value is 'None'
     parser.add_argument('-d', '--dest'
-                        , help='specifies a custom folder for the log'
+                        , help='specifies a custom path for the log'
                         , action = 'store', dest='log', default=None)
         # The -f/--file argument is to specify that the -l/--list is a file/files containing a list of .vhd files.
         # The flag is stored in 'file', default value is 'False'

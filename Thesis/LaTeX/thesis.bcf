@@ -1947,32 +1947,30 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">vhdlorigin</bcf:citekey>
-    <bcf:citekey order="2">vhdlorigin2</bcf:citekey>
-    <bcf:citekey order="3">vhdlsim</bcf:citekey>
-    <bcf:citekey order="4">vhdlsynth</bcf:citekey>
-    <bcf:citekey order="5">vhdlsynth2</bcf:citekey>
-    <bcf:citekey order="6">vhdlsynth3</bcf:citekey>
-    <bcf:citekey order="7">IEEE1164</bcf:citekey>
-    <bcf:citekey order="8">bergeron00</bcf:citekey>
-    <bcf:citekey order="9">vhdltestbench</bcf:citekey>
-    <bcf:citekey order="10">vhdldebug</bcf:citekey>
-    <bcf:citekey order="11">vhdlsynth3</bcf:citekey>
-    <bcf:citekey order="12">vhdlhierarchy</bcf:citekey>
-    <bcf:citekey order="13">weber06</bcf:citekey>
-    <bcf:citekey order="14">ActiveHDL</bcf:citekey>
-    <bcf:citekey order="15">Cadence</bcf:citekey>
-    <bcf:citekey order="16">ISE</bcf:citekey>
-    <bcf:citekey order="17">Quartus</bcf:citekey>
-    <bcf:citekey order="18">ModelSim</bcf:citekey>
-    <bcf:citekey order="19">VHDLUnit</bcf:citekey>
-    <bcf:citekey order="20">TDDinpractice</bcf:citekey>
-    <bcf:citekey order="21">Siniaalto:2007:CCS:1302496.1302946</bcf:citekey>
-    <bcf:citekey order="22">TDDinpractice</bcf:citekey>
-    <bcf:citekey order="22">conf/isese/BhatN06</bcf:citekey>
-    <bcf:citekey order="23">xunit</bcf:citekey>
-    <bcf:citekey order="24">junitxml</bcf:citekey>
-    <bcf:citekey order="25">junitxml</bcf:citekey>
-    <bcf:citekey order="26">setuptools</bcf:citekey>
+    <bcf:citekey order="1">vhdlorigin2</bcf:citekey>
+    <bcf:citekey order="2">vhdlsim</bcf:citekey>
+    <bcf:citekey order="2">vhdlsynth</bcf:citekey>
+    <bcf:citekey order="2">vhdlsynth2</bcf:citekey>
+    <bcf:citekey order="3">vhdlsynth3</bcf:citekey>
+    <bcf:citekey order="4">IEEE1164</bcf:citekey>
+    <bcf:citekey order="5">bergeron00</bcf:citekey>
+    <bcf:citekey order="6">vhdltestbench</bcf:citekey>
+    <bcf:citekey order="7">vhdldebug</bcf:citekey>
+    <bcf:citekey order="8">vhdlsynth3</bcf:citekey>
+    <bcf:citekey order="9">vhdlhierarchy</bcf:citekey>
+    <bcf:citekey order="10">weber06</bcf:citekey>
+    <bcf:citekey order="11">ActiveHDL</bcf:citekey>
+    <bcf:citekey order="11">Cadence</bcf:citekey>
+    <bcf:citekey order="11">ISE</bcf:citekey>
+    <bcf:citekey order="11">Quartus</bcf:citekey>
+    <bcf:citekey order="12">ModelSim</bcf:citekey>
+    <bcf:citekey order="13">VHDLUnit</bcf:citekey>
+    <bcf:citekey order="14">TDDinpractice</bcf:citekey>
+    <bcf:citekey order="15">Siniaalto</bcf:citekey>
+    <bcf:citekey order="15">TDDinpractice</bcf:citekey>
+    <bcf:citekey order="15">BhatN06</bcf:citekey>
+    <bcf:citekey order="16">xunit</bcf:citekey>
+    <bcf:citekey order="16">junitxml</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
   <bcf:sorting>
