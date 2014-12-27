@@ -604,6 +604,26 @@
       \verb http://hudson-ci.org/
       \endverb
     \endentry
+    \entry{bitvis}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{d486a02c53836cd1bd073b9d0d77ffe7}
+      \strng{fullhash}{d486a02c53836cd1bd073b9d0d77ffe7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Bitvis Utility Library}
+      \field{title}{Bitvis Utility Library}
+      \field{urlday}{25}
+      \field{urlmonth}{08}
+      \field{urlyear}{2014}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://bitvis.no/products/bitvis-utility-library/
+      \endverb
+    \endentry
   \endsortlist
   \sortlist{entry}{none}
     \entry{vhdlorigin}{article}{}
@@ -1189,6 +1209,26 @@
       \field{year}{2014}
       \verb{url}
       \verb http://hudson-ci.org/
+      \endverb
+    \endentry
+    \entry{bitvis}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{d486a02c53836cd1bd073b9d0d77ffe7}
+      \strng{fullhash}{d486a02c53836cd1bd073b9d0d77ffe7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Bitvis Utility Library}
+      \field{title}{Bitvis Utility Library}
+      \field{urlday}{25}
+      \field{urlmonth}{08}
+      \field{urlyear}{2014}
+      \field{year}{2014}
+      \verb{url}
+      \verb http://bitvis.no/products/bitvis-utility-library/
       \endverb
     \endentry
   \endsortlist

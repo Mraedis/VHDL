@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {british}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{List of Acronyms}{vi}
+\contentsline {section}{List of Acronyms}{vii}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{I\hspace {1em}Problem and background}{1}
 \defcounter {refsection}{0}\relax 
@@ -88,16 +88,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.4}Hudson-CI}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5}BitVis}{15}
+\contentsline {subsubsection}{\numberline {6.4.1}Using Hudson-CI}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}The future of testing}{16}
+\contentsline {subsection}{\numberline {6.5}Bitvis utility library}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Conclusion}{17}
+\contentsline {section}{\numberline {7}The future of testing}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendices}{20}
+\contentsline {section}{\numberline {8}Conclusion}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {A}Code examples}{20}
+\contentsline {section}{Appendices}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}DFF testbench}{20}
+\contentsline {section}{Appendix \numberline {A}Code examples}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}Revised DFF testbench}{21}
+\contentsline {subsection}{\numberline {A.1}DFF testbench}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2}Revised DFF testbench}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Appendix \numberline {B}Figures}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.1}Hudson-CI Bitvis IRQC statistics}{23}

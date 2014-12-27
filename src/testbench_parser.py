@@ -482,6 +482,7 @@ def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, args_
         outputname = words[0] + '.' + words[1] + '.' + words[2]
         outputfile = open(os.getcwd() + os.sep + outputname + '_cmd_output.txt','w+')
         
+        logwrite('n','Compiling tests for  ' + str(key))        
         for line in commands.split('\n'):                                       # Form a work directory per file
             #os.system(line)
             readcmd = os.popen(line).read()

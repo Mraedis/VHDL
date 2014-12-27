@@ -1974,6 +1974,7 @@
     <bcf:citekey order="17">junitxml</bcf:citekey>
     <bcf:citekey order="17">setuptools</bcf:citekey>
     <bcf:citekey order="18">hudson</bcf:citekey>
+    <bcf:citekey order="19">bitvis</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
   <bcf:sorting>
