@@ -267,6 +267,7 @@ the obligation to state expressly the source when quoting results from this mast
 \newacronym{TFD}{TFD}{Test First Development}
 \newacronym{CI}{CI}{Continuous Integration}
 
+\emph{\color{red}Tijdsuniformiteit in ganse document!}
 \section{Problem}
 \emph{\color{red}Revisie nodig: belangrijkste pagina} \\
 Developing digital hardware with the \gls{VHDL} is, like any code, prone to errors, either by the developer or by wrong product specifications. To ensure errors are weeded out before the more expensive roll-out or production begins, the code must be subjected to rigorous testing. \emph{Currently, large and impractical tests are needed to fully test a product.}
@@ -388,7 +389,7 @@ In this example, an error is thrown of the severity \emph{failure}, which ends t
 
 \subsection{Generic testbench}
 The generic testbench operates as mentioned in section~\ref{subsec:HDL}. It assigns every input and output on the \gls{DUT} their counterpart in the testbench and contains a number of processes with stimuli. Standard procedure is:
-\begin{enumerate}[itemsep=-0.1cm]
+\begin{enumerate}%[itemsep=-0.1cm]
 \item Wait for some clock periods to 'ready' the design
 \item Apply stimuli to the inputs
 \item Wait for the appropriate number of clock cycles
@@ -578,9 +579,10 @@ In the full code it is shown that the functions are overloads of existing functi
 Overloading functions, including libraries and seemingly completely overhauling the testbench may seem like a lot of work for a small testbench such as this. While true, this method is easily scalable for testbenches of much larger sizes and with designs of greater complexity. If the developer created a testbench starting with this approach, no time was wasted redoing any code and the readability was greatly improved. Lastly, automated logging was built in these procedures to keep track of progress during testruns. This allowed for easier and uniform report generation (see also section~\ref{subsec:reports}).
 
 \subsection{Calling the parser}
+\label{subsec:parser}
 The parser was created as a script, written in Python, thus it was necessary to have access to a command-line interface as python requires one to run its scripts. Originally, the call was as easy as \emph{python testbench\_parser.py tb\_dff.vhd}. There was one testbench to be parsed and everything happened automatically in default methods, hardcoded in the script. During further development it became clear that there were many ways a developer might want to test their project. As such there was a need for a way to the parser to be modified in the way it ran. Possible solutions included different scripts, a settings file but ultimately the decided upon method was the use of arguments.
 
-\subsubsection{Argparser}
+\subsubsection{Arguments to the parser}
 \label{subsec:argparser}
 Python had a built-in argument parser, the library \emph{argparse}. With this it became possible to have a complex yet simple to use command-line interface with both optional and required arguments. Included in the parser was the option for a clear and thorough help, providing users with all the information they needed to run the script. A simple example is listed below:
 \begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
@@ -608,7 +610,7 @@ The\emph{-r} or \emph{-\--runops} flag is to specify a custom command for ModelS
 \subsubsection{Processing methods}
 \label{subsubsec:processmethods}
 In section~\ref{subsec:argparser} the processing method \emph{partitioned} was mentioned as well as the \emph{-m} or \emph{-\--method} flag. The parser thus supports multiple methods of dividing the testbench, they are listed below:
-\begin{itemize}[itemsep=-0.1cm]
+\begin{itemize}%[itemsep=-0.1cm]
 \item Start Stop with identifiers
 \item Line per line 
 \item Partitioned with identifiers
@@ -621,8 +623,41 @@ In the Line method, the parser looks for a process. This process should contain 
 \\
 Finally, in the Partitioned method, the developer indicates which blocks are testsuites by using the \emph{-\--Test} and \emph{-\--End} keywords. Everything in between these keywords is assumed to be a single block of testcases, to be put in the same new testbench. As such, and unlike the previous two methods, it is possible to define multiple testsuites. 
 
-\subsection{Report generation}
+\subsection{Report and log generation}
 \label{subsec:reports}
+After the parser from section~\ref{subsec:parser} had run its course, results were captured automatically. However, making sense of a whole lot of command line output from a text file was challenging. ModelSim made this more difficult by adding a header and a lot of information that isn't really interesting at this time of development. Things such as which files were loaded prior to the execution and which preference file was being read were not needed for a quick overview. However, they might still be needed in the event of severe failure.
+
+\subsubsection{Basic report}
+A great deal of filtering of the output file was required, only the passed and failed testresults were needed for a proper report. In section~\ref{subsec:bitvis}, it will be shown that whether the test passed or failed is done with simple keywords. A simple filtering on these words per line of the output file returned every testresult, neatly ordered in passed and failed groups. A total testcount was tallied from the combination, and as such a crude report was written to a text file.
+
+\subsubsection{XML report}
+Previously discussed in section~\ref{subsec:xUnit}, the JUnit implementation of xUnit uses \gls{XML} for report viewing. The editor that was used throughout the development of the thesis is \emph{Eclipse}, which was written in Java, the same language JUnit is an implementation for. They could be read and displayed in Eclipse by manually navigating to them or editing the project properties to automatically read them.
+\\
+\\
+To create the XML reports, a pre-made, open-source Python implementation of a JUnit report, aptly named python-junit-xml was used. This package required its own external component to be installed, called setuptools.\cite{junitxml, setuptools} In this thesis, versions 1.0 and 3.5.1 respectively were used, but versions 1.3 and 8.0.4 are available at time of writing. 
+
+\subsubsection{Logkeeping}
+Finally, a log was kept detailing events throughout the parser's execution. It contained critical events along with timestamps for precise debugging. Everything within this log file was related to only the parser and its workings. The file that contained details about ModelSims execution was not saved.
+
+\subsection{Hudson-CI}
+\label{subsec:Hudson}
+For full automation, a \gls{CI} system was integrated into the framework. The \gls{CI} solution that was incorporated was Hudson-CI which provided an extensive range of features including:
+\begin{itemize}%[itemsep=-0.1cm]
+\item Timed and triggered building from an \gls{RC} repository
+\item Automated testing of builds
+\item Reading reports in the \emph{JUnit} format
+\item Graphical and statistical overview of test progress throughout builds
+\end{itemize}
+Hudson is available as both a running .war file (a Java web application that runs on a local machine) and as an installed service.\cite{hudson} The version used throughout this thesis is 3.2.0 but at time of writing 3.2.1 is available.
+
+\subsubsection{Using Hudson-CI}
+For ease of use, Hudson was installed as a local service. By default the gateway is accessed at port 8080 of the local machine, usually by typing \emph{localhost:8080} in a browser.
+
+\subsection{BitVis}
+\label{subsec:bitvis}
+
+
+
 
 %Furthermore, software practices will have to be applied to maintain clean code and a steady development process. To this end, work started with unit testing in mind. Parts of the VHDL testbench are separated to be executed independently in an automated fashion.
 %
@@ -926,21 +961,21 @@ Finally, in the Partitioned method, the developer indicates which blocks are tes
 
 \newpage{}
 
-\section{Surrounding programs}
-\emph{\color{red}Titel?}\\
-
-\subsection{Hudson-CI}
-\label{subsec:Hudson}
-The \gls{CI} solution that was investigated is Hudson-CI which provides an extensive range of features, including everything listed above. The used features are:
-\begin{itemize}
-\item Timed and triggered building from an \gls{RC} repository
-\item Automated testing of said build
-\item Humanly readable reports in the \emph{JUnit} format
-\item Graphical and statistical overview of test progress throughout builds
-\end{itemize}
-
-\subsection{BitVis}
-\label{subsec:bitvis}
+%\section{Surrounding programs}
+%\emph{\color{red}Titel?}\\
+%
+%\subsection{Hudson-CI}
+%\label{subsec:Hudson}
+%The \gls{CI} solution that was investigated is Hudson-CI which provides an extensive range of features, including everything listed above. The used features are:
+%\begin{itemize}
+%\item Timed and triggered building from an \gls{RC} repository
+%\item Automated testing of said build
+%\item Humanly readable reports in the \emph{JUnit} format
+%\item Graphical and statistical overview of test progress throughout builds
+%\end{itemize}
+%
+%\subsection{BitVis}
+%\label{subsec:bitvis}
 
 \newpage{}
 \section{The future of testing}

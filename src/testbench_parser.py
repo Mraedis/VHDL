@@ -485,13 +485,13 @@ def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, args_
         outputfile = open(os.getcwd() + os.sep + outputname + '_cmd_output.txt','w+')
         logwrite('n','Starting execution of tests in ' + str(key))
         for test in range(0, value):
-            print( 'vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" '
+            testname = (str(testcount) + '.' + entname + '(' + archname + str(test) + ')" '
                                + args_t.runops.replace(entname, 'work' + str(testcount) + '.' + entname + '(' + archname + str(test)))
-            readcmd = os.popen('vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" '
-                               + args_t.runops.replace(entname, 'work' + str(testcount) + '.' + entname + '(' + archname + str(test))).read()
-            #readcmd = os.popen('vsim -c "work' + str(testcount) + '.' + entname + '(' + archname + str(test) + ')" -do "run -all;exit"').read()
+            logwrite('n','Executing in: work' + testname)
+            readcmd = os.popen('vsim -c "work' + testname).read()
             outputfile.write(readcmd)
         outputfile.close()
+        logwrite('n','Finished execution of tests in ' + str(key))
         shutil.copy(os.getcwd() + os.sep + outputname + '_cmd_output.txt', foldername_t)
         testcount += 1
     os.chdir(currentdir_t)

@@ -1971,6 +1971,9 @@
     <bcf:citekey order="15">BhatN06</bcf:citekey>
     <bcf:citekey order="16">xunit</bcf:citekey>
     <bcf:citekey order="16">junitxml</bcf:citekey>
+    <bcf:citekey order="17">junitxml</bcf:citekey>
+    <bcf:citekey order="17">setuptools</bcf:citekey>
+    <bcf:citekey order="18">hudson</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
   <bcf:sorting>

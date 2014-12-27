@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {british}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{List of Acronyms}{vii}
+\contentsline {section}{List of Acronyms}{vi}
 \defcounter {refsection}{0}\relax 
 \contentsline {part}{I\hspace {1em}Problem and background}{1}
 \defcounter {refsection}{0}\relax 
@@ -74,21 +74,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2}Calling the parser}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.1}Argparser}{13}
+\contentsline {subsubsection}{\numberline {6.2.1}Arguments to the parser}{13}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {6.2.2}Processing methods}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Report generation}{14}
+\contentsline {subsection}{\numberline {6.3}Report and log generation}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Surrounding programs}{15}
+\contentsline {subsubsection}{\numberline {6.3.1}Basic report}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Hudson-CI}{15}
+\contentsline {subsubsection}{\numberline {6.3.2}XML report}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}BitVis}{15}
+\contentsline {subsubsection}{\numberline {6.3.3}Logkeeping}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}The future of testing}{16}
+\contentsline {subsection}{\numberline {6.4}Hudson-CI}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Conclusion}{17}
+\contentsline {subsection}{\numberline {6.5}BitVis}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}The future of testing}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Conclusion}{17}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Appendices}{20}
 \defcounter {refsection}{0}\relax 
