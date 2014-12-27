@@ -585,14 +585,6 @@
       \endverb
     \endentry
     \entry{hudson}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=bbfb6d4320df8ee85e5e9b2c6b0d03c2}{team}{t\bibinitperiod}{Hudson}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=bbfb6d4320df8ee85e5e9b2c6b0d03c2}{team}{t\bibinitperiod}{Hudson}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{bbfb6d4320df8ee85e5e9b2c6b0d03c2}
-      \strng{fullhash}{bbfb6d4320df8ee85e5e9b2c6b0d03c2}
       \field{sortinit}{0}
       \field{labeltitle}{Hudson-CI}
       \field{title}{Hudson-CI}
@@ -605,14 +597,6 @@
       \endverb
     \endentry
     \entry{bitvis}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{d486a02c53836cd1bd073b9d0d77ffe7}
-      \strng{fullhash}{d486a02c53836cd1bd073b9d0d77ffe7}
       \field{sortinit}{0}
       \field{labeltitle}{Bitvis Utility Library}
       \field{title}{Bitvis Utility Library}
@@ -1192,14 +1176,6 @@
       \endverb
     \endentry
     \entry{hudson}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=bbfb6d4320df8ee85e5e9b2c6b0d03c2}{team}{t\bibinitperiod}{Hudson}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=bbfb6d4320df8ee85e5e9b2c6b0d03c2}{team}{t\bibinitperiod}{Hudson}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{bbfb6d4320df8ee85e5e9b2c6b0d03c2}
-      \strng{fullhash}{bbfb6d4320df8ee85e5e9b2c6b0d03c2}
       \field{sortinit}{0}
       \field{labeltitle}{Hudson-CI}
       \field{title}{Hudson-CI}
@@ -1212,14 +1188,6 @@
       \endverb
     \endentry
     \entry{bitvis}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=d486a02c53836cd1bd073b9d0d77ffe7}{Bitvis}{B\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{d486a02c53836cd1bd073b9d0d77ffe7}
-      \strng{fullhash}{d486a02c53836cd1bd073b9d0d77ffe7}
       \field{sortinit}{0}
       \field{labeltitle}{Bitvis Utility Library}
       \field{title}{Bitvis Utility Library}

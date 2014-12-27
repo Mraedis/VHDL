@@ -92,18 +92,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.5}Bitvis utility library}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}The future of testing}{17}
+\contentsline {section}{\numberline {7}Results}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Conclusion}{18}
+\contentsline {section}{\numberline {8}Future work}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendices}{21}
+\contentsline {section}{\numberline {9}Remarks}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {A}Code examples}{21}
+\contentsline {section}{\numberline {10}Conclusion}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}DFF testbench}{21}
+\contentsline {section}{Appendices}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}Revised DFF testbench}{22}
+\contentsline {section}{Appendix \numberline {A}Code examples}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix \numberline {B}Figures}{23}
+\contentsline {subsection}{\numberline {A.1}DFF testbench}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1}Hudson-CI Bitvis IRQC statistics}{23}
+\contentsline {subsection}{\numberline {A.2}Revised DFF testbench}{24}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Appendix \numberline {B}Figures}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.1}Hudson-CI example statistics}{25}
