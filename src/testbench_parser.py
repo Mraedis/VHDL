@@ -474,8 +474,6 @@ def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, args_
                                                                                 # Make use of the vhdlUnit 'reportback' function
         commands = 'vlib work' + str(testcount) +'\n' + 'vcom -' + args_t.version + ' -quiet -work work' + str(testcount) + ' ' + key
         
-        for line in commands.split('\n'):                                       # Form a work directory per file
-            os.system(line)
         
         words = str(key).split('.')
         entname = words[0]                                                      # Get entity and architecture name from the key
@@ -483,6 +481,12 @@ def parse_tests(testcount_t = None, tempdir_t = None, foldername_t = None, args_
         
         outputname = words[0] + '.' + words[1] + '.' + words[2]
         outputfile = open(os.getcwd() + os.sep + outputname + '_cmd_output.txt','w+')
+        
+        for line in commands.split('\n'):                                       # Form a work directory per file
+            #os.system(line)
+            readcmd = os.popen(line).read()
+            outputfile.write(readcmd)
+            
         logwrite('n','Starting execution of tests in ' + str(key))
         for test in range(0, value):
             testname = (str(testcount) + '.' + entname + '(' + archname + str(test) + ')" '
