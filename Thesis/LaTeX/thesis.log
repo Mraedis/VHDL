@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  27 DEC 2014 19:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  30 DEC 2014 15:50
 entering extended mode
 **thesis.tex
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.tex
@@ -475,11 +475,13 @@ File: standard.bbx 2014/06/25 v2.9a biblatex bibliography style (PK/JW/AB)
 \c@bbx:relatedcount=\count204
 \c@bbx:relatedtotal=\count205
 ))
-Package biblatex Info: Trying to load citation style 'numeric'...
-Package biblatex Info: ... file 'numeric.cbx' found.
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
 
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\cbx\numeric.cbx"
-File: numeric.cbx 2014/06/25 v2.9a biblatex citation style (PK/JW/AB)
+("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\biblatex\cbx\numeric-comp.cbx"
+File: numeric-comp.cbx 2014/06/25 v2.9a biblatex citation style (PK/JW/AB)
+\c@cbx@tempcnta=\count206
+\c@cbx@tempcntb=\count207
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -547,9 +549,9 @@ Package ifvtex Info: VTeX not detected.
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count206
-\Gm@cntv=\count207
-\c@Gm@tempcnt=\count208
+\Gm@cnth=\count208
+\Gm@cntv=\count209
+\c@Gm@tempcnt=\count210
 \Gm@bindingoffset=\dimen103
 \Gm@wd@mp=\dimen104
 \Gm@odd@mp=\dimen105
@@ -577,7 +579,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count209
+\Gread@gobject=\count211
 ))
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
@@ -587,15 +589,15 @@ Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count210
-\calc@Bcount=\count211
+\calc@Acount=\count212
+\calc@Bcount=\count213
 \calc@Adimen=\dimen113
 \calc@Bdimen=\dimen114
 \calc@Askip=\skip57
 \calc@Bskip=\skip58
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count212
+\calc@Ccount=\count214
 \calc@Cskip=\skip59
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
@@ -626,30 +628,30 @@ File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box26
 \AM@toc@title=\toks18
-\c@AM@survey=\count213
+\c@AM@survey=\count215
 \AM@templatesizebox=\box27
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count214
+\lst@mode=\count216
 \lst@gtempboxa=\box28
 \lst@token=\toks19
-\lst@length=\count215
+\lst@length=\count217
 \lst@currlwidth=\dimen115
-\lst@column=\count216
-\lst@pos=\count217
+\lst@column=\count218
+\lst@pos=\count219
 \lst@lostspace=\dimen116
 \lst@width=\dimen117
-\lst@newlines=\count218
-\lst@lineno=\count219
+\lst@newlines=\count220
+\lst@lineno=\count221
 \lst@maxwidth=\dimen118
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
-\c@lstnumber=\count220
-\lst@skipnumbers=\count221
+\c@lstnumber=\count222
+\lst@skipnumbers=\count223
 \lst@framebox=\box29
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
@@ -671,7 +673,7 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
-\babel@savecnt=\count222
+\babel@savecnt=\count224
 \U@D=\dimen119
 )
 \l@canadian = a dialect from \language\l@american 
@@ -692,12 +694,12 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen125
 \caption@hangindent=\dimen126
 )
-\c@ContinuedFloat=\count223
+\c@ContinuedFloat=\count225
 Package caption Info: listings package is loaded.
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count224
+\c@float@type=\count226
 \float@exts=\toks20
 \float@box=\box30
 \@float@everytoks=\toks21
@@ -712,7 +714,7 @@ Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
 \XKV@toks=\toks22
 \XKV@tempa@toks=\toks23
-\XKV@depth=\count225
+\XKV@depth=\count227
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 ))
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\glossaries\base\mfirstuc.sty"
@@ -749,13 +751,13 @@ Package: amsbsy 1999/11/29 v1.2d
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count226
+\inf@bad=\count228
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count227
-\leftroot@=\count228
+\uproot@=\count229
+\leftroot@=\count230
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count229
-\DOTSCASE@=\count230
+\classnum@=\count231
+\DOTSCASE@=\count232
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -764,16 +766,16 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen129
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count231
-\c@MaxMatrixCols=\count232
-\dotsspace@=\muskip11
-\c@parentequation=\count233
+\macc@depth=\count233
 Normal \count register pool exhausted, switching to extended pool.
-\dspbrk@lvl=\count277
+\c@MaxMatrixCols=\count277
+\dotsspace@=\muskip11
+\c@parentequation=\count278
+\dspbrk@lvl=\count279
 \tag@help=\toks27
-\row@=\count278
-\column@=\count279
-\maxfields@=\count280
+\row@=\count280
+\column@=\count281
+\maxfields@=\count282
 \andhelp@=\toks28
 \eqnshift@=\dimen130
 \alignsep@=\dimen131
@@ -790,7 +792,7 @@ LaTeX Info: Redefining \] on input line 2666.
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\substr\substr.sty"
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count281
+\c@su@anzahl=\count283
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\datatool\datatool-fp.sty"
 Package: datatool-fp 2013/08/29 v2.17 (NLCT)
@@ -801,19 +803,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\defpattern.sty"
 Package: defpattern 1994/10/12
-\actioncount=\count282
+\actioncount=\count284
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-basic.sty"
 Package: fp-basic 1996/05/13
-\FP@xs=\count283
-\FP@xia=\count284
-\FP@xib=\count285
-\FP@xfa=\count286
-\FP@xfb=\count287
-\FP@rega=\count288
-\FP@regb=\count289
-\FP@regs=\count290
-\FP@times=\count291
+\FP@xs=\count285
+\FP@xia=\count286
+\FP@xib=\count287
+\FP@xfa=\count288
+\FP@xfb=\count289
+\FP@rega=\count290
+\FP@regb=\count291
+\FP@regs=\count292
+\FP@times=\count293
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-addons.sty"
 Package: fp-addons 1995/03/15
@@ -832,7 +834,7 @@ Package: fp-pas 1994/08/29
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-random.sty"
 Package: fp-random 1995/02/23
-\FPseed=\count292
+\FPseed=\count294
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-eqn.sty"
 Package: fp-eqn 1995/04/03
@@ -844,14 +846,14 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks31
-\@dtl@tmpcount=\count293
+\@dtl@tmpcount=\count295
 \dtl@tmplength=\skip63
-\dtl@sortresult=\count294
-\@dtl@numgrpsepcount=\count295
-\@dtl@datatype=\count296
-\dtl@codeA=\count297
-\dtl@codeB=\count298
-\@dtl@foreach@level=\count299
+\dtl@sortresult=\count296
+\@dtl@numgrpsepcount=\count297
+\@dtl@datatype=\count298
+\dtl@codeA=\count299
+\dtl@codeB=\count300
+\@dtl@foreach@level=\count301
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\glossaries\base\glossaries-compat
 ible-307.sty"
@@ -863,7 +865,7 @@ Package: translator 2010/06/12 ver 1.10
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\translator\translator
 -language-mappings.tex"))
-\gls@level=\count300
+\gls@level=\count302
 \@gls@tmpb=\toks32
 \gls@tmplen=\skip64
 \glskeylisttok=\toks33
@@ -889,16 +891,16 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip67
 \LTpre=\skip68
 \LTpost=\skip69
-\LTchunksize=\count301
+\LTchunksize=\count303
 \LTcapwidth=\dimen136
 \LT@head=\box34
 \LT@firsthead=\box35
 \LT@foot=\box36
 \LT@lastfoot=\box37
-\LT@cols=\count302
-\LT@rows=\count303
-\c@LT@tables=\count304
-\c@LT@chunks=\count305
+\LT@cols=\count304
+\LT@rows=\count305
+\c@LT@tables=\count306
+\c@LT@chunks=\count307
 \LT@p@ftn=\toks37
 )
 \glsdescwidth=\skip70
@@ -909,7 +911,7 @@ sty"
 Package: glossary-super 2013/11/14 v4.0 (NLCT)
  ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\supertabular\supertabular.sty"
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count306
+\c@tracingst=\count308
 \ST@wd=\dimen137
 \ST@rightskip=\skip72
 \ST@leftskip=\skip73
@@ -952,14 +954,14 @@ Package glossaries Info: Writing glossary file thesis.acn on input line 19.
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
 Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
-\c@tracingmulticols=\count307
+\c@tracingmulticols=\count309
 \mult@box=\box40
 \multicol@leftmargin=\dimen150
-\c@unbalance=\count308
-\c@collectmore=\count309
-\doublecol@number=\count310
-\multicoltolerance=\count311
-\multicolpretolerance=\count312
+\c@unbalance=\count310
+\c@collectmore=\count311
+\doublecol@number=\count312
+\multicoltolerance=\count313
+\multicolpretolerance=\count314
 \full@width=\dimen151
 \page@free=\dimen152
 \premulticols=\dimen153
@@ -989,14 +991,14 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \@tempa=\box61
 \@tempa=\box62
 \@tempa=\box63
-\c@columnbadness=\count313
-\c@finalcolumnbadness=\count314
+\c@columnbadness=\count315
+\c@finalcolumnbadness=\count316
 \last@try=\dimen155
 \multicolovershoot=\dimen156
 \multicolundershoot=\dimen157
 \mult@nat@firstbox=\box64
 \colbreak@box=\box65
-\multicol@sort@counter=\count315
+\multicol@sort@counter=\count317
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
@@ -1004,27 +1006,27 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@outerparindent=\dimen158
 \enit@toks=\toks39
 \enit@inbox=\box66
-\enitdp@description=\count316
+\enitdp@description=\count318
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count317
-\c@@ppsavesec=\count318
-\c@@ppsaveapp=\count319
+\c@@pps=\count319
+\c@@ppsavesec=\count320
+\c@@ppsaveapp=\count321
 )
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count320
+\c@KVtest=\count322
 \sf@farskip=\skip81
 \sf@captopadj=\dimen159
 \sf@capskip=\skip82
 \sf@nearskip=\skip83
-\c@subfigure=\count321
-\c@subfigure@save=\count322
-\c@lofdepth=\count323
-\c@subtable=\count324
-\c@subtable@save=\count325
-\c@lotdepth=\count326
+\c@subfigure=\count323
+\c@subfigure@save=\count324
+\c@lofdepth=\count325
+\c@subtable=\count326
+\c@subtable@save=\count327
+\c@lotdepth=\count328
 \sf@top=\skip84
 \sf@bottom=\skip85
 )
@@ -1052,8 +1054,8 @@ File: english.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count327
-\@quotereset=\count328
+\@quotelevel=\count329
+\@quotereset=\count330
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
 LaTeX Font Info:    ... okay on input line 112.
@@ -1082,7 +1084,15 @@ Package biblatex Warning: File 'thesis.bbl' is wrong format version - expected
 2.4.
 
 Package biblatex Info: ... file 'thesis.bbl' found.
-(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.bbl)
+(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\thesis.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                VHDLunit
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 112.
 Package biblatex Info: Reference segment=0 on input line 112.
 
@@ -1122,20 +1132,20 @@ Package biblatex Info: Reference segment=0 on input line 112.
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count331
 \scratchdimen=\dimen160
 \scratchbox=\box69
-\nofMPsegments=\count330
-\nofMParguments=\count331
+\nofMPsegments=\count332
+\nofMParguments=\count333
 \everyMPshowfont=\toks41
-\MPscratchCnt=\count332
+\MPscratchCnt=\count334
 \MPscratchDim=\dimen161
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
 \everyMPtoPDFconversion=\toks42
 )
 \AtBeginShipoutBox=\box70
-\c@lstlisting=\count335
+\c@lstlisting=\count337
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
@@ -1255,89 +1265,77 @@ Overfull \hbox (13.60683pt too wide) in paragraph at lines 2--284
 [7]
 \@gls@deffile=\write8
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--309
+Underfull \hbox (badness 10000) in paragraph at lines 297--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--309
+Underfull \hbox (badness 10000) in paragraph at lines 297--308
 
  []
 
 [1] ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
-<images/designflow.pdf, id=42, 445.665pt x 252.19218pt>
-File: images/designflow.pdf Graphic file (type pdf)
-
-<use images/designflow.pdf>
-Package pdftex.def Info: images/designflow.pdf used on input line 390.
-(pdftex.def)             Requested size: 330.42041pt x 186.97716pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--394
+Underfull \hbox (badness 10000) in paragraph at lines 369--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--394
+Underfull \hbox (badness 10000) in paragraph at lines 369--381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--394
+Underfull \hbox (badness 10000) in paragraph at lines 369--381
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--394
-
- []
-
-[2] [3 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/designflow.pdf
->] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
-
- []
-
-[6] [7] <images/tdd.pdf, id=85, 283.0575pt x 264.99pt>
+[2] [3] [4] [5] [6] [7] <images/tdd.pdf, id=64, 283.0575pt x 264.99pt>
 File: images/tdd.pdf Graphic file (type pdf)
- <use images/tdd.pdf>
-Package pdftex.def Info: images/tdd.pdf used on input line 498.
+
+<use images/tdd.pdf>
+Package pdftex.def Info: images/tdd.pdf used on input line 483.
 (pdftex.def)             Requested size: 179.37416pt x 167.92712pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 505--508
+Underfull \hbox (badness 10000) in paragraph at lines 500--504
 
  []
 
-[8 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/tdd.pdf>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 549--556
+[8 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/tdd.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 508--512
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 536--543
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--556
+Underfull \hbox (badness 10000) in paragraph at lines 536--543
 
  []
 
 [10]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 564.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 551.
 
  ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 564.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 551.
  [11]
-Underfull \hbox (badness 10000) in paragraph at lines 573--577
+Underfull \hbox (badness 10000) in paragraph at lines 561--565
 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 594.
+(Font)              <9> on input line 582.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 594.
+(Font)              <5> on input line 582.
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--606
+Underfull \hbox (badness 10000) in paragraph at lines 590--594
 
  []
 
@@ -1347,52 +1345,92 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 628--635
+Underfull \hbox (badness 10000) in paragraph at lines 616--623
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 628--635
+Underfull \hbox (badness 10000) in paragraph at lines 616--623
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 644--651
+Underfull \hbox (badness 10000) in paragraph at lines 632--639
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--651
+Underfull \hbox (badness 10000) in paragraph at lines 632--639
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--664
+Underfull \hbox (badness 10000) in paragraph at lines 648--652
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 695--699
+Underfull \hbox (badness 10000) in paragraph at lines 687--691
 
  []
 
-[15] [16] [17] [18] [19] [20]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 753.
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 727--731
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 748--752
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 766--782
+
+ []
 
 
-("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+Underfull \hbox (badness 10000) in paragraph at lines 766--782
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--782
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--782
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--782
+
+ []
+
+[19]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 785.
+
+ ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (1.65141pt too wide) in paragraph at lines 754--754
+Overfull \hbox (1.65141pt too wide) in paragraph at lines 785--785
 []\T1/lmr/m/n/10.95 D. Bie-der-man. ``An over-view on writ-ing a VHDL test-benc
 h''. In: \T1/lmr/m/it/10.95 Pro-ceed-ings The Twenty-Ninth
  []
 
-[21] [22] [23] [24] <images/hudsonstats.png, id=163, 589.4522pt x 440.39531pt>
+[20]
+Overfull \hbox (7.78267pt too wide) in paragraph at lines 785--785
+\T1/lmr/m/n/10.95 CV''. In: \T1/lmr/m/it/10.95 Pro-ceed-ings. XI Brazilian Sym-
+posium on In-teg-rated Cir-cuit Design (Cat. No.98EX216)\T1/lmr/m/n/10.95 .
+ []
+
+[21] [22] [23] [24] <images/hudsonstats.png, id=142, 589.4522pt x 440.39531pt>
 File: images/hudsonstats.png Graphic file (type png)
 
 <use images/hudsonstats.png>
-Package pdftex.def Info: images/hudsonstats.png used on input line 894.
+Package pdftex.def Info: images/hudsonstats.png used on input line 926.
 (pdftex.def)             Requested size: 401.22942pt x 299.77396pt.
  [25 <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/LaTeX/images/hudsonstats.png>
 ] [25
@@ -1402,13 +1440,13 @@ Package pdftex.def Info: images/hudsonstats.png used on input line 894.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 17705 strings out of 493921
- 275624 string characters out of 3144875
- 756891 words of memory out of 3000000
- 20632 multiletter control sequences out of 15000+200000
+ 17736 strings out of 493921
+ 276144 string characters out of 3144875
+ 757937 words of memory out of 3000000
+ 20663 multiletter control sequences out of 15000+200000
  82628 words of font info for 53 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,10n,93p,2229b,1537s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,10n,93p,2229b,1519s stack positions out of 5000i,500n,10000p,200000b,50000s
 {F:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{F:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<F:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><F:/Program Files (x86)/MiKTe
@@ -1425,9 +1463,9 @@ pe1/public/lm/lmr9.pfb><F:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm
  Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><F:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/lm/lmsy9.pfb><F:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/lm/lmtt10.pfb>
-Output written on thesis.pdf (35 pages, 733954 bytes).
+Output written on thesis.pdf (35 pages, 616663 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
+ 201 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
