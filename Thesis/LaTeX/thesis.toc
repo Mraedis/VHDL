@@ -2,8 +2,6 @@
 \defcounter {refsection}{0}\relax 
 \select@language {british}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{List of Acronyms}{vii}
-\defcounter {refsection}{0}\relax 
 \contentsline {part}{I\hspace {1em}Problem and background}{1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Problem}{1}

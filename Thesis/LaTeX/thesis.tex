@@ -11,7 +11,7 @@
 \usepackage{babel}
 \usepackage[justification=centering]{caption}
 \usepackage{float}
-\usepackage[nomain,acronym,toc,nopostdot]{glossaries}
+\usepackage[nomain,acronym,nopostdot]{glossaries}
 \usepackage{glossary-longragged}
 \usepackage[gen]{eurosym}
 \setglossarystyle{super}
@@ -26,6 +26,9 @@
 \usepackage[titletoc,toc,page]{appendix}
 
 \usepackage{subfig}
+
+\usepackage{ragged2e}
+\raggedright
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% python syntax highlighting
@@ -98,7 +101,7 @@ emphstyle={\color{self}\slshape},
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm,headheight=2.1cm}
-\exhyphenpenalty=10000\hyphenpenalty=20\emergencystretch=5pt
+\exhyphenpenalty=10000\hyphenpenalty=10000\emergencystretch=5pt
 
 \makeatletter
 \newcommand \Dotfill {\leavevmode \cleaders \hb@xt@ .77em{\hss .\hss }\hfill \kern \z@}
@@ -112,9 +115,9 @@ emphstyle={\color{self}\slshape},
 \begin{document}
 \renewcommand{\thepage}{\roman{page}}
 %%Mandatory blank page
-\newpage
-\thispagestyle{empty}
-\mbox{}
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Titelblad
@@ -180,8 +183,8 @@ Joren Guillaume
 
 \vspace{3.5cm}
 
-Supervisors: Prof.~Ir.~L.~Colman,~Dr.~Ir.~H.~Eeckhaut\\
-Counsellor: Ir.~Ing.~L.~Lemiengre\\
+Supervisors: prof.~ir.~L.~Colman,~dr.~ir.~H.~Eeckhaut\\
+Counsellor: ir.~ing.~L.~Lemiengre\\
 
 \vspace{2cm}
 
@@ -195,8 +198,83 @@ Academic year 2014--2015
 \end{center}
 \end{titlepage}
 
+\newpage{}
+\thispagestyle{empty}
+\mbox{}
 
-%\includepdf[pages={1}]{title-generated.pdf}
+\begin{titlepage}
+
+%\setlength{\hoffset}{-3cm}
+\setlength{\voffset}{-1in}
+\setlength{\topmargin}{1.5cm}
+\setlength{\headheight}{0.5cm}
+\setlength{\headsep}{1cm}
+%\setlength{\oddsidemargin}{3cm}
+%\setlength{\evensidemargin}{3cm}
+\setlength{\footskip}{1.5cm}
+\enlargethispage{1cm}
+% \textwidth en \textheight hier aanpassen blijkt niet te werken
+
+\fontsize{12pt}{14pt}
+\selectfont
+
+\begin{center}
+
+
+\begin{figure}
+\centerline{%
+\includegraphics[height=2.5cm]{images/ruglogo}
+\hspace{0.5cm}
+\includegraphics[height=2cm]{images/sigasi}
+}%
+\end{figure}
+
+
+\vspace{0.5cm}
+
+\fontseries{m}
+\fontsize{14pt}{16pt}
+\selectfont
+
+Faculty of Engineering and Architecture\\
+
+\vspace{4.5cm}
+
+\fontseries{bx}
+\fontsize{17.28pt}{21pt}
+\selectfont
+
+Building a better VHDL\\
+testing environment
+
+\fontseries{m}
+\fontsize{14pt}{16pt}
+\selectfont
+
+\vspace{1.2cm}
+
+Joren Guillaume
+
+\fontseries{m}
+\fontsize{12pt}{14pt}
+\selectfont
+
+\vspace{3.5cm}
+
+Supervisors: prof.~ir.~L.~Colman,~dr.~ir.~H.~Eeckhaut\\
+Counsellor: ir.~ing.~L.~Lemiengre\\
+
+\vspace{2cm}
+
+Master's dissertation submitted in order to obtain the academic degree of\\
+Master of Science in Electronics and ICT Engineering Technology
+
+\vspace{1cm}
+
+Academic year 2014--2015
+
+\end{center}
+\end{titlepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Copyright notice
@@ -215,31 +293,21 @@ the obligation to state expressly the source when quoting results from this mast
 %% Preface
 
 \newpage{}\part*{Preface}
-In the past year and a half I had the pleasure to work on the concept of integrating the software and hardware development worlds. In this thesis is contained the culminated knowledge and experience that was obtained during these many months, lest it be forgotten.
-\\
-\\
+In the past year and a half I had the pleasure to work on the concept of integrating the software and hardware development worlds. In this thesis is contained the culminated knowledge and experience that was obtained during these many months.
+\\[\baselineskip]
 In the first part the tackled problem is explained along with a summarised background on many of the practices and concepts one needs know to fully understand the next part. In the second part the practical side of the work is demonstrated and thoughts are shared on the usability and future of this line of work.
-\\
-\\
+\\[\baselineskip]
 \section*{Acknowledgements}
 In the course of learning, producing and revising both the code and the written text many helping hands guided my way. With this I would like to extend a thanks to them.
-\\
-\\
+\\[\baselineskip]
 To my fellow students for the pleasant atmosphere that dominated most of my studies. For providing help when asked and receiving advice without reluctance. And for those many hours spent in the telecommunications lab working side by side on many things.
-\\
-\\
+\\[\baselineskip]
 To my supervisors prof. ir. Luc Colman and dr. ir. Hendrik Eeckhaut. The former for providing his many years of experience in supporting students, keeping a calm but firm grip on matters and always pushing to the next step. The latter for granting me the subject, providing his technical expertise and willingness to work on my problems whenever I asked.
-\\
-\\
+\\[\baselineskip]
 Most certainly to my counsellor ir. ing. Lieven Lemiengre for providing an endless amount of feedback and brainstorming whenever. For providing technical expertise and insight when I had none to be found, for providing ideas and hooks to keep me going. For remaining realistic and setting achievable goals when the light at the end of the tunnel was darkest. And of course, for reviewing and critiquing this thesis.
-\\
-\\
-To Jeroen Baeken and ing. Sion Verschraege for being the friends that they are. For providing feedback on anything and support whenever it was needed.
-\\
-\\
+\\[\baselineskip]
 Finally, to my darling fianc\'{e}e Dorine Ndagsi for supporting me the many years we have been together. For providing a critical eye when needed and bringing me down a notch when explanations were overly complicated. And most certainly for being the driving force behind most of the work that got done at home, at work and in life.
-\\
-\\
+\\[\baselineskip]
 To all those that are not named, you are not forgotten, the list would simply be endless.
 
 \pagebreak{}
@@ -248,19 +316,30 @@ To all those that are not named, you are not forgotten, the list would simply be
 %% Abstract
 
 \newpage{}
-\begin{abstract}
-\end{abstract}
+\section*{Abstract}
+\subsection*{English}
+Digital electronics is a global industry of undeniable importance. Producing these electronics is usually done with the aid of computer programs analogous to software development. In this thesis a number of practices from the software world are transferred to the hardware world. It is investigated whether unit testing has merit in hardware development and whether test driven development is applicable. Furthermore, continuous integration as a method of speeding up and automating development with software development standards is tested. These practices are brought together in the form of a python script that uses ModelSim to compile and simulate the VHDL source code and testbenches.
+% The investigated practices include unit testing, continuous integration and test driven development. These practices are brought together in the form of a python script that uses ModelSim to compile and simulate the VHDL source code and testbenches.
+\\[\baselineskip]
+Keywords: VHDL; TDD; unit testing; continuous integration; testbenches
+\\[2\baselineskip]
+
+\subsection*{Nederlands}
+Digitale elektronica is een wereldwijde industrie van vitaal belang. Het produceren van deze elektronica wordt gebruikelijk gedaan met behulp van computer programmas zoals bij software ontwikkeling. In deze thesis worden een aantal gebruiken van de software wereld overgezet naar de hardware wereld. Er wordt onderzocht of unit testing van nut kan zijn in de hardware ontwikkelingswereld, en of test driven development toepasbaar is. Verder wordt continuous integration getest als manier om sneller en automatischer te ontwikkelen met software ontwikkelings standaarden. Deze praktijken worden samengebracht door een script, geschreven in python, dat ModelSim gebruikt om de VHDL broncode en testbenches te compileren.
+%De gebruiken die onderzocht werden zijn onder meer unit testing, continuous integration en test driven development.
+\\[\baselineskip]
+Trefwoorden: VHDL; TDD; unit testing; continuous integration; testbenches
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Extended abstract
-% Nog geen extended abstract
-%\includepdf[pages={1,2}]{extended-abstract.pdf}
 
+\includepdf[pages=-]{extended-abstract}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Table of Contents
 
 \newpage
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 \pagebreak
 
@@ -295,16 +374,16 @@ To all those that are not named, you are not forgotten, the list would simply be
 
 \section{Problem}
 \emph{\color{red}Revisie nodig: belangrijkste pagina} \\
-Developing digital hardware with the \gls{VHDL} is, like any code, prone to errors, either by the developer or by wrong product specifications. To ensure errors are weeded out before the more expensive roll-out or production begins, the code must be subjected to rigorous testing. \emph{Currently, large and impractical tests are needed to fully test a product.}
-\\
-\emph{\color{red}productie != einddoel alle VHDL -> FPGAs en FPGA verdelingen}
-\\
-\\
-Because testing is such a time consuming process, finding errors often results in severe delays due to the need to both correct the error and test for others. Therefore it is in the best interests of both testing- and software engineers to write testbenches with maximal coverage, optimal readability and minimum time spent. It is also important to find and correct errors with minimal delay and maximal efficiency. This entire process should affect the least amount of code possible in order to minimize time spent retesting and modifying the code.
-\emph{\color{red} Betere samenvatting + meer gevolgen}
-\\
-\\
-In this thesis, the objective is to explore the possibility of creating an operating system independent framework. This framework should allow users to quickly and consistently create, modify, execute and evaluate testbenches. To accomplish all of this, a number of industry standard tools will be incorporated around a central Python script. This combination should ensure timely and automated building, testing and test report generation.
+Developing digital hardware with the \gls{VHDL} is, like any code, prone to errors; either by the developer or by wrong product specifications. To ensure these errors are weeded out before the more expensive roll-out or production phase begins, the code must be subjected to rigorous testing. This testing process is long and extensive, and requires specially trained engineers.
+%\\
+% \emph{Currently, long and extensive testing is needed to fully test a product.}
+%\\
+%\emph{\color{red}productie != einddoel alle VHDL -> FPGAs en FPGA verdelingen}
+\\[\baselineskip]
+Because testing is such a time consuming process, finding errors often results in severe delays due to the need to both correct the error and test for others. Therefore it is in the best interests of both testing- and development engineers to find and correct errors with minimal delay and maximal efficiency. It is also important to write testbenches with maximal coverage, optimal readability and minimum time spent. This entire process should affect the least amount of code possible in order to minimize time spent retesting and modifying the code.
+%\emph{\color{red} Betere samenvatting + meer gevolgen}
+\\[\baselineskip]
+In this thesis, the objective is to explore the possibility of creating an operating system independent framework. This framework should allow developers to quickly and consistently create, modify, execute and evaluate their code with specially modified testbenches. To accomplish all of this, a number of industry standard tools will be incorporated around a central Python script. This combination should ensure timely and automated building, testing and test report generation.
 
 %\emph{\color{red}De stappen gezet, niet productie zelf}\\
 
@@ -343,7 +422,7 @@ In this thesis, the objective is to explore the possibility of creating an opera
 \label{subsec:HDL}
 \newacronym{HDL}{HDL}{Hardware Description Language}
 \newacronym{RTL}{RTL}{Register Transfer Level}
-A \gls{HDL} can be used to describe digital electronics, i.e. hardware, in different levels. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. \gls{VHDL} is such a language, having been developed in the eighties of the twentieth century, originally to have a uniform description of hardware brought in by external vendors to the U.S. department of defence. It was quickly realized that simulation was possible with a correct description and the language evolved to be used as such.\cite{vhdlorigin,vhdlorigin2} The final step was to create tools that could not only simulate, but also synthesize (i.e. create actual hardware layouts) from these descriptions.\cite{vhdlsim, vhdlsynth, vhdlsynth2, vhdlsynth3} An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
+A \gls{HDL} can be used to describe digital electronics, i.e. hardware, in different levels. The level that uses certain blocks of logic gates to describe more complex behaviour is called the \gls{RTL}. Some blocks are standard implementations that have been widely used and are nearly fully optimized, such as memories, flip-flops and clocks. One of the widely used HDLs is \gls{VHDL}, having been developed in the eighties of the twentieth century, originally to have a uniform description of hardware brought in by external vendors to the U.S. department of defence. It was quickly realized that simulation was possible with a correct description and the language evolved to be used as such.\cite{vhdlorigin,vhdlorigin2} The final step was to create tools that could not only simulate, but also synthesize (i.e. create actual hardware layouts) from these descriptions.\cite{vhdlsim, vhdlsynth, vhdlsynth2, vhdlsynth3} An \gls{RTL} flip-flop implementation written in \gls{VHDL} is shown here: 
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=16pt, aboveskip=16pt, showstringspaces=false, basicstyle=\footnotesize]
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
@@ -367,16 +446,13 @@ END Behavioural;
 \newacronym{IEEE}{IEEE}{Institute of Electrical and Electronics Engineers}
 \newacronym{DFF}{DFF}{D Flip-Flop}
 The \gls{IEEE} 1164 library provides a number of extensions on the original \gls{VHDL} IEEE 1076 specification that allow a more realistic simulation and description of hardware behaviour.\cite{IEEE1164} An \emph{entity} defines the inputs and outputs of a certain building block, in this case the \gls{DFF}. The \emph{architecture}, in this case named \emph{Behavioural}, takes the description of an entity and assigns a real implementation to it. In this architecture, we have one process and it is \emph{sequential}, meaning that every update in the process follows an update of \emph{clk}, a clock signal. The d stands for delay, and it simply puts on its output \emph{q}, that which was on the input \emph{d}, one clock period earlier. All processes are executed in parallel, this does not mean that all are triggered at the same time, nor do they take equally as long to finish, but it means that any process can be executed alongside any other process. In this case there is only one (nameless) process that describes the entire behaviour of the flip-flop. The process waits for the rising edge of the clock, which is a transition from zero to one, after which it schedules the value of d to be put on q until the next rising edge appears.
-\\
-\\
+\\[\baselineskip]
 \newacronym{UUT}{UUT}{Unit Under Test}
 \newacronym{DUT}{DUT}{Device Under Test}
 This is a basic example of an entity, an architecture and a process. Before the code can be put to use in a working environment, it needs to be tested first. This is done through the use of \emph{testbenches}.\cite{bergeron00} Testbenches are made up of code that takes a certain building block, the \gls{UUT} or \gls{DUT}. The specialized tools mentioned above take the testbenches and read them. Inside are usually instructions to put a certain sequence of values on the inputs and monitor the outputs.\cite{vhdltestbench} Applying this to the example listed earlier, the testbench would contain a process with a clock, signals coupled with the ones in the entity, some stimuli and \emph{wait} statements. The signals are linked to the DFF, which is now the UUT. Then the clock starts ticking and the input d is made '0' or '1' every now and then. All that is left is to assure the output q is always '0' and '1' exactly one clock cycle later. The full code is listed in appendix~\ref{app:dfftestbench}.
-\\
-\\
+\\[\baselineskip]
 If the device performs normally, the received output sequence should match an expected output sequence. In these testbenches it is good practice to observe how well a device performs if its inputs behave outside of the normal mode of operation. When all of these tests have finished and the output performs as expected, the device is ready to be moved further down the developmental process.\cite{vhdldebug}
-\\
-\\
+\\[\baselineskip]
 The higher level components, such as a registry, employ a number of the lower level ones to create more complex logic.\cite{vhdlsynth3} The flip-flop could be used in certain numbers to build a \emph{register}, a collection of ones and zeroes (henceforth referred to as \emph{bits}) that is used to (temporarily) store these values. The register could then be used alongside combinational logic to build an even bigger entity. The idea here is that small building blocks can be combined to produce vast and complex circuits that are nearly impossible to describe in one go.\cite{vhdlhierarchy} Adding all these layers together also creates a lot of room for error, and having a multi-level design makes it challenging to pinpoint the exact level and location of any errors. If a device is not tested properly and faults propagate throughout development, they can be very expensive to correct.\cite{weber06} Therefore a large portion of time is spent writing and executing tests. 
 
 %In figure~\ref{fig:Design_Flow} an overview of \gls{VHDL} design flow is given up until synthesis.
@@ -424,7 +500,7 @@ Coverage is a generic term that is used to describe how fully a design has been 
 
 \subsubsection{Code Coverage}
 \newacronym{FSM}{FSM}{Finite State Machine}
-In development, \gls{CC} is a type of measurement to indicate how well the source code has been tested. With the use of a coverage report, unused blocks of code can be uncovered, these blocks might indicate unnecessary code or a bug. Imagine a \gls{FSM} with an unused reset state, this might indicate that the reset isn't functioning properly or there are no tests covering the reset. However, CC does not provide any real functional analysis. It does not indicate any missing lines of code nor does it tell you whether the inputs and outputs behave properly.\cite{coverage1,coverage2}
+In development, \gls{CC} is a type of measurement to indicate how well the source code has been tested. With the use of a coverage report, unused blocks of code can be found, these blocks might indicate unnecessary code or a bug. Imagine a \gls{FSM} with an unused reset state, this might indicate that the reset isn't functioning properly or there are no tests covering the reset. However, CC does not provide any real functional analysis. It does not indicate any missing lines of code nor does it tell you whether the inputs and outputs behave properly.\cite{coverage1,coverage2}
 
 \subsubsection{Functional Coverage}
 %\emph{\color{red}Controleren}\\
@@ -463,20 +539,20 @@ During the making of this thesis, a number of approaches were investigated and s
 
 \subsection{Test Driven Development}
 \label{subsec:TDD}
-\gls{TDD} is a proven development technique that has regained traction in the past decade, primarily through the efforts of Kent Beck.\cite{VHDLUnit,agiletdd} This practice has proven to increase test coverage , decrease defect density \cite{TDDinpractice} as well as improve code quality.\cite{TDDinpractice,Siniaalto,BhatN06} The technique focuses on tests being created before the actual code. It is important to make certain distinctions before going more in depth on the used methods. The developing community has a great many practices, each with their own names and methods, and hardly none are mutually exclusive.
+\gls{TDD} is a proven development technique that has regained traction in the past decade, primarily through the efforts of Kent Beck.\cite{VHDLUnit,agiletdd} This practice has proven to increase test coverage , decrease defect density as well as improve code quality.\cite{TDDinpractice,Siniaalto,BhatN06} The technique focuses on tests being created before the actual code. It is important to make certain distinctions before going more in depth on the used methods. The developing community has a great many practices, each with their own names and methods, and almost none are mutually exclusive.
 
 \subsubsection{Unit testing}
-To understand \gls{TDD}, a basic knowledge of \emph{unit testing} is required. In software testing, a unit test is a test designed to check a unit of code.\cite{extremeunit,VHDLunit} Ideally, this unit is the smallest piece in which the code can be divided. A unit test should always test only a single entity, and only one aspect of that entity's behaviour. This division in units has a number of benefits, one of the most important being that code is exceedingly easy to maintain. Furthermore, the division of the code makes changes, when needed, fast to be carried out and ensures that only the modified code needs to re-tested.
+To understand \gls{TDD}, a basic knowledge of \emph{unit testing} is required. In software testing, a unit test is a test designed to check a unit of code.\cite{extremeunit,VHDLUnit} Ideally, this unit is the smallest piece in which the code can be divided. A unit test should always test only a single entity, and only one aspect of that entity's behaviour. This division in units has a number of benefits, one of the most important being that code is exceedingly easy to maintain. Furthermore, the division of the code makes changes, when needed, fast to be carried out and ensures that only the modified code needs to re-tested.
 
 %% herschrijven!
 \subsubsection{Test First Development}
-Another main component of \gls{TDD} is \gls{TFD}, a technique that has a developer writing tests first, before any code has been written.\cite{extremeunit} This method puts behaviour as the primary drive for development. After all, if the test is conceived before the code it tests, the goal is to make the tests pass by implementing the behaviour it tests. This has developers think about what the code should do rather than what the exact implementation has to be. A key feature of a new test is that it has to fail during its first run. If not, the test is obsolete seeing as the functionality it tests has already been implemented. After being run for the first time (and failing), the developer implements just enough code to get the test to pass. Once the test succeeds, it is time for a new test.
+Another main component of \gls{TDD} is \gls{TFD}, a technique that has a developer writing tests first, before any code has been written.\cite{extremeunit} This method puts behaviour as the primary drive for development. After all, if the test is conceived before the code it tests, the goal is to make the tests pass by implementing the behaviour it tests. This has developers think about what the code should do rather than what the exact implementation has to be. A key feature of a new test is that it has to fail during its first run. If not, the test is obsolete seeing as the functionality it tests has already been implemented. This is called the \emph{red} step because of the colour it shows in the results. After being run for the first time (and failing), the developer implements just enough code to get the test to pass; this is called the \emph{green} step. Once the test succeeds, it is time for a new test.
 
 \subsubsection{Refactoring}
 The third pillar of TDD is refactoring. After the tests succeed, it is necessary to clean up the code.\cite{refactoring} A well-done \gls{TFD} implementation uses the bare amount of code needed to make the test pass, but this might not be the best code possible. Refactoring means that you take existing code and modify it to perform better. This should leave both the input and output of the tests and code unchanged, only the way the code processes input is altered. It is important in this step to edit nothing in the test code or the outputs or inputs. Otherwise, either the test would behave differently or new tests would have to be written. 
 
 \subsubsection{Test Driven Development}
-Test Driven Development is a combination of the previously mentioned techniques. A Unit Test is written before any code is, the test is then executed and should fail. After the failure, the most basic code to make the test pass is implemented. The test is then executed again and should pass. After this first pass, the code written for the passing of the test, and only this code, is edited to perform better and be less complex. This follows all steps mentioned above, a \emph{Unit Test} is written according to \emph{Test First Development} and is \emph{Refactored} later.
+Test Driven Development is a combination of the previously mentioned techniques. A Unit Test is written before any code is, the test is then executed and should fail; the red step. After the failure, the most basic code to make the test pass is implemented. The test is then executed again and should pass; the green step. After this first pass, the code written for the passing of the test, and only this code, is edited to perform better and be less complex. This follows all steps mentioned above, a \emph{Unit Test} is written according to \emph{Test First Development} and is \emph{Refactored} later. The classic flowchart is shown in figure~\ref{fig:TDD_Flow}.
 
 \begin{figure}[h]
     \centering
@@ -498,16 +574,14 @@ A different aspect is build automation. Using a timer or trigger, the build auto
 
 \subsubsection{Test Automation}
 As the code is built at scheduled times, and testing is needed regardless, it makes perfect sense to add a testing step to the automated build. Automating tests saves the developers yet another part of their time, thus freeing more for the actual development and debugging steps. A good \gls{CI} system can read test results and reports and preferably visualise them in a way that makes them easy to read and locate faults.
-\\
-\\
+\\[\baselineskip]
 Combining all of these practices saves developers, and by extension the company they might work for, a lot of time and of money. Considering today's competitive market for software development, any edge that can be obtained is a plus. Even more so when plenty of free Continuous Integration solutions exist that employ open or widely used standards.\cite{ci1,ci2,ci3}
 
 \subsection{xUnit}
 \label{subsec:xUnit}
 \newacronym{XML}{XML}{eXtensible Markup Language}
 xUnit is a collection of frameworks that all follow the same basic principle. Its specification defines several key components for a testing framework. They encompass an implementation of a \emph{testcase} which contains a single unit test. These testcases are then enveloped in \emph{testsuites}, which are groups of tests that need the same conditions before they can be executed.  There are more implementation details but these will not be discussed.\cite{xunit2}
-\\
-\\
+\\[\baselineskip]
 JUnit is an implementation for the Java programming language of the xUnit specification. A useful part of the specification is a standard format for the test reports. The reports are written in \gls{XML}, which is a type of language used for formatting data. The JUnit format is supported by numerous (open source) tools, which makes it an ideal candidate for further investigation.\cite{xunit,junitxml,junit}
 
 \subsection{Python}
@@ -529,16 +603,14 @@ In part I different aspects from both the software and \gls{VHDL} development wo
 \section{Outlining}
 \label{sec:outlining}
 \newacronym{OS}{OS}{Operating System}
-Before work began on developing the framework, there needed to be some boundaries set and goals to work towards. As VHDL development is done on both Windows and Linux, it made sense to keep the whole framework as platform independent as possible. To add to this, the framework needsed to be developed in the short span of under a year by one developer who had little experience doing so. The language chosen thus had to be easy to master and work on all platforms with as few as possible modifications.
+Before work began on developing the framework, there needed to be some boundaries set and goals to work towards. As VHDL development is done on both Windows and Linux, it made sense to keep the whole framework as platform independent as possible. To add to this, the framework needed to be developed in the short span of under a year by one developer who had little experience doing so. The language chosen thus had to be easy to master and work on all platforms with as few as possible modifications.
 
 \subsection{First draft}
 \label{subsec:first}
 In section~\ref{sec:industry} some current industry practices were discussed and one of the very basic VHDL testing methods was found to be assertions. In order to remain as broad as possible, work started with processing these assertions first. As mentioned in section~\ref{subsec:TDD}, unit testing is a method that tests an as small as can be part of a code's behaviour. Applied to \gls{VHDL}, a unit test would then be the part of the code that the assertion checks. This under the assumption that the assertion checks for simple boolean truths such as \emph{output q equals '1'} and not a complex mix of logic.
-\\
-\\
+\\[\baselineskip]
 To the likeness of unit testing, these parts of code were separated into their own testbenches. Methods of separation were not available, and thus one was developed. For complete accuracy, a lexical analyzer for VHDL would have been needed, but the development of such was worth its own thesis and as such a more simple method was used. Instead, estimation of the level of depth in the testbench structure was made using VHDL keywords such as \emph{process} and \emph{begin}.
-\\
-\\
+\\[\baselineskip]
 Furthermore, because lexical analysis was out of the question, the constructs that each assert relied on were unable to be identified. A solution was found in the form of procedures and functions. These were placed in the architecture header, and with these single-line unit test could be called from the architecture body. All that was left for the parser to do was to find the location of these lines and place each of them in a newly created testbench.
 
 \subsection{Draft review}
@@ -559,8 +631,7 @@ All of these modifications made the framework more suitable for developers. The 
 \section{Using the framework}
 \label{sec:using}
 For the framework to be properly usable, a number of things had to be considered. Firstly, not all testbenches were suited to be processed by the parser; it relied heavily on the independence of tests from one another. Therefore, tests that relied on outputs from previous tests needed to be kept together, which lead to a large portion of such testbenches needing to be completely rewritten.
-\\
-\\
+\\[\baselineskip]
 Secondly, even with properly suited testbenches, the output needed to remain uniform and recognizable. As mentioned in section~\ref{subsec:first}, to have this done automatically would have required a full blown lexical analysis which was simply too complex. As a solution, the use of a testing library was proposed which would provide uniform tests and output.
 
 \subsection{Preparing the testbench}
@@ -588,8 +659,7 @@ Would turn into (See appendix~\ref{app:dfftestbench2}):
 	...
 \end{lstlisting}
 In the full code it is shown that the functions are overloads of existing functions in the \emph{BitVis} library, which will be discussed in section~\ref{subsec:bitvis}. Also visible here are the keywords \emph{-\--Test} and \emph{-\--End} with which the testsuites are separated. The number next to it is a testsuite identifier, but was not necessary as the parser kept track of the count.
-\\
-\\
+\\[\baselineskip]
 Overloading functions, using libraries and seemingly completely overhauling the testbench may appear to be like a lot of work for a small testbench such as this. While true, this method was easily scalable for testbenches of much larger sizes and with designs of greater complexity. If the developer created a testbench starting with this approach, no time would have been wasted redoing any code and the readability would have been greatly improved. Lastly, automated logging was built in these procedures to keep track of progress during testruns. This allowed for easier and uniform report generation (see section~\ref{subsec:reports}).
 
 \subsection{Calling the parser}
@@ -598,7 +668,7 @@ The parser was created as a script, written in Python, thus it was necessary to 
 
 \subsubsection{Arguments to the parser}
 \label{subsec:argparser}
-Python had a built-in argument parser, in the library \emph{argparse}. With this it became possible to have a complex yet simple to use command-line interface with both optional and required arguments. Included in the library was the option for a clear and thorough help, providing users with all the information they needed to run the script. A simple example is listed below:
+Python had a built-in argument parser, in the library \emph{argparse}. With this it became possible to have a powerful but simple to use command-line interface with both optional and required arguments. Included in the library was the option for a clear and thorough help, providing users with all the information they needed to run the script. A simple example is listed below:
 \begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
 $ python src\testbench_parser.py -m partitioned -l  Project\sim\tb_dff_r.vhd -c
 \end{lstlisting}
@@ -614,11 +684,9 @@ By using this command, the testbench from appendix~\ref{app:dfftestbench2} was p
 \item \itab{'-v', '-\--version'} \tab{specifies a different VHDL version, default is 2008}
 \end{itemize}
 With this parser, it also became possible to run multiple testbenches with one call to the script. This allowed to test multiple levels of a hierarchic design, or even completely different designs in one run. Most of the flags are self-evident, but those that are not are explained below.
-\\
-\\
+\\[\baselineskip]
 The \emph{-p} or \emph{-\--precompiled} flag points to a text file that contains instructions very similar to those found in a unix \emph{Makefile}. They are commands that need to be executed before the testbench can be compiled. This would be all of the source files used, in their specific order and any special libraries that need to be created beforehand. A full editor might have recognized the dependencies and libraries on its own and created a Makefile or similar accordingly but here the lack of a decent lexical analysis prevented this.
-\\
-\\
+\\[\baselineskip]
 The\emph{-r} or \emph{-\--runops} flag is to specify a custom command for ModelSim to run during the execution of the newly made testbenches. The default value is \emph{-do "run -all;exit"}, which simply starts the simulation until its end and then exits. However, developers might want to load different memory files in a memory or specifiy a custom file with more elaborate commands.
 
 \subsubsection{Processing methods}
@@ -630,24 +698,21 @@ In section~\ref{subsec:argparser} the processing method \emph{partitioned} was m
 \item Partitioned with identifiers
 \end{itemize}
 In the Start Stop method, every single line between certain keywords was assumed to contain a test. It was assumed that everything above the keywords was architecture header and everything below was a general 'end of the architecture body'. This method was the easiest to parse, it looked for \emph{-\--Start} and created a new testbench with every line until \emph{-\--Stop}.
-\\
-\\
+\\[\baselineskip]
 In the Line method, the parser looked for a process. This process should contain one test per line. It tried to identify this process on its own and as such, could easier make a mistake than the Start Stop method.
-\\
-\\
+\\[\baselineskip]
 Finally, in the Partitioned method, the developer indicated which blocks are testsuites by using the \emph{-\--Test} and \emph{-\--End} keywords. Everything in between these keywords was assumed to be a single block of testcases, to be put in the same new testbench. As such, and unlike the previous two methods, it was possible to define multiple testsuites. 
 
 \subsection{Report and log generation}
 \label{subsec:reports}
-After the parser from section~\ref{subsec:parser} had run its course, results were captured automatically. However, making sense of a whole lot of command line output from a text file was challenging. ModelSim made this more difficult by adding a header and a lot of information that isn't really interesting at that time of development. Things such as which files were loaded prior to the execution and which preference file was being read were not needed for a quick overview. However, they might have still be needed in the event of severe failure.
+After the parser from section~\ref{subsec:parser} had run its course, results were captured automatically. However, making sense of a whole lot of command line output from a text file was challenging. ModelSim made this more difficult by adding a header and a lot of information that isn't really interesting at that time of development. Things such as which files were loaded prior to the execution and which preference file was being read were not needed for a quick overview. However, in the event of severe failure they could still prove useful.
 
 \subsubsection{Basic report}
 A great deal of filtering of the output file was required, only the passed and failed testresults were needed for a proper report. Whether tests passed or failed was outputted with easy to recognize keywords. A simple filtering on these words per line of the output file returned every testresult, neatly ordered in passed and failed groups. A total testcount was tallied from the combination, and as such a crude report was written to a text file.
 
 \subsubsection{XML report}
 Previously discussed in section~\ref{subsec:xUnit}, the JUnit implementation of xUnit uses \gls{XML} for report viewing. The editor that was used throughout the development of the thesis is \emph{Eclipse}, which was written in Java, the same language JUnit is an implementation for. They could be read and displayed in Eclipse by manually navigating to them or editing the project properties to automatically read them.
-\\
-\\
+\\[\baselineskip]
 To create the XML reports, a pre-made, open-source Python implementation of a JUnit report generator, aptly named python-junit-xml was used. This package required its own external component to be installed, called setuptools.\cite{junitxml, setuptools} In this thesis, versions 1.0 and 3.5.1 respectively were used, but versions 1.3 and 8.0.4 are available at time of writing. 
 
 \subsubsection{Logkeeping}
@@ -685,8 +750,7 @@ This automatically downloaded the source, compiled the external testbench for th
 \subsection{Bitvis utility library}
 \label{subsec:bitvis}
 Throughout the development of the framework multiple approaches were used to enhance developer experience including a library with widely used and usable functions. At first this was a self developed library, however, after a short while the existing \emph{Bitvis utility library} was used. It was developed by the Norse company Bitvis for verification and compatible with all versions of \gls{VHDL}. \cite{bitvis} The library promoted overloading its functions with implementations for the project that was being developed. It also provided an easy to use logging function with great customizability, which made it ideal for use in the framework.
-\\
-\\
+\\[\baselineskip]
 To make use of the library, all that needed to be done was to include it in the project, use its functions and overload where needed. For the framework, the use of the \emph{check} or \emph{check\_value} function was critical seeing as the test parser relied on the output created by this function to assess test success. An example is listed below (full code in appendix~\ref{app:dfftestbench2}):
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\footnotesize]
 ...
@@ -725,8 +789,7 @@ While a working framework was achieved, many parts are missing for a usable whol
 
 \subsection{Wider tool support}
 In section~\ref{subsec:simtool} it was decided to support ModelSim as the compiler for the framework. Despite its extensive use in the classroom, it is not the only tool at the top. Different tools might use other methods, accept different input and produce different output. While there are too many tools to support them all, either a general approach can be achieved or the most widely used can be integrated.
-\\
-\\
+\\[\baselineskip]
 On the topic of tools, the current support of ModelSim itself is limited at best. Only the very basic steps have been taken to assure compiling. Complex projects might need an extensive list of options to be run before compiling, during simulation or otherwise.
 
 \subsection{Lexical analysis}
@@ -746,8 +809,7 @@ in section~\ref{sec:industry} industry standard practices were discussed along w
 
 \subsection{Lack of reflection or introspection}
 Reflection and introspection are two programming concepts, the former already existing since assembly languages were used. Reflection means that a programming language can modify parts of its innards at runtime. While this certainly sounds not synthesizable, it could bring about a revolution in the creation of functions for testbenches. Instead of having to overload for an unreasonable amount of different configurations, code would simply adapt to the situation by adjusting its arguments to the right type. This, of course, providing the function's structure  continues to work after the modifications.
-\\
-\\
+\\[\baselineskip]
 Introspection can be seen as a part of reflection, it is the ability to examine an object at runtime. While VHDL is not an object-oriented programming language, signals, variables and constant can be seen as a type of object. They have many possible configurations and can have  properties such as vector length. Being able to examine these properties at runtime and matching object types against each other would provide for some of the same functionality mentioned with reflection.
 
 \subsection{Hardware developers are not software developers}
@@ -764,20 +826,15 @@ While considering the previous commentaries it became clear that a major shortco
 %Wat hebben we gedaan en hoe hebben we het bereikt? (beknopte versie)
 %-> State facts
 At the start of this thesis, it was stipulated that developing \gls{VHDL} is prone to errors and that the testbench and its environment play an integral part in locating and solving these. As a solution, a testing framework was proposed that would work around a central script and integrate ideas from the software development world.
-\\
-\\
+\\[\baselineskip]
 A first draft revealed many shortcomings of the methods investigated and a subsequent revision was scheduled. More detailed outlines provided better planning and easier incorporation of the envisioned methods as well as a better coding practice.
-\\
-\\
+\\[\baselineskip]
 The framework was made to integrate one of the most commonly used simulation tools, ModelSim. Around it, the software development practice of continuous integration was built using the Hudson-CI tool. Hudson-CI was used to retrieve the code from an RC repository, call the script and display its output.
-\\
-\\
+\\[\baselineskip]
 The central script was made to accept different forms of modified testbenches and it was made possible to modify the behaviour of the script with command-line arguments. A full text output report, a text summary and a processed report in the JUnit XML format were made available after compilation and simulation.
-\\
-\\
+\\[\baselineskip]
 Compilation and simulation test runs were performed with a simple example and found to be working as expected. Runs with more complicated testbenches were found to be lacking in support and not fully completing.
-\\
-\\
+\\[\baselineskip]
 The objective of developing a framework was generally achieved, but it severely lacked in implementation details. Better support for the current tools and support for more a larger variety of tools is absolutely necessary for a working framework. Finally, it was most definitely shown that applying software development practices is possible and useful in a hardware development environment.
 
 \pagebreak{}

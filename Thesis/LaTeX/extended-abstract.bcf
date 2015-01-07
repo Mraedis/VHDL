@@ -4,11 +4,11 @@
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
       <bcf:key>output_encoding</bcf:key>
-      <bcf:value>utf8</bcf:value>
+      <bcf:value>ascii</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>input_encoding</bcf:key>
-      <bcf:value>utf8</bcf:value>
+      <bcf:value>ascii</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>debug</bcf:key>
@@ -117,7 +117,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortlocale</bcf:key>
-      <bcf:value>british</bcf:value>
+      <bcf:value>english</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortscheme</bcf:key>
@@ -1947,54 +1947,12 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">vhdlorigin</bcf:citekey>
-    <bcf:citekey order="1">vhdlorigin2</bcf:citekey>
-    <bcf:citekey order="2">vhdlsim</bcf:citekey>
-    <bcf:citekey order="2">vhdlsynth</bcf:citekey>
-    <bcf:citekey order="2">vhdlsynth2</bcf:citekey>
-    <bcf:citekey order="2">vhdlsynth3</bcf:citekey>
-    <bcf:citekey order="3">IEEE1164</bcf:citekey>
-    <bcf:citekey order="4">bergeron00</bcf:citekey>
-    <bcf:citekey order="5">vhdltestbench</bcf:citekey>
-    <bcf:citekey order="6">vhdldebug</bcf:citekey>
-    <bcf:citekey order="7">vhdlsynth3</bcf:citekey>
-    <bcf:citekey order="8">vhdlhierarchy</bcf:citekey>
-    <bcf:citekey order="9">weber06</bcf:citekey>
-    <bcf:citekey order="10">assertformal</bcf:citekey>
-    <bcf:citekey order="11">generictestbench</bcf:citekey>
-    <bcf:citekey order="12">coverage1</bcf:citekey>
-    <bcf:citekey order="12">coverage2</bcf:citekey>
-    <bcf:citekey order="13">functional1</bcf:citekey>
-    <bcf:citekey order="13">functional2</bcf:citekey>
-    <bcf:citekey order="14">crv1</bcf:citekey>
-    <bcf:citekey order="14">crv2</bcf:citekey>
-    <bcf:citekey order="15">assertformal</bcf:citekey>
-    <bcf:citekey order="15">formal</bcf:citekey>
-    <bcf:citekey order="16">ActiveHDL</bcf:citekey>
-    <bcf:citekey order="16">Cadence</bcf:citekey>
-    <bcf:citekey order="16">ISE</bcf:citekey>
-    <bcf:citekey order="16">Quartus</bcf:citekey>
-    <bcf:citekey order="17">ModelSim</bcf:citekey>
-    <bcf:citekey order="18">VHDLUnit</bcf:citekey>
-    <bcf:citekey order="18">agiletdd</bcf:citekey>
-    <bcf:citekey order="19">TDDinpractice</bcf:citekey>
-    <bcf:citekey order="19">Siniaalto</bcf:citekey>
-    <bcf:citekey order="19">BhatN06</bcf:citekey>
-    <bcf:citekey order="20">extremeunit</bcf:citekey>
-    <bcf:citekey order="20">VHDLUnit</bcf:citekey>
-    <bcf:citekey order="21">extremeunit</bcf:citekey>
-    <bcf:citekey order="22">refactoring</bcf:citekey>
-    <bcf:citekey order="23">ci1</bcf:citekey>
-    <bcf:citekey order="23">ci2</bcf:citekey>
-    <bcf:citekey order="23">ci3</bcf:citekey>
-    <bcf:citekey order="24">xunit2</bcf:citekey>
-    <bcf:citekey order="25">xunit</bcf:citekey>
-    <bcf:citekey order="25">junitxml</bcf:citekey>
-    <bcf:citekey order="25">junit</bcf:citekey>
-    <bcf:citekey order="26">python1</bcf:citekey>
-    <bcf:citekey order="27">junitxml</bcf:citekey>
-    <bcf:citekey order="27">setuptools</bcf:citekey>
-    <bcf:citekey order="28">hudson</bcf:citekey>
-    <bcf:citekey order="29">bitvis</bcf:citekey>
+    <bcf:citekey order="1">vhdlsim</bcf:citekey>
+    <bcf:citekey order="1">vhdlsynth</bcf:citekey>
+    <bcf:citekey order="2">extremeunit</bcf:citekey>
+    <bcf:citekey order="2">VHDLUnit</bcf:citekey>
+    <bcf:citekey order="3">ci1</bcf:citekey>
+    <bcf:citekey order="3">ci3</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
   <bcf:sorting>

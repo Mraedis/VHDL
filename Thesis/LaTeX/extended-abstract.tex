@@ -1,0 +1,146 @@
+\documentclass[twoside]{article}
+
+\usepackage{lipsum} % Package to generate dummy text throughout this template
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+%\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+
+\usepackage[backend=biber,style=numeric,citestyle=numeric-comp,sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+\bibliography{refs} 
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{4}
+\exhyphenpenalty=10000\hyphenpenalty=10000\emergencystretch=5pt
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\Alph{subsection}} % Roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{0.2em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{0.2em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+%\pagestyle{fancy} % All pages have headers and footers
+%\fancyhead{} % Blank out the default header
+%\fancyfoot{} % Blank out the default footer
+%\fancyhead[C]{Running title $\bullet$ November 2012 $\bullet$ Vol. XXI, No. 1} % Custom header text
+%\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont Building a better VHDL testing environment} % Article title
+
+\author{
+\large
+Joren Guillaume\\ % Your name
+\normalsize Supervisors: prof. ir. Luc Colman, dr. ir. Hendrik Eeckhaut, ir. ing. Lieven Lemiengre\\
+\normalsize Ghent University \\ % Your institution
+\vspace{-5mm}
+}
+\date{}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+
+\maketitle% Insert title
+
+\thispagestyle{fancy} % All pages have headers and footers
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+%\begin{abstract}
+%
+%%\noindent Digital electronics is a global industry of undeniable importance. Producing these electronics is usually done with the aid of computer programs analogous to software development. In this thesis a number of practices from the software world are transferred to the hardware world. The investigated practices include unit testing, continuous integration and test driven development. These practices are brought together in the form of a python script that uses ModelSim to compile and simulate the VHDL source code and testbenches.
+%
+%\noindent Developing digital
+%
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\begin{multicols}{2} % Two-column layout throughout the main article text
+
+\textbf{\emph{Abstract}-- The VHSIC Hardware Description Language (VHDL) is a language used industry-wide for developing digital electronics. This paper explores the possibility of using software development practices in hardware development that uses VHDL. Borrowing elements from test driven development, specifically unit testing, a testbench is split into parts that are executed sequentially. To achieve this, a script is written in python that uses the ModelSim compiler/simulator. This script is then automatically called by a continuous integration server that captures and process the results.
+\\
+\\
+\emph{Index terms}--VHDL, TDD, unit testing, continuous integration, testbenches}
+
+
+\section{Introduction}
+\lettrine[nindent=0em,lines=3]{D} eveloping digital hardware is and will remain a global industry of undeniable importance. VHDL is one of the important hardware design languages, having been used in this industry for many decades. Although improvements have been made to the language itself, the development practices have been lagging behind the software world for many years. As with all production, any improvements that can be done to the development process with appropriate cost should be a welcome sight. However, the industry is slow to adapt or convert to more up-to-date processes. This paper aims to investigate a number of software development practices and build a working framework in which they can be used for hardware design.\cite{vhdlorigin,vhdlsim,vhdlsynth}
+%
+%Although many improvements have been done throughout the years regarding the hardware side
+%
+%As with all production, any improvements that can be done to the development process with appropriate cost is a welcome sight.
+
+%------------------------------------------------
+
+\subsection{Unit Testing}
+In a testing environment, a unit is the most basic behaviour of a piece of code that can be tested. It is called a unit because there is nothing smaller. Unit testing is the practice of taking these small parts and writing tests for them and only them, so that all tests are performed on units. A test only performs on a single unit of code; if the test uses parts of code outside of the unit, it is not a unit test. One of the biggest advantages of this testing method is the precise debugging information that is given should a test fail. After the pinpointing, only a small part of the code needs to be examined, making it very efficient.\cite{extremeunit,VHDLUnit}
+
+\subsection{Continuous Integration}
+Continuous integration (CI) is the practice of automatically and very rapidly integrating code updates into a build. It encompasses a number of practices such as:
+\begin{compactitem}
+\item Revision control
+\item Automated building
+\item Automated testing
+\end{compactitem}
+CI aims to prevent the trouble in development that arises when developers wait too long to integrate their edits into the main build. It promotes early and rapid integration by automating these steps and downloading all the latest code from a repository. This is assuming that the repository contains the newest code and is updated on a frequent basis. After integrating and building the code, it should run the tests on these code and read the results. If all of these steps are automated and trigged on a timed basis, developers should have a steady stream of progress reports from the test results available.\cite{ci1,ci3}
+
+%------------------------------------------------
+
+\section{Methods}
+Transferring the concepts from software to hardware required a number of concessions that would otherwise make implementation impossible.
+
+\subsection{Unit testing in VHDL}
+A unit test was defined as a test or group of tests that could be run at earliest convenience. This sometimes needed inputs to be set and the simulation to be run up until the required point. All test groups were identified manually with markers in the original testbench code.
+
+\subsection{Python script}
+A script was written in python to combine all of the aspects investigated. This script is called from the command-line or a shell and takes a number of arguments to determine method of separation, source testbenches, output location and VHDL version. It read the testbenches and separated them into new testbenches. These testbenches were then compiled and simulated using Modelsim and condensed reports of the output were made in the JUnit XML specification.
+
+\subsection{Bitvis utility library}
+A utility library made by Bitvis was used to speed up development. Functions in these library made it possible to quickly produce tests with uniform output. The library's default output was slightly modified to better integrate with the python script's report generation.
+
+\subsection{Hudson-CI}
+Continuous integration was implemented using the Hudson-CI program. A job was made to download the code from an on-line Git repository. The job then executed the python script and captured its reports. Hudson provided built-in support for JUnit XML report reading and automatically provided statistics on failure and success.
+
+\section{Results}
+Separating the tests at earliest convenience provided the benefit of not halting tests when a critical error occurred. Instead, only that single group of tests would return as failed to run. The CI server gave clear indications on which test had passed and failed, but was not able to correctly read the nano- and picosecond timing a hardware simulation requires. Furthermore, the script was limited in how complicated the testbenches it read could be, putting boundaries on which projects could be tested.
+
+\section{Conclusion}
+It was proven that software techniques could be modified to work with a hardware development environment, but that more detailed and thorough work is required before it reaches full potential. 
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+\renewcommand*{\bibfont}{\footnotesize}
+\printbibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{multicols}
+
+\end{document}
