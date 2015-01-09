@@ -108,7 +108,7 @@ Continuous integration (CI) is the practice of automatically and very rapidly in
 \item Automated building
 \item Automated testing
 \end{compactitem}
-CI aims to prevent the trouble in development that arises when developers wait too long to integrate their edits into the main build. It promotes early and rapid integration by automating these steps and downloading all the latest code from a repository. This is assuming that the repository contains the newest code and is updated on a frequent basis. After integrating and building the code, it should run the tests on these code and read the results. If all of these steps are automated and trigged on a timed basis, developers should have a steady stream of progress reports from the test results available.\cite{ci1,ci3}
+CI aims to prevent the trouble in development that arises when developers wait too long to integrate their edits into the main build. It promotes early and rapid integration by automating these steps and downloading all the latest code from a repository. This is assuming that the repository contains the newest code and is updated on a frequent basis. After integrating and building the code, it should run the tests on this code and read the results. If all of these steps are automated and trigged on a timed basis, developers should have a steady stream of progress reports from the test results available.\cite{ci1,ci3}
 
 %------------------------------------------------
 
@@ -122,13 +122,13 @@ A unit test was defined as a test or group of tests that could be run at earlies
 A script was written in python to combine all of the aspects investigated. This script is called from the command-line or a shell and takes a number of arguments to determine method of separation, source testbenches, output location and VHDL version. It read the testbenches and separated them into new testbenches. These testbenches were then compiled and simulated using Modelsim and condensed reports of the output were made in the JUnit XML specification.
 
 \subsection{Bitvis utility library}
-A utility library made by Bitvis was used to speed up development. Functions in these library made it possible to quickly produce tests with uniform output. The library's default output was slightly modified to better integrate with the python script's report generation.
+A utility library made by Bitvis was used to speed up development. Functions in this library made it possible to quickly produce tests with uniform output. The library's default output was slightly modified to better integrate with the python script's report generation.
 
 \subsection{Hudson-CI}
 Continuous integration was implemented using the Hudson-CI program. A job was made to download the code from an on-line Git repository. The job then executed the python script and captured its reports. Hudson provided built-in support for JUnit XML report reading and automatically provided statistics on failure and success.
 
 \section{Results}
-Separating the tests at earliest convenience provided the benefit of not halting tests when a critical error occurred. Instead, only that single group of tests would return as failed to run. The CI server gave clear indications on which test had passed and failed, but was not able to correctly read the nano- and picosecond timing a hardware simulation requires. Furthermore, the script was limited in how complicated the testbenches it read could be, putting boundaries on which projects could be tested.
+Separating the tests at earliest convenience provided the benefit of not halting tests when a critical error occurred. Instead, only that single group of tests would return as failed to run. The CI server gave clear indications which tests had passed and failed, but was not able to correctly read the nano- and picosecond timing a hardware simulation requires. Furthermore, the script was limited when it came to the complexity of the testbenches it could read, putting boundaries on which projects could be tested.
 
 \section{Conclusion}
 It was proven that software techniques could be modified to work with a hardware development environment, but that more detailed and thorough work is required before it reaches full potential. 

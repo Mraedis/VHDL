@@ -2,6 +2,12 @@
 \defcounter {refsection}{0}\relax 
 \select@language {british}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Three step TDD design flow\relax }}{8}
+\contentsline {figure}{\numberline {1}{\ignorespaces Typical design flow, red indicates the main focus of this thesis.\relax }}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Hudson-CI example statistics.\relax }}{25}
+\contentsline {figure}{\numberline {2}{\ignorespaces Three step TDD design flow\relax }}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3}{\ignorespaces Workflow of the framework\relax }}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4}{\ignorespaces Hudson jobs status window\relax }}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5}{\ignorespaces Hudson-CI example statistics.\relax }}{26}

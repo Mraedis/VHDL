@@ -58,6 +58,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{HDL}{}%
+{%
+\gls@defglossaryentry{HDL}%
+{%
+name={HDL},%
+sort={HDL},%
+type={acronym},%
+first={Hardware Description Language\glsspace (HDL)},%
+firstplural={Hardware Description Languages\glsspace (HDLs)},%
+text={HDL},%
+plural={HDLs},%
+description={Hardware Description Language},%
+descriptionplural={Hardware Description Language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hardware Description Language},%
+longplural={Hardware Description Languages},%
+short={HDL},%
+shortplural={HDLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{TDD}{}%
 {%
 \gls@defglossaryentry{TDD}%
@@ -143,126 +173,6 @@ long={Continuous Integration},%
 longplural={Continuous Integrations},%
 short={CI},%
 shortplural={CIs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{CMOS}{}%
-{%
-\gls@defglossaryentry{CMOS}%
-{%
-name={CMOS},%
-sort={CMOS},%
-type={acronym},%
-first={Complementary Metal Oxide Semiconductor\glsspace (CMOS)},%
-firstplural={Complementary Metal Oxide Semiconductors\glsspace (CMOSs)},%
-text={CMOS},%
-plural={CMOSs},%
-description={Complementary Metal Oxide Semiconductor},%
-descriptionplural={Complementary Metal Oxide Semiconductor\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Complementary Metal Oxide Semiconductor},%
-longplural={Complementary Metal Oxide Semiconductors},%
-short={CMOS},%
-shortplural={CMOSs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{NAND}{}%
-{%
-\gls@defglossaryentry{NAND}%
-{%
-name={NAND},%
-sort={NAND},%
-type={acronym},%
-first={Not AND\glsspace (NAND)},%
-firstplural={Not ANDs\glsspace (NANDs)},%
-text={NAND},%
-plural={NANDs},%
-description={Not AND},%
-descriptionplural={Not AND\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Not AND},%
-longplural={Not ANDs},%
-short={NAND},%
-shortplural={NANDs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{NOR}{}%
-{%
-\gls@defglossaryentry{NOR}%
-{%
-name={NOR},%
-sort={NOR},%
-type={acronym},%
-first={Not OR\glsspace (NOR)},%
-firstplural={Not ORs\glsspace (NORs)},%
-text={NOR},%
-plural={NORs},%
-description={Not OR},%
-descriptionplural={Not OR\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Not OR},%
-longplural={Not ORs},%
-short={NOR},%
-shortplural={NORs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{HDL}{}%
-{%
-\gls@defglossaryentry{HDL}%
-{%
-name={HDL},%
-sort={HDL},%
-type={acronym},%
-first={Hardware Description Language\glsspace (HDL)},%
-firstplural={Hardware Description Languages\glsspace (HDLs)},%
-text={HDL},%
-plural={HDLs},%
-description={Hardware Description Language},%
-descriptionplural={Hardware Description Language\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Hardware Description Language},%
-longplural={Hardware Description Languages},%
-short={HDL},%
-shortplural={HDLs},%
 counter={page},%
 parent={},%
 %
@@ -683,6 +593,96 @@ long={Operating System},%
 longplural={Operating Systems},%
 short={OS},%
 shortplural={OSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SHA}{}%
+{%
+\gls@defglossaryentry{SHA}%
+{%
+name={SHA},%
+sort={SHA},%
+type={acronym},%
+first={Secure Hash Algorithm\glsspace (SHA)},%
+firstplural={Secure Hash Algorithms\glsspace (SHAs)},%
+text={SHA},%
+plural={SHAs},%
+description={Secure Hash Algorithm},%
+descriptionplural={Secure Hash Algorithm\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Secure Hash Algorithm},%
+longplural={Secure Hash Algorithms},%
+short={SHA},%
+shortplural={SHAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AES}{}%
+{%
+\gls@defglossaryentry{AES}%
+{%
+name={AES},%
+sort={AES},%
+type={acronym},%
+first={Advanced Encryption Standard\glsspace (AES)},%
+firstplural={Advanced Encryption Standards\glsspace (AESs)},%
+text={AES},%
+plural={AESs},%
+description={Advanced Encryption Standard},%
+descriptionplural={Advanced Encryption Standard\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Advanced Encryption Standard},%
+longplural={Advanced Encryption Standards},%
+short={AES},%
+shortplural={AESs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CRC}{}%
+{%
+\gls@defglossaryentry{CRC}%
+{%
+name={CRC},%
+sort={CRC},%
+type={acronym},%
+first={Cyclic Redundancy Check\glsspace (CRC)},%
+firstplural={Cyclic Redundancy Checks\glsspace (CRCs)},%
+text={CRC},%
+plural={CRCs},%
+description={Cyclic Redundancy Check},%
+descriptionplural={Cyclic Redundancy Check\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cyclic Redundancy Check},%
+longplural={Cyclic Redundancy Checks},%
+short={CRC},%
+shortplural={CRCs},%
 counter={page},%
 parent={},%
 %

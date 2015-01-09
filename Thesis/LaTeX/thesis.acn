@@ -1,3 +1,4 @@
+\glossaryentry{VHSIC?\glossentry{VHSIC}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{VHDL?\glossentry{VHDL}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{HDL?\glossentry{HDL}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{RTL?\glossentry{RTL}|setentrycounter[]{page}\glsnumberformat}{2}
@@ -7,7 +8,7 @@
 \glossaryentry{IEEE?\glossentry{IEEE}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{VHDL?\glossentry{VHDL}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{DFF?\glossentry{DFF}|setentrycounter[]{page}\glsnumberformat}{2}
-\glossaryentry{UUT?\glossentry{UUT}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{UUT?\glossentry{UUT}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{DUT?\glossentry{DUT}|setentrycounter[]{page}\glsnumberformat}{3}
 \glossaryentry{HDL?\glossentry{HDL}|setentrycounter[]{page}\glsnumberformat}{4}
 \glossaryentry{DUT?\glossentry{DUT}|setentrycounter[]{page}\glsnumberformat}{4}
@@ -41,9 +42,15 @@
 \glossaryentry{CI?\glossentry{CI}|setentrycounter[]{page}\glsnumberformat}{15}
 \glossaryentry{CI?\glossentry{CI}|setentrycounter[]{page}\glsnumberformat}{15}
 \glossaryentry{RC?\glossentry{RC}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{DFF?\glossentry{DFF}|setentrycounter[]{page}\glsnumberformat}{15}
-\glossaryentry{XML?\glossentry{XML}|setentrycounter[]{page}\glsnumberformat}{15}
+\glossaryentry{DFF?\glossentry{DFF}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{XML?\glossentry{XML}|setentrycounter[]{page}\glsnumberformat}{16}
 \glossaryentry{VHDL?\glossentry{VHDL}|setentrycounter[]{page}\glsnumberformat}{16}
-\glossaryentry{CI?\glossentry{CI}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{VHDL?\glossentry{VHDL}|setentrycounter[]{page}\glsnumberformat}{18}
+\glossaryentry{SHA?\glossentry{SHA}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{AES?\glossentry{AES}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{CRC?\glossentry{CRC}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{VHDL?\glossentry{VHDL}|setentrycounter[]{page}\glsnumberformat}{17}
+\glossaryentry{CI?\glossentry{CI}|setentrycounter[]{page}\glsnumberformat}{18}
 \glossaryentry{VHDL?\glossentry{VHDL}|setentrycounter[]{page}\glsnumberformat}{19}
+\glossaryentry{VHDL?\glossentry{VHDL}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{RC?\glossentry{RC}|setentrycounter[]{page}\glsnumberformat}{20}
+\glossaryentry{XML?\glossentry{XML}|setentrycounter[]{page}\glsnumberformat}{20}

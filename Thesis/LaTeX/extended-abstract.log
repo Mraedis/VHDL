@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  7 JAN 2015 13:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  8 JAN 2015 20:13
 entering extended mode
 **extended-abstract.tex
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\LaTeX\extended-abstract.tex
@@ -692,11 +692,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package logreq Info: Writing requests to 'extended-abstract.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 10550 strings out of 493921
- 176136 string characters out of 3144875
+ 10554 strings out of 493921
+ 176163 string characters out of 3144875
  699050 words of memory out of 3000000
  13499 multiletter control sequences out of 15000+200000
- 62863 words of font info for 211 fonts, out of 3000000 for 9000
+ 63086 words of font info for 214 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  44i,10n,49p,844b,1240s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Joren\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
@@ -707,7 +707,7 @@ ectt0800.pk>{F:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}
 x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><F:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><F:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on extended-abstract.pdf (2 pages, 102362 bytes).
+Output written on extended-abstract.pdf (2 pages, 102395 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
