@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.3 $
+% $ biblatex bbl format version 2.4 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \sortlist{entry}{}
+  \sortlist{none}{none}
     \entry{vhdlorigin}{article}{}
       \name{labelname}{3}{}{%
         {{hash=8045a85ca0648c0ac15edd45a480c18c}{Lipsett}{L\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
@@ -36,6 +36,7 @@
       \strng{namehash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
       \strng{fullhash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{{VHDL} - The Language}
       \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
       \field{month}{04}
@@ -65,6 +66,7 @@
       \strng{namehash}{6857e7a8704193eaf9070a2e893f9425}
       \strng{fullhash}{6857e7a8704193eaf9070a2e893f9425}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Mixed-mode simulation of compiled {VHDL} programs}
       \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
       \field{title}{Mixed-mode simulation of compiled {VHDL} programs}
@@ -94,6 +96,7 @@
       \strng{namehash}{dd5b8898ea9831669e16835c9b40fcf8}
       \strng{fullhash}{24d3f6b203fcfc203bfb9f27f2a9c201}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{A logic synthesis system for {VHDL} design descriptions}
       \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
       \field{title}{A logic synthesis system for {VHDL} design descriptions}
@@ -112,6 +115,7 @@
       \strng{namehash}{c1ca05ac724c94a216cce6ee20197f4b}
       \strng{fullhash}{c1ca05ac724c94a216cce6ee20197f4b}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Code the Unit Test First}
       \field{title}{Code the Unit Test First}
       \field{urlday}{20}
@@ -132,6 +136,7 @@
       \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
       \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{UnitTest}
       \field{title}{UnitTest}
       \field{urlday}{30}
@@ -157,6 +162,7 @@
       \strng{namehash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
       \strng{fullhash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Implementing Continuous Integration towards rapid application development}
       \field{booktitle}{2012 International Conference on Innovation Management and Technology Research}
       \field{month}{05}
@@ -179,177 +185,7 @@
       \strng{namehash}{53b6bd5470779fc382c11ac47e6864d2}
       \strng{fullhash}{53b6bd5470779fc382c11ac47e6864d2}
       \field{sortinit}{0}
-      \field{labeltitle}{Enabling Agile Testing through Continuous Integration}
-      \field{booktitle}{2009 Agile Conference}
-      \field{month}{08}
-      \field{title}{Enabling Agile Testing through Continuous Integration}
-      \field{year}{2009}
-      \verb{doi}
-      \verb 10.1109/agile.2009.16
-      \endverb
-    \endentry
-  \endsortlist
-  \sortlist{entry}{none}
-    \entry{vhdlorigin}{article}{}
-      \name{labelname}{3}{}{%
-        {{hash=8045a85ca0648c0ac15edd45a480c18c}{Lipsett}{L\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=6c56e002634b05b173a207168d2e0b9f}{Marschner}{M\bibinitperiod}{Erich}{E\bibinitperiod}{}{}{}{}}%
-        {{hash=33a6f3134b55fe68e8a70fcce58b4de3}{Shahdad}{S\bibinitperiod}{Moe}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=8045a85ca0648c0ac15edd45a480c18c}{Lipsett}{L\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=6c56e002634b05b173a207168d2e0b9f}{Marschner}{M\bibinitperiod}{Erich}{E\bibinitperiod}{}{}{}{}}%
-        {{hash=33a6f3134b55fe68e8a70fcce58b4de3}{Shahdad}{S\bibinitperiod}{Moe}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
-      }
-      \strng{namehash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
-      \strng{fullhash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
-      \field{sortinit}{0}
-      \field{labeltitle}{{VHDL} - The Language}
-      \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
-      \field{month}{04}
-      \field{number}{2}
-      \field{title}{{VHDL} - The Language}
-      \field{volume}{3}
-      \field{year}{1986}
-      \field{pages}{28\bibrangedash 41}
-      \verb{doi}
-      \verb 10.1109/mdt.1986.294900
-      \endverb
-    \endentry
-    \entry{vhdlsim}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=d95f58ed940df57c573bf7da32ff5a8b}{Acosta}{A\bibinitperiod}{R.D.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=63b7a91d18cfa28f8d1684b0e287116a}{Smith}{S\bibinitperiod}{S.P.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=3618aae565a7a68636715575d99d208e}{Larson}{L\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=d95f58ed940df57c573bf7da32ff5a8b}{Acosta}{A\bibinitperiod}{R.D.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=63b7a91d18cfa28f8d1684b0e287116a}{Smith}{S\bibinitperiod}{S.P.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=3618aae565a7a68636715575d99d208e}{Larson}{L\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc. Press}%
-      }
-      \strng{namehash}{6857e7a8704193eaf9070a2e893f9425}
-      \strng{fullhash}{6857e7a8704193eaf9070a2e893f9425}
-      \field{sortinit}{0}
-      \field{labeltitle}{Mixed-mode simulation of compiled {VHDL} programs}
-      \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
-      \field{title}{Mixed-mode simulation of compiled {VHDL} programs}
-      \field{year}{1989}
-      \verb{doi}
-      \verb 10.1109/iccad.1989.76930
-      \endverb
-    \endentry
-    \entry{vhdlsynth}{inproceedings}{}
-      \name{labelname}{5}{}{%
-        {{hash=c9ef1dbd475f3695b0200e5236de53b6}{Dillinger}{D\bibinitperiod}{T.E.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=462e3e415fb55499ad52586d092306f6}{McCarthy}{M\bibinitperiod}{K.M.}{K\bibinitperiod}{}{}{}{}}%
-        {{hash=6eae17fab4f75ae74503003b2b146a58}{Mosher}{M\bibinitperiod}{T.A.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=528755ea6d9a45a79ea065de9279e2f9}{Neumann}{N\bibinitperiod}{D.R.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=980cd6eb46323f38a89aaf161396ec32}{Schmidt}{S\bibinitperiod}{R.A.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{5}{}{%
-        {{hash=c9ef1dbd475f3695b0200e5236de53b6}{Dillinger}{D\bibinitperiod}{T.E.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=462e3e415fb55499ad52586d092306f6}{McCarthy}{M\bibinitperiod}{K.M.}{K\bibinitperiod}{}{}{}{}}%
-        {{hash=6eae17fab4f75ae74503003b2b146a58}{Mosher}{M\bibinitperiod}{T.A.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=528755ea6d9a45a79ea065de9279e2f9}{Neumann}{N\bibinitperiod}{D.R.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=980cd6eb46323f38a89aaf161396ec32}{Schmidt}{S\bibinitperiod}{R.A.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc. Press}%
-      }
-      \strng{namehash}{dd5b8898ea9831669e16835c9b40fcf8}
-      \strng{fullhash}{24d3f6b203fcfc203bfb9f27f2a9c201}
-      \field{sortinit}{0}
-      \field{labeltitle}{A logic synthesis system for {VHDL} design descriptions}
-      \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
-      \field{title}{A logic synthesis system for {VHDL} design descriptions}
-      \field{year}{1989}
-      \verb{doi}
-      \verb 10.1109/iccad.1989.76906
-      \endverb
-    \endentry
-    \entry{extremeunit}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=c1ca05ac724c94a216cce6ee20197f4b}{Wells}{W\bibinitperiod}{Don}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=c1ca05ac724c94a216cce6ee20197f4b}{Wells}{W\bibinitperiod}{Don}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{c1ca05ac724c94a216cce6ee20197f4b}
-      \strng{fullhash}{c1ca05ac724c94a216cce6ee20197f4b}
-      \field{sortinit}{0}
-      \field{labeltitle}{Code the Unit Test First}
-      \field{title}{Code the Unit Test First}
-      \field{urlday}{20}
-      \field{urlmonth}{03}
-      \field{urlyear}{2014}
-      \field{year}{2000}
-      \verb{url}
-      \verb http://www.extremeprogramming.org/rules/testfirst.html
-      \endverb
-    \endentry
-    \entry{VHDLUnit}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
-      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
-      \field{sortinit}{0}
-      \field{labeltitle}{UnitTest}
-      \field{title}{UnitTest}
-      \field{urlday}{30}
-      \field{urlmonth}{06}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://martinfowler.com/bliki/UnitTest.html
-      \endverb
-    \endentry
-    \entry{ci1}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=674b3d57d78b59076a3092ccafb4f3cb}{Abdul}{A\bibinitperiod}{Fazreil\bibnamedelima Amreen}{F\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=3086c57fc28ca382ec39329669276623}{Fhang}{F\bibinitperiod}{Mensely\bibnamedelimb Cheah\bibnamedelima Siow}{M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=674b3d57d78b59076a3092ccafb4f3cb}{Abdul}{A\bibinitperiod}{Fazreil\bibnamedelima Amreen}{F\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=3086c57fc28ca382ec39329669276623}{Fhang}{F\bibinitperiod}{Mensely\bibnamedelimb Cheah\bibnamedelima Siow}{M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
-      \strng{fullhash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
-      \field{sortinit}{0}
-      \field{labeltitle}{Implementing Continuous Integration towards rapid application development}
-      \field{booktitle}{2012 International Conference on Innovation Management and Technology Research}
-      \field{month}{05}
-      \field{title}{Implementing Continuous Integration towards rapid application development}
-      \field{year}{2012}
-      \verb{doi}
-      \verb 10.1109/icimtr.2012.6236372
-      \endverb
-    \endentry
-    \entry{ci3}{inproceedings}{}
-      \name{labelname}{1}{}{%
-        {{hash=53b6bd5470779fc382c11ac47e6864d2}{Stolberg}{S\bibinitperiod}{Sean}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=53b6bd5470779fc382c11ac47e6864d2}{Stolberg}{S\bibinitperiod}{Sean}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{53b6bd5470779fc382c11ac47e6864d2}
-      \strng{fullhash}{53b6bd5470779fc382c11ac47e6864d2}
-      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Enabling Agile Testing through Continuous Integration}
       \field{booktitle}{2009 Agile Conference}
       \field{month}{08}

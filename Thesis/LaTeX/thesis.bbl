@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.3 $
+% $ biblatex bbl format version 2.4 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \sortlist{entry}{}
+  \sortlist{none}{none}
     \entry{vhdlorigin}{article}{}
       \name{labelname}{3}{}{%
         {{hash=8045a85ca0648c0ac15edd45a480c18c}{Lipsett}{L\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
@@ -36,6 +36,7 @@
       \strng{namehash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
       \strng{fullhash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{{VHDL} - The Language}
       \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
       \field{month}{04}
@@ -65,6 +66,7 @@
       \strng{namehash}{c1ccde39e02f63e91d34d72f3d4a6daa}
       \strng{fullhash}{c1ccde39e02f63e91d34d72f3d4a6daa}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{{VHDL} - Feature Description And Analysis}
       \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
       \field{month}{04}
@@ -94,6 +96,7 @@
       \strng{namehash}{6857e7a8704193eaf9070a2e893f9425}
       \strng{fullhash}{6857e7a8704193eaf9070a2e893f9425}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Mixed-mode simulation of compiled {VHDL} programs}
       \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
       \field{title}{Mixed-mode simulation of compiled {VHDL} programs}
@@ -123,6 +126,7 @@
       \strng{namehash}{dd5b8898ea9831669e16835c9b40fcf8}
       \strng{fullhash}{24d3f6b203fcfc203bfb9f27f2a9c201}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{A logic synthesis system for {VHDL} design descriptions}
       \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
       \field{title}{A logic synthesis system for {VHDL} design descriptions}
@@ -148,6 +152,7 @@
       \strng{namehash}{c1f877c38b12857df4c526eb0a1ce91f}
       \strng{fullhash}{c1f877c38b12857df4c526eb0a1ce91f}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{{VHDL} as input for high-level synthesis}
       \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
       \field{month}{03}
@@ -177,6 +182,7 @@
       \strng{namehash}{b295c6d4c3150f34855571d690aa1af1}
       \strng{fullhash}{b295c6d4c3150f34855571d690aa1af1}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{{VHDL} links design, test, and maintenance}
       \field{journaltitle}{{IEEE} Spectr.}
       \field{month}{05}
@@ -194,6 +200,7 @@
         {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
       }
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{1164-1993 - IEEE Standard Multivalue Logic System for VHDL Model Interoperability}
       \field{title}{1164-1993 - IEEE Standard Multivalue Logic System for VHDL Model Interoperability}
       \field{year}{1993}
@@ -214,6 +221,7 @@
       \strng{namehash}{f69f4007d3ae9e68699445e95362d552}
       \strng{fullhash}{f69f4007d3ae9e68699445e95362d552}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Writing Testbenches: Functional Verification of HDL Models}
       \field{title}{Writing Testbenches: Functional Verification of HDL Models}
       \field{year}{2000}
@@ -231,6 +239,7 @@
       \strng{namehash}{cffb0902a224db1bd97f9a97dc6222af}
       \strng{fullhash}{cffb0902a224db1bd97f9a97dc6222af}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{An overview on writing a {VHDL} testbench}
       \field{booktitle}{Proceedings The Twenty-Ninth Southeastern Symposium on System Theory}
       \field{title}{An overview on writing a {VHDL} testbench}
@@ -249,6 +258,7 @@
       \strng{namehash}{2ebe117ae97a190baf53b62c2258b832}
       \strng{fullhash}{2ebe117ae97a190baf53b62c2258b832}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Debugging \{VHDL\} designs using model-based reasoning}
       \field{issn}{0954-1810}
       \field{journaltitle}{Artificial Intelligence in Engineering}
@@ -278,6 +288,7 @@
       \strng{namehash}{1c98f069ec450925dd8b6910f340d601}
       \strng{fullhash}{1c98f069ec450925dd8b6910f340d601}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{{VHDL} based design methodology for hierarchy and component re-use}
       \field{booktitle}{Proceedings of {EURO}-{DAC}. European Design Automation Conference}
       \field{title}{{VHDL} based design methodology for hierarchy and component re-use}
@@ -300,6 +311,7 @@
       \strng{namehash}{b5692251efa064f9dc1991688113adca}
       \strng{fullhash}{b5692251efa064f9dc1991688113adca}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis}
       \field{journaltitle}{IEEE Transactions on Semiconductor Manufacturing}
       \field{number}{4}
@@ -325,6 +337,7 @@
       \strng{namehash}{cfece00ee3da94cf64ff94cf86f1c147}
       \strng{fullhash}{cfece00ee3da94cf64ff94cf86f1c147}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Formal specification in {VHDL} for hardware verification}
       \field{booktitle}{Proceedings Design, Automation and Test in Europe}
       \field{title}{Formal specification in {VHDL} for hardware verification}
@@ -352,8 +365,9 @@
       \strng{namehash}{41575b1c4bf73463709942c93a55d4bb}
       \strng{fullhash}{1c9c55e7701528fce6913cc200a27b0f}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{A generic {VHDL} testbench to aid in development of board-level test programs}
-      \field{booktitle}{Proceedings of {AUTOTESTCON} '94}
+      \field{booktitle}{Proceedings of {AUTOTESTCON} {'}94}
       \field{title}{A generic {VHDL} testbench to aid in development of board-level test programs}
       \field{year}{1994}
       \verb{doi}
@@ -379,6 +393,7 @@
       \strng{namehash}{c5074df3894f8e76b77740bff0126372}
       \strng{fullhash}{ae949c35189ccd43e5c17ac39e29cc86}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Code coverage, what does it mean in terms of quality?}
       \field{booktitle}{Annual Reliability and Maintainability Symposium. 2001 Proceedings. International Symposium on Product Quality and Integrity (Cat. No.01CH37179)}
       \field{title}{Code coverage, what does it mean in terms of quality?}
@@ -404,6 +419,7 @@
       \strng{namehash}{ae0e115192cbe8b3355d2feda61c5f25}
       \strng{fullhash}{ae0e115192cbe8b3355d2feda61c5f25}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{A Hardware-Assisted Tool for Fast, Full Code Coverage Analysis}
       \field{booktitle}{2008 19th International Symposium on Software Reliability Engineering ({ISSRE})}
       \field{month}{11}
@@ -430,6 +446,7 @@
       \strng{namehash}{da5fe8529c270ed0c117e276bd315dbd}
       \strng{fullhash}{da5fe8529c270ed0c117e276bd315dbd}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Automated Functional Coverage for a Digital System Based on a Binary Differential Evolution Algorithm}
       \field{booktitle}{2013 {BRICS} Congress on Computational Intelligence and 11th Brazilian Congress on Computational Intelligence}
       \field{month}{09}
@@ -462,6 +479,7 @@
       \strng{namehash}{3bf2cea13f7f6de9bce3f087b666efd8}
       \strng{fullhash}{9033786148bb2cba1e67c8fe01e2315b}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Automating functional coverage analysis based on an executable specification}
       \field{booktitle}{The 3rd {IEEE} International Workshop on System-on-Chip for Real-Time Applications, 2003. Proceedings.}
       \field{title}{Automating functional coverage analysis based on an executable specification}
@@ -480,6 +498,7 @@
       \strng{namehash}{6734ec2bda645e6dae68e01444565c85}
       \strng{fullhash}{6734ec2bda645e6dae68e01444565c85}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Importance of Constrained Random Verification Approach}
       \field{title}{Importance of Constrained Random Verification Approach}
       \field{urlday}{20}
@@ -505,6 +524,7 @@
       \strng{namehash}{4233484e6e84878c66850c222d1d54e7}
       \strng{fullhash}{4233484e6e84878c66850c222d1d54e7}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Stimulus generation for constrained random simulation}
       \field{booktitle}{2007 {IEEE}/{ACM} International Conference on Computer-Aided Design}
       \field{month}{11}
@@ -531,6 +551,7 @@
       \strng{namehash}{13cb43d5d2555384b8c402b999aaa6fb}
       \strng{fullhash}{13cb43d5d2555384b8c402b999aaa6fb}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Formal verification of {VHDL}: the model checker {CV}}
       \field{booktitle}{Proceedings. {XI} Brazilian Symposium on Integrated Circuit Design (Cat. No.98EX216)}
       \field{title}{Formal verification of {VHDL}: the model checker {CV}}
@@ -549,6 +570,7 @@
       \strng{namehash}{ac3d8ed6c68dd5474508d864bccfaad7}
       \strng{fullhash}{ac3d8ed6c68dd5474508d864bccfaad7}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Active-HDL Configurations}
       \field{title}{Active-HDL Configurations}
       \field{urlday}{19}
@@ -569,6 +591,7 @@
       \strng{namehash}{bce431d01a4df1bf31ba7787331ad1dc}
       \strng{fullhash}{bce431d01a4df1bf31ba7787331ad1dc}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Incisive Enterprise Simulator}
       \field{title}{Incisive Enterprise Simulator}
       \field{urlday}{19}
@@ -589,6 +612,7 @@
       \strng{namehash}{f872201c6db9bf2620dc262ba42d2271}
       \strng{fullhash}{f872201c6db9bf2620dc262ba42d2271}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Vivado Synthesis}
       \field{title}{Vivado Synthesis}
       \field{urlday}{19}
@@ -609,6 +633,7 @@
       \strng{namehash}{feb14148e4ce243ab58a4f11cd231ab9}
       \strng{fullhash}{feb14148e4ce243ab58a4f11cd231ab9}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Quartus II support for VHDL 2008}
       \field{title}{Quartus II support for VHDL 2008}
       \field{urlday}{19}
@@ -629,6 +654,7 @@
       \strng{namehash}{feb14148e4ce243ab58a4f11cd231ab9}
       \strng{fullhash}{feb14148e4ce243ab58a4f11cd231ab9}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{ModelSim 10.0 release notes}
       \field{title}{ModelSim 10.0 release notes}
       \field{urlday}{19}
@@ -649,6 +675,7 @@
       \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
       \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{UnitTest}
       \field{title}{UnitTest}
       \field{urlday}{30}
@@ -669,6 +696,7 @@
       \strng{namehash}{230d6a1c679422b486dd2093104e7612}
       \strng{fullhash}{230d6a1c679422b486dd2093104e7612}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Introduction to Test Driven Development (TDD)}
       \field{title}{Introduction to Test Driven Development (TDD)}
       \field{urlday}{14}
@@ -696,6 +724,7 @@
       \strng{namehash}{9b3c1d9f2f1e57b67b39b54591e389a9}
       \strng{fullhash}{9b3c1d9f2f1e57b67b39b54591e389a9}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{On the Sustained Use of a Test-Driven Development Practice at IBM}
       \field{booktitle}{{AGILE} 2007 Conference {(AGILE} 2007), 13-17 August 2007, Washington, DC, {USA}}
       \field{isbn}{0-7695-2872-4}
@@ -722,6 +751,7 @@
       \strng{namehash}{885caf2fd64c7de1bd8f3d4291670afa}
       \strng{fullhash}{885caf2fd64c7de1bd8f3d4291670afa}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage}
       \field{booktitle}{Proceedings of the First International Symposium on Empirical Software Engineering and Measurement}
       \field{isbn}{0-7695-2886-4}
@@ -748,6 +778,7 @@
       \strng{namehash}{616279e0e5308872e5362eb1ab21def2}
       \strng{fullhash}{616279e0e5308872e5362eb1ab21def2}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Evaluating the efficacy of test-driven development: industrial case studies}
       \field{booktitle}{ISESE}
       \field{isbn}{1-59593-218-6}
@@ -771,6 +802,7 @@
       \strng{namehash}{c1ca05ac724c94a216cce6ee20197f4b}
       \strng{fullhash}{c1ca05ac724c94a216cce6ee20197f4b}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Code the Unit Test First}
       \field{title}{Code the Unit Test First}
       \field{urlday}{20}
@@ -798,6 +830,7 @@
       \strng{namehash}{71cb539d01854c8686faa08f53014817}
       \strng{fullhash}{71cb539d01854c8686faa08f53014817}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{An Initial Study on Refactoring Tactics}
       \field{booktitle}{2012 {IEEE} 36th Annual Computer Software and Applications Conference}
       \field{month}{07}
@@ -822,6 +855,7 @@
       \strng{namehash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
       \strng{fullhash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Implementing Continuous Integration towards rapid application development}
       \field{booktitle}{2012 International Conference on Innovation Management and Technology Research}
       \field{month}{05}
@@ -850,6 +884,7 @@
       \strng{namehash}{c85e660b661f6958b05674dbaadb18ab}
       \strng{fullhash}{dff4fff578eff3552d628cb7799afd8d}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{{CiCUTS}: Combining System Execution Modeling Tools with Continuous Integration Environments}
       \field{booktitle}{15th Annual {IEEE} International Conference and Workshop on the Engineering of Computer Based Systems (ecbs 2008)}
       \field{month}{03}
@@ -872,6 +907,7 @@
       \strng{namehash}{53b6bd5470779fc382c11ac47e6864d2}
       \strng{fullhash}{53b6bd5470779fc382c11ac47e6864d2}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Enabling Agile Testing through Continuous Integration}
       \field{booktitle}{2009 Agile Conference}
       \field{month}{08}
@@ -891,6 +927,7 @@
       \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
       \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Xunit}
       \field{title}{Xunit}
       \field{urlday}{02}
@@ -921,6 +958,7 @@
       \strng{namehash}{efc9a341ea67a15c6cb035ec9714322d}
       \strng{fullhash}{0936c34a9f64f70b5fddcddc307f052d}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Extreme programming: a university team design experience}
       \field{booktitle}{Canadian Conference on Electrical and Computer Engineering}
       \field{isbn}{0-7803-5957-7}
@@ -942,6 +980,7 @@
       \strng{namehash}{817c1fb2234a6a8c7449a1484e7a892b}
       \strng{fullhash}{817c1fb2234a6a8c7449a1484e7a892b}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Python JUnit XML}
       \field{title}{Python JUnit XML}
       \field{urlday}{07}
@@ -954,6 +993,7 @@
     \endentry
     \entry{junit}{online}{}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{JUnit}
       \field{title}{JUnit}
       \field{urlday}{25}
@@ -965,6 +1005,7 @@
     \endentry
     \entry{python1}{online}{}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Python}
       \field{title}{Python}
       \field{urlday}{28}
@@ -986,6 +1027,7 @@
       \strng{namehash}{09e1a70e9fff91274bc214da331f9e33}
       \strng{fullhash}{09e1a70e9fff91274bc214da331f9e33}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{setuptools}
       \field{title}{setuptools}
       \field{urlday}{07}
@@ -998,6 +1040,7 @@
     \endentry
     \entry{hudson}{online}{}
       \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Hudson-CI}
       \field{title}{Hudson-CI}
       \field{urlday}{25}
@@ -1010,1009 +1053,7 @@
     \endentry
     \entry{bitvis}{online}{}
       \field{sortinit}{0}
-      \field{labeltitle}{Bitvis Utility Library}
-      \field{title}{Bitvis Utility Library}
-      \field{urlday}{25}
-      \field{urlmonth}{08}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://bitvis.no/products/bitvis-utility-library/
-      \endverb
-    \endentry
-  \endsortlist
-  \sortlist{entry}{none}
-    \entry{vhdlorigin}{article}{}
-      \name{labelname}{3}{}{%
-        {{hash=8045a85ca0648c0ac15edd45a480c18c}{Lipsett}{L\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=6c56e002634b05b173a207168d2e0b9f}{Marschner}{M\bibinitperiod}{Erich}{E\bibinitperiod}{}{}{}{}}%
-        {{hash=33a6f3134b55fe68e8a70fcce58b4de3}{Shahdad}{S\bibinitperiod}{Moe}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=8045a85ca0648c0ac15edd45a480c18c}{Lipsett}{L\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=6c56e002634b05b173a207168d2e0b9f}{Marschner}{M\bibinitperiod}{Erich}{E\bibinitperiod}{}{}{}{}}%
-        {{hash=33a6f3134b55fe68e8a70fcce58b4de3}{Shahdad}{S\bibinitperiod}{Moe}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
-      }
-      \strng{namehash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
-      \strng{fullhash}{234fa1e5e6c29b9ed2faf1cba8ad8e52}
-      \field{sortinit}{0}
-      \field{labeltitle}{{VHDL} - The Language}
-      \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
-      \field{month}{04}
-      \field{number}{2}
-      \field{title}{{VHDL} - The Language}
-      \field{volume}{3}
-      \field{year}{1986}
-      \field{pages}{28\bibrangedash 41}
-      \verb{doi}
-      \verb 10.1109/mdt.1986.294900
-      \endverb
-    \endentry
-    \entry{vhdlorigin2}{article}{}
-      \name{labelname}{3}{}{%
-        {{hash=6f5f0f26aa83c362f79715ed7c60bccf}{Aylor}{A\bibinitperiod}{J.H.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=95619681936a888ee685aa4225dbca4f}{Waxman}{W\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=174415b9f7fc86ffcb09b19c23132716}{Scarratt}{S\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=6f5f0f26aa83c362f79715ed7c60bccf}{Aylor}{A\bibinitperiod}{J.H.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=95619681936a888ee685aa4225dbca4f}{Waxman}{W\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=174415b9f7fc86ffcb09b19c23132716}{Scarratt}{S\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
-      }
-      \strng{namehash}{c1ccde39e02f63e91d34d72f3d4a6daa}
-      \strng{fullhash}{c1ccde39e02f63e91d34d72f3d4a6daa}
-      \field{sortinit}{0}
-      \field{labeltitle}{{VHDL} - Feature Description And Analysis}
-      \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
-      \field{month}{04}
-      \field{number}{2}
-      \field{title}{{VHDL} - Feature Description And Analysis}
-      \field{volume}{3}
-      \field{year}{1986}
-      \field{pages}{17\bibrangedash 27}
-      \verb{doi}
-      \verb 10.1109/mdt.1986.294899
-      \endverb
-    \endentry
-    \entry{vhdlsim}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=d95f58ed940df57c573bf7da32ff5a8b}{Acosta}{A\bibinitperiod}{R.D.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=63b7a91d18cfa28f8d1684b0e287116a}{Smith}{S\bibinitperiod}{S.P.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=3618aae565a7a68636715575d99d208e}{Larson}{L\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=d95f58ed940df57c573bf7da32ff5a8b}{Acosta}{A\bibinitperiod}{R.D.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=63b7a91d18cfa28f8d1684b0e287116a}{Smith}{S\bibinitperiod}{S.P.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=3618aae565a7a68636715575d99d208e}{Larson}{L\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc. Press}%
-      }
-      \strng{namehash}{6857e7a8704193eaf9070a2e893f9425}
-      \strng{fullhash}{6857e7a8704193eaf9070a2e893f9425}
-      \field{sortinit}{0}
-      \field{labeltitle}{Mixed-mode simulation of compiled {VHDL} programs}
-      \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
-      \field{title}{Mixed-mode simulation of compiled {VHDL} programs}
-      \field{year}{1989}
-      \verb{doi}
-      \verb 10.1109/iccad.1989.76930
-      \endverb
-    \endentry
-    \entry{vhdlsynth}{inproceedings}{}
-      \name{labelname}{5}{}{%
-        {{hash=c9ef1dbd475f3695b0200e5236de53b6}{Dillinger}{D\bibinitperiod}{T.E.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=462e3e415fb55499ad52586d092306f6}{McCarthy}{M\bibinitperiod}{K.M.}{K\bibinitperiod}{}{}{}{}}%
-        {{hash=6eae17fab4f75ae74503003b2b146a58}{Mosher}{M\bibinitperiod}{T.A.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=528755ea6d9a45a79ea065de9279e2f9}{Neumann}{N\bibinitperiod}{D.R.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=980cd6eb46323f38a89aaf161396ec32}{Schmidt}{S\bibinitperiod}{R.A.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{5}{}{%
-        {{hash=c9ef1dbd475f3695b0200e5236de53b6}{Dillinger}{D\bibinitperiod}{T.E.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=462e3e415fb55499ad52586d092306f6}{McCarthy}{M\bibinitperiod}{K.M.}{K\bibinitperiod}{}{}{}{}}%
-        {{hash=6eae17fab4f75ae74503003b2b146a58}{Mosher}{M\bibinitperiod}{T.A.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=528755ea6d9a45a79ea065de9279e2f9}{Neumann}{N\bibinitperiod}{D.R.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=980cd6eb46323f38a89aaf161396ec32}{Schmidt}{S\bibinitperiod}{R.A.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc. Press}%
-      }
-      \strng{namehash}{dd5b8898ea9831669e16835c9b40fcf8}
-      \strng{fullhash}{24d3f6b203fcfc203bfb9f27f2a9c201}
-      \field{sortinit}{0}
-      \field{labeltitle}{A logic synthesis system for {VHDL} design descriptions}
-      \field{booktitle}{1989 {IEEE} International Conference on Computer-Aided Design. Digest of Technical Papers}
-      \field{title}{A logic synthesis system for {VHDL} design descriptions}
-      \field{year}{1989}
-      \verb{doi}
-      \verb 10.1109/iccad.1989.76906
-      \endverb
-    \endentry
-    \entry{vhdlsynth2}{article}{}
-      \name{labelname}{3}{}{%
-        {{hash=e00db7c8a27a73b2bdc9d393ace02159}{Camposano}{C\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=65c06d7e53350e11b98a4ae1abd0bcd0}{Saunders}{S\bibinitperiod}{L.F.}{L\bibinitperiod}{}{}{}{}}%
-        {{hash=51a5bc64d8ea60091364b6dca2fad539}{Tabet}{T\bibinitperiod}{R.M.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=e00db7c8a27a73b2bdc9d393ace02159}{Camposano}{C\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=65c06d7e53350e11b98a4ae1abd0bcd0}{Saunders}{S\bibinitperiod}{L.F.}{L\bibinitperiod}{}{}{}{}}%
-        {{hash=51a5bc64d8ea60091364b6dca2fad539}{Tabet}{T\bibinitperiod}{R.M.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
-      }
-      \strng{namehash}{c1f877c38b12857df4c526eb0a1ce91f}
-      \strng{fullhash}{c1f877c38b12857df4c526eb0a1ce91f}
-      \field{sortinit}{0}
-      \field{labeltitle}{{VHDL} as input for high-level synthesis}
-      \field{journaltitle}{{IEEE} Design {\&} Test of Computers}
-      \field{month}{03}
-      \field{number}{1}
-      \field{title}{{VHDL} as input for high-level synthesis}
-      \field{volume}{8}
-      \field{year}{1991}
-      \field{pages}{43\bibrangedash 49}
-      \verb{doi}
-      \verb 10.1109/54.75662
-      \endverb
-    \endentry
-    \entry{vhdlsynth3}{article}{}
-      \name{labelname}{3}{}{%
-        {{hash=95619681936a888ee685aa4225dbca4f}{Waxman}{W\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=844fdd20bdb7a305aed137c5a7ec5a90}{Saunders}{S\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
-        {{hash=4400bdf59e91407f47ef8706f63afba5}{Carter}{C\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=95619681936a888ee685aa4225dbca4f}{Waxman}{W\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=844fdd20bdb7a305aed137c5a7ec5a90}{Saunders}{S\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
-        {{hash=4400bdf59e91407f47ef8706f63afba5}{Carter}{C\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
-      }
-      \strng{namehash}{b295c6d4c3150f34855571d690aa1af1}
-      \strng{fullhash}{b295c6d4c3150f34855571d690aa1af1}
-      \field{sortinit}{0}
-      \field{labeltitle}{{VHDL} links design, test, and maintenance}
-      \field{journaltitle}{{IEEE} Spectr.}
-      \field{month}{05}
-      \field{number}{5}
-      \field{title}{{VHDL} links design, test, and maintenance}
-      \field{volume}{26}
-      \field{year}{1989}
-      \field{pages}{40\bibrangedash 44}
-      \verb{doi}
-      \verb 10.1109/6.30762
-      \endverb
-    \endentry
-    \entry{IEEE1164}{misc}{}
-      \list{publisher}{1}{%
-        {Institute of Electrical {\&} Electronics Engineers ({IEEE})}%
-      }
-      \field{sortinit}{0}
-      \field{labeltitle}{1164-1993 - IEEE Standard Multivalue Logic System for VHDL Model Interoperability}
-      \field{title}{1164-1993 - IEEE Standard Multivalue Logic System for VHDL Model Interoperability}
-      \field{year}{1993}
-      \verb{doi}
-      \verb 10.1109/ieeestd.1993.115571
-      \endverb
-    \endentry
-    \entry{bergeron00}{book}{}
-      \name{labelname}{1}{}{%
-        {{hash=f69f4007d3ae9e68699445e95362d552}{Bergeron}{B\bibinitperiod}{Janick}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=f69f4007d3ae9e68699445e95362d552}{Bergeron}{B\bibinitperiod}{Janick}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Springer US}%
-      }
-      \strng{namehash}{f69f4007d3ae9e68699445e95362d552}
-      \strng{fullhash}{f69f4007d3ae9e68699445e95362d552}
-      \field{sortinit}{0}
-      \field{labeltitle}{Writing Testbenches: Functional Verification of HDL Models}
-      \field{title}{Writing Testbenches: Functional Verification of HDL Models}
-      \field{year}{2000}
-    \endentry
-    \entry{vhdltestbench}{inproceedings}{}
-      \name{labelname}{1}{}{%
-        {{hash=cffb0902a224db1bd97f9a97dc6222af}{Biederman}{B\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=cffb0902a224db1bd97f9a97dc6222af}{Biederman}{B\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc. Press}%
-      }
-      \strng{namehash}{cffb0902a224db1bd97f9a97dc6222af}
-      \strng{fullhash}{cffb0902a224db1bd97f9a97dc6222af}
-      \field{sortinit}{0}
-      \field{labeltitle}{An overview on writing a {VHDL} testbench}
-      \field{booktitle}{Proceedings The Twenty-Ninth Southeastern Symposium on System Theory}
-      \field{title}{An overview on writing a {VHDL} testbench}
-      \field{year}{1997}
-      \verb{doi}
-      \verb 10.1109/ssst.1997.581677
-      \endverb
-    \endentry
-    \entry{vhdldebug}{article}{}
-      \name{labelname}{1}{}{%
-        {{hash=2ebe117ae97a190baf53b62c2258b832}{Wotawa}{W\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=2ebe117ae97a190baf53b62c2258b832}{Wotawa}{W\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{2ebe117ae97a190baf53b62c2258b832}
-      \strng{fullhash}{2ebe117ae97a190baf53b62c2258b832}
-      \field{sortinit}{0}
-      \field{labeltitle}{Debugging \{VHDL\} designs using model-based reasoning}
-      \field{issn}{0954-1810}
-      \field{journaltitle}{Artificial Intelligence in Engineering}
-      \field{number}{4}
-      \field{title}{Debugging \{VHDL\} designs using model-based reasoning}
-      \field{volume}{14}
-      \field{year}{2000}
-      \field{pages}{331\bibrangedash 351}
-      \verb{doi}
-      \verb 10.1016/S0954-1810(00)00021-2
-      \endverb
-    \endentry
-    \entry{vhdlhierarchy}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=3b3ac758555ce66357f2e9ab72772d90}{Kission}{K\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-        {{hash=47f018f66d32bcfd6681209804b87cce}{Ding}{D\bibinitperiod}{Hong}{H\bibinitperiod}{}{}{}{}}%
-        {{hash=d7f69bfa376fd443c15db6578b690395}{Jerraya}{J\bibinitperiod}{A.A.}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=3b3ac758555ce66357f2e9ab72772d90}{Kission}{K\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-        {{hash=47f018f66d32bcfd6681209804b87cce}{Ding}{D\bibinitperiod}{Hong}{H\bibinitperiod}{}{}{}{}}%
-        {{hash=d7f69bfa376fd443c15db6578b690395}{Jerraya}{J\bibinitperiod}{A.A.}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc. Press}%
-      }
-      \strng{namehash}{1c98f069ec450925dd8b6910f340d601}
-      \strng{fullhash}{1c98f069ec450925dd8b6910f340d601}
-      \field{sortinit}{0}
-      \field{labeltitle}{{VHDL} based design methodology for hierarchy and component re-use}
-      \field{booktitle}{Proceedings of {EURO}-{DAC}. European Design Automation Conference}
-      \field{title}{{VHDL} based design methodology for hierarchy and component re-use}
-      \field{year}{1995}
-      \verb{doi}
-      \verb 10.1109/eurdac.1995.527446
-      \endverb
-    \endentry
-    \entry{weber06}{article}{}
-      \name{labelname}{3}{}{%
-        {{hash=bde1efd4649f63fa5a73f7ecac574679}{Weber}{W\bibinitperiod}{Charles\bibnamedelima M.}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=a4c2c3ac30273d783a83644d13c3682c}{Berglund}{B\bibinitperiod}{Neil\bibnamedelima C.}{N\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=23a81a475123990a877394e29c447af6}{Gabella}{G\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=bde1efd4649f63fa5a73f7ecac574679}{Weber}{W\bibinitperiod}{Charles\bibnamedelima M.}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=a4c2c3ac30273d783a83644d13c3682c}{Berglund}{B\bibinitperiod}{Neil\bibnamedelima C.}{N\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=23a81a475123990a877394e29c447af6}{Gabella}{G\bibinitperiod}{Patricia}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{b5692251efa064f9dc1991688113adca}
-      \strng{fullhash}{b5692251efa064f9dc1991688113adca}
-      \field{sortinit}{0}
-      \field{labeltitle}{Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis}
-      \field{journaltitle}{IEEE Transactions on Semiconductor Manufacturing}
-      \field{number}{4}
-      \field{title}{Mask Cost and Profitability in Photomask Manufacturing: An Empirical Analysis}
-      \field{volume}{19}
-      \field{year}{2006}
-      \field{pages}{465\bibrangedash 474}
-    \endentry
-    \entry{assertformal}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=5ff21f9d645b54fa9f5162c01cacf781}{Reetz}{R\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=936f536097d506a7bf81c77e6cd6d303}{Schneider}{S\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
-        {{hash=20e72b7c8c60e7422d5fa9bb4364f288}{Kropf}{K\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=5ff21f9d645b54fa9f5162c01cacf781}{Reetz}{R\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=936f536097d506a7bf81c77e6cd6d303}{Schneider}{S\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
-        {{hash=20e72b7c8c60e7422d5fa9bb4364f288}{Kropf}{K\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc}%
-      }
-      \strng{namehash}{cfece00ee3da94cf64ff94cf86f1c147}
-      \strng{fullhash}{cfece00ee3da94cf64ff94cf86f1c147}
-      \field{sortinit}{0}
-      \field{labeltitle}{Formal specification in {VHDL} for hardware verification}
-      \field{booktitle}{Proceedings Design, Automation and Test in Europe}
-      \field{title}{Formal specification in {VHDL} for hardware verification}
-      \field{year}{1998}
-      \verb{doi}
-      \verb 10.1109/date.1998.655865
-      \endverb
-    \endentry
-    \entry{generictestbench}{inproceedings}{}
-      \name{labelname}{4}{}{%
-        {{hash=4cc0827d7c59673455de6759071aa009}{Swavely}{S\bibinitperiod}{W.G.}{W\bibinitperiod}{}{}{}{}}%
-        {{hash=1e18849a2e7c9e2697817a17a2001adc}{Beaton}{B\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=a7fd09404239ac1dfe5c1783b4c88485}{Debany}{D\bibinitperiod}{W.}{W\bibinitperiod}{}{}{}{}}%
-        {{hash=20aa5e1e64b6dab6ecbd43aa331899c3}{Guerra}{G\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{4}{}{%
-        {{hash=4cc0827d7c59673455de6759071aa009}{Swavely}{S\bibinitperiod}{W.G.}{W\bibinitperiod}{}{}{}{}}%
-        {{hash=1e18849a2e7c9e2697817a17a2001adc}{Beaton}{B\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=a7fd09404239ac1dfe5c1783b4c88485}{Debany}{D\bibinitperiod}{W.}{W\bibinitperiod}{}{}{}{}}%
-        {{hash=20aa5e1e64b6dab6ecbd43aa331899c3}{Guerra}{G\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{41575b1c4bf73463709942c93a55d4bb}
-      \strng{fullhash}{1c9c55e7701528fce6913cc200a27b0f}
-      \field{sortinit}{0}
-      \field{labeltitle}{A generic {VHDL} testbench to aid in development of board-level test programs}
-      \field{booktitle}{Proceedings of {AUTOTESTCON} '94}
-      \field{title}{A generic {VHDL} testbench to aid in development of board-level test programs}
-      \field{year}{1994}
-      \verb{doi}
-      \verb 10.1109/autest.1994.381506
-      \endverb
-    \endentry
-    \entry{coverage1}{inproceedings}{}
-      \name{labelname}{4}{}{%
-        {{hash=7a8ee02609db8ecde44e7e9408595dca}{Williams}{W\bibinitperiod}{T.W.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=ac178278c42ae7356ac34a8b550d6bc9}{Mercer}{M\bibinitperiod}{M.R.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=e2866c9c9e52c4626ea13ff14853d4f4}{Mucha}{M\bibinitperiod}{J.P.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=14d12c0e8724c9e5dda2c29cc934e6a2}{Kapur}{K\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{4}{}{%
-        {{hash=7a8ee02609db8ecde44e7e9408595dca}{Williams}{W\bibinitperiod}{T.W.}{T\bibinitperiod}{}{}{}{}}%
-        {{hash=ac178278c42ae7356ac34a8b550d6bc9}{Mercer}{M\bibinitperiod}{M.R.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=e2866c9c9e52c4626ea13ff14853d4f4}{Mucha}{M\bibinitperiod}{J.P.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=14d12c0e8724c9e5dda2c29cc934e6a2}{Kapur}{K\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{c5074df3894f8e76b77740bff0126372}
-      \strng{fullhash}{ae949c35189ccd43e5c17ac39e29cc86}
-      \field{sortinit}{0}
-      \field{labeltitle}{Code coverage, what does it mean in terms of quality?}
-      \field{booktitle}{Annual Reliability and Maintainability Symposium. 2001 Proceedings. International Symposium on Product Quality and Integrity (Cat. No.01CH37179)}
-      \field{title}{Code coverage, what does it mean in terms of quality?}
-      \field{year}{2001}
-      \verb{doi}
-      \verb 10.1109/rams.2001.902502
-      \endverb
-    \endentry
-    \entry{coverage2}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=bb19a67ac747665c926d617258051818}{Tran}{T\bibinitperiod}{Albert}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=d01760295ade9079a627d15c7644cda0}{Smith}{S\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=bff0e87eeab4ba1e74ae3e776e15d490}{Miller}{M\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=bb19a67ac747665c926d617258051818}{Tran}{T\bibinitperiod}{Albert}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=d01760295ade9079a627d15c7644cda0}{Smith}{S\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=bff0e87eeab4ba1e74ae3e776e15d490}{Miller}{M\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{ae0e115192cbe8b3355d2feda61c5f25}
-      \strng{fullhash}{ae0e115192cbe8b3355d2feda61c5f25}
-      \field{sortinit}{0}
-      \field{labeltitle}{A Hardware-Assisted Tool for Fast, Full Code Coverage Analysis}
-      \field{booktitle}{2008 19th International Symposium on Software Reliability Engineering ({ISSRE})}
-      \field{month}{11}
-      \field{title}{A Hardware-Assisted Tool for Fast, Full Code Coverage Analysis}
-      \field{year}{2008}
-      \verb{doi}
-      \verb 10.1109/issre.2008.22
-      \endverb
-    \endentry
-    \entry{functional1}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=2823dfba7fe5bd76d400652445444879}{Cruz}{C\bibinitperiod}{Alfonso\bibnamedelima Martinez}{A\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=3cee800c3c38e44ffed68b745c2b7971}{Fernandez}{F\bibinitperiod}{Ricardo\bibnamedelima Barron}{R\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
-        {{hash=b970ad0dce6f893248435c8d102eb30a}{Lozano}{L\bibinitperiod}{Heron\bibnamedelima Molina}{H\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=2823dfba7fe5bd76d400652445444879}{Cruz}{C\bibinitperiod}{Alfonso\bibnamedelima Martinez}{A\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=3cee800c3c38e44ffed68b745c2b7971}{Fernandez}{F\bibinitperiod}{Ricardo\bibnamedelima Barron}{R\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
-        {{hash=b970ad0dce6f893248435c8d102eb30a}{Lozano}{L\bibinitperiod}{Heron\bibnamedelima Molina}{H\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{da5fe8529c270ed0c117e276bd315dbd}
-      \strng{fullhash}{da5fe8529c270ed0c117e276bd315dbd}
-      \field{sortinit}{0}
-      \field{labeltitle}{Automated Functional Coverage for a Digital System Based on a Binary Differential Evolution Algorithm}
-      \field{booktitle}{2013 {BRICS} Congress on Computational Intelligence and 11th Brazilian Congress on Computational Intelligence}
-      \field{month}{09}
-      \field{title}{Automated Functional Coverage for a Digital System Based on a Binary Differential Evolution Algorithm}
-      \field{year}{2013}
-      \verb{doi}
-      \verb 10.1109/brics-cci-cbic.2013.26
-      \endverb
-    \endentry
-    \entry{functional2}{inproceedings}{}
-      \name{labelname}{6}{}{%
-        {{hash=82cbe058c6ebab1b951b90f924f32b1a}{Regimbal}{R\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=030f2380e86b065910fad2c831575b61}{Lemire}{L\bibinitperiod}{J.-F.}{J\bibinithyphendelim F\bibinitperiod}{}{}{}{}}%
-        {{hash=521890551e7f6695f10743c4d4fbf4bc}{Savaria}{S\bibinitperiod}{Y.}{Y\bibinitperiod}{}{}{}{}}%
-        {{hash=d250df00d8c4bad2ac8dd2eae0ed7db6}{Bois}{B\bibinitperiod}{G.}{G\bibinitperiod}{}{}{}{}}%
-        {{hash=712a3285720ae66509aca66794715a3b}{Aboulhamid}{A\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-        {{hash=fa12d3b7c4ef995f80aa978eeeef9cae}{Baron}{B\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{6}{}{%
-        {{hash=82cbe058c6ebab1b951b90f924f32b1a}{Regimbal}{R\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=030f2380e86b065910fad2c831575b61}{Lemire}{L\bibinitperiod}{J.-F.}{J\bibinithyphendelim F\bibinitperiod}{}{}{}{}}%
-        {{hash=521890551e7f6695f10743c4d4fbf4bc}{Savaria}{S\bibinitperiod}{Y.}{Y\bibinitperiod}{}{}{}{}}%
-        {{hash=d250df00d8c4bad2ac8dd2eae0ed7db6}{Bois}{B\bibinitperiod}{G.}{G\bibinitperiod}{}{}{}{}}%
-        {{hash=712a3285720ae66509aca66794715a3b}{Aboulhamid}{A\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-        {{hash=fa12d3b7c4ef995f80aa978eeeef9cae}{Baron}{B\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc}%
-      }
-      \strng{namehash}{3bf2cea13f7f6de9bce3f087b666efd8}
-      \strng{fullhash}{9033786148bb2cba1e67c8fe01e2315b}
-      \field{sortinit}{0}
-      \field{labeltitle}{Automating functional coverage analysis based on an executable specification}
-      \field{booktitle}{The 3rd {IEEE} International Workshop on System-on-Chip for Real-Time Applications, 2003. Proceedings.}
-      \field{title}{Automating functional coverage analysis based on an executable specification}
-      \field{year}{2003}
-      \verb{doi}
-      \verb 10.1109/iwsoc.2003.1213040
-      \endverb
-    \endentry
-    \entry{crv1}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=6734ec2bda645e6dae68e01444565c85}{Gopani}{G\bibinitperiod}{Ankit}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=6734ec2bda645e6dae68e01444565c85}{Gopani}{G\bibinitperiod}{Ankit}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{6734ec2bda645e6dae68e01444565c85}
-      \strng{fullhash}{6734ec2bda645e6dae68e01444565c85}
-      \field{sortinit}{0}
-      \field{labeltitle}{Importance of Constrained Random Verification Approach}
-      \field{title}{Importance of Constrained Random Verification Approach}
-      \field{urlday}{20}
-      \field{urlmonth}{12}
-      \field{urlyear}{2014}
-      \field{year}{2012}
-      \verb{url}
-      \verb http://asicwithankit.blogspot.be/2012/04/importance-of-constrain-random.html
-      \endverb
-    \endentry
-    \entry{crv2}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=25c5f2d8b0091ac18a8a2d05291fc199}{Kitchen}{K\bibinitperiod}{Nathan}{N\bibinitperiod}{}{}{}{}}%
-        {{hash=18eb9decd7ff485393823b2d9f3228bf}{Kuehlmann}{K\bibinitperiod}{Andreas}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=25c5f2d8b0091ac18a8a2d05291fc199}{Kitchen}{K\bibinitperiod}{Nathan}{N\bibinitperiod}{}{}{}{}}%
-        {{hash=18eb9decd7ff485393823b2d9f3228bf}{Kuehlmann}{K\bibinitperiod}{Andreas}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{4233484e6e84878c66850c222d1d54e7}
-      \strng{fullhash}{4233484e6e84878c66850c222d1d54e7}
-      \field{sortinit}{0}
-      \field{labeltitle}{Stimulus generation for constrained random simulation}
-      \field{booktitle}{2007 {IEEE}/{ACM} International Conference on Computer-Aided Design}
-      \field{month}{11}
-      \field{title}{Stimulus generation for constrained random simulation}
-      \field{year}{2007}
-      \verb{doi}
-      \verb 10.1109/iccad.2007.4397275
-      \endverb
-    \endentry
-    \entry{formal}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=fa3ed11758946d80ae6480004e808321}{Deharbe}{D\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=b98e5e84b2b1668275ed29af333dc10d}{Shankar}{S\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=9ecf9f892f2d463b515e488c6763051c}{Clarke}{C\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=fa3ed11758946d80ae6480004e808321}{Deharbe}{D\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=b98e5e84b2b1668275ed29af333dc10d}{Shankar}{S\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=9ecf9f892f2d463b515e488c6763051c}{Clarke}{C\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Comput. Soc}%
-      }
-      \strng{namehash}{13cb43d5d2555384b8c402b999aaa6fb}
-      \strng{fullhash}{13cb43d5d2555384b8c402b999aaa6fb}
-      \field{sortinit}{0}
-      \field{labeltitle}{Formal verification of {VHDL}: the model checker {CV}}
-      \field{booktitle}{Proceedings. {XI} Brazilian Symposium on Integrated Circuit Design (Cat. No.98EX216)}
-      \field{title}{Formal verification of {VHDL}: the model checker {CV}}
-      \field{year}{1998}
-      \verb{doi}
-      \verb 10.1109/sbcci.1998.715418
-      \endverb
-    \endentry
-    \entry{ActiveHDL}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=ac3d8ed6c68dd5474508d864bccfaad7}{Inc.}{I\bibinitperiod}{Aldec}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=ac3d8ed6c68dd5474508d864bccfaad7}{Inc.}{I\bibinitperiod}{Aldec}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{ac3d8ed6c68dd5474508d864bccfaad7}
-      \strng{fullhash}{ac3d8ed6c68dd5474508d864bccfaad7}
-      \field{sortinit}{0}
-      \field{labeltitle}{Active-HDL Configurations}
-      \field{title}{Active-HDL Configurations}
-      \field{urlday}{19}
-      \field{urlmonth}{12}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb https://www.aldec.com/en/products/fpga_simulation/active-hdl
-      \endverb
-    \endentry
-    \entry{Cadence}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=bce431d01a4df1bf31ba7787331ad1dc}{Cadence}{C\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=bce431d01a4df1bf31ba7787331ad1dc}{Cadence}{C\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{bce431d01a4df1bf31ba7787331ad1dc}
-      \strng{fullhash}{bce431d01a4df1bf31ba7787331ad1dc}
-      \field{sortinit}{0}
-      \field{labeltitle}{Incisive Enterprise Simulator}
-      \field{title}{Incisive Enterprise Simulator}
-      \field{urlday}{19}
-      \field{urlmonth}{12}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://www.cadence.com/products/fv/enterprise_simulator/pages/default.aspx
-      \endverb
-    \endentry
-    \entry{ISE}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=f872201c6db9bf2620dc262ba42d2271}{Xilinx}{X\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=f872201c6db9bf2620dc262ba42d2271}{Xilinx}{X\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{f872201c6db9bf2620dc262ba42d2271}
-      \strng{fullhash}{f872201c6db9bf2620dc262ba42d2271}
-      \field{sortinit}{0}
-      \field{labeltitle}{Vivado Synthesis}
-      \field{title}{Vivado Synthesis}
-      \field{urlday}{19}
-      \field{urlmonth}{12}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://www.xilinx.com/support/answers/62005.html
-      \endverb
-    \endentry
-    \entry{Quartus}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{feb14148e4ce243ab58a4f11cd231ab9}
-      \strng{fullhash}{feb14148e4ce243ab58a4f11cd231ab9}
-      \field{sortinit}{0}
-      \field{labeltitle}{Quartus II support for VHDL 2008}
-      \field{title}{Quartus II support for VHDL 2008}
-      \field{urlday}{19}
-      \field{urlmonth}{12}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://quartushelp.altera.com/14.1/master.htm#mergedProjects/hdl/vhdl/vhdl_list_2008_vhdl_support.htm?GSA_pos=1&WT.oss_r=1&WT.oss=vhdl%202008
-      \endverb
-    \endentry
-    \entry{ModelSim}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=feb14148e4ce243ab58a4f11cd231ab9}{Altera}{A\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{feb14148e4ce243ab58a4f11cd231ab9}
-      \strng{fullhash}{feb14148e4ce243ab58a4f11cd231ab9}
-      \field{sortinit}{0}
-      \field{labeltitle}{ModelSim 10.0 release notes}
-      \field{title}{ModelSim 10.0 release notes}
-      \field{urlday}{19}
-      \field{urlmonth}{12}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://www.altera.com/download/os-support/release-notes_10.0c.txt
-      \endverb
-    \endentry
-    \entry{VHDLUnit}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
-      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
-      \field{sortinit}{0}
-      \field{labeltitle}{UnitTest}
-      \field{title}{UnitTest}
-      \field{urlday}{30}
-      \field{urlmonth}{06}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://martinfowler.com/bliki/UnitTest.html
-      \endverb
-    \endentry
-    \entry{agiletdd}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=230d6a1c679422b486dd2093104e7612}{Wambler}{W\bibinitperiod}{Scott}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=230d6a1c679422b486dd2093104e7612}{Wambler}{W\bibinitperiod}{Scott}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{230d6a1c679422b486dd2093104e7612}
-      \strng{fullhash}{230d6a1c679422b486dd2093104e7612}
-      \field{sortinit}{0}
-      \field{labeltitle}{Introduction to Test Driven Development (TDD)}
-      \field{title}{Introduction to Test Driven Development (TDD)}
-      \field{urlday}{14}
-      \field{urlmonth}{03}
-      \field{urlyear}{2014}
-      \field{year}{2002}
-      \verb{url}
-      \verb http://agiledata.org/essays/tdd.html
-      \endverb
-    \endentry
-    \entry{TDDinpractice}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=d3686808d5941e5aa359d0c66e8c0dc9}{Williams}{W\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
-        {{hash=43a97811952f1cb39044c702ab8df66e}{Sanchez}{S\bibinitperiod}{J.C.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=d3686808d5941e5aa359d0c66e8c0dc9}{Williams}{W\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
-        {{hash=43a97811952f1cb39044c702ab8df66e}{Sanchez}{S\bibinitperiod}{J.C.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=050de8e43a1ff48e640a02a259b4cc9e}{Maximilien}{M\bibinitperiod}{E.M.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {{IEEE} Computer Society}%
-      }
-      \strng{namehash}{9b3c1d9f2f1e57b67b39b54591e389a9}
-      \strng{fullhash}{9b3c1d9f2f1e57b67b39b54591e389a9}
-      \field{sortinit}{0}
-      \field{labeltitle}{On the Sustained Use of a Test-Driven Development Practice at IBM}
-      \field{booktitle}{{AGILE} 2007 Conference {(AGILE} 2007), 13-17 August 2007, Washington, DC, {USA}}
-      \field{isbn}{0-7695-2872-4}
-      \field{series}{AGILE '07}
-      \field{title}{On the Sustained Use of a Test-Driven Development Practice at IBM}
-      \field{year}{2007}
-      \field{pages}{6\bibrangedash 14}
-      \verb{doi}
-      \verb 10.1109/AGILE.2007.43
-      \endverb
-    \endentry
-    \entry{Siniaalto}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=ec60540f104c366402a1ade216fa9053}{Siniaalto}{S\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=643f27fd87bc989106865f2992b84fa8}{Abrahamsson}{A\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=ec60540f104c366402a1ade216fa9053}{Siniaalto}{S\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=643f27fd87bc989106865f2992b84fa8}{Abrahamsson}{A\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE Computer Society}%
-      }
-      \strng{namehash}{885caf2fd64c7de1bd8f3d4291670afa}
-      \strng{fullhash}{885caf2fd64c7de1bd8f3d4291670afa}
-      \field{sortinit}{0}
-      \field{labeltitle}{A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage}
-      \field{booktitle}{Proceedings of the First International Symposium on Empirical Software Engineering and Measurement}
-      \field{isbn}{0-7695-2886-4}
-      \field{series}{ESEM '07}
-      \field{title}{A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage}
-      \field{year}{2007}
-      \field{pages}{275\bibrangedash 284}
-      \verb{doi}
-      \verb 10.1109/ESEM.2007.2
-      \endverb
-    \endentry
-    \entry{BhatN06}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=5fbaf783b8140891257eba9f62176ec0}{Thirumalesh}{T\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
-        {{hash=cdc711a2fa255038778a399e556da46c}{Nachiappan}{N\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=5fbaf783b8140891257eba9f62176ec0}{Thirumalesh}{T\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
-        {{hash=cdc711a2fa255038778a399e556da46c}{Nachiappan}{N\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {ACM}%
-      }
-      \strng{namehash}{616279e0e5308872e5362eb1ab21def2}
-      \strng{fullhash}{616279e0e5308872e5362eb1ab21def2}
-      \field{sortinit}{0}
-      \field{labeltitle}{Evaluating the efficacy of test-driven development: industrial case studies}
-      \field{booktitle}{ISESE}
-      \field{isbn}{1-59593-218-6}
-      \field{title}{Evaluating the efficacy of test-driven development: industrial case studies}
-      \field{urlday}{23}
-      \field{urlmonth}{01}
-      \field{urlyear}{2007}
-      \field{year}{2006}
-      \field{pages}{356\bibrangedash 363}
-      \verb{doi}
-      \verb 10.1145/1159733.1159787
-      \endverb
-    \endentry
-    \entry{extremeunit}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=c1ca05ac724c94a216cce6ee20197f4b}{Wells}{W\bibinitperiod}{Don}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=c1ca05ac724c94a216cce6ee20197f4b}{Wells}{W\bibinitperiod}{Don}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{c1ca05ac724c94a216cce6ee20197f4b}
-      \strng{fullhash}{c1ca05ac724c94a216cce6ee20197f4b}
-      \field{sortinit}{0}
-      \field{labeltitle}{Code the Unit Test First}
-      \field{title}{Code the Unit Test First}
-      \field{urlday}{20}
-      \field{urlmonth}{03}
-      \field{urlyear}{2014}
-      \field{year}{2000}
-      \verb{url}
-      \verb http://www.extremeprogramming.org/rules/testfirst.html
-      \endverb
-    \endentry
-    \entry{refactoring}{inproceedings}{}
-      \name{labelname}{3}{}{%
-        {{hash=c2969289c79bfb5f2bd68129932f963b}{Liu}{L\bibinitperiod}{Hui}{H\bibinitperiod}{}{}{}{}}%
-        {{hash=a85dcf731e772b177341998a236d587a}{Gao}{G\bibinitperiod}{Yuan}{Y\bibinitperiod}{}{}{}{}}%
-        {{hash=faf6a68b5a508c48933315891d2a1394}{Niu}{N\bibinitperiod}{Zhendong}{Z\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{3}{}{%
-        {{hash=c2969289c79bfb5f2bd68129932f963b}{Liu}{L\bibinitperiod}{Hui}{H\bibinitperiod}{}{}{}{}}%
-        {{hash=a85dcf731e772b177341998a236d587a}{Gao}{G\bibinitperiod}{Yuan}{Y\bibinitperiod}{}{}{}{}}%
-        {{hash=faf6a68b5a508c48933315891d2a1394}{Niu}{N\bibinitperiod}{Zhendong}{Z\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{71cb539d01854c8686faa08f53014817}
-      \strng{fullhash}{71cb539d01854c8686faa08f53014817}
-      \field{sortinit}{0}
-      \field{labeltitle}{An Initial Study on Refactoring Tactics}
-      \field{booktitle}{2012 {IEEE} 36th Annual Computer Software and Applications Conference}
-      \field{month}{07}
-      \field{title}{An Initial Study on Refactoring Tactics}
-      \field{year}{2012}
-      \verb{doi}
-      \verb 10.1109/compsac.2012.31
-      \endverb
-    \endentry
-    \entry{ci1}{inproceedings}{}
-      \name{labelname}{2}{}{%
-        {{hash=674b3d57d78b59076a3092ccafb4f3cb}{Abdul}{A\bibinitperiod}{Fazreil\bibnamedelima Amreen}{F\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=3086c57fc28ca382ec39329669276623}{Fhang}{F\bibinitperiod}{Mensely\bibnamedelimb Cheah\bibnamedelima Siow}{M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=674b3d57d78b59076a3092ccafb4f3cb}{Abdul}{A\bibinitperiod}{Fazreil\bibnamedelima Amreen}{F\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=3086c57fc28ca382ec39329669276623}{Fhang}{F\bibinitperiod}{Mensely\bibnamedelimb Cheah\bibnamedelima Siow}{M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
-      \strng{fullhash}{d8d36bd9a1f63e79046aa6cb53e54eb9}
-      \field{sortinit}{0}
-      \field{labeltitle}{Implementing Continuous Integration towards rapid application development}
-      \field{booktitle}{2012 International Conference on Innovation Management and Technology Research}
-      \field{month}{05}
-      \field{title}{Implementing Continuous Integration towards rapid application development}
-      \field{year}{2012}
-      \verb{doi}
-      \verb 10.1109/icimtr.2012.6236372
-      \endverb
-    \endentry
-    \entry{ci2}{inproceedings}{}
-      \name{labelname}{4}{}{%
-        {{hash=c51a10c955cbc7b1a58ef1c58d2a9fed}{Hill}{H\bibinitperiod}{James\bibnamedelima H.}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{hash=569abfe029e25edab40ab82439dbf434}{Schmidt}{S\bibinitperiod}{Douglas\bibnamedelima C.}{D\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=0584b5c38ba4cfe46031e8c3605a720c}{Porter}{P\bibinitperiod}{Adam\bibnamedelima A.}{A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=518d816aac79d8d0ed463a3053ceccf7}{Slaby}{S\bibinitperiod}{John\bibnamedelima M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{4}{}{%
-        {{hash=c51a10c955cbc7b1a58ef1c58d2a9fed}{Hill}{H\bibinitperiod}{James\bibnamedelima H.}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{hash=569abfe029e25edab40ab82439dbf434}{Schmidt}{S\bibinitperiod}{Douglas\bibnamedelima C.}{D\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=0584b5c38ba4cfe46031e8c3605a720c}{Porter}{P\bibinitperiod}{Adam\bibnamedelima A.}{A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=518d816aac79d8d0ed463a3053ceccf7}{Slaby}{S\bibinitperiod}{John\bibnamedelima M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{c85e660b661f6958b05674dbaadb18ab}
-      \strng{fullhash}{dff4fff578eff3552d628cb7799afd8d}
-      \field{sortinit}{0}
-      \field{labeltitle}{{CiCUTS}: Combining System Execution Modeling Tools with Continuous Integration Environments}
-      \field{booktitle}{15th Annual {IEEE} International Conference and Workshop on the Engineering of Computer Based Systems (ecbs 2008)}
-      \field{month}{03}
-      \field{title}{{CiCUTS}: Combining System Execution Modeling Tools with Continuous Integration Environments}
-      \field{year}{2008}
-      \verb{doi}
-      \verb 10.1109/ecbs.2008.20
-      \endverb
-    \endentry
-    \entry{ci3}{inproceedings}{}
-      \name{labelname}{1}{}{%
-        {{hash=53b6bd5470779fc382c11ac47e6864d2}{Stolberg}{S\bibinitperiod}{Sean}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=53b6bd5470779fc382c11ac47e6864d2}{Stolberg}{S\bibinitperiod}{Sean}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{53b6bd5470779fc382c11ac47e6864d2}
-      \strng{fullhash}{53b6bd5470779fc382c11ac47e6864d2}
-      \field{sortinit}{0}
-      \field{labeltitle}{Enabling Agile Testing through Continuous Integration}
-      \field{booktitle}{2009 Agile Conference}
-      \field{month}{08}
-      \field{title}{Enabling Agile Testing through Continuous Integration}
-      \field{year}{2009}
-      \verb{doi}
-      \verb 10.1109/agile.2009.16
-      \endverb
-    \endentry
-    \entry{xunit2}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=312ac886938a9b2be4f8eb607567fe4c}{Fowler}{F\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
-      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
-      \field{sortinit}{0}
-      \field{labeltitle}{Xunit}
-      \field{title}{Xunit}
-      \field{urlday}{02}
-      \field{urlmonth}{06}
-      \field{urlyear}{2014}
-      \verb{url}
-      \verb http://www.martinfowler.com/bliki/Xunit.html
-      \endverb
-    \endentry
-    \entry{xunit}{inproceedings}{}
-      \name{labelname}{5}{}{%
-        {{hash=111397407a76a2ab1031df7163bdfabc}{Kivi}{K\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=759d24648e81313a84406b84d0e36b32}{Haydon}{H\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=aa748277d720ac18c1c9383a133ce319}{Hayes}{H\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=8c6eba904b09ba6acf88313287a049e1}{Schneider}{S\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=615364429460b16557e3e55dee8c7557}{Succi}{S\bibinitperiod}{G.}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{5}{}{%
-        {{hash=111397407a76a2ab1031df7163bdfabc}{Kivi}{K\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=759d24648e81313a84406b84d0e36b32}{Haydon}{H\bibinitperiod}{D.}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=aa748277d720ac18c1c9383a133ce319}{Hayes}{H\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=8c6eba904b09ba6acf88313287a049e1}{Schneider}{S\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{hash=615364429460b16557e3e55dee8c7557}{Succi}{S\bibinitperiod}{G.}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{efc9a341ea67a15c6cb035ec9714322d}
-      \strng{fullhash}{0936c34a9f64f70b5fddcddc307f052d}
-      \field{sortinit}{0}
-      \field{labeltitle}{Extreme programming: a university team design experience}
-      \field{booktitle}{Canadian Conference on Electrical and Computer Engineering}
-      \field{isbn}{0-7803-5957-7}
-      \field{series}{CCECE '00}
-      \field{title}{Extreme programming: a university team design experience}
-      \field{year}{2000}
-      \field{pages}{816\bibrangedash 820}
-      \verb{doi}
-      \verb 10.1109/CCECE.2000.849579
-      \endverb
-    \endentry
-    \entry{junitxml}{online}{}
-      \name{labelname}{1}{}{%
-        {{hash=817c1fb2234a6a8c7449a1484e7a892b}{Beyer}{B\bibinitperiod}{Brian}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=817c1fb2234a6a8c7449a1484e7a892b}{Beyer}{B\bibinitperiod}{Brian}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{817c1fb2234a6a8c7449a1484e7a892b}
-      \strng{fullhash}{817c1fb2234a6a8c7449a1484e7a892b}
-      \field{sortinit}{0}
-      \field{labeltitle}{Python JUnit XML}
-      \field{title}{Python JUnit XML}
-      \field{urlday}{07}
-      \field{urlmonth}{05}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb https://pypi.python.org/pypi/junit-xml/1.3
-      \endverb
-    \endentry
-    \entry{junit}{online}{}
-      \field{sortinit}{0}
-      \field{labeltitle}{JUnit}
-      \field{title}{JUnit}
-      \field{urlday}{25}
-      \field{urlmonth}{07}
-      \field{urlyear}{2014}
-      \verb{url}
-      \verb http://JUnit.org
-      \endverb
-    \endentry
-    \entry{python1}{online}{}
-      \field{sortinit}{0}
-      \field{labeltitle}{Python}
-      \field{title}{Python}
-      \field{urlday}{28}
-      \field{urlmonth}{12}
-      \field{urlyear}{2014}
-      \verb{url}
-      \verb https://www.python.org/
-      \endverb
-    \endentry
-    \entry{setuptools}{online}{}
-      \name{labelname}{2}{}{%
-        {{hash=8b4ba0e6aa896caa9e658caf32dd3859}{Coombs}{C\bibinitperiod}{Jason\bibnamedelima R.}{J\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-        {{hash=6b43a6ad96ee8c2181887c641c87a7e6}{Eby}{E\bibinitperiod}{Phillip\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{2}{}{%
-        {{hash=8b4ba0e6aa896caa9e658caf32dd3859}{Coombs}{C\bibinitperiod}{Jason\bibnamedelima R.}{J\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-        {{hash=6b43a6ad96ee8c2181887c641c87a7e6}{Eby}{E\bibinitperiod}{Phillip\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{09e1a70e9fff91274bc214da331f9e33}
-      \strng{fullhash}{09e1a70e9fff91274bc214da331f9e33}
-      \field{sortinit}{0}
-      \field{labeltitle}{setuptools}
-      \field{title}{setuptools}
-      \field{urlday}{07}
-      \field{urlmonth}{05}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb https://pypi.python.org/pypi/setuptools
-      \endverb
-    \endentry
-    \entry{hudson}{online}{}
-      \field{sortinit}{0}
-      \field{labeltitle}{Hudson-CI}
-      \field{title}{Hudson-CI}
-      \field{urlday}{25}
-      \field{urlmonth}{05}
-      \field{urlyear}{2014}
-      \field{year}{2014}
-      \verb{url}
-      \verb http://hudson-ci.org/
-      \endverb
-    \endentry
-    \entry{bitvis}{online}{}
-      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
       \field{labeltitle}{Bitvis Utility Library}
       \field{title}{Bitvis Utility Library}
       \field{urlday}{25}

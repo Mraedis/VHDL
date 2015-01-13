@@ -8,7 +8,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Introduction}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Hardware Description Languages}{2}
+\contentsline {subsection}{\numberline {2.1}Hardware description languages}{2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Current industry practices}{4}
 \defcounter {refsection}{0}\relax 
@@ -18,15 +18,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3}Coverage}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Code Coverage}{5}
+\contentsline {subsubsection}{\numberline {3.3.1}Code coverage}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2}Functional Coverage}{5}
+\contentsline {subsubsection}{\numberline {3.3.2}Functional coverage}{5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4}Verification}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.4.1}Constrained Random Verification}{5}
+\contentsline {subsubsection}{\numberline {3.4.1}Constrained random verification}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.4.2}Formal Verification}{5}
+\contentsline {subsubsection}{\numberline {3.4.2}Formal verification}{5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5}Simulation tools}{5}
 \defcounter {refsection}{0}\relax 
@@ -34,23 +34,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Software development practices}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Test-Driven Development}{7}
+\contentsline {subsection}{\numberline {4.1}Test-driven development}{7}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.1.1}Unit testing}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.2}Test First Development}{7}
+\contentsline {subsubsection}{\numberline {4.1.2}Test first development}{7}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.1.3}Refactoring}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.4}Test-Driven Development}{8}
+\contentsline {subsubsection}{\numberline {4.1.4}Test-driven development}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Continuous Integration}{8}
+\contentsline {subsection}{\numberline {4.2}Continuous integration}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.1}Revision Control}{8}
+\contentsline {subsubsection}{\numberline {4.2.1}Revision control}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.2}Build Automation}{8}
+\contentsline {subsubsection}{\numberline {4.2.2}Build automation}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.3}Test Automation}{9}
+\contentsline {subsubsection}{\numberline {4.2.3}Test automation}{9}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}xUnit}{9}
 \defcounter {refsection}{0}\relax 
