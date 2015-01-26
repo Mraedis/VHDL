@@ -1,0 +1,423 @@
+\documentclass[british,10pt]{beamer}
+\usepackage{pifont}
+\usepackage{listings}
+
+% Beamer specific settings
+
+% Other styles can be used instead of Boadilla, e.g., to add an index column.
+\mode<presentation>
+{
+  \usetheme{Boadilla} % Without index, with footer
+}
+
+\title{Building a better VHDL testing environment}
+\author[J. Guillaume]{Joren Guillaume}
+\date[JAN'15, Gent]{Thesis presentation}
+\institute[Ghent University]
+{
+  FEA\\
+  Ghent University
+}
+
+% This command makes the logo appear at the right side which does not fit
+% the UGent style. A solution is found further below.
+% \logo{\includegraphics[scale=0.25]{logolabel.jpg}}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>\frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\setbeamersize{text margin left=1cm}
+\setbeamersize{text margin right=1cm}
+
+\begin{document}
+
+
+% Titlepage containing the logo of the Faculty (Engineering in this example)
+\begin{frame}[plain]
+\mode<presentation>{\includegraphics[width=\textwidth]{tw.pdf}}
+  \titlepage
+\end{frame}
+
+
+% UGent logo at left side from second slide on.
+\setbeamertemplate{sidebar left}{ 
+\vfill 
+\rlap{%\hskip0.1cm 
+ \includegraphics[scale=0.3]{logolabel2.jpg} } 
+\vskip20pt 
+}
+
+\begin{frame}<beamer>\frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\subsection{VHDL}
+
+\begin{frame}\frametitle{VHDL}
+VHDL
+\begin{itemize}
+\item VHSIC Hardware Description Language
+\item Used for describing digital and mixed-signal systems 
+\item Developed by U.S. Department of Defense
+\begin{itemize}
+\item Document \ding{222} Simulate \ding{222} Synthesize
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Testing VHDL}
+
+\begin{frame}\frametitle{Testing VHDL}
+\begin{columns}
+\begin{column}{0.05\textwidth}
+\end{column}
+\begin{column}{0.55\textwidth}
+Test benches
+\begin{itemize}
+\item Unit Under Test (UUT)
+\item Drivers, processes \& stimuli
+\item Assertions and output tracking
+\begin{itemize}
+\item Comparison to desired result
+\begin{itemize}
+\item Manual or automated
+\end{itemize}
+\item Wave-check
+\end{itemize}
+\end{itemize}
+Coverage reports
+\begin{itemize}
+\item Functional coverage
+\item Code coverage
+\end{itemize}
+\vspace{0.25cm}
+Problems
+\begin{itemize}
+\item Non-standardized process
+\item Single point of failure
+\end{itemize}
+\end{column}
+\column{0.4\textwidth}
+\raggedleft
+\includegraphics[width=\textwidth]{images/TB.pdf}
+\end{columns}
+\end{frame}
+
+%\begin{frame}\frametitle{VHDL - design flow}
+%\includegraphics[width=\textwidth]{images/designflow2.pdf}
+%\end{frame}
+
+\begin{frame}[fragile]\frametitle{Testing VHDL - assertions example }
+D-flipflop
+\begin{itemize}
+\item d: delay, input
+\item q: output
+\end{itemize}
+\centering
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
+	...
+		assert q = '0'
+			report "Wrong output value at startup" severity FAILURE;
+		d <= '1';
+     	WAIT FOR clk_period;
+     	assert q = '1'
+			report "Wrong output value at first test" severity FAILURE;
+	...
+\end{lstlisting}
+\end{frame}
+
+\subsection{Software development techniques}
+
+%\begin{frame}\frametitle{Unit testing}
+%Unit testing
+%\begin{itemize}
+%\item Unit: smallest behaviour in code
+%\item Unit test: Tests that behaviour
+%\item Test success/failure \ding{222} excellent locator
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}\frametitle{Software development techniques}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+Unit testing
+\begin{itemize}
+\item Unit = smallest behaviour in code
+\item Test failure \ding{222} exact location
+\end{itemize}
+\vskip3pt
+Test First Development
+\begin{itemize}
+\item Create unit test before the code
+\item Work from how the code will behave
+\end{itemize}
+\vskip3pt
+Test Driven Development
+\begin{itemize}
+\item TFD \& short development cycle
+\item All behaviour is tested
+\item Proven to significantly reduce errors
+\end{itemize}
+\end{column}
+\column{0.4\textwidth}
+\includegraphics[width=\textwidth]{images/tdd.pdf}
+\end{columns}
+\end{frame}
+
+%\begin{frame}\frametitle{Unit testing}
+%Unit testing
+%\begin{itemize}
+%\item Unit: smallest behaviour in code
+%\item Unit test: Tests that behaviour
+%\item Test success/failure \ding{222} excellent locator
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}\frametitle{Test Driven Development}
+%\begin{columns}
+%\begin{column}{0.6\textwidth}
+%Test Driven Development
+%\begin{itemize}
+%\item Software development technique
+%\item Proven to significantly reduce errors
+%\item All behaviour is tested
+%\item Unit testing \& short development cycle
+%\item Red - Green - Refactor
+%\end{itemize}
+%\end{column}
+%\column{0.4\textwidth}
+%\includegraphics[width=\textwidth]{images/tdd.pdf}
+%\end{columns}
+%\end{frame}
+
+%\begin{frame}\frametitle{TDD - design flow}
+%\includegraphics[width=\textwidth]{images/TDDflow2.pdf}
+%\end{frame}
+
+\section{Proposed solution}
+
+\subsection{VHDL testing Framework}
+
+\begin{frame}\frametitle{VHDL testing framework}
+Standardized testing framework
+\begin{itemize}
+\item Based on previously mentioned software techniques
+\item Cross platform
+\item At the core: Python script
+\item Utility library
+\item Continuous Integration (CI) systemn
+\end{itemize}
+\end{frame}
+
+\subsection{Utility library}
+
+\begin{frame}\frametitle{Utility library}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+Bitvis utility library
+\begin{itemize}
+\item Compatible with all VHDL versions
+\item Expands VHDL functions
+\begin{itemize}
+\item Easy value checking
+\item String handling \& random generation
+\item Formatted \& automated console output
+\end{itemize}
+\item Quick \& uniform coding
+\end{itemize}
+\end{column}
+\column{0.4\textwidth}
+\includegraphics[width=0.8\textwidth]{images/bitvis.png}
+\end{columns}
+\end{frame}
+
+\subsection{Continuous Integration}
+
+\begin{frame}\frametitle{Continuous Integration}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+Hudson-CI
+\begin{itemize}
+\item Centralized, automated testing
+\item Revision control integration (e.g. Git)
+\item Very customizable (many modules)
+\item Displays statistics
+\item Standardized test reports (JUnit)
+\end{itemize}
+\end{column}
+\column{0.5\textwidth}
+\includegraphics[width=0.6\textwidth]{images/hudson.png}
+\end{columns}
+\end{frame}
+
+\subsection{Python script}
+
+\begin{frame}\frametitle{Python script}
+Features
+\begin{itemize}
+\item Customizable process
+\begin{itemize}
+\item Command-line arguments
+\item Multiple supported methods
+\end{itemize}
+\item Multiple useful outputs
+\begin{itemize}
+\item ModelSim simulation output
+\item processed text-based report
+\item processed XML (JUnit) report
+\end{itemize}
+\item Automated clean up
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}\frametitle{Script workflow}
+Specialized python script
+\includegraphics[width=\textwidth]{images/parserwork.pdf}
+\end{frame}
+\subsection{Using the framework}
+
+
+\begin{frame}\frametitle{Preparing the test bench}
+Preparing the test bench:
+\begin{enumerate}
+\item Import the utility library
+\item Decide on separation method
+\begin{itemize}
+\item Line by line \ding{222} No editing test bench
+\item Start/Stop
+\item Partitioned (recommended)
+\end{itemize}
+\item Sort tests into groups accordingly
+\item Create dependencies file if needed
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{Modified test bench example}
+Old test bench:
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
+	...
+		assert q = '0'
+			report "Wrong output value at startup" severity FAILURE;
+		d <= '1';
+     	WAIT FOR clk_period;
+     	assert q = '1'
+			report "Wrong output value at first test" severity FAILURE;
+	...
+\end{lstlisting}
+\vskip1pt
+Modified test bench:
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
+	...
+		--Test 1
+		check_value(q = '0', FAILURE, "Wrong output value at startup");
+		write(d, '1', "DFF");
+		check_value(q = '1', FAILURE, "Wrong output value at first test");
+		...
+		--End 1
+	...
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Running the job}
+Running the job:
+\begin{enumerate}
+\item Create new job at Hudson-CI 
+\item Optional: set for import from revision control source
+\item Set correct parser flags
+\item Set for timed or manual build
+\item Build \& check results
+\end{enumerate}
+\vskip5pt
+\begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
+python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
+\end{lstlisting}
+\end{frame}
+
+%\begin{frame}[fragile]\frametitle{Job example}
+%\begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
+%$ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
+%\end{lstlisting}
+%\end{frame}
+
+
+%\begin{frame}\frametitle{Framework design flow}
+%\centering
+%\includegraphics[width=\textwidth]{images/parserwork.pdf}
+%\end{frame}
+
+\section{Concluding}
+
+\subsection{Results}
+\begin{frame}\frametitle{Results}
+\begin{itemize}
+\item Multiple open-source projects converted
+\item Tested with Git, Hudson-CI \& Bitvis
+\end{itemize}
+\medskip
+{\centering
+\includegraphics[width=\textwidth]{images/jobs.png}}
+\\\hskip10pt\ding{222} Successful runs where code faultless
+\\\hskip10pt\ding{222} Partially completed test-runs even with severe errors
+\\\hskip10pt\ding{222} Unsuccessful runs only due to code faults\\
+\end{frame}
+
+%\item Code duplication increases compile \& simulation time
+
+\subsection{Commentaries on developing VHDL}
+\begin{frame}\frametitle{Commentaries on developing VHDL}
+\begin{itemize}
+\item An industry stuck in 1993
+\begin{itemize}
+\item Outdated practices
+\item "Don't fix what isn't broken"
+\end{itemize}
+\item Hardware engineers are not software developers
+\begin{itemize}
+\item No software development experience
+\item No fresh ideas: taught by seniors
+\end{itemize}
+\item VHDL has no reflection or introspection
+\begin{itemize}
+\item Could make test benches even more compact
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Future work}
+
+\begin{frame}\frametitle{Future work}
+\begin{itemize}
+\item Wider tool support
+\begin{itemize}
+\item Extensive support for current tool (ModelSim)
+\item Greater variety of tools 
+\end{itemize}
+\item Lexical analysis
+\begin{itemize}
+\item Full code analysis
+\item Smart test bench generation
+\item Automated partitioning
+\end{itemize}
+\item Adapted CI tool
+\begin{itemize}
+\item Specific needs of VHDL development
+\item Integration with coverage
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Demo}
+
+\begin{frame}\frametitle{Demo}
+\centering
+\Huge Demo
+\end{frame}
+
+\end{document}
