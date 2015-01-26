@@ -84,22 +84,16 @@ Test benches
 \item Assertions and output tracking
 \begin{itemize}
 \item Comparison to desired result
-\begin{itemize}
-\item Manual or automated
-\end{itemize}
+\\(Manual or automated)
 \item Wave-check
 \end{itemize}
-\end{itemize}
-Coverage reports
-\begin{itemize}
-\item Functional coverage
-\item Code coverage
 \end{itemize}
 \vspace{0.25cm}
 Problems
 \begin{itemize}
 \item Non-standardized process
 \item Single point of failure
+\item Time consuming
 \end{itemize}
 \end{column}
 \column{0.4\textwidth}
@@ -112,24 +106,24 @@ Problems
 %\includegraphics[width=\textwidth]{images/designflow2.pdf}
 %\end{frame}
 
-\begin{frame}[fragile]\frametitle{Testing VHDL - assertions example }
-D-flipflop
-\begin{itemize}
-\item d: delay, input
-\item q: output
-\end{itemize}
-\centering
-\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
-	...
-		assert q = '0'
-			report "Wrong output value at startup" severity FAILURE;
-		d <= '1';
-     	WAIT FOR clk_period;
-     	assert q = '1'
-			report "Wrong output value at first test" severity FAILURE;
-	...
-\end{lstlisting}
-\end{frame}
+%\begin{frame}[fragile]\frametitle{Testing VHDL - assertions example }
+%D-flipflop
+%\begin{itemize}
+%\item d: delay, input
+%\item q: output
+%\end{itemize}
+%\centering
+%\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
+%	...
+%		assert q = '0'
+%			report "Wrong output value at startup" severity FAILURE;
+%		d <= '1';
+%     	WAIT FOR clk_period;
+%     	assert q = '1'
+%			report "Wrong output value at first test" severity FAILURE;
+%	...
+%\end{lstlisting}
+%\end{frame}
 
 \subsection{Software development techniques}
 
@@ -153,14 +147,13 @@ Unit testing
 \vskip3pt
 Test First Development
 \begin{itemize}
-\item Create unit test before the code
+\item Create test before the code
 \item Work from how the code will behave
 \end{itemize}
 \vskip3pt
 Test Driven Development
 \begin{itemize}
 \item TFD \& short development cycle
-\item All behaviour is tested
 \item Proven to significantly reduce errors
 \end{itemize}
 \end{column}
@@ -210,7 +203,7 @@ Standardized testing framework
 \item Cross platform
 \item At the core: Python script
 \item Utility library
-\item Continuous Integration (CI) systemn
+\item Continuous Integration (CI) system
 \end{itemize}
 \end{frame}
 
@@ -226,9 +219,13 @@ Bitvis utility library
 \begin{itemize}
 \item Easy value checking
 \item String handling \& random generation
-\item Formatted \& automated console output
+\item Formatted output
 \end{itemize}
 \item Quick \& uniform coding
+\begin{itemize}
+\item Reduces time spent coding
+\item Improves readability
+\end{itemize}
 \end{itemize}
 \end{column}
 \column{0.4\textwidth}
@@ -246,8 +243,8 @@ Hudson-CI
 \item Centralized, automated testing
 \item Revision control integration (e.g. Git)
 \item Very customizable (many modules)
+\item Standardized test reports (XML)
 \item Displays statistics
-\item Standardized test reports (JUnit)
 \end{itemize}
 \end{column}
 \column{0.5\textwidth}
@@ -260,28 +257,23 @@ Hudson-CI
 \begin{frame}\frametitle{Python script}
 Features
 \begin{itemize}
+\item Test bench parser
 \item Customizable process
 \begin{itemize}
 \item Command-line arguments
-\item Multiple supported methods
+%\item Multiple supported methods
 \end{itemize}
 \item Multiple useful outputs
 \begin{itemize}
-\item ModelSim simulation output
-\item processed text-based report
-\item processed XML (JUnit) report
+\item Processed text-based report
+\item Processed XML report
+\item Unmodified console output
 \end{itemize}
-\item Automated clean up
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}\frametitle{Script workflow}
-Specialized python script
-\includegraphics[width=\textwidth]{images/parserwork.pdf}
-\end{frame}
 \subsection{Using the framework}
-
 
 \begin{frame}\frametitle{Preparing the test bench}
 Preparing the test bench:
@@ -293,8 +285,7 @@ Preparing the test bench:
 \item Start/Stop
 \item Partitioned (recommended)
 \end{itemize}
-\item Sort tests into groups accordingly
-\item Create dependencies file if needed
+\item Create command file if needed
 \end{enumerate}
 \end{frame}
 
@@ -325,19 +316,27 @@ Modified test bench:
 \end{lstlisting}
 \end{frame}
 
+
 \begin{frame}[fragile]\frametitle{Running the job}
 Running the job:
 \begin{enumerate}
 \item Create new job at Hudson-CI 
 \item Optional: set for import from revision control source
-\item Set correct parser flags
-\item Set for timed or manual build
+\item Set correct parser flags in shell command
 \item Build \& check results
 \end{enumerate}
 \vskip5pt
 \begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
 python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}\frametitle{Script workflow}
+Specialized python script
+\includegraphics[width=\textwidth]{images/parserwork.pdf}
+\newline{}
+Steps of the parser are logged separately
 \end{frame}
 
 %\begin{frame}[fragile]\frametitle{Job example}
@@ -363,34 +362,14 @@ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 \medskip
 {\centering
 \includegraphics[width=\textwidth]{images/jobs.png}}
-\\\hskip10pt\ding{222} Successful runs where code faultless
-\\\hskip10pt\ding{222} Partially completed test-runs even with severe errors
-\\\hskip10pt\ding{222} Unsuccessful runs only due to code faults\\
+\\\hskip10pt\ding{222} Successful runs when VHDL code OK
+\\\hskip10pt\ding{222} Partially completed test-runs even with faults in code
+\\\hskip10pt\ding{222} Unsuccessful runs only due to compilation errors\\
 \end{frame}
 
 %\item Code duplication increases compile \& simulation time
 
-\subsection{Commentaries on developing VHDL}
-\begin{frame}\frametitle{Commentaries on developing VHDL}
-\begin{itemize}
-\item An industry stuck in 1993
-\begin{itemize}
-\item Outdated practices
-\item "Don't fix what isn't broken"
-\end{itemize}
-\item Hardware engineers are not software developers
-\begin{itemize}
-\item No software development experience
-\item No fresh ideas: taught by seniors
-\end{itemize}
-\item VHDL has no reflection or introspection
-\begin{itemize}
-\item Could make test benches even more compact
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\subsection{Future work}
+\subsection{Future work and commentaries}
 
 \begin{frame}\frametitle{Future work}
 \begin{itemize}
@@ -407,8 +386,45 @@ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 \end{itemize}
 \item Adapted CI tool
 \begin{itemize}
-\item Specific needs of VHDL development
-\item Integration with coverage
+\item Specific needs of hardware development
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}\frametitle{Commentaries on developing VHDL}
+\begin{itemize}
+\item Outdated practices
+\begin{itemize}
+\item An industry stuck in 1993
+\item "Don't fix what isn't broken"
+\end{itemize}
+\item Hardware engineers are not software developers
+\begin{itemize}
+\item Little to no software development experience
+\item Taught by seniors at work
+\end{itemize}
+\item VHDL has no reflection or introspection
+\begin{itemize}
+\item Could make test benches even more compact
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Conclusion}
+
+\begin{frame}\frametitle{Conclusion}
+\begin{itemize}
+\item Software methods are applicable to an extent if:
+\begin{itemize}
+\item Tailored to development needs
+\item Integrated with existing methods
+\end{itemize}
+\item Framework provided:
+\begin{itemize}
+\item Easier to read code
+\item Precise debugging information
+\item Faster development
 \end{itemize}
 \end{itemize}
 \end{frame}

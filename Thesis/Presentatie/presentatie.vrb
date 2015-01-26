@@ -3,8 +3,7 @@ Running the job:
 \begin{enumerate}
 \item Create new job at Hudson-CI
 \item Optional: set for import from revision control source
-\item Set correct parser flags
-\item Set for timed or manual build
+\item Set correct parser flags in shell command
 \item Build \& check results
 \end{enumerate}
 \vskip5pt
