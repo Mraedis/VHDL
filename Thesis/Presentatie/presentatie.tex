@@ -23,7 +23,7 @@
 % the UGent style. A solution is found further below.
 % \logo{\includegraphics[scale=0.25]{logolabel.jpg}}
 
-\AtBeginSubsection[]
+\AtBeginSection[]
 {
   \begin{frame}<beamer>\frametitle{Outline}
     \tableofcontents[currentsection,currentsubsection]
@@ -56,7 +56,7 @@
 \end{frame}
 
 \section{Situating}
-\subsection{Developing VHDL}
+\subsection{Testing VHDL}
 
 %\begin{frame}\frametitle{VHDL}
 %\begin{itemize}
@@ -100,11 +100,12 @@
 %\end{columns}
 %\end{frame}
 
-\begin{frame}\frametitle{Developing VHDL}
+\begin{frame}\frametitle{Testing VHDL}
 VHDL
 \begin{itemize}
 \item VHSIC Hardware Description Language
-\item Test benches
+\item Develop hardware
+\item Tested with test benches
 \begin{itemize}
 \item Output tracking
 \end{itemize}
@@ -123,11 +124,11 @@ Problems
 \begin{frame}\frametitle{Proposed solution}
 Standardized testing framework
 \begin{itemize}
-\item Based on software techniques
+\item Based on software development techniques
 \item Cross platform
-\item At the core: Python script
 \item Utility library
 \item Continuous Integration system
+\item At the core: Python script
 \end{itemize}
 \end{frame}
 
@@ -256,7 +257,11 @@ Bitvis utility library
 Hudson-CI
 \begin{itemize}
 \item Centralized, automated testing
-\item Revision control integration
+\begin{itemize}
+\item Revision control
+\item Timed building
+\end{itemize}
+\item Easy to read results
 \item Very customizable
 %\item Standardized test reports (XML)
 %\item Displays statistics
@@ -272,24 +277,33 @@ Hudson-CI
 \begin{frame}\frametitle{Python script}
 Test bench parser
 \begin{itemize}
-\item Customizable process
+\item Customizable
 \begin{itemize}
 \item Command-line arguments
 \end{itemize}
-\item Separates (groups of) independent tests
+\item Separates independent tests
+\begin{itemize}
+\item Remove single point of failure
+\end{itemize}
 \item Multiple useful outputs
 \begin{itemize}
 \item Processed text-based report
 \item Processed XML report
-\item Unmodified console output
 \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Script workflow}
+\includegraphics[width=\textwidth]{images/parserwork.pdf}
+\newline{}
+\centering(Steps of the parser logged separately)
 \end{frame}
 
 
 \subsection{Using the framework}
 
-\begin{frame}\frametitle{Preparing the test bench}
+\begin{frame}\frametitle{Using the framework}
+Preparing the test bench
 \begin{enumerate}
 \item Import the utility library
 \item Decide on separation method
@@ -304,7 +318,10 @@ Test bench parser
 
 
 \begin{frame}[fragile]\frametitle{Modified test bench example}
-Old test bench:
+D flip-flop
+\begin{itemize}
+\item Old test bench:
+\end{itemize}
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
 assert q = '0'
     report "Wrong output value at startup" severity FAILURE;
@@ -314,7 +331,9 @@ assert q = '1'
     report "Wrong output value at first test" severity FAILURE;
 \end{lstlisting}
 \vskip1pt
-Modified test bench:
+\begin{itemize}
+\item Modified test bench:
+\end{itemize}
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
 --Test 1
     check_value(q = '0', FAILURE, "Wrong output value at startup");
@@ -326,9 +345,10 @@ Modified test bench:
 \end{frame}
 
 
-\begin{frame}[fragile]\frametitle{Running the job}
+\begin{frame}[fragile]\frametitle{Using the framework}
+Running Hudson-CI
 \begin{enumerate}
-\item Create new job at Hudson-CI 
+\item Create new job
 \item Optional: set for import from revision control source
 \item Set correct parser flags in shell command
 \item Build \& check results
@@ -337,13 +357,6 @@ Modified test bench:
 \begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
 python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 \end{lstlisting}
-\end{frame}
-
-
-\begin{frame}\frametitle{Script workflow}
-\includegraphics[width=\textwidth]{images/parserwork.pdf}
-\newline{}
-\centering(Steps of the parser logged separately)
 \end{frame}
 
 %\begin{frame}[fragile]\frametitle{Job example}
@@ -364,17 +377,28 @@ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 \begin{frame}\frametitle{Results}
 \begin{itemize}
 \item Multiple open-source projects converted
-\item Tested with Git, Hudson-CI \& Bitvis
 \end{itemize}
 \medskip
 {\centering
 \includegraphics[width=\textwidth]{images/jobs.png}}
+\\\hskip10pt\ding{222} Bypassed single point of failure
+\\\hskip10pt\ding{222} Automated testing = faster development
 %\\\hskip10pt\ding{222} Successful runs when VHDL code OK
 %\\\hskip10pt\ding{222} Partially completed test-runs even with faults in code
 %\\\hskip10pt\ding{222} Unsuccessful runs only due to compilation errors\\
 \end{frame}
 
-%\item Code duplication increases compile \& simulation time
+
+%\begin{frame}\frametitle{Results}
+%{\centering
+%\includegraphics[width=.85\textwidth]{images/results1.png}}
+%\end{frame}
+%
+%\begin{frame}\frametitle{Results}
+%{\centering
+%\includegraphics[width=.85\textwidth]{images/results2.png}}
+%\end{frame}
+%%\item Code duplication increases compile \& simulation time
 
 \subsection{Future work}
 
@@ -393,6 +417,11 @@ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 \end{itemize}
 \end{frame}
 
+
+\begin{frame}\frametitle{Thanks for your attention}
+\centering
+\Huge Questions?
+\end{frame}
 
 %\begin{frame}\frametitle{Commentaries on developing VHDL}
 %\begin{itemize}
@@ -432,10 +461,10 @@ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 %\end{frame}
 
 \section{Demo}
-\begin{frame}<beamer>\frametitle{Outline}
-    \tableofcontents[currentsection,currentsubsection]
-\end{frame}
-  
+%\begin{frame}<beamer>\frametitle{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%\end{frame}
+%  
 \begin{frame}\frametitle{Demo}
 \centering
 \Huge Demo

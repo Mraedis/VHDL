@@ -1,6 +1,7 @@
-\frametitle{Running the job}
+\frametitle{Using the framework}
+Running Hudson-CI
 \begin{enumerate}
-\item Create new job at Hudson-CI
+\item Create new job
 \item Optional: set for import from revision control source
 \item Set correct parser flags in shell command
 \item Build \& check results
