@@ -1,6 +1,7 @@
 \documentclass[british,10pt]{beamer}
 \usepackage{pifont}
 \usepackage{listings}
+\usepackage{adjustbox} % for \adjincludegraphics
 
 % Beamer specific settings
 
@@ -56,62 +57,50 @@
 \end{frame}
 
 \section{Situating}
-\subsection{Testing VHDL}
-
-%\begin{frame}\frametitle{VHDL}
-%\begin{itemize}
-%\item VHSIC Hardware Description Language
-%\item Used for describing digital and mixed-signal systems 
-%\item Developed by U.S. Department of Defense
-%\begin{itemize}
-%\item Document \ding{222} Simulate \ding{222} Synthesize
-%\end{itemize}
-%\end{itemize}
-%\end{frame}
-%
-%\begin{frame}\frametitle{Testing VHDL}
-%\begin{columns}
-%\begin{column}{0.05\textwidth}
-%\end{column}
-%\begin{column}{0.55\textwidth}
-%Test benches
-%\begin{itemize}
-%\item Unit Under Test (UUT)
-%\item Signal coupling \& stimuli
-%\item Output tracking
-%\begin{itemize}
-%\item Assertions
-%\item Comparison to desired result
-%\\(Manual or automated)
-%\item Wave-check
-%\end{itemize}
-%\end{itemize}
-%%\vspace{0.25cm}
-%%Problems
-%%\begin{itemize}
-%%\item Non-standardized process
-%%\item Single point of failure
-%%\item Time consuming
-%%\end{itemize}
-%\end{column}
-%\column{0.4\textwidth}
-%\raggedleft
-%\includegraphics[width=\textwidth]{images/TB.pdf}
-%\end{columns}
-%\end{frame}
-
-\begin{frame}\frametitle{Testing VHDL}
-VHDL
+\subsection{VHDL}
+\begin{frame}\frametitle{VHDL}
 \begin{itemize}
 \item VHSIC Hardware Description Language
-\item Develop hardware
-\item Tested with test benches
+\item Used for describing digital and mixed-signal systems 
+\item Developed by U.S. Department of Defense
 \begin{itemize}
-\item Output tracking
+\item Document \ding{222} Simulate \ding{222} Synthesize
 \end{itemize}
 \end{itemize}
-\vskip5pt
-Problems
+\end{frame}
+
+\begin{frame}\frametitle{Testing VHDL}
+\begin{columns}
+\begin{column}{0.05\textwidth}
+\end{column}
+\begin{column}{0.55\textwidth}
+Test benches
+\begin{itemize}
+\item Unit Under Test (UUT)
+\item Apply stimuli
+\item Signal/output tracking
+\begin{itemize}
+\item Assertions
+\item Comparison to desired result
+\item Wave-check
+\end{itemize}
+\end{itemize}
+%\vspace{0.25cm}
+%Problems
+%\begin{itemize}
+%\item Non-standardized process
+%\item Single point of failure
+%\item Time consuming
+%\end{itemize}
+\end{column}
+\column{0.4\textwidth}
+\raggedleft
+\includegraphics[width=\textwidth]{images/TB.pdf}
+\end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Testing VHDL}
+Problems with testing
 \begin{itemize}
 \item Non-standardized process
 \item Single point of failure
@@ -132,12 +121,12 @@ Unit testing
 Test First Development
 \begin{itemize}
 \item Create test before the code
-\item How the code will behave?
+\item How will the code behave?
 \end{itemize}
 \vskip3pt
 Test Driven Development
 \begin{itemize}
-\item TFD \& short development cycle
+\item TFD \& refactoring
 \item Proven to significantly reduce errors
 \end{itemize}
 \end{column}
@@ -146,18 +135,19 @@ Test Driven Development
 \end{columns}
 \end{frame}
 
-%\subsection{Proposed solution}
-%
-%\begin{frame}\frametitle{Proposed solution}
-%Standardized testing framework
-%\begin{itemize}
-%\item Based on software development techniques
-%\item Cross platform
-%\item Utility library
-%\item Continuous Integration system
-%\item At the core: Python script
-%\end{itemize}
-%\end{frame}
+\section{Proposed solution}
+\subsection{VHDL testing framework}
+
+\begin{frame}\frametitle{Proposed solution}
+Standardized testing framework
+\begin{itemize}
+\item Based on software development techniques
+\item Cross platform
+\item At the core: Python script
+\item Utility library
+\item Continuous Integration system
+\end{itemize}
+\end{frame}
 
 %\begin{frame}\frametitle{VHDL - design flow}
 %\includegraphics[width=\textwidth]{images/designflow2.pdf}
@@ -223,22 +213,40 @@ Test Driven Development
 %\includegraphics[width=\textwidth]{images/TDDflow2.pdf}
 %\end{frame}
 
-\section{Proposed solution}
-\subsection{VHDL testing framework}
+%\section{Proposed solution}
 
-\begin{frame}\frametitle{VHDL testing framework}
-Python script
+\begin{frame}\frametitle{Python script}
+%\vskip20pt
+\begin{columns}
+\begin{column}{0.60\textwidth}
 \begin{enumerate}
 \item Identify and group tests
 \item Separate groups into new test benches
-\item Compile sources
-\item Compile and execute new test benches
+\item Compile sources and new test benches
+\item Execute test benches
 \item Capture and process results
 \end{enumerate}
+\end{column}
+\column{0.05\textwidth}
+\vskip12pt
+\Huge\}
+\vskip1pt
+\}
+\column{0.30\textwidth}
+\ding{222} Prepare
+\vskip13pt
+\ding{222} Process
+\vskip17pt
+\ding{222} Execute
+\end{columns}
+%\vskip20pt
+%\centering
+%\includegraphics[width=.7\textwidth]{images/ppe.pdf}
 \end{frame}
 
 \subsection{Preparing test benches}
 \begin{frame}\frametitle{Preparing test benches}
+\vskip50pt
 \begin{columns}
 \begin{column}{0.6\textwidth}
 \begin{itemize}
@@ -260,6 +268,9 @@ Python script
 \column{0.4\textwidth}
 \includegraphics[width=0.8\textwidth]{images/bitvis.png}
 \end{columns}
+\centering
+\vskip50pt
+\includegraphics[width=.7\textwidth]{images/ppe1.pdf}
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Modified test bench example}
@@ -289,49 +300,70 @@ assert q = '1'
 \end{lstlisting}
 \end{frame}
 
-\subsection{Processing and compilation}
-\begin{frame}\frametitle{Processing and compilation}
+\subsection{Processing and compiling}
+\begin{frame}\frametitle{Processing and compiling}
+\vskip20pt
 Python script:
-\begin{enumerate}
-\item Read command line arguments
-\item Read modified test bench
-\item Group tests into new test benches
-\end{enumerate}
-ModelSim:
-\begin{enumerate}
-\setcounter{enumi}{3}
-\item Compile source code
-\item Compile test benches
-\end{enumerate}
+\begin{itemize}
+\item Reads command line arguments
+\item Reads modified test bench
+\item Groups tests into new test benches
+\end{itemize}
+\vskip5pt
+\centering
+\includegraphics[width=.8\textwidth]{images/tbsplit.pdf}
+\vskip20pt
+\includegraphics[width=.7\textwidth]{images/ppe2.pdf}
 \end{frame}
+
+\begin{frame}\frametitle{Processing and compiling}
+\vskip45pt
+ModelSim:
+\begin{itemize}
+\item Compiles source code
+\item Compiles test benches
+\end{itemize}
+\centering
+\includegraphics[width=.8\textwidth]{images/sources.pdf}
+\vskip15pt
+\includegraphics[width=.7\textwidth]{images/ppe2.pdf}
+\end{frame}
+
 
 \subsection{Execution and results}
 \begin{frame}\frametitle{Execution and results}
+\vskip48pt
 ModelSim:
-\begin{enumerate}
-\item Execute separated test benches
-\end{enumerate}
+\begin{itemize}
+\item Executes each test bench
+\end{itemize}
+\vskip5pt
 Python script:
-\begin{enumerate}
-\setcounter{enumi}{1}
-\item Capture ModelSim output
-\item Process results
+\begin{itemize}
+\item Captures ModelSim output
+\item Processes results
 \begin{itemize}
 \item Text report
 \item XML report
 \end{itemize}
-\end{enumerate}
+\end{itemize}
+\centering
+\vskip48pt
+\includegraphics[width=.7\textwidth]{images/ppe3.pdf}
 \end{frame}
 
+\subsection{Automation}
 \begin{frame}\frametitle{Automation}
 \begin{columns}
 \begin{column}{0.6\textwidth}
 Hudson-CI
 \begin{itemize}
-\item Source at revision control system
-\item Create job per project
-\item Get latest version from RC
-\item Timed script execution
+\item Gets latest version from RC
+\begin{itemize}
+\item Timed retrieval
+\item Detect changes
+\end{itemize}
+\item Automated script execution
 \item Result progress (XML)
 \end{itemize}
 \end{column}
@@ -491,10 +523,8 @@ Hudson-CI
 
 \subsection{Results}
 \begin{frame}\frametitle{Results}
-\begin{itemize}
-\item Multiple open-source projects converted
-\end{itemize}
-\medskip
+Multiple open-source projects tested
+\vskip10pt
 {\centering
 \includegraphics[width=\textwidth]{images/jobs.png}}
 %\\\hskip10pt\ding{222} Bypassed single point of failure
@@ -505,10 +535,11 @@ Hudson-CI
 \end{frame}
 
 
-%\begin{frame}\frametitle{Results}
-%{\centering
-%\includegraphics[width=.85\textwidth]{images/results1.png}}
-%\end{frame}
+\begin{frame}\frametitle{Results}
+Precise debugging information
+{\centering
+\includegraphics[width=.95\textwidth]{images/results1.png}}
+\end{frame}
 %
 %\begin{frame}\frametitle{Results}
 %{\centering
@@ -541,9 +572,12 @@ Hudson-CI
 %%NU?
 
 
-\begin{frame}\frametitle{Thanks for your attention}
+\begin{frame}\frametitle{End}
 \centering
-\Huge Questions?
+\Large
+Thanks for your attention!
+\vskip20pt
+Questions?
 \end{frame}
 
 %\begin{frame}\frametitle{Commentaries on developing VHDL}
