@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  27 JAN 2015 13:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  27 JAN 2015 14:14
 entering extended mode
 **presentatie.tex
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.tex
@@ -1203,7 +1203,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 473.
 Here is how much of TeX's memory you used:
  18275 strings out of 493921
  348085 string characters out of 3144875
- 445131 words of memory out of 3000000
+ 445121 words of memory out of 3000000
  21063 multiletter control sequences out of 15000+200000
  10048 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1219,7 +1219,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><F:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><F:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam5.pfb><F:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on presentatie.pdf (19 pages, 937234 bytes).
+Output written on presentatie.pdf (19 pages, 937226 bytes).
 PDF statistics:
  767 PDF objects out of 1000 (max. 8388607)
  51 named destinations out of 1000 (max. 500000)
