@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  26 JAN 2015 20:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.17)  27 JAN 2015 11:42
 entering extended mode
 **presentatie.tex
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.tex
@@ -953,7 +953,7 @@ LaTeX Info: Redefining \includegraphics on input line 36.
 \c@lstlisting=\count168
 
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.nav)
-<tw.pdf, id=73, 616.3025pt x 70.2625pt>
+<tw.pdf, id=61, 616.3025pt x 70.2625pt>
 File: tw.pdf Graphic file (type pdf)
  <use tw.pdf>
 Package pdftex.def Info: tw.pdf used on input line 43.
@@ -967,7 +967,7 @@ GitHub/VHDL/Thesis/Presentatie/tw.pdf>]
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 56.
 
-<logolabel2.jpg, id=140, 156.585pt x 57.3342pt>
+<logolabel2.jpg, id=125, 156.585pt x 57.3342pt>
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
 Package pdftex.def Info: logolabel2.jpg used on input line 56.
@@ -984,18 +984,18 @@ Package pdftex.def Info: logolabel2.jpg used on input line 59.
  [3
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+LaTeX Font Info:    Try loading font information for U+msa on input line 119.
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 71.
+LaTeX Font Info:    Try loading font information for U+msb on input line 119.
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 71.
+line 119.
 
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\sansmathaccent\ot1mathkerncmss.fd
 "
@@ -1004,7 +1004,7 @@ thkerncmss.
 )
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 71.
+Package pdftex.def Info: logolabel2.jpg used on input line 119.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
  [4
 
@@ -1013,153 +1013,115 @@ Package pdftex.def Info: logolabel2.jpg used on input line 71.
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 73.
+Package pdftex.def Info: logolabel2.jpg used on input line 121.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
  [5
 
-] <images/TB.pdf, id=292, 200.24812pt x 372.64218pt>
-File: images/TB.pdf Graphic file (type pdf)
-
-<use images/TB.pdf>
-Package pdftex.def Info: images/TB.pdf used on input line 103.
-(pdftex.def)             Requested size: 122.91406pt x 228.73291pt.
+]
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 103.
+Package pdftex.def Info: logolabel2.jpg used on input line 132.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
  [6
 
- <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/Presentatie/images/TB.pdf>]
+]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 128.
+Package pdftex.def Info: logolabel2.jpg used on input line 226.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
  [7
 
-] <images/tdd.pdf, id=389, 283.0575pt x 264.99pt>
-File: images/tdd.pdf Graphic file (type pdf)
-
-<use images/tdd.pdf>
-Package pdftex.def Info: images/tdd.pdf used on input line 163.
-(pdftex.def)             Requested size: 122.91406pt x 115.06754pt.
-File: logolabel2.jpg Graphic file (type jpg)
- <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 163.
-(pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [8
-
- <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/Presentatie/images/tdd.pdf>]
-(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
-File: logolabel2.jpg Graphic file (type jpg)
-
-<use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 197.
-(pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [9
-
-]
-File: logolabel2.jpg Graphic file (type jpg)
- <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 208.
-(pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [10
-
-]
-(H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
-File: logolabel2.jpg Graphic file (type jpg)
-
-<use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 210.
-(pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [11
-
-]
-<images/bitvis.png, id=538, 669.2503pt x 296.60812pt>
+] <images/bitvis.png, id=331, 669.2503pt x 296.60812pt>
 File: images/bitvis.png Graphic file (type png)
- <use images/bitvis.png>
-Package pdftex.def Info: images/bitvis.png used on input line 234.
+
+<use images/bitvis.png>
+Package pdftex.def Info: images/bitvis.png used on input line 249.
 (pdftex.def)             Requested size: 98.33162pt x 43.57959pt.
 File: logolabel2.jpg Graphic file (type jpg)
-
-<use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 234.
+ <use logolabel2.jpg>
+Package pdftex.def Info: logolabel2.jpg used on input line 249.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [12
+ [8
 
  <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/Presentatie/images/bitvis.png>]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 236.
+Package pdftex.def Info: logolabel2.jpg used on input line 251.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [13
+ [9
 
-] <images/hudson.png, id=608, 225.84375pt x 188.705pt>
+] <images/hudson.png, id=397, 225.84375pt x 188.705pt>
 File: images/hudson.png Graphic file (type png)
 
 <use images/hudson.png>
-Package pdftex.def Info: images/hudson.png used on input line 253.
-(pdftex.def)             Requested size: 92.18788pt x 77.02977pt.
+Package pdftex.def Info: images/hudson.png used on input line 268.
+(pdftex.def)             Requested size: 98.33162pt x 82.16374pt.
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 253.
+Package pdftex.def Info: logolabel2.jpg used on input line 268.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [14
+ [10
 
  <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/Presentatie/images/hudson.png>]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 255.
+Package pdftex.def Info: logolabel2.jpg used on input line 270.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [15
+ [11
 
 ]
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 273.
+Package pdftex.def Info: logolabel2.jpg used on input line 287.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [16
+ [12
 
 ]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 276.
+Package pdftex.def Info: logolabel2.jpg used on input line 290.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [17
+ [13
 
 ]
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 290.
+Package pdftex.def Info: logolabel2.jpg used on input line 303.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [18
+ [14
 
 ]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.vrb
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 7.
-LaTeX Font Info:    No file OMLcmss.fd. on input line 7.
+LaTeX Font Info:    Try loading font information for OML+cmss on input line 6.
+LaTeX Font Info:    No file OMLcmss.fd. on input line 6.
 
 
 LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 7.
+(Font)              for symbol `textless' on input line 6.
+
+
+Overfull \hbox (5.09218pt too wide) in paragraph at lines 17--18
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
 
 )
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 317.
+Package pdftex.def Info: logolabel2.jpg used on input line 326.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [19
+ [15
 
 ]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.vrb
@@ -1169,34 +1131,34 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 ("F:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 11.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 10.
 
-LaTeX Font Info:    No file OMScmss.fd. on input line 11.
+LaTeX Font Info:    No file OMScmss.fd. on input line 10.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 11.
+(Font)              for symbol `textbackslash' on input line 10.
 
 )
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 332.
+Package pdftex.def Info: logolabel2.jpg used on input line 340.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [20
+ [16
 
 ]
-<images/parserwork.pdf, id=824, 615.80063pt x 247.67531pt>
+<images/parserwork.pdf, id=608, 615.80063pt x 247.67531pt>
 File: images/parserwork.pdf Graphic file (type pdf)
 
 <use images/parserwork.pdf>
-Package pdftex.def Info: images/parserwork.pdf used on input line 340.
+Package pdftex.def Info: images/parserwork.pdf used on input line 347.
 (pdftex.def)             Requested size: 307.28987pt x 123.59547pt.
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 340.
+Package pdftex.def Info: logolabel2.jpg used on input line 347.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [21
+ [17
 
  <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/Presentatie/images/parserwork.pdf
 >]
@@ -1204,89 +1166,66 @@ Package pdftex.def Info: logolabel2.jpg used on input line 340.
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 356.
+Package pdftex.def Info: logolabel2.jpg used on input line 363.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [22
+ [18
 
-] <images/jobs.png, id=947, 483.30562pt x 140.77594pt>
+] <images/jobs.png, id=729, 483.30562pt x 140.77594pt>
 File: images/jobs.png Graphic file (type png)
 
 <use images/jobs.png>
-Package pdftex.def Info: images/jobs.png used on input line 368.
+Package pdftex.def Info: images/jobs.png used on input line 375.
 (pdftex.def)             Requested size: 307.28987pt x 89.50986pt.
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 368.
+Package pdftex.def Info: logolabel2.jpg used on input line 375.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [23
+ [19
 
  <H:/Users/Joren/Documents/GitHub/VHDL/Thesis/Presentatie/images/jobs.png>]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 372.
+Package pdftex.def Info: logolabel2.jpg used on input line 379.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [24
+ [20
 
 ]
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 392.
+Package pdftex.def Info: logolabel2.jpg used on input line 394.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [25
-
-]
-File: logolabel2.jpg Graphic file (type jpg)
- <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 412.
-(pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
-
-[26
-
-] (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
-File: logolabel2.jpg Graphic file (type jpg)
-
-<use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 414.
-(pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [27
-
-]
-File: logolabel2.jpg Graphic file (type jpg)
- <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 430.
-(pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [28
+ [21
 
 ]
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.toc)
 File: logolabel2.jpg Graphic file (type jpg)
 
 <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 432.
+Package pdftex.def Info: logolabel2.jpg used on input line 437.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [29
+ [22
 
 ]
 File: logolabel2.jpg Graphic file (type jpg)
  <use logolabel2.jpg>
-Package pdftex.def Info: logolabel2.jpg used on input line 437.
+Package pdftex.def Info: logolabel2.jpg used on input line 442.
 (pdftex.def)             Requested size: 46.97586pt x 17.20038pt.
- [30
+ [23
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 439.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 439.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
 
 (H:\Users\Joren\Documents\GitHub\VHDL\Thesis\Presentatie\presentatie.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 439.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 439.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
 Package rerunfilecheck Info: File `presentatie.out' has not changed.
-(rerunfilecheck)             Checksum: 8ABB3B805B098E0131CAAB2E6D6C9D39;948.
+(rerunfilecheck)             Checksum: 3A29B19457AC3333AB401949D66CEF33;706.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1295,16 +1234,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 439.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
  ) 
 Here is how much of TeX's memory you used:
- 18356 strings out of 493921
- 349913 string characters out of 3144875
- 447997 words of memory out of 3000000
- 21101 multiletter control sequences out of 15000+200000
+ 18301 strings out of 493921
+ 348937 string characters out of 3144875
+ 444233 words of memory out of 3000000
+ 21071 multiletter control sequences out of 15000+200000
  10048 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 56i,16n,65p,411b,1346s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,16n,65p,411b,1348s stack positions out of 5000i,500n,10000p,200000b,50000s
 <F:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
 F:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><F:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><F:/P
@@ -1316,9 +1255,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><F:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><F:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam5.pfb><F:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on presentatie.pdf (30 pages, 1168621 bytes).
+Output written on presentatie.pdf (23 pages, 972502 bytes).
 PDF statistics:
- 1253 PDF objects out of 1440 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 932 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 193 words of extra memory for PDF output out of 10000 (max. 10000000)
 

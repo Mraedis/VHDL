@@ -1,5 +1,4 @@
 \frametitle{Running the job}
-Running the job:
 \begin{enumerate}
 \item Create new job at Hudson-CI
 \item Optional: set for import from revision control source

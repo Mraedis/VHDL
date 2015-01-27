@@ -48,58 +48,87 @@
 \vfill 
 \rlap{%\hskip0.1cm 
  \includegraphics[scale=0.3]{logolabel2.jpg} } 
-\vskip20pt 
+\vskip10pt 
 }
 
 \begin{frame}<beamer>\frametitle{Outline}
   \tableofcontents
 \end{frame}
 
-\section{Introduction}
-\subsection{VHDL}
+\section{Situating}
+\subsection{Developing VHDL}
 
-\begin{frame}\frametitle{VHDL}
+%\begin{frame}\frametitle{VHDL}
+%\begin{itemize}
+%\item VHSIC Hardware Description Language
+%\item Used for describing digital and mixed-signal systems 
+%\item Developed by U.S. Department of Defense
+%\begin{itemize}
+%\item Document \ding{222} Simulate \ding{222} Synthesize
+%\end{itemize}
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}\frametitle{Testing VHDL}
+%\begin{columns}
+%\begin{column}{0.05\textwidth}
+%\end{column}
+%\begin{column}{0.55\textwidth}
+%Test benches
+%\begin{itemize}
+%\item Unit Under Test (UUT)
+%\item Signal coupling \& stimuli
+%\item Output tracking
+%\begin{itemize}
+%\item Assertions
+%\item Comparison to desired result
+%\\(Manual or automated)
+%\item Wave-check
+%\end{itemize}
+%\end{itemize}
+%%\vspace{0.25cm}
+%%Problems
+%%\begin{itemize}
+%%\item Non-standardized process
+%%\item Single point of failure
+%%\item Time consuming
+%%\end{itemize}
+%\end{column}
+%\column{0.4\textwidth}
+%\raggedleft
+%\includegraphics[width=\textwidth]{images/TB.pdf}
+%\end{columns}
+%\end{frame}
+
+\begin{frame}\frametitle{Developing VHDL}
 VHDL
 \begin{itemize}
 \item VHSIC Hardware Description Language
-\item Used for describing digital and mixed-signal systems 
-\item Developed by U.S. Department of Defense
+\item Test benches
 \begin{itemize}
-\item Document \ding{222} Simulate \ding{222} Synthesize
+\item Output tracking
 \end{itemize}
 \end{itemize}
-\end{frame}
-
-\subsection{Testing VHDL}
-
-\begin{frame}\frametitle{Testing VHDL}
-\begin{columns}
-\begin{column}{0.05\textwidth}
-\end{column}
-\begin{column}{0.55\textwidth}
-Test benches
-\begin{itemize}
-\item Unit Under Test (UUT)
-\item Drivers, processes \& stimuli
-\item Assertions and output tracking
-\begin{itemize}
-\item Comparison to desired result
-\\(Manual or automated)
-\item Wave-check
-\end{itemize}
-\end{itemize}
-\vspace{0.25cm}
+\vskip5pt
 Problems
 \begin{itemize}
 \item Non-standardized process
 \item Single point of failure
 \item Time consuming
 \end{itemize}
-\end{column}
-\column{0.4\textwidth}
-\raggedleft
-\includegraphics[width=\textwidth]{images/TB.pdf}
-\end{columns}
+\end{frame}
+
+\subsection{Proposed solution}
+
+\begin{frame}\frametitle{Proposed solution}
+Standardized testing framework
+\begin{itemize}
+\item Based on software techniques
+\item Cross platform
+\item At the core: Python script
+\item Utility library
+\item Continuous Integration system
+\end{itemize}
 \end{frame}
 
 %\begin{frame}\frametitle{VHDL - design flow}
@@ -125,7 +154,7 @@ Problems
 %\end{lstlisting}
 %\end{frame}
 
-\subsection{Software development techniques}
+%\subsection{Software development techniques}
 
 %\begin{frame}\frametitle{Unit testing}
 %Unit testing
@@ -136,31 +165,31 @@ Problems
 %\end{itemize}
 %\end{frame}
 
-\begin{frame}\frametitle{Software development techniques}
-\begin{columns}
-\begin{column}{0.6\textwidth}
-Unit testing
-\begin{itemize}
-\item Unit = smallest behaviour in code
-\item Test failure \ding{222} exact location
-\end{itemize}
-\vskip3pt
-Test First Development
-\begin{itemize}
-\item Create test before the code
-\item Work from how the code will behave
-\end{itemize}
-\vskip3pt
-Test Driven Development
-\begin{itemize}
-\item TFD \& short development cycle
-\item Proven to significantly reduce errors
-\end{itemize}
-\end{column}
-\column{0.4\textwidth}
-\includegraphics[width=\textwidth]{images/tdd.pdf}
-\end{columns}
-\end{frame}
+%\begin{frame}\frametitle{Software development techniques}
+%\begin{columns}
+%\begin{column}{0.6\textwidth}
+%Unit testing
+%\begin{itemize}
+%\item Unit = smallest behaviour in code
+%\item Test failure \ding{222} exact location
+%\end{itemize}
+%\vskip3pt
+%Test First Development
+%\begin{itemize}
+%\item Create test before the code
+%\item How the code will behave?
+%\end{itemize}
+%\vskip3pt
+%Test Driven Development
+%\begin{itemize}
+%\item TFD \& short development cycle
+%\item Proven to significantly reduce errors
+%\end{itemize}
+%\end{column}
+%\column{0.4\textwidth}
+%\includegraphics[width=\textwidth]{images/tdd.pdf}
+%\end{columns}
+%\end{frame}
 
 %\begin{frame}\frametitle{Unit testing}
 %Unit testing
@@ -192,20 +221,7 @@ Test Driven Development
 %\includegraphics[width=\textwidth]{images/TDDflow2.pdf}
 %\end{frame}
 
-\section{Proposed solution}
-
-\subsection{VHDL testing Framework}
-
-\begin{frame}\frametitle{VHDL testing framework}
-Standardized testing framework
-\begin{itemize}
-\item Based on previously mentioned software techniques
-\item Cross platform
-\item At the core: Python script
-\item Utility library
-\item Continuous Integration (CI) system
-\end{itemize}
-\end{frame}
+\section{The framework}
 
 \subsection{Utility library}
 
@@ -218,7 +234,6 @@ Bitvis utility library
 \item Expands VHDL functions
 \begin{itemize}
 \item Easy value checking
-\item String handling \& random generation
 \item Formatted output
 \end{itemize}
 \item Quick \& uniform coding
@@ -241,28 +256,27 @@ Bitvis utility library
 Hudson-CI
 \begin{itemize}
 \item Centralized, automated testing
-\item Revision control integration (e.g. Git)
-\item Very customizable (many modules)
-\item Standardized test reports (XML)
-\item Displays statistics
+\item Revision control integration
+\item Very customizable
+%\item Standardized test reports (XML)
+%\item Displays statistics
 \end{itemize}
 \end{column}
-\column{0.5\textwidth}
-\includegraphics[width=0.6\textwidth]{images/hudson.png}
+\column{0.4\textwidth}
+\includegraphics[width=0.8\textwidth]{images/hudson.png}
 \end{columns}
 \end{frame}
 
 \subsection{Python script}
 
 \begin{frame}\frametitle{Python script}
-Features
+Test bench parser
 \begin{itemize}
-\item Test bench parser
 \item Customizable process
 \begin{itemize}
 \item Command-line arguments
-%\item Multiple supported methods
 \end{itemize}
+\item Separates (groups of) independent tests
 \item Multiple useful outputs
 \begin{itemize}
 \item Processed text-based report
@@ -276,7 +290,6 @@ Features
 \subsection{Using the framework}
 
 \begin{frame}\frametitle{Preparing the test bench}
-Preparing the test bench:
 \begin{enumerate}
 \item Import the utility library
 \item Decide on separation method
@@ -292,33 +305,28 @@ Preparing the test bench:
 
 \begin{frame}[fragile]\frametitle{Modified test bench example}
 Old test bench:
-\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
-	...
-		assert q = '0'
-			report "Wrong output value at startup" severity FAILURE;
-		d <= '1';
-     	WAIT FOR clk_period;
-     	assert q = '1'
-			report "Wrong output value at first test" severity FAILURE;
-	...
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+assert q = '0'
+    report "Wrong output value at startup" severity FAILURE;
+d <= '1';
+WAIT FOR clk_period;
+assert q = '1'
+    report "Wrong output value at first test" severity FAILURE;
 \end{lstlisting}
 \vskip1pt
 Modified test bench:
-\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
-	...
-		--Test 1
-		check_value(q = '0', FAILURE, "Wrong output value at startup");
-		write(d, '1', "DFF");
-		check_value(q = '1', FAILURE, "Wrong output value at first test");
-		...
-		--End 1
-	...
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+--Test 1
+    check_value(q = '0', FAILURE, "Wrong output value at startup");
+    write(d, '1', "DFF");
+    check_value(q = '1', FAILURE, "Wrong output value at first test");
+    ...
+--End 1
 \end{lstlisting}
 \end{frame}
 
 
 \begin{frame}[fragile]\frametitle{Running the job}
-Running the job:
 \begin{enumerate}
 \item Create new job at Hudson-CI 
 \item Optional: set for import from revision control source
@@ -333,10 +341,9 @@ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
 
 
 \begin{frame}\frametitle{Script workflow}
-Specialized python script
 \includegraphics[width=\textwidth]{images/parserwork.pdf}
 \newline{}
-Steps of the parser are logged separately
+\centering(Steps of the parser logged separately)
 \end{frame}
 
 %\begin{frame}[fragile]\frametitle{Job example}
@@ -362,27 +369,22 @@ Steps of the parser are logged separately
 \medskip
 {\centering
 \includegraphics[width=\textwidth]{images/jobs.png}}
-\\\hskip10pt\ding{222} Successful runs when VHDL code OK
-\\\hskip10pt\ding{222} Partially completed test-runs even with faults in code
-\\\hskip10pt\ding{222} Unsuccessful runs only due to compilation errors\\
+%\\\hskip10pt\ding{222} Successful runs when VHDL code OK
+%\\\hskip10pt\ding{222} Partially completed test-runs even with faults in code
+%\\\hskip10pt\ding{222} Unsuccessful runs only due to compilation errors\\
 \end{frame}
 
 %\item Code duplication increases compile \& simulation time
 
-\subsection{Future work and commentaries}
+\subsection{Future work}
 
 \begin{frame}\frametitle{Future work}
 \begin{itemize}
-\item Wider tool support
-\begin{itemize}
-\item Extensive support for current tool (ModelSim)
-\item Greater variety of tools 
-\end{itemize}
+\item Wider, better tool support
 \item Lexical analysis
 \begin{itemize}
-\item Full code analysis
-\item Smart test bench generation
 \item Automated partitioning
+\item Smart test bench generation
 \end{itemize}
 \item Adapted CI tool
 \begin{itemize}
@@ -392,45 +394,48 @@ Steps of the parser are logged separately
 \end{frame}
 
 
-\begin{frame}\frametitle{Commentaries on developing VHDL}
-\begin{itemize}
-\item Outdated practices
-\begin{itemize}
-\item An industry stuck in 1993
-\item "Don't fix what isn't broken"
-\end{itemize}
-\item Hardware engineers are not software developers
-\begin{itemize}
-\item Little to no software development experience
-\item Taught by seniors at work
-\end{itemize}
-\item VHDL has no reflection or introspection
-\begin{itemize}
-\item Could make test benches even more compact
-\end{itemize}
-\end{itemize}
+%\begin{frame}\frametitle{Commentaries on developing VHDL}
+%\begin{itemize}
+%\item Outdated practices
+%\begin{itemize}
+%\item An industry stuck in 1993
+%\item "Don't fix what isn't broken"
+%\end{itemize}
+%\item Hardware engineers are not software developers
+%\begin{itemize}
+%\item Little to no software development experience
+%\item Taught by seniors at work
+%\end{itemize}
+%\item VHDL has no reflection or introspection
+%\begin{itemize}
+%\item Could make test benches even more compact
+%\end{itemize}
+%\end{itemize}
+%\end{frame}
+%
+%\subsection{Conclusion}
+%
+%\begin{frame}\frametitle{Conclusion}
+%\begin{itemize}
+%\item Software methods are applicable to an extent if:
+%\begin{itemize}
+%\item Tailored to development needs
+%\item Integrated with existing methods
+%\end{itemize}
+%\item Framework provided:
+%\begin{itemize}
+%\item Easier to read code
+%\item Precise debugging information
+%\item Faster development
+%\end{itemize}
+%\end{itemize}
+%\end{frame}
+
+\section{Demo}
+\begin{frame}<beamer>\frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
 \end{frame}
-
-\subsection{Conclusion}
-
-\begin{frame}\frametitle{Conclusion}
-\begin{itemize}
-\item Software methods are applicable to an extent if:
-\begin{itemize}
-\item Tailored to development needs
-\item Integrated with existing methods
-\end{itemize}
-\item Framework provided:
-\begin{itemize}
-\item Easier to read code
-\item Precise debugging information
-\item Faster development
-\end{itemize}
-\end{itemize}
-\end{frame}
-
-\subsection{Demo}
-
+  
 \begin{frame}\frametitle{Demo}
 \centering
 \Huge Demo
