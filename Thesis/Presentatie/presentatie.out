@@ -1,12 +1,12 @@
 \BOOKMARK [2][]{Outline0.1}{Situating}{}% 1
 \BOOKMARK [3][]{Outline0.1.1.4}{Testing VHDL}{Outline0.1}% 2
-\BOOKMARK [3][]{Outline0.1.2.5}{Proposed solution}{Outline0.1}% 3
-\BOOKMARK [2][]{Outline0.2}{The framework}{}% 4
-\BOOKMARK [3][]{Outline0.2.1.7}{Utility library}{Outline0.2}% 5
-\BOOKMARK [3][]{Outline0.2.2.8}{Continuous Integration}{Outline0.2}% 6
-\BOOKMARK [3][]{Outline0.2.3.9}{Python script}{Outline0.2}% 7
-\BOOKMARK [3][]{Outline0.2.4.11}{Using the framework}{Outline0.2}% 8
+\BOOKMARK [3][]{Outline0.1.2.5}{Software development techniques}{Outline0.1}% 3
+\BOOKMARK [2][]{Outline0.2}{Proposed solution}{}% 4
+\BOOKMARK [3][]{Outline0.2.1.7}{VHDL testing framework}{Outline0.2}% 5
+\BOOKMARK [3][]{Outline0.2.2.8}{Preparing test benches}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.3.10}{Processing and compilation}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.4.11}{Execution and results}{Outline0.2}% 8
 \BOOKMARK [2][]{Outline0.3}{Concluding}{}% 9
-\BOOKMARK [3][]{Outline0.3.1.15}{Results}{Outline0.3}% 10
-\BOOKMARK [3][]{Outline0.3.2.16}{Future work}{Outline0.3}% 11
+\BOOKMARK [3][]{Outline0.3.1.14}{Results}{Outline0.3}% 10
+\BOOKMARK [3][]{Outline0.3.2.15}{Future work}{Outline0.3}% 11
 \BOOKMARK [2][]{Outline0.4}{Demo}{}% 12
