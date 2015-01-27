@@ -1,13 +1,13 @@
 \beamer@endinputifotherversion {3.33pt}
 \beamer@sectionintoc {1}{Situating}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Testing VHDL}{4}{0}{1}
-\beamer@subsectionintoc {1}{2}{Proposed solution}{5}{0}{1}
-\beamer@sectionintoc {2}{The framework}{6}{0}{2}
-\beamer@subsectionintoc {2}{1}{Utility library}{7}{0}{2}
-\beamer@subsectionintoc {2}{2}{Continuous Integration}{8}{0}{2}
-\beamer@subsectionintoc {2}{3}{Python script}{9}{0}{2}
-\beamer@subsectionintoc {2}{4}{Using the framework}{11}{0}{2}
-\beamer@sectionintoc {3}{Concluding}{14}{0}{3}
-\beamer@subsectionintoc {3}{1}{Results}{15}{0}{3}
-\beamer@subsectionintoc {3}{2}{Future work}{16}{0}{3}
-\beamer@sectionintoc {4}{Demo}{18}{0}{4}
+\beamer@subsectionintoc {1}{2}{Software development techniques}{5}{0}{1}
+\beamer@sectionintoc {2}{Proposed solution}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{VHDL testing framework}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Preparing test benches}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{Processing and compilation}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{Execution and results}{11}{0}{2}
+\beamer@sectionintoc {3}{Concluding}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Results}{14}{0}{3}
+\beamer@subsectionintoc {3}{2}{Future work}{15}{0}{3}
+\beamer@sectionintoc {4}{Demo}{17}{0}{4}

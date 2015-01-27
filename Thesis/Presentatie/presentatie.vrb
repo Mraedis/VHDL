@@ -1,12 +1,25 @@
-\frametitle{Using the framework}
-Running Hudson-CI
-\begin{enumerate}
-\item Create new job
-\item Optional: set for import from revision control source
-\item Set correct parser flags in shell command
-\item Build \& check results
-\end{enumerate}
-\vskip5pt
-\begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
-python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
+\frametitle{Modified test bench example}
+D flip-flop
+\begin{itemize}
+\item Old test bench:
+\end{itemize}
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+assert q = '0'
+    report "Wrong output value at startup" severity FAILURE;
+d <= '1';
+WAIT FOR clk_period;
+assert q = '1'
+    report "Wrong output value at first test" severity FAILURE;
+\end{lstlisting}
+\vskip1pt
+\begin{itemize}
+\item Modified test bench:
+\end{itemize}
+\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+--Test 1
+    check_value(q = '0', FAILURE, "Wrong output value at startup");
+    write(d, '1', "DFF");
+    check_value(q = '1', FAILURE, "Wrong output value at first test");
+    ...
+--End 1
 \end{lstlisting}
