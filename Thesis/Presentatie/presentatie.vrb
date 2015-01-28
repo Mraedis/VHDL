@@ -1,25 +1,30 @@
-\frametitle{Modified test bench example}
-D flip-flop
+\frametitle{Utility library}
+\vskip30pt
+\begin{columns}
+\begin{column}{0.6\textwidth}
+Use Bitvis utility library for:
 \begin{itemize}
-\item Old test bench:
+\item Faster coding
+\item Improved readability
 \end{itemize}
+%\hskip24pt\ding{222} Unit testing
+\end{column}
+\column{0.4\textwidth}
+\includegraphics[width=0.8\textwidth]{images/bitvis.png}
+\end{columns}
+\vskip10pt
+Modified test bench:
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
-assert q = '0'
-    report "Wrong output value at startup" severity FAILURE;
-d <= '1';
-WAIT FOR clk_period;
-assert q = '1'
-    report "Wrong output value at first test" severity FAILURE;
-\end{lstlisting}
-\vskip1pt
-\begin{itemize}
-\item Modified test bench:
-\end{itemize}
-\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+...
 --Test 1
     check_value(q = '0', FAILURE, "Wrong output value at startup");
     write(d, '1', "DFF");
     check_value(q = '1', FAILURE, "Wrong output value at first test");
     ...
 --End 1
+...
 \end{lstlisting}
+\vskip25pt
+\begin{center}
+\includegraphics[width=.7\textwidth]{images/ppe1.pdf}
+\end{center}

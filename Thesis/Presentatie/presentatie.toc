@@ -5,10 +5,10 @@
 \beamer@subsectionintoc {1}{3}{Software development techniques}{7}{0}{1}
 \beamer@sectionintoc {2}{Proposed solution}{8}{0}{2}
 \beamer@subsectionintoc {2}{1}{VHDL testing framework}{10}{0}{2}
-\beamer@subsectionintoc {2}{2}{Using the framework}{11}{0}{2}
-\beamer@subsectionintoc {2}{3}{Automation}{16}{0}{2}
-\beamer@sectionintoc {3}{Concluding}{17}{0}{3}
-\beamer@subsectionintoc {3}{1}{Results}{18}{0}{3}
-\beamer@subsectionintoc {3}{2}{Future work}{20}{0}{3}
-\beamer@subsectionintoc {3}{3}{Conclusion}{21}{0}{3}
-\beamer@sectionintoc {4}{Demo}{23}{0}{4}
+\beamer@subsectionintoc {2}{2}{Using the framework}{12}{0}{2}
+\beamer@subsectionintoc {2}{3}{Automation}{17}{0}{2}
+\beamer@sectionintoc {3}{Concluding}{18}{0}{3}
+\beamer@subsectionintoc {3}{1}{Results}{19}{0}{3}
+\beamer@subsectionintoc {3}{2}{Future work}{21}{0}{3}
+\beamer@subsectionintoc {3}{3}{Conclusion}{22}{0}{3}
+\beamer@sectionintoc {4}{Demo}{24}{0}{4}

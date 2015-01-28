@@ -138,94 +138,27 @@ Test Driven Development
 \end{frame}
 
 \section{Proposed solution}
-
 \begin{frame}\frametitle{Proposed solution}
-Standardized testing framework
+Apply unit testing to VHDL?
 \begin{itemize}
-\item Based on software development techniques
-\item Cross platform
-\item At the core: Python script
-\item Utility library
-\item Continuous Integration system
+\item[\ding{222}] 1 unit test per test bench
+\item[\ding{222}] Extremely large number of TBs
+\item[\ding{222}] Impractical, time wasting
 \end{itemize}
+\vskip5pt
+Solution: use a framework to do it for you
 \end{frame}
 
-%\begin{frame}\frametitle{VHDL - design flow}
-%\includegraphics[width=\textwidth]{images/designflow2.pdf}
-%\end{frame}
-
-%\begin{frame}[fragile]\frametitle{Testing VHDL - assertions example }
-%D-flipflop
-%\begin{itemize}
-%\item d: delay, input
-%\item q: output
-%\end{itemize}
-%\centering
-%\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
-%	...
-%		assert q = '0'
-%			report "Wrong output value at startup" severity FAILURE;
-%		d <= '1';
-%     	WAIT FOR clk_period;
-%     	assert q = '1'
-%			report "Wrong output value at first test" severity FAILURE;
-%	...
-%\end{lstlisting}
-%\end{frame}
-
-%\subsection{Software development techniques}
-
-%\begin{frame}\frametitle{Unit testing}
-%Unit testing
-%\begin{itemize}
-%\item Unit: smallest behaviour in code
-%\item Unit test: Tests that behaviour
-%\item Test success/failure \ding{222} excellent locator
-%\end{itemize}
-%\end{frame}
-
-%\begin{frame}\frametitle{Unit testing}
-%Unit testing
-%\begin{itemize}
-%\item Unit: smallest behaviour in code
-%\item Unit test: Tests that behaviour
-%\item Test success/failure \ding{222} excellent locator
-%\end{itemize}
-%\end{frame}
-%
-%\begin{frame}\frametitle{Test Driven Development}
-%\begin{columns}
-%\begin{column}{0.6\textwidth}
-%Test Driven Development
-%\begin{itemize}
-%\item Software development technique
-%\item Proven to significantly reduce errors
-%\item All behaviour is tested
-%\item Unit testing \& short development cycle
-%\item Red - Green - Refactor
-%\end{itemize}
-%\end{column}
-%\column{0.4\textwidth}
-%\includegraphics[width=\textwidth]{images/tdd.pdf}
-%\end{columns}
-%\end{frame}
-
-%\begin{frame}\frametitle{TDD - design flow}
-%\includegraphics[width=\textwidth]{images/TDDflow2.pdf}
-%\end{frame}
-
-%\section{Proposed solution}
 \subsection{VHDL testing framework}
-
 \begin{frame}\frametitle{VHDL testing framework}
 %\vskip20pt
 \begin{columns}
 \begin{column}{0.60\textwidth}
 \begin{enumerate}
-\item Split test bench into groups of tests
-\item Separate groups into new test benches
-\item Compile sources and new test benches
-\item Execute test benches
+\item Arrange test bench into unit tests
+\item Separate unit tests into files
+\item Compile source and newly created files
+\item Execute unit tests ("test suite")
 \item Capture and process results
 \end{enumerate}
 \end{column}
@@ -246,17 +179,37 @@ Standardized testing framework
 %\includegraphics[width=.7\textwidth]{images/ppe.pdf}
 \end{frame}
 
-\subsection{Using the framework}
-\begin{frame}\frametitle{Preparing test benches}
-\vskip50pt
-\begin{columns}
-\begin{column}{0.6\textwidth}
+\begin{frame}\frametitle{VHDL testing framework}
+\vskip45pt
+Python script + ModelSim
+\vskip10pt
 \begin{itemize}
-\item Use Bitvis utility library
+\item Prepare
 \begin{itemize}
-\item Faster coding
-\item Improved readability
+\item[\ding{222}] Developer arranges test suite
 \end{itemize}
+\item Process
+\begin{itemize}
+\item[\ding{222}] Python script separates unit tests
+\item[\ding{222}] ModelSim compiles all files
+\end{itemize}
+\item Execute
+\begin{itemize}
+\item[\ding{222}] ModelSim executes unit tests
+\item[\ding{222}] Python script reads output
+\end{itemize}
+\end{itemize}
+\vskip45pt
+\begin{center}
+\includegraphics[width=.7\textwidth]{images/ppe.pdf}
+\end{center}
+\end{frame}
+
+
+\subsection{Using the framework}
+\begin{frame}[fragile]\frametitle{Preparing test benches}
+\vskip30pt
+\begin{itemize}
 \item Separate independent tests
 \begin{itemize}
 \item Line by line
@@ -265,42 +218,109 @@ Standardized testing framework
 \end{itemize}
 \item Create commands file
 \end{itemize}
-%\hskip24pt\ding{222} Unit testing
-\end{column}
-\column{0.4\textwidth}
-\includegraphics[width=0.8\textwidth]{images/bitvis.png}
-\end{columns}
-\centering
-\vskip50pt
-\includegraphics[width=.7\textwidth]{images/ppe1.pdf}
-\end{frame}
-
-\begin{frame}[fragile]\frametitle{Modified test bench example}
-D flip-flop
-\begin{itemize}
-\item Old test bench:
-\end{itemize}
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+...
 assert q = '0'
     report "Wrong output value at startup" severity FAILURE;
 d <= '1';
 WAIT FOR clk_period;
 assert q = '1'
     report "Wrong output value at first test" severity FAILURE;
+...
 \end{lstlisting}
-\vskip1pt
+\vskip25pt
+\begin{center}
+\includegraphics[width=.7\textwidth]{images/ppe1.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Utility library}
+\vskip30pt
+\begin{columns}
+\begin{column}{0.6\textwidth}
+Use Bitvis utility library for:
 \begin{itemize}
-\item Modified test bench:
+\item Faster coding
+\item Improved readability
 \end{itemize}
+%\hskip24pt\ding{222} Unit testing
+\end{column}
+\column{0.4\textwidth}
+\includegraphics[width=0.8\textwidth]{images/bitvis.png}
+\end{columns}
+\vskip10pt
+Modified test bench:
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+...
 --Test 1
     check_value(q = '0', FAILURE, "Wrong output value at startup");
     write(d, '1', "DFF");
     check_value(q = '1', FAILURE, "Wrong output value at first test");
     ...
 --End 1
+...
 \end{lstlisting}
+\vskip25pt
+\begin{center}
+\includegraphics[width=.7\textwidth]{images/ppe1.pdf}
+\end{center}
 \end{frame}
+
+%\subsection{Using the framework}
+%\begin{frame}\frametitle{Preparing test benches}
+%\vskip50pt
+%\begin{columns}
+%\begin{column}{0.6\textwidth}
+%\begin{itemize}
+%\item Use Bitvis utility library
+%\begin{itemize}
+%\item Faster coding
+%\item Improved readability
+%\end{itemize}
+%\item Separate independent tests
+%\begin{itemize}
+%\item Line by line
+%\item Start/Stop
+%\item Partitioned
+%\end{itemize}
+%\item Create commands file
+%\end{itemize}
+%%\hskip24pt\ding{222} Unit testing
+%\end{column}
+%\column{0.4\textwidth}
+%\includegraphics[width=0.8\textwidth]{images/bitvis.png}
+%\end{columns}
+%\centering
+%\vskip50pt
+%\includegraphics[width=.7\textwidth]{images/ppe1.pdf}
+%\end{frame}
+%
+%\begin{frame}[fragile]\frametitle{Modified test bench example}
+%D flip-flop
+%\begin{itemize}
+%\item Old test bench:
+%\end{itemize}
+%\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+%assert q = '0'
+%    report "Wrong output value at startup" severity FAILURE;
+%d <= '1';
+%WAIT FOR clk_period;
+%assert q = '1'
+%    report "Wrong output value at first test" severity FAILURE;
+%\end{lstlisting}
+%\vskip1pt
+%\begin{itemize}
+%\item Modified test bench:
+%\end{itemize}
+%\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
+%--Test 1
+%    check_value(q = '0', FAILURE, "Wrong output value at startup");
+%    write(d, '1', "DFF");
+%    check_value(q = '1', FAILURE, "Wrong output value at first test");
+%    ...
+%--End 1
+%\end{lstlisting}
+%\end{frame}
 
 
 \begin{frame}\frametitle{Processing and compiling}
@@ -308,8 +328,8 @@ assert q = '1'
 Python script:
 \begin{itemize}
 \item Reads command line arguments
-\item Reads modified test bench
-\item Groups tests into new test benches
+\item Reads test suite
+\item Separates test suite into unit tests
 \end{itemize}
 \vskip5pt
 \centering
@@ -318,13 +338,29 @@ Python script:
 \includegraphics[width=.7\textwidth]{images/ppe2.pdf}
 \end{frame}
 
+
+
+%\begin{frame}\frametitle{Proposed solution}
+%Standardized testing framework
+%\begin{itemize}
+%\item Based on unit testing
+%\item Cross platform
+%\item At the core: Python script
+%\item Utility library
+%\item Continuous Integration system
+%\end{itemize}
+%\end{frame}
+%\subsection{VHDL testing framework}
+
 \begin{frame}\frametitle{Processing and compiling}
 \vskip40pt
 ModelSim:
 \begin{itemize}
-\item Compiles source code
-\item Compiles test benches\\
-\hskip2pt\ding{222} One entity, many architectures
+\item Compiles source code (UUT)
+\item Compiles test suite
+\begin{itemize}
+\item[\ding{222}] One entity, many architectures
+\end{itemize}
 \end{itemize}
 \centering
 \includegraphics[width=.75\textwidth]{images/sources.pdf}
@@ -337,7 +373,7 @@ ModelSim:
 \vskip48pt
 ModelSim:
 \begin{itemize}
-\item Executes each test bench
+\item Executes each unit test
 \end{itemize}
 \vskip5pt
 Python script:
@@ -374,153 +410,6 @@ Hudson-CI
 \end{columns}
 \end{frame}
 
-%\subsection{Utility library}
-%
-%\begin{frame}\frametitle{Utility library}
-%\begin{columns}
-%\begin{column}{0.6\textwidth}
-%Bitvis utility library
-%\begin{itemize}
-%\item Compatible with all VHDL versions
-%\item Expands VHDL functions
-%\begin{itemize}
-%\item Easy value checking
-%\item Formatted output
-%\end{itemize}
-%\item Quick \& uniform coding
-%\begin{itemize}
-%\item Reduces time spent coding
-%\item Improves readability
-%\end{itemize}
-%\end{itemize}
-%\end{column}
-%\column{0.4\textwidth}
-%\includegraphics[width=0.8\textwidth]{images/bitvis.png}
-%\end{columns}
-%\end{frame}
-
-%\subsection{Continuous Integration}
-%
-%\begin{frame}\frametitle{Continuous Integration}
-%\begin{columns}
-%\begin{column}{0.6\textwidth}
-%Hudson-CI
-%\begin{itemize}
-%\item Centralized, automated testing
-%\begin{itemize}
-%\item Revision control
-%\item Timed building
-%\end{itemize}
-%\item Easy to read results
-%\item Very customizable
-%%\item Standardized test reports (XML)
-%%\item Displays statistics
-%\end{itemize}
-%\end{column}
-%\column{0.4\textwidth}
-%\includegraphics[width=0.8\textwidth]{images/hudson.png}
-%\end{columns}
-%\end{frame}
-
-%\subsection{Python script}
-%
-%\begin{frame}\frametitle{Python script}
-%Test bench parser
-%\begin{itemize}
-%\item Separates independent tests
-%\begin{itemize}
-%\item Remove single point of failure
-%\end{itemize}
-%\item Customizable
-%\begin{itemize}
-%\item Command-line arguments
-%\end{itemize}
-%\item Multiple useful outputs
-%\begin{itemize}
-%\item Processed text-based report
-%\item Processed XML report
-%\end{itemize}
-%\end{itemize}
-%\end{frame}
-%
-%\begin{frame}\frametitle{Script workflow}
-%\includegraphics[width=\textwidth]{images/parserwork.pdf}
-%\newline{}
-%\centering(Steps of the parser logged separately)
-%\end{frame}
-
-
-%\subsection{Using the framework}
-%
-%\begin{frame}\frametitle{Using the framework}
-%Preparing the test bench
-%\begin{enumerate}
-%\item Import the utility library
-%\item Decide on separation method
-%\begin{itemize}
-%\item Line by line \ding{222} No editing test bench
-%\item Start/Stop
-%\item Partitioned (recommended)
-%\end{itemize}
-%\item Create command file
-%\end{enumerate}
-%\end{frame}
-
-
-%\begin{frame}[fragile]\frametitle{Modified test bench example}
-%D flip-flop
-%\begin{itemize}
-%\item Old test bench:
-%\end{itemize}
-%\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
-%assert q = '0'
-%    report "Wrong output value at startup" severity FAILURE;
-%d <= '1';
-%WAIT FOR clk_period;
-%assert q = '1'
-%    report "Wrong output value at first test" severity FAILURE;
-%\end{lstlisting}
-%\vskip1pt
-%\begin{itemize}
-%\item Modified test bench:
-%\end{itemize}
-%\begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
-%--Test 1
-%    check_value(q = '0', FAILURE, "Wrong output value at startup");
-%    write(d, '1', "DFF");
-%    check_value(q = '1', FAILURE, "Wrong output value at first test");
-%    ...
-%--End 1
-%\end{lstlisting}
-%\end{frame}
-
-
-%\begin{frame}[fragile]\frametitle{Using the framework}
-%Running Hudson-CI
-%\begin{enumerate}
-%\item Create new job
-%\item Optional: set for import from revision control source
-%\item Set correct parser flags in shell command
-%\item Build \& check results
-%\end{enumerate}
-%\vskip5pt
-%\begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
-%python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
-%\end{lstlisting}
-%\end{frame}
-
-%\begin{frame}[fragile]\frametitle{Job example}
-%\begin{lstlisting}[language=bash, tabsize=4, frame=single, framesep=2mm, belowskip=8pt, aboveskip=8pt, showstringspaces=false, basicstyle=\scriptsize]
-%$ python src\testbench_parser.py -m partitioned -l sim\tb_dff_r.vhd
-%\end{lstlisting}
-%\end{frame}
-
-
-%\begin{frame}\frametitle{Framework design flow}
-%\centering
-%\includegraphics[width=\textwidth]{images/parserwork.pdf}
-%\end{frame}
-
 \section{Concluding}
 
 \subsection{Results}
@@ -542,13 +431,6 @@ Precise debugging information
 {\centering
 \includegraphics[width=.95\textwidth]{images/results1.png}}
 \end{frame}
-%
-%\begin{frame}\frametitle{Results}
-%{\centering
-%\includegraphics[width=.85\textwidth]{images/results2.png}}
-%\end{frame}
-%%\item Code duplication increases compile \& simulation time
-
 \subsection{Future work}
 
 \begin{frame}\frametitle{Future work}
@@ -600,43 +482,6 @@ Thanks for your attention!
 \vskip20pt
 Questions?
 \end{frame}
-
-%\begin{frame}\frametitle{Commentaries on developing VHDL}
-%\begin{itemize}
-%\item Outdated practices
-%\begin{itemize}
-%\item An industry stuck in 1993
-%\item "Don't fix what isn't broken"
-%\end{itemize}
-%\item Hardware engineers are not software developers
-%\begin{itemize}
-%\item Little to no software development experience
-%\item Taught by seniors at work
-%\end{itemize}
-%\item VHDL has no reflection or introspection
-%\begin{itemize}
-%\item Could make test benches even more compact
-%\end{itemize}
-%\end{itemize}
-%\end{frame}
-%
-%\subsection{Conclusion}
-%
-%\begin{frame}\frametitle{Conclusion}
-%\begin{itemize}
-%\item Software methods are applicable to an extent if:
-%\begin{itemize}
-%\item Tailored to development needs
-%\item Integrated with existing methods
-%\end{itemize}
-%\item Framework provided:
-%\begin{itemize}
-%\item Easier to read code
-%\item Precise debugging information
-%\item Faster development
-%\end{itemize}
-%\end{itemize}
-%\end{frame}
 
 \section{Demo}
 \begin{frame}\frametitle{Demo}
