@@ -69,6 +69,8 @@
 \end{itemize}
 \end{frame}
 
+\subsection{Testing and problems}
+
 \begin{frame}\frametitle{Testing VHDL}
 \begin{columns}
 \begin{column}{0.05\textwidth}
@@ -136,7 +138,6 @@ Test Driven Development
 \end{frame}
 
 \section{Proposed solution}
-\subsection{VHDL testing framework}
 
 \begin{frame}\frametitle{Proposed solution}
 Standardized testing framework
@@ -214,13 +215,14 @@ Standardized testing framework
 %\end{frame}
 
 %\section{Proposed solution}
+\subsection{VHDL testing framework}
 
-\begin{frame}\frametitle{Python script}
+\begin{frame}\frametitle{VHDL testing framework}
 %\vskip20pt
 \begin{columns}
 \begin{column}{0.60\textwidth}
 \begin{enumerate}
-\item Identify and group tests
+\item Split test bench into groups of tests
 \item Separate groups into new test benches
 \item Compile sources and new test benches
 \item Execute test benches
@@ -244,7 +246,7 @@ Standardized testing framework
 %\includegraphics[width=.7\textwidth]{images/ppe.pdf}
 \end{frame}
 
-\subsection{Preparing test benches}
+\subsection{Using the framework}
 \begin{frame}\frametitle{Preparing test benches}
 \vskip50pt
 \begin{columns}
@@ -300,7 +302,7 @@ assert q = '1'
 \end{lstlisting}
 \end{frame}
 
-\subsection{Processing and compiling}
+
 \begin{frame}\frametitle{Processing and compiling}
 \vskip20pt
 Python script:
@@ -317,20 +319,20 @@ Python script:
 \end{frame}
 
 \begin{frame}\frametitle{Processing and compiling}
-\vskip45pt
+\vskip40pt
 ModelSim:
 \begin{itemize}
 \item Compiles source code
-\item Compiles test benches
+\item Compiles test benches\\
+\hskip2pt\ding{222} One entity, many architectures
 \end{itemize}
 \centering
 \includegraphics[width=.75\textwidth]{images/sources.pdf}
-\vskip15pt
+\vskip10pt
 \includegraphics[width=.7\textwidth]{images/ppe2.pdf}
 \end{frame}
 
 
-\subsection{Execution and results}
 \begin{frame}\frametitle{Execution and results}
 \vskip48pt
 ModelSim:
@@ -344,7 +346,7 @@ Python script:
 \item Processes results
 \begin{itemize}
 \item Text report
-\item XML report
+\item JUnit XML report
 \end{itemize}
 \end{itemize}
 \centering
@@ -570,6 +572,25 @@ Precise debugging information
 %%ONTWIKKELING
 %%WAT
 %%NU?
+
+\subsection{Conclusion}
+
+\begin{frame}\frametitle{Conclusion}
+\begin{itemize}
+\item Software methods are applicable if:
+\begin{itemize}
+\item Tailored to development needs
+\item Integrated with existing methods
+\end{itemize}
+\vskip3pt
+\item The framework provided:
+\begin{itemize}
+\item Easier to read code
+\item Precise debugging information
+\item Eliminated single point of failure
+\end{itemize}
+\end{itemize}
+\end{frame}
 
 
 \begin{frame}\frametitle{End}
