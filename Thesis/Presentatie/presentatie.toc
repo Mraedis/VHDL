@@ -1,8 +1,8 @@
 \beamer@endinputifotherversion {3.33pt}
 \beamer@sectionintoc {1}{Situating}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{VHDL}{4}{0}{1}
-\beamer@subsectionintoc {1}{2}{Testing and problems}{5}{0}{1}
-\beamer@subsectionintoc {1}{3}{Software development techniques}{7}{0}{1}
+\beamer@subsectionintoc {1}{1}{Software development techniques}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{VHDL}{5}{0}{1}
+\beamer@subsectionintoc {1}{3}{Testing and problems}{6}{0}{1}
 \beamer@sectionintoc {2}{Proposed solution}{8}{0}{2}
 \beamer@subsectionintoc {2}{1}{VHDL testing framework}{10}{0}{2}
 \beamer@subsectionintoc {2}{2}{Using the framework}{12}{0}{2}

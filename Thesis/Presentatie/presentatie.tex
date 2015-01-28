@@ -56,7 +56,38 @@
   \tableofcontents
 \end{frame}
 
+
+
+
 \section{Situating}
+\subsection{Software development techniques}
+\begin{frame}\frametitle{Software development techniques}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+Unit testing
+\begin{itemize}
+\item Unit = smallest behaviour in code
+\item Test failure \ding{222} exact location
+\end{itemize}
+\vskip3pt
+Test First Development
+\begin{itemize}
+\item Create test before the code
+\item How will the code behave?
+\end{itemize}
+\vskip3pt
+Test Driven Development
+\begin{itemize}
+\item TFD \& refactoring
+\item Proven to significantly reduce errors
+\end{itemize}
+\end{column}
+\column{0.4\textwidth}
+\includegraphics[width=\textwidth]{images/tdd.pdf}
+\end{columns}
+\end{frame}
+
+
 \subsection{VHDL}
 \begin{frame}\frametitle{VHDL}
 \begin{itemize}
@@ -110,55 +141,31 @@ Problems with testing
 \end{itemize}
 \end{frame}
 
-\subsection{Software development techniques}
-\begin{frame}\frametitle{Software development techniques}
-\begin{columns}
-\begin{column}{0.6\textwidth}
-Unit testing
-\begin{itemize}
-\item Unit = smallest behaviour in code
-\item Test failure \ding{222} exact location
-\end{itemize}
-\vskip3pt
-Test First Development
-\begin{itemize}
-\item Create test before the code
-\item How will the code behave?
-\end{itemize}
-\vskip3pt
-Test Driven Development
-\begin{itemize}
-\item TFD \& refactoring
-\item Proven to significantly reduce errors
-\end{itemize}
-\end{column}
-\column{0.4\textwidth}
-\includegraphics[width=\textwidth]{images/tdd.pdf}
-\end{columns}
-\end{frame}
 
 \section{Proposed solution}
 \begin{frame}\frametitle{Proposed solution}
 Apply unit testing to VHDL?
 \begin{itemize}
-\item[\ding{222}] 1 unit test per test bench
+\item[=] 1 unit test per test bench
+\begin{itemize}
 \item[\ding{222}] Extremely large number of TBs
 \item[\ding{222}] Impractical, time wasting
 \end{itemize}
+\end{itemize}
 \vskip5pt
-Solution: use a framework to do it for you
+Solution: have a framework do it for you
 \end{frame}
 
 \subsection{VHDL testing framework}
 \begin{frame}\frametitle{VHDL testing framework}
 %\vskip20pt
 \begin{columns}
-\begin{column}{0.60\textwidth}
+\begin{column}{0.65\textwidth}
 \begin{enumerate}
-\item Arrange test bench into unit tests
+\item Arrange tests into unit tests (test suite)
 \item Separate unit tests into files
 \item Compile source and newly created files
-\item Execute unit tests ("test suite")
+\item Execute unit tests
 \item Capture and process results
 \end{enumerate}
 \end{column}
@@ -167,7 +174,7 @@ Solution: use a framework to do it for you
 \Huge\}
 \vskip1pt
 \}
-\column{0.30\textwidth}
+\column{0.25\textwidth}
 \ding{222} Prepare
 \vskip13pt
 \ding{222} Process
@@ -208,7 +215,7 @@ Python script + ModelSim
 
 \subsection{Using the framework}
 \begin{frame}[fragile]\frametitle{Preparing test benches}
-\vskip30pt
+\vskip25pt
 \begin{itemize}
 \item Separate independent tests
 \begin{itemize}
@@ -216,19 +223,21 @@ Python script + ModelSim
 \item Start/Stop
 \item Partitioned
 \end{itemize}
-\item Create commands file
-\end{itemize}
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
 ...
+--Test 1
 assert q = '0'
     report "Wrong output value at startup" severity FAILURE;
 d <= '1';
 WAIT FOR clk_period;
 assert q = '1'
     report "Wrong output value at first test" severity FAILURE;
+--End 1
 ...
 \end{lstlisting}
-\vskip25pt
+\item Create commands file
+\end{itemize}
+\vskip15pt
 \begin{center}
 \includegraphics[width=.7\textwidth]{images/ppe1.pdf}
 \end{center}
@@ -249,18 +258,17 @@ Use Bitvis utility library for:
 \includegraphics[width=0.8\textwidth]{images/bitvis.png}
 \end{columns}
 \vskip10pt
-Modified test bench:
+Modified unit test:
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
 ...
 --Test 1
     check_value(q = '0', FAILURE, "Wrong output value at startup");
     write(d, '1', "DFF");
     check_value(q = '1', FAILURE, "Wrong output value at first test");
-    ...
 --End 1
 ...
 \end{lstlisting}
-\vskip25pt
+\vskip30pt
 \begin{center}
 \includegraphics[width=.7\textwidth]{images/ppe1.pdf}
 \end{center}
@@ -333,7 +341,7 @@ Python script:
 \end{itemize}
 \vskip5pt
 \centering
-\includegraphics[width=.8\textwidth]{images/tbsplit.pdf}
+\includegraphics[width=.8\textwidth]{images/tbsplit2.pdf}
 \vskip20pt
 \includegraphics[width=.7\textwidth]{images/ppe2.pdf}
 \end{frame}
@@ -353,7 +361,7 @@ Python script:
 %\subsection{VHDL testing framework}
 
 \begin{frame}\frametitle{Processing and compiling}
-\vskip40pt
+\vskip30pt
 ModelSim:
 \begin{itemize}
 \item Compiles source code (UUT)
@@ -363,7 +371,7 @@ ModelSim:
 \end{itemize}
 \end{itemize}
 \centering
-\includegraphics[width=.75\textwidth]{images/sources.pdf}
+\includegraphics[width=.75\textwidth]{images/sources2.pdf}
 \vskip10pt
 \includegraphics[width=.7\textwidth]{images/ppe2.pdf}
 \end{frame}
@@ -438,8 +446,8 @@ Precise debugging information
 \item Wider, better tool support
 \item Lexical analysis
 \begin{itemize}
-\item Automated partitioning
-\item Smart test bench generation
+\item Automated unit test recognition
+\item Smart testsuite generation
 \end{itemize}
 \item Adapted CI tool
 \begin{itemize}

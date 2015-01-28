@@ -13,18 +13,17 @@ Use Bitvis utility library for:
 \includegraphics[width=0.8\textwidth]{images/bitvis.png}
 \end{columns}
 \vskip10pt
-Modified test bench:
+Modified unit test:
 \begin{lstlisting}[language=VHDL, tabsize=4, frame=single, framesep=2mm, belowskip=5pt, aboveskip=5pt, showstringspaces=false, basicstyle=\scriptsize]
 ...
 --Test 1
     check_value(q = '0', FAILURE, "Wrong output value at startup");
     write(d, '1', "DFF");
     check_value(q = '1', FAILURE, "Wrong output value at first test");
-    ...
 --End 1
 ...
 \end{lstlisting}
-\vskip25pt
+\vskip30pt
 \begin{center}
 \includegraphics[width=.7\textwidth]{images/ppe1.pdf}
 \end{center}
